@@ -1,0 +1,22 @@
+.faq--header {
+  background-image: url('../../../../public/faqs.jpg');
+  background-size: cover;
+  aspect-ratio: 3 / 1;
+}
+
+.faq--accordion-content {
+  padding: 1rem;
+}
+
+.faq--accordion-item {
+  background-color: var(--slate-1);
+  border: 1px solid var(--slate-6);
+}
+
+.faq--accordion-trigger {
+  border-bottom: 1px solid var(--slate-6);
+}
+
+.hello {
+  background-color: red;
+}

@@ -1,0 +1,62 @@
+@use '../../../scss/_settings/easing' as *;
+
+.badge {
+  --center-display: inline-flex;
+  border-radius: 100px;
+  background-color: var(--color-shared-8);
+  color: var(--color-shared-12);
+  font-size: 0.75rem;
+  // border: 2px solid var(--slate-1);
+  line-height: 1.2;
+  font-weight: 500;
+  flex: none;
+  min-width: var(--badge-size);
+  height: var(--badge-size);
+  &[data-animate='true'] {
+    animation: pulse 1s infinite $ease-elastic;
+  }
+  flex: none;
+}
+
+.badge__number {
+  padding-inline: 0.25rem;
+  --badge-size: var(--badge-sz);
+}
+
+.badge__dot {
+  --badge-size: calc(var(--badge-sz) / 3);
+  background-color: var(--color-shared-9);
+}
+
+.badge__icon {
+  --badge-size: var(--badge-sz);
+}
+.badge__icon svg {
+  width: calc(var(--badge-sz) / 1.75);
+}
+
+.badge__xs {
+  --badge-sz: 1.5rem;
+}
+
+.badge__sm {
+  --badge-sz: 1.75rem;
+}
+
+.badge__md {
+  --badge-sz: 2rem;
+}
+
+.badge__lg {
+  --badge-sz: 2.125rem;
+}
+
+.badge__xl {
+  --badge-sz: 2.25rem;
+}
+
+@keyframes pulse {
+  80% {
+    transform: scale(1.2);
+  }
+}

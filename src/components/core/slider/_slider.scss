@@ -1,0 +1,105 @@
+/* ============================================================================================  
+    Slider Root Section
+   ============================================================================================ */
+
+.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  touch-action: none;
+
+  &[data-orientation='horizontal'] {
+    width: min(16em, 100%);
+    height: 1.5em;
+  }
+  &[data-orientation='vertical'] {
+    flex-direction: column;
+    height: 8em;
+  }
+}
+
+.slider__xs {
+  font-size: 12px;
+}
+.slider__sm {
+  font-size: 16px;
+}
+
+.slider__md {
+  font-size: 20px;
+}
+
+.slider__lg {
+  font-size: 32px;
+}
+
+/* ============================================================================================  
+    Slider Track Section
+   ============================================================================================ */
+
+.slider--track {
+  background-color: var(--slate-4);
+  position: relative;
+  flex-grow: 1;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+.slider--track[data-orientation='horizontal'] {
+  height: 5px;
+}
+.slider--track[data-orientation='vertical'] {
+  width: 5px;
+}
+/* ============================================================================================  
+    Slider Range Section
+   ============================================================================================ */
+
+.slider--range {
+  position: absolute;
+  background-color: var(--color-shared-8);
+  border-radius: 9999px;
+  height: 100%;
+  &[data-orientation='vertical'] {
+    width: 100%;
+  }
+}
+
+/* ============================================================================================  
+    Slider Thumb Section
+   ============================================================================================ */
+
+.slider--thumb {
+  display: block;
+  width: 1em;
+  height: 1em;
+  box-shadow: 0 0 8px var(--opacity-6);
+  transition: transform 0.3s;
+  border: 1px solid var(--slate-8);
+}
+
+.slider--thumb:hover {
+  transform: scale(1.2);
+}
+.slider--thumb:focus {
+  outline: 2px solid transparent;
+  box-shadow: 0 0 0 5px var(--color-shared-6);
+}
+
+.slider--thumb__sm {
+  font-size: 16px;
+}
+.slider--thumb__md {
+  font-size: 20px;
+}
+.slider--thumb__lg {
+  font-size: 24px;
+}
+
+.slider--thumb__solid {
+  background-color: var(--slate-1);
+}
+.slider--thumb__outline {
+  background-color: var(--slate-1);
+  border: 5px solid var(--color-shared-8);
+}

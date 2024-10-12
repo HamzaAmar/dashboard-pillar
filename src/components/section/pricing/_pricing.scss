@@ -1,0 +1,43 @@
+.billing-item {
+  padding: 0;
+}
+
+.billing-trigger {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  &[data-current='true'] {
+    box-shadow: inset 0 0 0 2px;
+    .billing-check {
+      display: initial;
+    }
+  }
+}
+
+.billing-check {
+  display: none;
+}
+
+.icon-wrapper {
+  border: 1px solid var(--opacity-6);
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+}
+
+.pricing-review--list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.pricing-review--footer {
+  margin-top: auto;
+}
+
+.plan-feature--icon-wrapper {
+  background-color: var(--slate-12);
+  color: var(--slate-1);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}

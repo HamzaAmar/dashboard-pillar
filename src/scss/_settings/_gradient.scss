@@ -1,0 +1,9 @@
+// All Custom Gradient That we Need I Will try in the future to customize this
+// to only work with 1 linear and make all the attribute can change
+:root {
+  --gradient: linear-gradient(
+    to right,
+    var(--color-shared-2, var(--color-primary-2)),
+    var(--color-shared-3, var(--color-primary-3))
+  );
+}

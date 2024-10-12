@@ -1,0 +1,151 @@
+@use '../../../scss/_settings/easing' as easing;
+
+.modal--overlay {
+  background-color: rgba(0 0 0 / 0.6);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms easing.$ease-elastic;
+  z-index: 100;
+}
+// TODO: Fix ANimation Problem
+
+.drawer-content--header {
+  border-bottom: 1px solid var(--opacity-6);
+}
+
+.dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  max-height: 85vh;
+  animation: contentShow 150ms easing.$ease-elastic;
+}
+.drawer {
+  position: fixed;
+  border-radius: 0;
+  transition: transform 1s easing.$ease-elastic;
+  min-width: 280px;
+}
+
+/* 
+========================================================================================================
+      Drawer Position Section 
+========================================================================================================
+*/
+
+.drawer__top,
+.drawer__bottom {
+  left: 0;
+  width: 100vw;
+  height: calc(var(--drawer-size, 50) * 1vh);
+  max-height: 100%;
+}
+
+.drawer__right,
+.drawer__left {
+  top: 0;
+  height: 100vh;
+  width: calc(var(--drawer-size, 50) * 1vw);
+}
+
+.drawer__top {
+  top: 0;
+  border-end-start-radius: 0.5rem;
+  border-end-end-radius: 0.5rem;
+  transform: translateY(-100%);
+}
+
+.drawer__bottom {
+  bottom: 0;
+  border-start-start-radius: 0.5rem;
+  border-start-end-radius: 0.5rem;
+  transform: translateY(100%);
+}
+.drawer__left {
+  left: 0;
+  border-start-end-radius: 0.5rem;
+  border-end-end-radius: 0.5rem;
+  transform: translateX(-100%);
+}
+
+.drawer__right {
+  right: 0;
+  border-start-start-radius: 0.5rem;
+  border-end-start-radius: 0.5rem;
+  transform: translateX(100%);
+}
+
+/* 
+========================================================================================================
+      Drawer Size Section 
+========================================================================================================
+*/
+
+.drawer__sm {
+  --drawer-size: 30;
+}
+
+.drawer__md {
+  --drawer-size: 50;
+}
+
+.drawer__lg {
+  --drawer-size: 75;
+}
+.drawer__full {
+  --drawer-size: 100;
+  border-radius: 0;
+}
+
+.drawer[data-state='open'] {
+  transform: none;
+  transition: transform 1s easing.$ease-elastic;
+}
+
+.modal--content {
+  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  z-index: 101;
+  display: grid;
+  grid-template-rows: 3rem 1fr;
+}
+
+.modal--content-children {
+  overflow-y: auto;
+}
+
+.modal__sm {
+  max-width: 350px;
+}
+.modal__md {
+  max-width: 500px;
+}
+.modal__lg {
+  max-width: 750px;
+}
+.modal__full {
+  max-width: 100vh;
+  max-height: 100vh;
+}
+
+.modal--content:focus {
+  outline: none;
+}
+
+@keyframes overlayShow {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

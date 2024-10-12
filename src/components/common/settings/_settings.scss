@@ -1,0 +1,82 @@
+.settings-section {
+  position: fixed;
+  inset-block-start: 4rem;
+  inset-inline-end: 0;
+  // ------------> 3 rem Calculated From the width and margin of the button
+  transform: translateX(calc(100% - 2.5rem));
+  transition: transform 0.3s ease-out;
+  pointer-events: none;
+}
+
+.settings-section:lang(ar) {
+  transform: translateX(calc(-100% + 5rem));
+}
+.settings--content > * {
+  padding: 1rem;
+}
+
+.customize--primary-color-box {
+  width: 3rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-color: var(--customize-color, var(--color-shared-9));
+  border: 1px solid var(--opacity-7);
+  color: white;
+}
+.customize--white-color-box {
+  --customize-color: white;
+}
+.customize--white-color-text {
+  color: black;
+}
+
+.customize--black-color-box {
+  --customize-color: black;
+}
+
+.settings--content > * + * {
+  border-top: 1px solid var(--opacity-6);
+}
+
+.settings-section[data-open='true'] {
+  transform: none;
+  transition-timing-function: ease-in;
+}
+
+.settings--content {
+  min-width: 240px;
+  height: calc(100vh - 4rem);
+  background-color: var(--slate-1);
+  box-shadow: 0 0 12px -4px var(--opacity-6);
+  pointer-events: visible;
+}
+.preferred-color--radio {
+  color: white;
+}
+.settings--content-header {
+  background-color: var(--slate-2);
+}
+
+.settings--button {
+  box-shadow: 0 0 16px var(--opacity-8);
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 1;
+}
+.settings--button:focus {
+  outline-width: 4px;
+}
+
+.settings--button-icon {
+  animation: roll 1s infinite linear;
+}
+
+@keyframes roll {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

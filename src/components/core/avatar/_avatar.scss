@@ -1,0 +1,128 @@
+.avatar {
+  // box-shadow: var(--shadow-sm);
+  position: relative;
+  border: 3px solid var(--slate-1);
+  background-image: linear-gradient(var(--color-shared-8), var(--color-shared-9));
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
+
+.avatar > * {
+  border-radius: inherit;
+}
+
+// Avatar Size Style Section
+
+.avatar__2xs {
+  font-size: 20px;
+}
+
+.avatar__xs {
+  font-size: 24px;
+}
+.avatar__sm {
+  font-size: 32px;
+}
+.avatar__md {
+  font-size: 3rem;
+}
+.avatar__lg {
+  font-size: 4rem;
+}
+.avatar__xl {
+  font-size: 5rem;
+}
+
+.avatar__2xl {
+  font-size: 7rem;
+}
+
+// Avatar Children Section Style
+
+.avatar--image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar--letter {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.35em;
+  user-select: none;
+}
+.avatar--plus {
+  font-size: 0.3em;
+  vertical-align: super;
+}
+
+.avatar--icon > svg {
+  width: 0.75em;
+  color: white;
+  stroke-width: 2px;
+}
+
+// Avatar Group Style Section
+.avatar-group {
+  display: flex;
+  --flow-gap: 2rem;
+}
+
+.avatar-group__stack {
+  & > * + * {
+    margin-inline-start: -0.5em;
+  }
+}
+.avatar-group__grid {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  // width: fit-content;
+}
+
+.avatar-group > * {
+  transition: transform 0.3s;
+  transform-origin: left;
+}
+.avatar-group > *:hover {
+  transform: scale(1.1) translateY(-2px);
+  z-index: 1;
+}
+
+// Avatar Badge Section Style Start
+.avatar-badge {
+  position: absolute;
+  z-index: 100;
+  flex: none;
+  font-size: 0;
+}
+
+/*TODO: Make it work with all Variant Of  Badge*/
+
+.avatar-badge__start-end {
+  inset-inline-start: 0;
+  inset-block-end: 0;
+  transform: translate(-25%, 25%);
+}
+
+.avatar-badge__start-start {
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  transform: translate(25%, -25%);
+}
+
+.avatar-badge__end-start {
+  inset-inline-end: 0;
+  inset-block-start: 0;
+  transform: translate(-25%, 25%);
+}
+
+.avatar-badge__end-end {
+  inset-inline-end: 0;
+  inset-block-end: 0;
+  transform: translate(25%, 25%);
+}
+
+// Avatar Badge Section Style End

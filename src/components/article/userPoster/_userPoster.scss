@@ -1,0 +1,11 @@
+.user-poster {
+  width: 260px;
+  max-width: 100%;
+  box-shadow: 0 5px 10px -5px rgba(0 0 0 / 40%);
+  z-index: 1;
+}
+
+.user-poster--common-friends {
+  color: var(--color-text-6);
+  line-height: 1.3;
+}

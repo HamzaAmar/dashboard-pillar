@@ -1,0 +1,38 @@
+/**
+ * 1. Change the inconsistent appearance in all browsers (opinionated).
+ * 2. Add typography inheritance in all browsers (opinionated).
+ */
+
+:where(button, input, select, textarea) {
+  background-color: transparent; /* 1 */
+  border: none;
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  letter-spacing: inherit; /* 2 */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  &:not([class]) {
+    color: var(--color-primary-3);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+:where(select) {
+  border-radius: 0;
+  padding-right: 2em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary-7);
+  outline-offset: -2px;
+}

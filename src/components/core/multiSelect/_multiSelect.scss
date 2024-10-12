@@ -1,0 +1,49 @@
+.multiselect--wrapper {
+  color: var(--slate-11);
+  position: relative;
+  background-color: red;
+}
+
+.multiselect {
+  border: 1px solid var(--slate-6);
+  background-color: var(--slate-1);
+  padding: 0.25rem 1rem;
+  border-radius: 0.375rem;
+}
+.multiselect--list {
+  background-color: var(--slate-1);
+  border: 1px solid var(--slate-6);
+  border-radius: 0.375rem;
+  position: absolute;
+  width: 100%;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  overflow: hidden;
+}
+
+.multiselect--selected-item-wrapper {
+  background-color: var(--color-shared-7);
+  overflow: hidden;
+  border-radius: 0.25rem;
+}
+
+.multiselect--selected-item {
+  padding: 0.125rem 0.25rem;
+}
+.multiselect--close-button {
+  padding: 0 0.25rem;
+  background-color: var(--slate-8);
+  display: inline-block;
+}
+
+.multiselect--close-button:hover {
+  background-color: var(--opacity-8);
+}
+
+.multiselect--item {
+  padding: 0.25rem 1rem;
+  cursor: pointer;
+}
+.multiselect--item:hover {
+  background-color: var(--opacity-3);
+}

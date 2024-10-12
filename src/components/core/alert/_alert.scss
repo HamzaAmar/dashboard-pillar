@@ -1,0 +1,20 @@
+.alert {
+  padding: 0.5rem 1rem;
+}
+
+.alert__soft {
+  background-color: var(--color-shared-3);
+  border: 1px solid var(--color-shared-6);
+  color: var(--color-shared-11);
+}
+
+.alert__outline {
+  background-color: var(--color-shared-1);
+  border: 1px solid var(--color-shared-6);
+  color: var(--color-shared-11);
+}
+.alert__fill {
+  background-color: var(--color-shared-8);
+  color: var(--color-shared-12);
+  border-inline-start: 6px solid var(--color-shared-11);
+}

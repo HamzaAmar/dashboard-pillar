@@ -1,0 +1,16 @@
+/* truncated Style Section Start */
+
+.u_multiline {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-numbers, 4);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.u_singleline {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* truncated Style Section End */

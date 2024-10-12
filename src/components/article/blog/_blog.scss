@@ -1,0 +1,16 @@
+.blog-post {
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, rgba(0 0 0 / 0.7), rgba(0 0 0 / 0.3)), var(--image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+  padding: 1rem;
+  min-height: 500px;
+  max-width: 380px;
+  box-shadow: 0 0 4px var(--slate-6);
+  color: white;
+}
+
+.blog-post--footer {
+  margin-top: auto;
+}

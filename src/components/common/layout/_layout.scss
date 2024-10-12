@@ -1,0 +1,18 @@
+.admin-layout {
+  --header-footer-height: 4rem;
+  display: grid;
+  background-color: var(--slate-3);
+  grid-template-columns: auto 1fr;
+  grid-template-rows: var(--header-footer-height) 1fr var(
+      --header-footer-height
+    );
+  grid-template-areas: "sidebar header" "sidebar main" "sidebar footer";
+  transition: grid-template-columns 1s;
+}
+
+.main {
+  grid-area: main;
+  padding: 1rem;
+  height: 100%;
+  overflow: auto;
+}

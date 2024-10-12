@@ -1,0 +1,15 @@
+.profile-photos--wrapper {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 0 4px var(--opacity-6);
+}
+.profile-photos {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  transition: transform 1s;
+}
+
+.profile-photos:hover {
+  transform: scale(1.1) skew(3deg) rotate(-3deg);
+}

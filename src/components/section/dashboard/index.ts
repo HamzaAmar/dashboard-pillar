@@ -1,0 +1,6 @@
+export { default as EcommerceSection } from './ecommerce'
+export { default as JobsSection } from './jobs'
+export { default as ContactSection } from './contact'
+export { default as CryptoSection } from './crypto'
+export { default as NftSection } from './nft'
+export { default as Pages } from './pages'

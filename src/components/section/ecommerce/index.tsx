@@ -1,0 +1,6 @@
+export { default as ProductsSection } from './products'
+export { ProductDetailsSection } from './productDetails'
+export { default as OrdersSection } from './orders'
+export { default as CartSection } from './cart'
+export { default as CustomersSection } from './customers'
+export { default as CheckoutSection } from './checkout'

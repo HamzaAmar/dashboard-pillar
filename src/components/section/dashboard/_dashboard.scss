@@ -1,0 +1,72 @@
+/*
+=====================================================================================================
+ Pages Root
+=====================================================================================================
+*/
+
+.page--article {
+  border-radius: 0.5rem;
+  box-shadow: 0 0 8px var(--opacity-5);
+}
+
+.page--article-image {
+  width: 100%;
+  object-fit: cover;
+  border-start-start-radius: inherit;
+  border-start-end-radius: inherit;
+}
+.page--article-content {
+  padding: 0.5rem 1rem;
+}
+
+/*))))))))))))))))))*/
+.store-visit--icon-container {
+  background: var(--primary-6);
+  padding: 0.875rem;
+  width: fit-content;
+  border-radius: 0.5rem;
+
+  & > svg {
+    stroke: var(--primary-11);
+  }
+}
+
+/*
+======================================================================================================
+Jobs Style
+======================================================================================================
+*/
+
+.job-static-article {
+  min-width: 200px;
+  background-color: var(--color-shared-5);
+}
+
+/*
+=====================================================================================================
+Crypto Page
+=====================================================================================================
+*/
+
+.crypto-currency {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.crypto-curr--header {
+  border-bottom: 1px solid var(--opacity-6);
+  padding-bottom: 0.5rem;
+}
+
+.history-trading-container {
+}
+
+/*
+=====================================================================================================
+Contact Page
+=====================================================================================================
+*/
+
+.contact-card {
+  padding: 0.75rem;
+}

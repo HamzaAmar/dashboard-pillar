@@ -1,0 +1,177 @@
+{
+  "name": "dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@hello-pangea/dnd": "^16.2.0",
+    "@radix-ui/react-accordion": "^1.0.1",
+    "@radix-ui/react-alert-dialog": "^1.0.2",
+    "@radix-ui/react-dialog": "^1.0.2",
+    "@radix-ui/react-dropdown-menu": "^2.0.1",
+    "@radix-ui/react-hover-card": "^1.0.2",
+    "@radix-ui/react-popover": "^1.0.2",
+    "@radix-ui/react-slider": "^1.1.0",
+    "@radix-ui/react-tabs": "^1.0.1",
+    "@radix-ui/react-tooltip": "^0.1.7",
+    "@react-spring/web": "^9.6.1",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@visx/axis": "^2.14.0",
+    "@visx/event": "^2.6.0",
+    "@visx/gradient": "^2.10.0",
+    "@visx/grid": "^2.12.2",
+    "@visx/group": "^2.10.0",
+    "@visx/legend": "^2.10.0",
+    "@visx/marker": "^2.12.2",
+    "@visx/mock-data": "^2.15.1",
+    "@visx/responsive": "^2.10.0",
+    "@visx/scale": "^2.2.2",
+    "@visx/shape": "^2.12.2",
+    "@visx/tooltip": "^2.16.0",
+    "d3-array": "^3.2.1",
+    "embla-carousel-react": "^7.0.5",
+    "prism-react-renderer": "^1.3.5",
+    "react": "^18.1.0",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-dom": "^18.1.0",
+    "react-dropzone": "^14.2.3",
+    "react-full-screen": "^1.1.1",
+    "react-input-mask": "^3.0.0-alpha.2",
+    "react-router-dom": "^6.4.2",
+    "react-scripts": "5.0.1",
+    "sass": "^1.52.1",
+    "uuid": "^9.0.0",
+    "web-vitals": "^2.1.4",
+    "zod": "^3.20.6"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
+    "debug-storybook": "set DEBUG=docgen:include,docgen:exclude & npm run storybook",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
+    "cz": "exec < /dev/tty && git cz --hook || true",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "yarn type-check -- --watch",
+    "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\"",
+    "stylelint": "stylelint \"src/**/*.{css,scss}\"",
+    "lint:fix": "yarn lint --fix",
+    "lint:check": "yarn lint --quiet",
+    "stylelint:fix": "yarn stylelint --fix",
+    "stylelint:check": "yarn stylelint --quiet",
+    "prettier:base": "prettier --parser typescript --single-quote --write",
+    "prettier:check": "yarn prettier:base --list-different \"src/**/*.{ts,tsx}\"",
+    "prettier:write": "yarn prettier:base \"src/**/*.{ts,tsx}\"",
+    "validation": "npx concurrently yarn:type-check yarn:lint:check yarn:prettier:check",
+    "test-storybook": "test-storybook",
+    "test-storybook:coverage": "yarn test-storybook --coverage",
+    "test-storybook:cross-browser": "yarn test-storybook --browsers chromium firefox webkit"
+  },
+  "eslintConfig": {
+    "plugins": [
+      "prettier"
+    ],
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.ts?(x)"
+        ]
+      },
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-unresolved": 0,
+          "import/extensions": 0,
+          "import/no-extraneous-dependencies": 0,
+          "react/no-multi-comp": 0,
+          "react/no-unstable-nested-components": 0
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@storybook/addon-a11y": "^6.5.16",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/node-logger": "^6.5.16",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.16",
+    "@storybook/test-runner": "^0.9.4",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/d3-array": "^3.0.3",
+    "@types/d3-time-format": "^4.0.0",
+    "@types/jest": "^27.5.1",
+    "@types/node": "^17.0.36",
+    "@types/react": "^18.0.9",
+    "@types/react-beautiful-dnd": "^13.1.3",
+    "@types/react-dom": "^18.0.5",
+    "@types/react-input-mask": "^3.0.2",
+    "@types/uuid": "^9.0.1",
+    "addon-screen-reader": "^1.8.6",
+    "axe-playwright": "^1.2.3",
+    "babel-plugin-named-exports-order": "^0.0.2",
+    "commitizen": "^4.2.5",
+    "concurrently": "^7.4.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "jest-axe": "^7.0.0",
+    "lint-staged": "^12.5.0",
+    "prettier": "^2.6.2",
+    "prop-types": "^15.8.1",
+    "react-app-rewire-alias": "^1.1.7",
+    "react-app-rewired": "^2.2.1",
+    "source-map-explorer": "^2.5.2",
+    "storybook-addon-pseudo-states": "^1.15.2",
+    "storybook-addon-react-router-v6": "^0.2.1",
+    "storybook-addon-themes": "^6.1.0",
+    "stylelint": "^14.16.1",
+    "stylelint-color-format": "^1.1.0",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-standard-scss": "^6.1.0",
+    "stylelint-order": "^6.0.1",
+    "stylelint-semantic-groups": "^1.2.0",
+    "tsconfig-paths-webpack-plugin": "^3.5.2",
+    "typescript": "^4.7.2",
+    "webpack": "^5.72.1"
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

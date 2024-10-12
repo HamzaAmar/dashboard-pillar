@@ -1,0 +1,6 @@
+export { default as BarChart } from './bar'
+export { default as BarStackChart } from './barStack'
+export { default as BarStackChart2 } from './barStack2'
+export { default as LineChart } from './line'
+export { default as DonutChart } from './doughnut'
+export { default as PieChart } from './pie'

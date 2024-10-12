@@ -1,0 +1,125 @@
+@use '../../../scss/_settings/media' as *; // Sidebar Section Style Start
+.sidebar {
+  align-self: start;
+  background-color: var(--slate-1);
+  box-shadow: 5px 0 10px -5px var(--opacity-3);
+  grid-area: sidebar;
+  height: 100vh;
+  width: 200px;
+  overflow: auto;
+  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-inline-end: 1px solid var(--opacity-6);
+  &[data-shrink='true'] {
+    overflow: visible;
+  }
+}
+
+.sidebar[data-shrink='true'] {
+  width: 64px;
+
+  .sidebar--list > .sidebar--nav-item > .sidebar--nav-button {
+    padding-right: 0;
+  }
+}
+.sidebar--nav {
+  display: grid;
+  grid-template-rows: var(--header-footer-height) 1fr;
+}
+
+// Sidebar Section Style End
+
+// Sidebar Item Section Style Start
+
+.sidebar--nav-item[data-type='shrink'] {
+  position: relative;
+  background-color: var(--slate-2);
+
+  &:hover,
+  &:focus-within {
+    & .sidebar-item--nested-list {
+      transform: translateX(0);
+      opacity: 1;
+      min-width: 12rem;
+      height: auto;
+    }
+  }
+
+  .sidebar-item--nested-list {
+    box-shadow: 4px 4px 8px -4px var(--slate-8);
+    border-left: 1px solid var(--opacity-6);
+    position: absolute;
+    transition: transform 0.3s, opacity 0.2s;
+    transform-origin: left;
+    left: 100%;
+    top: 0;
+    background-color: var(--slate-2);
+    z-index: -2;
+    transform: translateX(-100%);
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    .sidebar--nav-item-content {
+      opacity: 1;
+      width: auto;
+      height: auto;
+    }
+  }
+  .sidebar--nav-item-content {
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+  }
+  & ul {
+    padding: 0;
+  }
+}
+// TODO: Add Animation to it
+.sidebar--nav-item[data-type='regular'] {
+  .sidebar-item--nested-list {
+    display: none;
+  }
+  .sidebar-item--nested-list[data-visible='true'] {
+    display: block;
+  }
+}
+
+.sidebar--nav-button:focus {
+  outline: none;
+}
+
+.sidebar--nav-button {
+  padding: 8px 20px;
+  width: 100%;
+  border-inline-start: 3px solid transparent;
+}
+
+.sidebar--nav-button:focus-visible {
+  outline: 2px dashed var(--primary-8);
+  outline-offset: -2px;
+}
+
+.sidebar--nav-button[aria-current='page'] {
+  border-color: var(--primary-9);
+  background-color: var(--primary-4);
+}
+
+li ul {
+  padding: 0 0.375rem;
+}
+
+.sidebar--nav-button:hover {
+  background-color: var(--opacity-6);
+}
+
+// Sidebar Item Section Style End
+
+// Media Query
+
+@media (max-width: $screen-desktop-small) {
+  .sidebar {
+    display: none;
+  }
+} ;

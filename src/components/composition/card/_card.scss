@@ -1,0 +1,31 @@
+// TODO: Fix Horizontal Problem
+.product-card {
+  overflow: hidden;
+  box-shadow: 0 3px 9px -3px var(--opacity-6);
+  &[data-variant='horizontal'] {
+    .product-card--image {
+      margin: -1rem;
+      height: calc(100% + 2rem);
+      max-width: 360px;
+      object-fit: cover;
+      margin-right: 0;
+    }
+  }
+  &[data-variant='vertical'] {
+    .product-card--image {
+      margin-block-start: -1rem;
+      margin-inline-start: -1rem;
+      width: calc(100% + 2rem);
+    }
+  }
+}
+
+.product-card--header {
+  position: relative;
+}
+
+.product-card--heart-icon {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}

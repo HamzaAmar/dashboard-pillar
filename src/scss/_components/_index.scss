@@ -1,0 +1,76 @@
+@forward '../../components/core/alert/alert';
+@forward '../../components/core/avatar/avatar';
+@forward '../../components/core/badge/badge';
+@forward '../../components/core/button/button';
+@forward '../../components/core/chips/chips';
+@forward '../../components/core/spinner/spinner';
+@forward '../../components/core/checkbox/checkbox';
+@forward '../../components/core/radio/radio';
+@forward '../../components/core/toggle/toggle';
+@forward '../../components/core/form/form';
+@forward '../../components/core/text/text';
+@forward '../../components/core/heading/heading';
+@forward '../../components/core/flex/flex';
+@forward '../../components/core/menuButton/menu-button';
+@forward '../../components/core/separator/separator';
+@forward '../../components/core/breadcrumb/breadcrumb';
+@forward '../../components/core/popover/popover';
+@forward '../../components/core/tooltip/tooltip';
+@forward '../../components/core/slider/slider';
+@forward '../../components/core/progress/progress';
+@forward '../../components/core/grid/grid';
+@forward '../../components/core/multiSelect/multiSelect';
+@forward '../../components/core/timeline/timeline';
+@forward '../../components/core/skeleton/skeleton';
+@forward '../../components/core/stepper/stepper';
+
+//------ Composition Style Section Start
+@forward '../../components/composition/tab/tab';
+@forward '../../components/composition/pagination/pagination';
+@forward '../../components/composition/card/card';
+@forward '../../components/composition/rating/rating';
+@forward '../../components/composition/accordion/accordion';
+@forward '../../components/composition/table/table';
+@forward '../../components/composition/modal/modal';
+@forward '../../components/composition/card/card';
+@forward '../../components/composition/carousel/carousel';
+@forward '../../components/composition/status/status';
+@forward '../../components/composition/dropzone/dropzone';
+
+//------ Composition Style Section End
+
+//  Common Style
+@forward '../../components/common/sidebar/sidebar';
+@forward '../../components/common/header/header';
+@forward '../../components/common/footer/footer';
+@forward '../../components/common/layout/layout';
+@forward '../../components/common/logo/logo';
+@forward '../../components/common/settings/settings';
+
+// Section Style Start
+@forward '../../components/section/faq/faq';
+@forward '../../components/section/profile/hero/hero';
+@forward '../../components/section/profile/feed/feed';
+@forward '../../components/section/profile/friends/friends';
+@forward '../../components/section/authentifaction/auth';
+@forward '../../components/section/inbox/inbox';
+@forward '../../components/section/settings/settings';
+@forward '../../components/section/chat/chat';
+@forward '../../components/section/codeBlock';
+@forward '../../components/section/ecommerce/products';
+@forward '../../components/section/todo/todo';
+@forward '../../components/section/dashboard/dashboard';
+@forward '../../components/section/pricing/pricing';
+@forward '../../components/section/notification/notification';
+@forward '../../components/section/profile/profilePhotos/photos';
+@forward '../../components/section/icons/icons';
+@forward '../../components/section/loading/loading';
+
+// Article Style Start
+@forward '../../components/article/post/post';
+@forward '../../components/article/userPoster/userPoster';
+@forward '../../components/article/friend/friend';
+@forward '../../components/article/blog/blog';
+
+// Chart Style Start
+@forward '../../components/chart/chart';
