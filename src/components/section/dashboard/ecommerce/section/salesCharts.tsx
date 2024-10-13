@@ -1,4 +1,4 @@
-import { Flex, Grid, Heading, Text } from '@components/core'
+import { Flex, Grid, Heading, Text } from '@pillar-ui/core'
 import { ArrowDown, Dollar } from '@components/icons'
 import { ParentSize } from '@visx/responsive'
 import { AxisBottom } from '@visx/axis'
@@ -88,7 +88,7 @@ const BarChart = ({ width, height }: ChartCore) => {
 const Doghnut = ({ width, height }: ChartCore) => {
   const half = width / 2
   // const { showTooltip, tooltipData, tooltipLeft, tooltipTop } = useTooltip();
-  const [active, setActive] = useState<typeof products[1] | null>(null)
+  const [active, setActive] = useState<(typeof products)[1] | null>(null)
 
   const totalPrice = products.reduce((acc, cur) => {
     return cur.price * cur.totalSale + acc
@@ -124,7 +124,7 @@ const Doghnut = ({ width, height }: ChartCore) => {
             })
           }}
         </Pie>
-        <VisxText textAnchor="middle" fontSize={25} fontWeight="bold">
+        <VisxText textAnchor="middle" fontSize={25}>
           {active == null ? 'Total' : active.category}
         </VisxText>
         <VisxText textAnchor="middle" dy={20} fontSize={15} color="var(--slate-11)" fontWeight="500">
@@ -137,33 +137,33 @@ const Doghnut = ({ width, height }: ChartCore) => {
 
 export const SalesCharts = () => {
   return (
-    <Grid columns="1.3fr 1.7fr" className="md_grid-one" gap="sm">
+    <Grid grid="1.3fr 1.7fr" className="md_grid-one" gap="4">
       <section className="l_box">
-        <Heading size="xs" as="h3">
+        <Heading size="3" as="h3">
           Generated Leads
         </Heading>
-        <Text size="xs" color="slate" contrast="low">
+        <Text size="3" color="b" low>
           {' '}
           Monthly Report
         </Text>
 
-        <Flex items="end" justify="between" gap="md">
+        <Flex items="end" justify="between" gap="5">
           <div>
             <div>
-              <Flex items="center" gap="2xs">
+              <Flex items="center" gap="1">
                 <Dollar width="20" />
-                <Text color="slate" size="xs">
+                <Text color="b" size="3">
                   All Price in dollar{' '}
                 </Text>
               </Flex>
-              <Text color="slate" size="sm" contrast="low">
+              <Text color="b" size="4" low>
                 Money You gain this Week
               </Text>
             </div>
-            <Text size="2xl" weight="bold">
+            <Text size="8" weight="7">
               $14,599
             </Text>
-            <Text as="div" weight="medium" size="sm" color="red" contrast="low">
+            <Text as="div" weight="5" size="4" color="d" low>
               <span>+15%</span>
               <ArrowDown direction="right-top" width="20" />
             </Text>
@@ -172,15 +172,15 @@ export const SalesCharts = () => {
         </Flex>
       </section>
       <section className="l_box u_flex-1">
-        <Heading size="xs" as="h3">
+        <Heading size="3" as="h3">
           Generated Leads
         </Heading>
-        <Text size="xs" color="slate" contrast="low">
+        <Text size="3" color="b" low>
           {' '}
           Monthly Report
         </Text>
 
-        <Flex items="end" justify="between" gap="md">
+        <Flex items="end" justify="between" gap="5">
           <ParentSize debounceTime={10}>{({ width, height }) => <BarChart width={width} height={150} />}</ParentSize>
         </Flex>
       </section>

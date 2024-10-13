@@ -1,4 +1,4 @@
-import { Breadcrumb, Flex, Heading, IconButton, Tooltip } from '@components/core'
+import { Breadcrumb, BreadcrumbItem, Flex, Heading, IconButton, Tooltip } from '@pillar-ui/core'
 import { Warning } from '@components/icons'
 import { Preview } from '@components/section'
 import { TooltipPlacementDocs } from './tooltip.docs'
@@ -7,19 +7,19 @@ const tooltip = () => {
   return (
     <section aria-labelledby="toggle--page-id" className="l_flow-lg">
       <Flex items="center" wrap justify="between">
-        <Heading as="h1" id="toggle--page-id" size="xs">
+        <Heading as="h1" id="toggle--page-id" size="3">
           Toggle Docs Page
         </Heading>
-        <Breadcrumb size="sm">
-          <Breadcrumb.Item link="../../..">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Components</Breadcrumb.Item>
-          <Breadcrumb.Item link="../">Base UI</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="4">
+          <BreadcrumbItem link="../../..">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Components</BreadcrumbItem>
+          <BreadcrumbItem link="../">Base UI</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Toggle
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Preview title="Simple Alert Dialog" description="Show alert only with message Props" code={TooltipPlacementDocs}>
+      {/* <Preview title="Simple Alert Dialog" description="Show alert only with message Props" code={TooltipPlacementDocs}>
         <div
           style={{
             width: '100%',
@@ -29,7 +29,7 @@ const tooltip = () => {
             placeItems: 'center',
           }}
         >
-          <Tooltip title="Warning" placement="top-start">
+          <Tooltip title="Warning"  placement="top-start">
             <IconButton icon={<Warning width={16} />} title="open popover" />
           </Tooltip>
           <Tooltip title="Warning" placement="top-center">
@@ -68,7 +68,7 @@ const tooltip = () => {
             <IconButton icon={<Warning width={16} />} title="open popover" />
           </Tooltip>
         </div>
-      </Preview>
+      </Preview> */}
     </section>
   )
 }

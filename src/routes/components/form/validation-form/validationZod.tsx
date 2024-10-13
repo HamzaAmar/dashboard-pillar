@@ -1,4 +1,4 @@
-import { Button, Checkbox, Flex, FormController, FormGroup, Heading, Input, InputPassword } from '@components/core'
+import { Button, Checkbox, Flex, FormController, FormGroup, Heading, Input, InputPassword } from '@pillar-ui/core'
 import { FormEvent } from 'react'
 
 const validationZod = () => {
@@ -10,7 +10,7 @@ const validationZod = () => {
   }
   return (
     <article className="u_flex-1 l_box l_flow-md">
-      <Heading size="xs" weight="medium">
+      <Heading size="3" weight="5">
         Form Grid Layout
       </Heading>
       <form method="post" onSubmit={handleSubmit} className="l_flow-md">
@@ -33,9 +33,9 @@ const validationZod = () => {
         </FormGroup>
 
         <Checkbox label="Remember Me" name="rememberMe" />
-        <Flex gap="sm">
+        <Flex gap="4">
           <Button variant="solid">Register</Button>
-          <Button color="slate" variant="soft">
+          <Button color="b" variant="soft">
             Login
           </Button>
         </Flex>

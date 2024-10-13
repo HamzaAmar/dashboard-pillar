@@ -1,4 +1,14 @@
-import { Breadcrumb, Button, Flex, FormController, Heading, Input, Text, Textarea } from '@components/core'
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  Button,
+  Flex,
+  FormController,
+  Heading,
+  Input,
+  Text,
+  Textarea,
+} from '@pillar-ui/core'
 import { ArrowDown, Card, Check, CircleCheck, Ship } from '@components/icons'
 import { useState } from 'react'
 
@@ -14,34 +24,34 @@ const Checkout = () => {
   return (
     <section className="l_flow-md">
       <Flex justify="between" items="center">
-        <Heading weight="medium" size="sm">
+        <Heading weight="5" size="4">
           Products Details
         </Heading>
-        <Breadcrumb size="md">
-          <Breadcrumb.Item link="../../">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">E-commerce</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="5">
+          <BreadcrumbItem link="../../">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">E-commerce</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Checkout
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Flex gap="md">
+      <Flex gap="5">
         <button data-current={info === 'shipping'} onClick={handleInfo('shipping')} className="checkout--button l_box">
           <div>
             <Ship width="28" />
-            <Text size="sm">Shipping info</Text>
+            <Text size="4">Shipping info</Text>
           </div>
         </button>
         <button data-current={info === 'payment'} onClick={handleInfo('payment')} className="checkout--button l_box">
           <div>
             <Card width="28" />
-            <Text size="sm">Payment Info</Text>
+            <Text size="4">Payment Info</Text>
           </div>
         </button>
         <button data-current={info === 'success'} onClick={handleInfo('success')} className="checkout--button l_box">
           <div>
             <CircleCheck width="28" />
-            <Text size="sm">Confirmation</Text>
+            <Text size="4">Confirmation</Text>
           </div>
         </button>
       </Flex>
@@ -49,15 +59,15 @@ const Checkout = () => {
       <div className="checkout--content">
         <Flex
           as="section"
-          direction="column"
+          direction="col"
           data-current={info === 'shipping'}
           className="checkout--content-shipping l_box l_flow-md"
         >
           <div>
-            <Heading as="h2" size="xs">
+            <Heading as="h2" size="3">
               Shipping information
             </Heading>
-            <Text size="xs" color="slate" contrast="low">
+            <Text size="3" color="b" low>
               Fill all information below filled with * is (required)
             </Text>
           </div>
@@ -74,7 +84,7 @@ const Checkout = () => {
             <FormController required label="Phone">
               <Textarea />
             </FormController>
-            <Flex className="checkout--content-footer" items="center" gap="xs">
+            <Flex className="checkout--content-footer" items="center" gap="3">
               <Button
                 icon={<ArrowDown direction="right" />}
                 iconPosition="end"
@@ -87,12 +97,12 @@ const Checkout = () => {
             </Flex>
           </form>
         </Flex>
-        <Flex as="section" direction="column" data-current={info === 'payment'} className="l_box l_flow-md">
+        <Flex as="section" direction="col" data-current={info === 'payment'} className="l_box l_flow-md">
           <div>
-            <Heading as="h2" size="xs">
+            <Heading as="h2" size="3">
               Payment information
             </Heading>
-            <Text size="xs" color="slate" contrast="low">
+            <Text size="3" color="b" low>
               Fill all information below filled with * is (required)
             </Text>
           </div>
@@ -109,7 +119,7 @@ const Checkout = () => {
             <FormController required label="Phone">
               <Textarea />
             </FormController>
-            <Flex className="checkout--content-footer" items="center" gap="xs">
+            <Flex className="checkout--content-footer" items="center" gap="3">
               <Button
                 icon={<ArrowDown direction="left" />}
                 type="button"
@@ -130,7 +140,7 @@ const Checkout = () => {
             </Flex>
           </form>
         </Flex>
-        <Flex direction="column" data-current={info === 'success'} className="l_box l_flow-md">
+        <Flex direction="col" data-current={info === 'success'} className="l_box l_flow-md">
           <form className="l_flow-md">
             <FormController required label="name">
               <Input />
@@ -144,7 +154,7 @@ const Checkout = () => {
             <FormController required label="Phone">
               <Textarea />
             </FormController>
-            <Flex className="checkout--content-footer" items="center" gap="xs">
+            <Flex className="checkout--content-footer" items="center" gap="3">
               <Button
                 icon={<ArrowDown direction="left" />}
                 type="button"

@@ -1,5 +1,5 @@
 import { Drawer } from '@components/composition'
-import { CustomRadio, Flex, IconButton, RadioGroup, Text } from '@components/core'
+import { CustomRadio, Flex, IconButton, RadioGroup, Text } from '@pillar-ui/core'
 import { Setting } from '@components/icons'
 import useBoolean from '@hooks/useBoolean'
 import useSettings from '@hooks/useSettings/useSettings'
@@ -10,13 +10,13 @@ const Settings = () => {
   return (
     <Drawer
       title="Page Customize"
-      size="sm"
+      size="5"
       position="right"
       trigger={
         <IconButton
-          color="slate"
+          color="b"
           variant="solid"
-          corner="sharp"
+          corner="0"
           className="settings--button"
           onClick={handleToggle}
           title="Page Customize"
@@ -29,8 +29,8 @@ const Settings = () => {
         <div className="l_flow-md">
           <article className="l_flow-md">
             <div>
-              <Text weight="medium"> Color Scheme</Text>
-              <Text color="slate" contrast="low" size="xs">
+              <Text weight="5"> Color Scheme</Text>
+              <Text color="b" low size="3">
                 Choose Your Prefered Light Mode
               </Text>
             </div>
@@ -38,7 +38,7 @@ const Settings = () => {
               <CustomRadio
                 className="customize--white-color-text"
                 label="Light"
-                size="sm"
+                size="4"
                 defaultChecked={settings.mode === 'light'}
                 onChange={changeMode('light')}
               >
@@ -48,7 +48,7 @@ const Settings = () => {
               <CustomRadio
                 defaultChecked={settings.mode === 'dark'}
                 label="Dark"
-                size="sm"
+                size="4"
                 onChange={changeMode('dark')}
               >
                 <div className="customize--primary-color-box  customize--black-color-box" />
@@ -57,8 +57,8 @@ const Settings = () => {
           </article>
           <article className="l_flow-md">
             <div>
-              <Text weight="medium"> Primary Color</Text>
-              <Text color="slate" contrast="low" size="xs">
+              <Text weight="5"> Primary Color</Text>
+              <Text color="b" low size="3">
                 Choose the preferred Primary color you want
               </Text>
             </div>
@@ -67,8 +67,8 @@ const Settings = () => {
                 defaultChecked={settings.primary === 'green'}
                 onChange={changePrimary('green')}
                 label="Success"
-                size="sm"
-                color="success"
+                size="4"
+                color="su"
                 className="preferred-color--radio"
               >
                 <div className="customize--primary-color-box"></div>
@@ -77,8 +77,8 @@ const Settings = () => {
                 defaultChecked={settings.primary === 'red'}
                 onChange={changePrimary('red')}
                 label="Danger"
-                size="sm"
-                color="danger"
+                size="4"
+                color="d"
                 className="preferred-color--radio"
               >
                 <div className="customize--primary-color-box"></div>
@@ -87,8 +87,8 @@ const Settings = () => {
                 defaultChecked={settings.primary === 'orange'}
                 onChange={changePrimary('orange')}
                 label="Warning"
-                size="sm"
-                color="warning"
+                size="4"
+                color="w"
                 className="preferred-color--radio"
               >
                 <div className="customize--primary-color-box"></div>
@@ -97,8 +97,8 @@ const Settings = () => {
                 defaultChecked={settings.primary === 'mint'}
                 onChange={changePrimary('mint')}
                 label="Mint"
-                size="sm"
-                color="indigo"
+                size="4"
+                color="i"
                 className="preferred-color--radio"
               >
                 <div className="customize--primary-color-box"></div>
@@ -107,8 +107,8 @@ const Settings = () => {
                 defaultChecked={settings.primary === 'indigo'}
                 onChange={changePrimary('indigo')}
                 label="Indigo"
-                size="sm"
-                color="indigo"
+                size="4"
+                color="i"
                 className="preferred-color--radio"
               >
                 <div className="customize--primary-color-box"></div>
@@ -117,8 +117,8 @@ const Settings = () => {
                 defaultChecked={settings.primary === 'purple'}
                 onChange={changePrimary('purple')}
                 label="Purple"
-                size="sm"
-                color="purple"
+                size="4"
+                color="se"
                 className="preferred-color--radio"
               >
                 <div className="customize--primary-color-box"></div>

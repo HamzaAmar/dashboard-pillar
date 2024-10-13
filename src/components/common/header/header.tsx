@@ -1,5 +1,5 @@
-import { Badge, Button, Flex, IconButton, Text } from '@components/core'
-import { Avatar } from '@components/core/avatar'
+import { Badge, Button, Flex, IconButton, Text } from '@pillar-ui/core'
+import { Avatar } from '@pillar-ui/core'
 import {
   Bell,
   Check,
@@ -37,8 +37,8 @@ function ProfileMenuButton() {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <Flex className="custom-button" as="button" items="center" gap="2xs">
-          <Avatar variant="image" title={me.name} />
+        <Flex className="custom-button" as="button" items="center" gap="1">
+          <Avatar title={me.name} />
           <ChevronDown width="16" />
         </Flex>
       </DropdownMenu.Trigger>
@@ -46,13 +46,13 @@ function ProfileMenuButton() {
       <DropdownMenu.Content align="end" sideOffset={16} className="menu-button--container">
         <DropdownMenu.Group>
           <DropdownMenu.Item asChild>
-            <Flex as={Link} to="pages/profile" gap="xs" className="menu-button--item">
-              <Avatar title={me.name} variant="image" image={me.avatar} />
+            <Flex as={Link} to="pages/profile" gap="3" className="menu-button--item">
+              <Avatar title={me.name} image={me.avatar} />
               <div>
-                <Text size="sm" weight="medium">
+                <Text size="4" weight="5">
                   {me.name}
                 </Text>
-                <Text color="slate" contrast="low" size="xs">
+                <Text color="b" low size="3">
                   {me.role}
                 </Text>
               </div>
@@ -63,36 +63,36 @@ function ProfileMenuButton() {
 
         <DropdownMenu.Group>
           <DropdownMenu.Item asChild>
-            <Flex gap="xs" as={Link} className="menu-button--item" to="pages/profile">
+            <Flex gap="3" as={Link} className="menu-button--item" to="pages/profile">
               <User width="20" />
-              <Text size="xs" weight="medium">
+              <Text size="3" weight="5">
                 {' '}
                 View Profile
               </Text>
             </Flex>
           </DropdownMenu.Item>
           <DropdownMenu.Item asChild>
-            <Flex gap="xs" as={Link} className="menu-button--item" to="pages/emails">
+            <Flex gap="3" as={Link} className="menu-button--item" to="pages/emails">
               <Envelop width="20" />
-              <Text size="xs" weight="medium">
+              <Text size="3" weight="5">
                 {' '}
                 Inbox
               </Text>
             </Flex>
           </DropdownMenu.Item>
           <DropdownMenu.Item asChild>
-            <Flex gap="xs" as={Link} className="menu-button--item" to="pages/chat">
+            <Flex gap="3" as={Link} className="menu-button--item" to="pages/chat">
               <Messages width="20" />
-              <Text size="xs" weight="medium">
+              <Text size="3" weight="5">
                 {' '}
                 Chat
               </Text>
             </Flex>
           </DropdownMenu.Item>
           <DropdownMenu.Item asChild>
-            <Flex gap="xs" className="menu-button--item" as={Link} to="pages/todo">
+            <Flex gap="3" className="menu-button--item" as={Link} to="pages/todo">
               <Checkbox width="20" />
-              <Text size="xs" weight="medium">
+              <Text size="3" weight="5">
                 {' '}
                 Task board
               </Text>
@@ -102,18 +102,18 @@ function ProfileMenuButton() {
         <DropdownMenu.Separator className="menu-button--separator" />
         <DropdownMenu.Group>
           <DropdownMenu.Item asChild>
-            <Flex gap="xs" as={Link} className="menu-button--item" to="pages/account-settings">
+            <Flex gap="3" as={Link} className="menu-button--item" to="pages/account-settings">
               <Setting width="20" />
-              <Text size="xs" weight="medium">
+              <Text size="3" weight="5">
                 {' '}
                 Account Settings
               </Text>
             </Flex>
           </DropdownMenu.Item>
           <DropdownMenu.Item asChild>
-            <Flex gap="xs" as={Link} className="menu-button--item" to="pages/faq">
+            <Flex gap="3" as={Link} className="menu-button--item" to="pages/faq">
               <Help width="20" />
-              <Text size="xs" weight="medium">
+              <Text size="3" weight="5">
                 {' '}
                 Faq
               </Text>
@@ -137,9 +137,9 @@ function LanguageMenuButton() {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger className="custom-button sm-hide">
-        <Flex items="center" gap="2xs">
+        <Flex items="center" gap="1">
           {getCurrentLanguage?.icon}
-          <Text size="sm">{getCurrentLanguage?.title}</Text>
+          <Text size="4">{getCurrentLanguage?.title}</Text>
           <ChevronDown width="16" />
         </Flex>
       </DropdownMenu.Trigger>
@@ -149,9 +149,9 @@ function LanguageMenuButton() {
             {languageListWithoutCurrent.map(({ slug, icon, title }) => (
               <DropdownMenu.Item asChild key={slug}>
                 <li className="menu-button--item">
-                  <Flex items="center" as="button" onClick={changeLanguage(slug)} gap="2xs">
+                  <Flex items="center" as="button" onClick={changeLanguage(slug)} gap="1">
                     {icon}
-                    <Text size="sm">{title}</Text>
+                    <Text size="4">{title}</Text>
                   </Flex>
                 </li>
               </DropdownMenu.Item>
@@ -178,10 +178,10 @@ function MessageMenuButton() {
           <DropdownMenu.Group>
             <DropdownMenu.Item className="menu-button--item">
               <Flex as="header" items="center" justify="between">
-                <Text size="sm" weight="medium">
+                <Text size="4" weight="5">
                   Message
                 </Text>
-                <Button size="xs" variant="text">
+                <Button size="3" variant="text">
                   Settings
                 </Button>
               </Flex>
@@ -193,19 +193,19 @@ function MessageMenuButton() {
             {getMessages(15).map(({ from, id, date, unread, message }) => (
               <DropdownMenu.Item asChild key={id}>
                 <Flex justify="between" className="menu-button--item">
-                  <Flex gap="xs">
-                    <Avatar variant="image" image={from.avatar} title={from.name} />
+                  <Flex gap="3">
+                    <Avatar image={from.avatar} title={from.name} />
                     <div className="u_flex-1">
-                      <Text weight="medium" size="xs">
+                      <Text weight="5" size="3">
                         {from.name}
                       </Text>
-                      <Text truncate="multiline" contrast="low" color="slate" numberLine={2} size="xs">
+                      <Text truncate="2" low color="b" size="3">
                         {message}
                       </Text>
                     </div>
                   </Flex>
-                  <Flex flex="none" items="end" justify="between" direction="column">
-                    <Text color="slate" contrast="low" size="xs">
+                  <Flex flex="none" items="end" justify="between" direction="col">
+                    <Text color="b" low size="3">
                       {formatDate(date)}
                     </Text>
 
@@ -220,7 +220,7 @@ function MessageMenuButton() {
           <DropdownMenu.Group>
             <DropdownMenu.Item className="menu-button--item">
               <Button
-                size="sm"
+                size="4"
                 // className="menu-button--item"
                 variant="text"
                 fluid
@@ -252,10 +252,10 @@ function NotificationMenuButton() {
           <DropdownMenu.Group>
             <DropdownMenu.Item className="menu-button--item">
               <Flex as="header" items="center" justify="between">
-                <Text size="sm" weight="medium">
+                <Text size="4" weight="5">
                   Notification
                 </Text>
-                <Button size="xs" variant="text">
+                <Button size="3" variant="text">
                   Mark as Read
                 </Button>
               </Flex>
@@ -266,26 +266,25 @@ function NotificationMenuButton() {
             {getNotifications(15).map(({ user, id, date, unread, request }) => (
               <DropdownMenu.Item className="menu-button--item" key={id}>
                 <Flex justify="between">
-                  <Flex gap="xs">
-                    <Avatar variant="image" image={user.avatar} title={user.name} />
+                  <Flex gap="3">
+                    <Avatar image={user.avatar} title={user.name} />
                     <div>
                       <Text
-                        truncate="multiline"
-                        numberLine={2}
-                        size="sm"
-                        // weight="medium"
+                        truncate="2"
+                        size="4"
+                        // weight="5"
                         dangerouslySetInnerHTML={{
                           __html: requestText[request](user.name),
                         }}
                       />
-                      <Text color="indigo" contrast="low" size="xs">
+                      <Text color="p" low size="3">
                         {getTimeAgo(date)}
                       </Text>
                     </div>
                   </Flex>
                   {unread && (
                     <div className="u_flex-none">
-                      <Badge color="primary" variant="dot" size="xl" />
+                      <Badge color="p" type="dot" size="7" />
                     </div>
                   )}
                 </Flex>
@@ -295,7 +294,7 @@ function NotificationMenuButton() {
           <DropdownMenu.Separator className="menu-button--separator" />
           <DropdownMenu.Group>
             <DropdownMenu.Item className="menu-button--item">
-              <Button as={Link} to="/pages/notifications" size="sm" variant="text" fluid>
+              <Button as={Link} to="/pages/notifications" size="4" variant="text" fluid>
                 View All
               </Button>
             </DropdownMenu.Item>
@@ -316,7 +315,7 @@ const Header = ({ handleToggle, isShrink }: any) => {
   const sidebarLabel = isShrink ? 'Expand Sidebar' : 'Shrink Sidebar'
   return (
     <Flex as="header" justify="between" items="center" className="header">
-      <Flex gap="xs">
+      <Flex gap="3">
         <div className="language">
           <IconButton
             className="sidebar--trigger md-hide"
@@ -327,7 +326,7 @@ const Header = ({ handleToggle, isShrink }: any) => {
           <SidebarDrawer />
         </div>
       </Flex>
-      <Flex gap="xs" items="center" className="header--settings">
+      <Flex gap="3" items="center" className="header--settings">
         <IconButton
           onClick={changeMode(nextMode)}
           icon={state.mode === 'light' ? <Moon /> : <Sun />}

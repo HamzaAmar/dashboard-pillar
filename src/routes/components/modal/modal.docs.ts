@@ -12,7 +12,7 @@ import {CustomAlertDialog} from '@components/composite'
 
 export const alertDialog = `
 import { AlertDialog } from '@components/composite'
-import { Flex, Button, IconButton } from '@components/core'
+import { Flex, Button, IconButton } from '@pillar-ui/core'
 import { Cross, CircleRefresh, Trash } from '@components/icons'
 import useBoolean from "@hooks/useBoolean";
 
@@ -42,10 +42,10 @@ function CustomDialog(){
                 deserunt labore eaque doloribus.
             </AlertDialog.Description>
 
-            <Flex justify="end" gap="sm">
+            <Flex justify="end" gap="4">
                 <AlertDialog.CancelButton
                 icon={<CircleRefresh width="16" />}
-                color="indigo"
+                color="i"
                 >
                 Cancel
                 </AlertDialog.CancelButton>
@@ -60,7 +60,7 @@ function CustomDialog(){
 
 export const defaultDialog = `
 import { Dialog } from '@components/composite'
-import { Flex, Button, IconButton ,InputPassword, Input , FormController } from '@components/core'
+import { Flex, Button, IconButton ,InputPassword, Input , FormController } from '@pillar-ui/core'
 import { Cross, CircleRefresh, Trash, Facebook } from '@components/icons'
 import useBoolean from "@hooks/useBoolean";
 
@@ -73,7 +73,7 @@ function CustomDialog(){
         <Dialog
             title="Create your account"
             trigger={
-            <Button icon={<Facebook />} variant="solid" color="indigo"> Facebook </Button>}
+            <Button icon={<Facebook />} variant="solid" color="i"> Facebook </Button>}
         >
             <FormController label="email" required>
              <Input type="email" />  
@@ -88,18 +88,18 @@ function CustomDialog(){
             </FormController>
             
             <Button
-              size="lg"
+              size="6"
               fluid
               icon={<Facebook />}
               variant="solid"
-              color="indigo"
+              color="i"
             >
                 Connect With Facebook
             </Button>
         </Dialog>
         <Dialog
             title="Create your account"
-            trigger={<Button color="indigo">More Info</Button>}
+            trigger={<Button color="i">More Info</Button>}
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, dolor exercitationem error voluptatum iusto sapiente odio repellat pariatur saepe fugiat maxime distinctio voluptas beatae delectus culpa quos obcaecati magni illo.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, natus. Assumenda tempora quae, laboriosam dignissimos sed dolore, sapiente dolorum facilis quaerat adipisci eos enim numquam voluptatibus voluptatem unde quisquam sint? Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, dolor exercitationem error voluptatum iusto sapiente odio repellat pariatur saepe fugiat maxime distinctio voluptas beatae delectus culpa quos obcaecati magni illo.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, natus. Assumenda tempora quae, laboriosam dignissimos sed dolore, sapiente dolorum facilis quaerat adipisci eos enim numquam voluptatibus voluptatem unde quisquam sint?  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, dolor exercitationem error voluptatum iusto sapiente odio repellat pariatur saepe fugiat maxime distinctio voluptas beatae delectus culpa quos obcaecati magni illo.

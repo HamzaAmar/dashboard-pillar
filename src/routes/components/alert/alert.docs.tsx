@@ -1,5 +1,5 @@
 export const outlineAlert = `
-import { Alert } from "@components/core";
+import { Alert } from "@pillar-ui/core";
 
 const AlertOutline = ()=>{
     return(
@@ -11,7 +11,7 @@ const AlertOutline = ()=>{
 }`
 
 export const fillAlert = `
-import { Alert } from "@components/core";
+import { Alert } from "@pillar-ui/core";
 
 const AlertOutline = ()=>{
     return(
@@ -23,7 +23,7 @@ const AlertOutline = ()=>{
 }`
 
 export const outlineAlertTitle = `
-import { Alert } from "@components/core";
+import { Alert } from "@pillar-ui/core";
 
 const AlertOutline = ()=>{
     return(
@@ -35,7 +35,7 @@ const AlertOutline = ()=>{
 }`
 
 export const outlineAlertIcon = `
-import { Alert } from "@components/core";
+import { Alert } from "@pillar-ui/core";
 
 const AlertOutline = ()=>{
     return(

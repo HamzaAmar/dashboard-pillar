@@ -28,5 +28,5 @@ export const VerticalCarousel = () => {
 }
 
 export const PerViewCarousel = () => {
-  return <Carousel perView={2.7} gap="sm" />
+  return <Carousel perView={2.7} gap="4" />
 }

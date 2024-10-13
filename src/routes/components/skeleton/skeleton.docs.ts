@@ -1,127 +1,127 @@
 export const avatarSkeletonSize = `
-import  {Flex, Skeleton} from '@components/core'
+import  {Flex, Skeleton} from '@pillar-ui/core'
 
 function formControllerStories(){
     return(
-      <Flex items="center" gap="2xs">
-        <Skeleton.Avatar isLoading={true} size="xs">
+      <Flex items="center" gap="1">
+        <SkeletonAvatar isLoading={true} size="3">
           <Avatar
-            variant="image"
+            
             title="Hello"
             src="https://picsum.photos/300/100/100"
           />
-        </Skeleton.Avatar>
-        <Skeleton.Avatar isLoading={true} size="sm">
+        </SkeletonAvatar>
+        <SkeletonAvatar isLoading={true} size="4">
           <Avatar
-            variant="image"
+            
             title="Hello"
             src="https://picsum.photos/300/100/100"
           />
-        </Skeleton.Avatar>
-        <Skeleton.Avatar isLoading={true} size="md">
+        </SkeletonAvatar>
+        <SkeletonAvatar isLoading={true} size="5">
           <Avatar
-            variant="image"
+            
             title="Hello"
             src="https://picsum.photos/300/100/100"
           />
-        </Skeleton.Avatar>
-        <Skeleton.Avatar isLoading={true} size="lg">
+        </SkeletonAvatar>
+        <SkeletonAvatar isLoading={true} size="6">
           <Avatar
-            variant="image"
+            
             title="Hello"
             src="https://picsum.photos/300/100/100"
           />
-        </Skeleton.Avatar>
-        <Skeleton.Avatar isLoading={true} size="xl">
+        </SkeletonAvatar>
+        <SkeletonAvatar isLoading={true} size="7">
           <Avatar
-            variant="image"
+            
             title="Hello"
             src="https://picsum.photos/300/100/100"
           />
-        </Skeleton.Avatar>
+        </SkeletonAvatar>
       </Flex>
     )
 }`
 
 export const avatarButtonSize = `
-import  {Flex, Button, Skeleton} from '@components/core'
+import  {Flex, Button, Skeleton} from '@pillar-ui/core'
 
 function formControllerStories(){
     return(
-      <Flex direction="column" gap="2xs">
-        <Skeleton.Button isLoading={true} size="xs">
+      <Flex direction="col" gap="1">
+        <SkeletonButton isLoading={true} size="3">
           <Button>Hello</Button>
-        </Skeleton.Button>
-        <Skeleton.Button isLoading={true} size="sm">
+        </SkeletonButton>
+        <SkeletonButton isLoading={true} size="4">
           <Button>Hello</Button>
-        </Skeleton.Button>
-        <Skeleton.Button isLoading={true} size="md">
+        </SkeletonButton>
+        <SkeletonButton isLoading={true} size="5">
           <Button>Hello</Button>
-        </Skeleton.Button>
-        <Skeleton.Button isLoading={true} size="lg">
+        </SkeletonButton>
+        <SkeletonButton isLoading={true} size="6">
           <Button>Hello</Button>
-        </Skeleton.Button>
-        <Skeleton.Button isLoading={true} size="xl">
+        </SkeletonButton>
+        <SkeletonButton isLoading={true} size="7">
           <Button>Hello</Button>
-        </Skeleton.Button>
+        </SkeletonButton>
       </Flex>
     )
 }`
 
 export const skeletonTextSize = `
-import  {Flex, Skeleton, Text} from '@components/core'
+import  {Flex, Skeleton, Text} from '@pillar-ui/core'
 
 function formControllerStories(){
     return(
-      <Skeleton.Text isLoading={true} size="xs">
+      <SkeletonText isLoading={true} size="3">
         <Text>Hello</Text>
-      </Skeleton.Text>
-      <Skeleton.Text isLoading={true} size="sm">
+      </SkeletonText>
+      <SkeletonText isLoading={true} size="4">
         <Text>Hello</Text>
-      </Skeleton.Text>
-      <Skeleton.Text isLoading={true} size="md">
+      </SkeletonText>
+      <SkeletonText isLoading={true} size="5">
         <Text>Hello</Text>
-      </Skeleton.Text>
-      <Skeleton.Text isLoading={true} size="lg">
+      </SkeletonText>
+      <SkeletonText isLoading={true} size="6">
         <Text>Hello</Text>
-      </Skeleton.Text>
-      <Skeleton.Text isLoading={true} size="xl">
+      </SkeletonText>
+      <SkeletonText isLoading={true} size="7">
         <Text>Hello</Text>
-      </Skeleton.Text>
+      </SkeletonText>
     )
 }`
 
 export const skeletonLinesNumber = `
-import  {Flex, Skeleton, Text} from '@components/core'
+import  {Flex, Skeleton, Text} from '@pillar-ui/core'
 
 function formControllerStories(){
     return(
-      <Flex direction="column" gap="xl">
-        <Skeleton.Text lines={1} isLoading={true}>
+      <Flex direction="col" gap="7">
+        <SkeletonText lines={1} isLoading={true}>
           <Text>Hello</Text>
-        </Skeleton.Text>
-        <Skeleton.Text lines={1.7} isLoading={true}>
+        </SkeletonText>
+        <SkeletonText lines={1.7} isLoading={true}>
           <Text>Hello</Text>
-        </Skeleton.Text>
-        <Skeleton.Text lines={2.7} isLoading={true}>
+        </SkeletonText>
+        <SkeletonText lines={2.7} isLoading={true}>
           <Text>Hello</Text>
-        </Skeleton.Text>
-        <Skeleton.Text lines={2.1} isLoading={true}>
+        </SkeletonText>
+        <SkeletonText lines={2.1} isLoading={true}>
           <Text>Hello</Text>
-        </Skeleton.Text>
-        <Skeleton.Text lines={5.5} isLoading={true}>
+        </SkeletonText>
+        <SkeletonText lines={5.5} isLoading={true}>
           <Text>Hello</Text>
-        </Skeleton.Text>
+        </SkeletonText>
       </Flex>
     )
 }`
 
 export const skeletonImages = `
-import  {Flex, Skeleton, Text} from '@components/core'
+import  {Flex, Skeleton, Text} from '@pillar-ui/core'
 
 function formControllerStories(){
     return(
-      <Flex direction="column" gap="xl">
+      <Flex direction="col" gap="7">
         <Skeleton height="500px" isLoading={true}>
           <img src="https://picsum.photos/id/120/500/500" alt="" />
         </Skeleton>

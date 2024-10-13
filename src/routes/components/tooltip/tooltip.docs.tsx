@@ -1,5 +1,5 @@
 export const TooltipPlacementDocs = `
-import {  Heading, IconButton, Tooltip } from "@components/core";
+import {  Heading, IconButton, Tooltip } from "@pillar-ui/core";
 
 const TooltipPlacement = () =>{
     <div

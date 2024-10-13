@@ -1,7 +1,6 @@
-import { Avatar, Breadcrumb, Button, Flex, Grid, Heading, IconButton, Text } from '@components/core'
+import { Avatar, Breadcrumb, BreadcrumbItem, Button, Flex, Grid, Heading, IconButton, Text } from '@pillar-ui/core'
 import { Preview } from '@components/section'
 import React, { useState } from 'react'
-import { MenuButton } from '@components/core'
 import * as docs from './menuButton.docs'
 import * as Icons from '@components/icons'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
@@ -9,6 +8,7 @@ import { USERS_LIST } from '@api/user/users.data'
 import { Link } from 'react-router-dom'
 import { formatDate } from '@utils/date'
 import { getMessages } from '@api/messages'
+import { MenuButton } from '@components/composition/menuButton'
 
 const user = USERS_LIST[0]
 
@@ -19,7 +19,7 @@ const MenuButtonTest = () => {
   return (
     <MenuButton
       trigger={
-        <Button iconPosition="end" size="sm" icon={<Icons.Caret />} variant="outline" color="slate">
+        <Button iconPosition="end" size="4" icon={<Icons.Caret />} variant="outline" color="b">
           Sort by
         </Button>
       }
@@ -27,22 +27,22 @@ const MenuButtonTest = () => {
       <MenuButton.Content>
         <MenuButton.RadioGroup value={state} onValueChange={setState}>
           <MenuButton.Radio value="lowest-price">
-            <Text size="xs" weight={state === 'lowest-price' ? 'medium' : 'normal'}>
+            <Text size="3" weight={state === 'lowest-price' ? '5' : '4'}>
               Lowest Price
             </Text>
           </MenuButton.Radio>
           <MenuButton.Radio value="highest-price">
-            <Text size="xs" weight={state === 'highest-price' ? 'medium' : 'normal'}>
+            <Text size="3" weight={state === 'highest-price' ? '5' : '4'}>
               Highest Price
             </Text>
           </MenuButton.Radio>
           <MenuButton.Radio value={'top-review'}>
-            <Text size="xs" weight={state === 'top-review' ? 'medium' : 'normal'}>
+            <Text size="3" weight={state === 'top-review' ? '5' : '4'}>
               Top Customers Review
             </Text>
           </MenuButton.Radio>
           <MenuButton.Radio value="recent">
-            <Text size="xs" weight={state === 'recent' ? 'medium' : 'normal'}>
+            <Text size="3" weight={state === 'recent' ? '5' : '4'}>
               Most Recent
             </Text>
           </MenuButton.Radio>
@@ -56,8 +56,8 @@ function ProfileMenuButton() {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <Flex className="custom-button" as="button" items="center" gap="2xs">
-          <Avatar variant="image" title={user.name} />
+        <Flex className="custom-button" as="button" items="center" gap="1">
+          <Avatar title={user.name} />
           <Icons.ChevronDown width="16" />
         </Flex>
       </DropdownMenu.Trigger>
@@ -65,13 +65,13 @@ function ProfileMenuButton() {
       <DropdownMenu.Content align="end" sideOffset={16} className="menu-button--container">
         <DropdownMenu.Group>
           <DropdownMenu.Item asChild>
-            <Flex as={Link} to="pages/profile" gap="xs" className="menu-button--item">
-              <Avatar title={user.name} variant="image" image={user.avatar} />
+            <Flex as={Link} to="pages/profile" gap="3" className="menu-button--item">
+              <Avatar title={user.name} image={user.avatar} />
               <div>
-                <Text size="sm" weight="medium">
+                <Text size="4" weight="5">
                   {user.name}
                 </Text>
-                <Text color="slate" contrast="low" size="xs">
+                <Text color="b" low size="3">
                   {user.role}
                 </Text>
               </div>
@@ -82,36 +82,36 @@ function ProfileMenuButton() {
 
         <DropdownMenu.Group>
           <DropdownMenu.Item asChild>
-            <Flex gap="xs" as={Link} className="menu-button--item" to="pages/profile">
+            <Flex gap="3" as={Link} className="menu-button--item" to="pages/profile">
               <Icons.User width="20" />
-              <Text size="xs" weight="medium">
+              <Text size="3" weight="5">
                 {' '}
                 View Profile
               </Text>
             </Flex>
           </DropdownMenu.Item>
           <DropdownMenu.Item asChild>
-            <Flex gap="xs" as={Link} className="menu-button--item" to="pages/emails">
+            <Flex gap="3" as={Link} className="menu-button--item" to="pages/emails">
               <Icons.Envelop width="20" />
-              <Text size="xs" weight="medium">
+              <Text size="3" weight="5">
                 {' '}
                 Inbox
               </Text>
             </Flex>
           </DropdownMenu.Item>
           <DropdownMenu.Item asChild>
-            <Flex gap="xs" as={Link} className="menu-button--item" to="pages/chat">
+            <Flex gap="3" as={Link} className="menu-button--item" to="pages/chat">
               <Icons.Messages width="20" />
-              <Text size="xs" weight="medium">
+              <Text size="3" weight="5">
                 {' '}
                 Chat
               </Text>
             </Flex>
           </DropdownMenu.Item>
           <DropdownMenu.Item asChild>
-            <Flex gap="xs" className="menu-button--item" as={Link} to="pages/todo">
+            <Flex gap="3" className="menu-button--item" as={Link} to="pages/todo">
               <Icons.Checkbox width="20" />
-              <Text size="xs" weight="medium">
+              <Text size="3" weight="5">
                 {' '}
                 Task board
               </Text>
@@ -121,18 +121,18 @@ function ProfileMenuButton() {
         <DropdownMenu.Separator className="menu-button--separator" />
         <DropdownMenu.Group>
           <DropdownMenu.Item asChild>
-            <Flex gap="xs" as={Link} className="menu-button--item" to="pages/account-settings">
+            <Flex gap="3" as={Link} className="menu-button--item" to="pages/account-settings">
               <Icons.Setting width="20" />
-              <Text size="xs" weight="medium">
+              <Text size="3" weight="5">
                 {' '}
                 Account Settings
               </Text>
             </Flex>
           </DropdownMenu.Item>
           <DropdownMenu.Item asChild>
-            <Flex gap="xs" as={Link} className="menu-button--item" to="pages/faq">
+            <Flex gap="3" as={Link} className="menu-button--item" to="pages/faq">
               <Icons.Help width="20" />
-              <Text size="xs" weight="medium">
+              <Text size="3" weight="5">
                 {' '}
                 Faq
               </Text>
@@ -160,10 +160,10 @@ function MessageMenuButton() {
           <DropdownMenu.Group>
             <DropdownMenu.Item className="menu-button--item">
               <Flex as="header" items="center" justify="between">
-                <Text size="sm" weight="medium">
+                <Text size="4" weight="5">
                   Message
                 </Text>
-                <Button size="xs" variant="text">
+                <Button size="3" variant="text">
                   Settings
                 </Button>
               </Flex>
@@ -175,19 +175,19 @@ function MessageMenuButton() {
             {getMessages(10).map(({ from, id, date, unread, message }) => (
               <DropdownMenu.Item asChild key={id}>
                 <Flex justify="between" className="menu-button--item">
-                  <Flex gap="xs">
-                    <Avatar variant="image" image={from.avatar} title={from.name} />
+                  <Flex gap="3">
+                    <Avatar image={from.avatar} title={from.name} />
                     <div className="u_flex-1">
-                      <Text weight="medium" size="xs">
+                      <Text weight="5" size="3">
                         {from.name}
                       </Text>
-                      <Text truncate="multiline" contrast="low" color="slate" numberLine={2} size="xs">
+                      <Text truncate="2" low color="b" size="3">
                         {message}
                       </Text>
                     </div>
                   </Flex>
-                  <Flex flex="none" items="end" justify="between" direction="column">
-                    <Text color="slate" contrast="low" size="xs">
+                  <Flex flex="none" items="end" justify="between" direction="col">
+                    <Text color="b" low size="3">
                       {formatDate(date)}
                     </Text>
 
@@ -202,7 +202,7 @@ function MessageMenuButton() {
           <DropdownMenu.Group>
             <DropdownMenu.Item className="menu-button--item">
               <Button
-                size="sm"
+                size="4"
                 // className="menu-button--item"
                 variant="text"
                 fluid
@@ -223,19 +223,19 @@ const MenuButtonComp = () => {
   return (
     <section aria-labelledby="menu-button--page-id" className="l_flow-lg">
       <Flex items="center" wrap justify="between">
-        <Heading as="h1" id="menu-button--page-id" size="xs">
+        <Heading as="h1" id="menu-button--page-id" size="3">
           MenuButton Docs Page
         </Heading>
-        <Breadcrumb size="sm">
-          <Breadcrumb.Item link="../../..">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Components</Breadcrumb.Item>
-          <Breadcrumb.Item link="../">Base UI</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="4">
+          <BreadcrumbItem link="../../..">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Components</BreadcrumbItem>
+          <BreadcrumbItem link="../">Base UI</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             MenuButton
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Grid gap="sm" columns="minmax(0, 1fr) minmax(0,1fr)" className="md_grid-one">
+      <Grid gap="4" grid="minmax(0, 1fr) minmax(0,1fr)" className="md_grid-one">
         <Preview
           title="Radio Menu Button"
           description="Menu button has a Lot of comp one of them is radio this components is based on Radix menu button"

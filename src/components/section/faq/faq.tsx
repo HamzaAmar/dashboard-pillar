@@ -1,5 +1,14 @@
-import { Accordion } from '@components/composition'
-import { Button, Flex, Grid, Heading, Text } from '@components/core'
+import {
+  Button,
+  Flex,
+  Grid,
+  Heading,
+  Text,
+  Accordion,
+  AccordionItem,
+  AccordionPanel,
+  AccordionButton,
+} from '@pillar-ui/core'
 import { Message } from '@components/icons'
 import { useId } from 'react'
 import { CommonQuestion, FAQ_HEADER_DATA } from './faq.data'
@@ -9,13 +18,13 @@ import type { CardProps, QuestionProps } from './faq.type'
 const Card = ({ title, icon, description }: CardProps) => {
   const id = `contact-${useId()}-info`
   return (
-    <Flex aria-labelledby={id} as="article" direction="column" items="center" className="l_box l_flow-sm">
+    <Flex aria-labelledby={id} as="article" direction="col" items="center" className="l_box l_flow-sm">
       {icon}
-      <Heading id={id} size="sm" weight="medium" as="h2">
+      <Heading id={id} size="4" weight="5" as="h2">
         {title}
       </Heading>
-      <Text size="sm">{description}</Text>
-      <Button icon={<Message />} fluid size="lg" corner="sm">
+      <Text size="4">{description}</Text>
+      <Button icon={<Message />} fluid size="6" corner="3">
         Contact Info
       </Button>
     </Flex>
@@ -25,10 +34,10 @@ const Card = ({ title, icon, description }: CardProps) => {
 const AccordionFaq = ({ id, title, description }: QuestionProps) => {
   return (
     <Accordion>
-      <Accordion.Item className="faq--accordion-item" value={id}>
-        <Accordion.Trigger className="faq--accordion-trigger">{title}</Accordion.Trigger>
-        <Accordion.Content className="faq--accordion-content">{description}</Accordion.Content>
-      </Accordion.Item>
+      <AccordionItem className="faq--accordion-item" value={id}>
+        <AccordionButton className="faq--accordion-trigger">{title}</AccordionButton>
+        <AccordionPanel className="faq--accordion-content">{description}</AccordionPanel>
+      </AccordionItem>
     </Accordion>
   )
 }
@@ -42,14 +51,14 @@ const faq = () => {
         </Heading>
       </Flex>
       <div>
-        <Grid gap="lg" className="md_grid-two sm_grid-one" columns="repeat(3, minmax(0,1fr))">
+        <Grid gap="6" md="1fr 1fr" sm="1fr" grid="repeat(3, minmax(0,1fr))">
           {FAQ_HEADER_DATA.map(({ id, ...rest }) => (
             <Card key={id} {...rest} />
           ))}
         </Grid>
       </div>
       <section aria-labelledby="frequently-question-id" className="l_flow-md">
-        <Heading id="frequently-question-id" as="h2" size="xs">
+        <Heading id="frequently-question-id" as="h2" size="3">
           Frequently Asked Question
         </Heading>
         <div className="l_flow-sm">

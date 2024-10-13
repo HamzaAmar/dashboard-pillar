@@ -1,4 +1,4 @@
-import { Flex, Heading, Checkbox, Grid, Breadcrumb } from '@components/core'
+import { Flex, Heading, Checkbox, Grid, Breadcrumb, BreadcrumbItem } from '@pillar-ui/core'
 import { Preview } from '@components/section'
 import useBoolean from '@hooks/useBoolean'
 import { FormEvent, useState } from 'react'
@@ -27,27 +27,27 @@ export const Component = () => {
   return (
     <section aria-labelledby="checkbox--page-id" className="l_flow-lg">
       <Flex items="center" wrap justify="between">
-        <Heading as="h1" id="checkbox--page-id" size="xs">
+        <Heading as="h1" id="checkbox--page-id" size="3">
           Checkbox Docs Page
         </Heading>
-        <Breadcrumb size="sm">
-          <Breadcrumb.Item link="../../..">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Components</Breadcrumb.Item>
-          <Breadcrumb.Item link="../">Base UI</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="4">
+          <BreadcrumbItem link="../../..">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Components</BreadcrumbItem>
+          <BreadcrumbItem link="../">Base UI</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Checkbox
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
+      <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
         <Preview title="Checkbox Color" description="Show alert only with message Props" code={docs.checkboxColor}>
-          <Flex wrap gap="md" items="center">
-            <Checkbox color="danger" label="danger" />
-            <Checkbox color="success" label="success" />
-            <Checkbox color="purple" label="purple" />
-            <Checkbox color="indigo" label="indigo" />
-            <Checkbox color="slate" label="slate" />
-            <Checkbox color="warning" label="warning" />
+          <Flex wrap gap="5" items="center">
+            <Checkbox color="d" label="danger" />
+            <Checkbox color="su" label="success" />
+            <Checkbox color="se" label="purple" />
+            <Checkbox color="i" label="indigo" />
+            <Checkbox color="b" label="slate" />
+            <Checkbox color="w" label="warning" />
           </Flex>
         </Preview>
 
@@ -56,13 +56,13 @@ export const Component = () => {
           description="Default check is Boolean value default to false"
           code={docs.defaultCheckedCheckbox}
         >
-          <Flex wrap gap="md" items="center">
-            <Checkbox defaultChecked color="danger" label="danger" />
-            <Checkbox defaultChecked color="success" label="success" />
-            <Checkbox defaultChecked color="purple" label="purple" />
-            <Checkbox defaultChecked color="indigo" label="indigo" />
-            <Checkbox defaultChecked color="slate" label="slate" />
-            <Checkbox defaultChecked color="warning" label="warning" />
+          <Flex wrap gap="5" items="center">
+            <Checkbox defaultChecked color="d" label="danger" />
+            <Checkbox defaultChecked color="su" label="success" />
+            <Checkbox defaultChecked color="se" label="purple" />
+            <Checkbox defaultChecked color="i" label="indigo" />
+            <Checkbox defaultChecked color="b" label="slate" />
+            <Checkbox defaultChecked color="w" label="warning" />
           </Flex>
         </Preview>
 
@@ -71,21 +71,21 @@ export const Component = () => {
           description="Disabled is Boolean value default to false"
           code={docs.checkboxDisabled}
         >
-          <Flex wrap gap="md" items="center">
-            <Checkbox disabled defaultChecked color="danger" label="danger" />
-            <Checkbox disabled color="success" label="success" />
-            <Checkbox disabled color="purple" label="purple" />
-            <Checkbox disabled color="indigo" label="indigo" />
-            <Checkbox disabled color="slate" label="slate" />
-            <Checkbox disabled defaultChecked color="warning" label="warning" />
+          <Flex wrap gap="5" items="center">
+            <Checkbox disabled defaultChecked color="d" label="danger" />
+            <Checkbox disabled color="su" label="success" />
+            <Checkbox disabled color="se" label="purple" />
+            <Checkbox disabled color="i" label="indigo" />
+            <Checkbox disabled color="b" label="slate" />
+            <Checkbox disabled defaultChecked color="w" label="warning" />
           </Flex>
         </Preview>
 
         <Preview title="Checkbox Size" description="Show alert only with message Props" code={docs.checkboxSize}>
-          <Flex wrap gap="md" items="center">
-            <Checkbox size="sm" label="danger" />
+          <Flex wrap gap="5" items="center">
+            <Checkbox size="4" label="danger" />
             <Checkbox label="danger" />
-            <Checkbox size="lg" label="success" />
+            <Checkbox size="6" label="success" />
           </Flex>
         </Preview>
 
@@ -94,10 +94,10 @@ export const Component = () => {
           description="Show alert only with message Props"
           code={docs.checkboxIsIndeterminate}
         >
-          <Flex wrap gap="md" items="center">
-            <Checkbox checked={state} onChange={handleToggle} isIndeterminate size="sm" label="Indeterminate" />
-            <Checkbox checked={state} onChange={handleToggle} isIndeterminate size="md" label="Indeterminate" />
-            <Checkbox checked={state} onChange={handleToggle} isIndeterminate size="lg" label="Indeterminate" />
+          <Flex wrap gap="5" items="center">
+            <Checkbox checked={state} onChange={handleToggle} isIndeterminate size="4" label="Indeterminate" />
+            <Checkbox checked={state} onChange={handleToggle} isIndeterminate size="5" label="Indeterminate" />
+            <Checkbox checked={state} onChange={handleToggle} isIndeterminate size="6" label="Indeterminate" />
           </Flex>
         </Preview>
 
@@ -114,7 +114,7 @@ export const Component = () => {
               label="Parent"
               name="Hello"
             />
-            <Flex style={{ paddingInlineStart: '1rem' }} gap="md" direction="column" items="start">
+            <Flex style={{ paddingInlineStart: '1rem' }} gap="5" direction="col" items="start">
               <Checkbox checked={isCheck[0]} onChange={handleChecks('first')} label="first" name="first" />
               <Checkbox checked={isCheck[1]} onChange={handleChecks('second')} label="second" name="second" />
               <Checkbox checked={isCheck[2]} onChange={handleChecks('third')} label="third" name="third" />

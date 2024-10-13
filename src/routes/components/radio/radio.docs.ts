@@ -1,62 +1,62 @@
 export const radioButtonColor = `
-import { Radio } from "@components/core";
+import { Radio } from "@pillar-ui/core";
 
 const RadioTest = ()=>{
     return(
-        <Radio color="danger" label="danger" />
-        <Radio color="success" label="success" />
-        <Radio color="purple" label="purple" />
-        <Radio color="indigo" label="indigo" />
-        <Radio color="slate" label="slate" />
-        <Radio color="warning" label="warning" />
+        <Radio color="d" label="danger" />
+        <Radio color="su" label="success" />
+        <Radio color="se" label="purple" />
+        <Radio color="i" label="indigo" />
+        <Radio color="b" label="slate" />
+        <Radio color="w" label="warning" />
     )
 }`
 
 export const defaultCheckedRadio = `
-import { Radio } from "@components/core";
+import { Radio } from "@pillar-ui/core";
 
 const RadioTest = ()=>{
     return(
-      <Radio defaultChecked color="danger" label="danger" />
-      <Radio defaultChecked color="success" label="success" />
-      <Radio defaultChecked color="purple" label="purple" />
-      <Radio defaultChecked color="indigo" label="indigo" />
-      <Radio defaultChecked color="slate" label="slate" />
-      <Radio defaultChecked color="warning" label="warning" />
+      <Radio defaultChecked color="d" label="danger" />
+      <Radio defaultChecked color="su" label="success" />
+      <Radio defaultChecked color="se" label="purple" />
+      <Radio defaultChecked color="i" label="indigo" />
+      <Radio defaultChecked color="b" label="slate" />
+      <Radio defaultChecked color="w" label="warning" />
     )
 }`
 
 export const radioButtonDisabled = `
-import { Radio } from "@components/core";
+import { Radio } from "@pillar-ui/core";
 
 const RadioTest = ()=>{
     return(
-      <Radio disabled defaultChecked color="danger" label="danger" />
-      <Radio disabled color="success" label="success" />
-      <Radio disabled color="purple" label="purple" />
-      <Radio disabled color="indigo" label="indigo" />
-      <Radio disabled color="slate" label="slate" />
-      <Radio disabled defaultChecked color="warning" label="warning" />
+      <Radio disabled defaultChecked color="d" label="danger" />
+      <Radio disabled color="su" label="success" />
+      <Radio disabled color="se" label="purple" />
+      <Radio disabled color="i" label="indigo" />
+      <Radio disabled color="b" label="slate" />
+      <Radio disabled defaultChecked color="w" label="warning" />
     )
 }`
 
 export const radioButtonSize = `
-import { Radio } from "@components/core";
+import { Radio } from "@pillar-ui/core";
 
 const RadioTest = ()=>{
     return(
-      <Radio size="sm" label="danger" />
+      <Radio size="4" label="danger" />
       <Radio label="danger" />
-      <Radio size="lg" label="success" />
+      <Radio size="6" label="success" />
     )
 }`
 
 export const radioButtonGroup = `
-import { Radio, RadioGroup } from "@components/core";
+import { Radio, RadioGroup } from "@pillar-ui/core";
 
 const RadioTest = ()=>{
     return(
-      <RadioGroup label="Rating" color="danger" name="hello">
+      <RadioGroup label="Rating" color="d" name="hello">
         <Radio defaultChecked label="Bad" />
         <Radio defaultChecked label="Poor" />
         <Radio defaultChecked label="Medium" />
@@ -67,11 +67,11 @@ const RadioTest = ()=>{
 }`
 
 export const radioButtonGroupVertical = `
-import { Radio , RadioGroup} from "@components/core";
+import { Radio , RadioGroup} from "@pillar-ui/core";
 
 const RadioTest = ()=>{
     return(
-      <RadioGroup direction="vertical" label="Rating" color="danger">
+      <RadioGroup direction="vertical" label="Rating" color="d">
           <Radio defaultChecked label="Bad" />
           <Radio defaultChecked label="Poor" />
           <Radio defaultChecked label="Medium" />

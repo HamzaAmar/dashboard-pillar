@@ -1,9 +1,9 @@
 export const defaultFlex = `
-import { Flex } from "@components/core";
+import { Flex } from "@pillar-ui/core";
 
 const FlexTest = ()=>{
     return(
-      <Flex gap="sm">
+      <Flex gap="4">
         <Box />
         <Box />
         <Box />
@@ -15,11 +15,11 @@ const FlexTest = ()=>{
 }`
 
 export const centeredFlex = `
-import { Flex } from "@components/core";
+import { Flex } from "@pillar-ui/core";
 
 const FlexTest = ()=>{
     return(
-      <Flex gap="sm" items="center" justify="center">
+      <Flex gap="4" items="center" justify="center">
         <Box />
         <Box />
         <Box />
@@ -31,11 +31,11 @@ const FlexTest = ()=>{
 }`
 
 export const justifyAroundFlex = `
-import { Flex } from "@components/core";
+import { Flex } from "@pillar-ui/core";
 
 const FlexTest = ()=>{
     return(
-      <Flex gap="sm" items="center" justify="around">
+      <Flex gap="4" items="center" justify="around">
         <Box />
         <Box />
         <Box />
@@ -47,11 +47,11 @@ const FlexTest = ()=>{
 }`
 
 export const justifyBetweenFlex = `
-import { Flex } from "@components/core";
+import { Flex } from "@pillar-ui/core";
 
 const FlexTest = ()=>{
     return(
-      <Flex gap="sm" items="center" justify="between">
+      <Flex gap="4" items="center" justify="between">
         <Box />
         <Box />
         <Box />
@@ -63,11 +63,11 @@ const FlexTest = ()=>{
 }`
 
 export const justifyEvenlyFlex = `
-import { Flex } from "@components/core";
+import { Flex } from "@pillar-ui/core";
 
 const FlexTest = ()=>{
     return(
-      <Flex gap="sm" items="center" justify="evenly">
+      <Flex gap="4" items="center" justify="evenly">
         <Box />
         <Box />
         <Box />
@@ -79,11 +79,11 @@ const FlexTest = ()=>{
 }`
 
 export const wrapFlex = `
-import { Flex } from "@components/core";
+import { Flex } from "@pillar-ui/core";
 
 const FlexWrap = ()=>{
     return(
-    <Flex gap="sm" wrap>
+    <Flex gap="4" wrap>
         <Box />
         <Box />
         <Box />
@@ -101,11 +101,11 @@ const FlexWrap = ()=>{
 }`
 
 export const flexGrowEqual = `
-import { Flex } from "@components/core";
+import { Flex } from "@pillar-ui/core";
 
 const FlexWrap = ()=>{
     return(
-      <Flex gap="sm" wrap>
+      <Flex gap="4" wrap>
         <Box className="u_flex-1" />
         <Box className="u_flex-1" />
         <Box className="u_flex-1" />
@@ -115,11 +115,11 @@ const FlexWrap = ()=>{
 }`
 
 export const flexGrowDifferent = `
-import { Flex } from "@components/core";
+import { Flex } from "@pillar-ui/core";
 
 const FlexWrap = ()=>{
     return(
-      <Flex gap="sm" wrap>
+      <Flex gap="4" wrap>
         <Box className="u_flex-1" />
         <Box className="u_flex-2" />
         <Box className="u_flex-1" />
@@ -128,11 +128,11 @@ const FlexWrap = ()=>{
 }`
 
 export const flexDirectionCol = `
-import { Flex } from "@components/core";
+import { Flex } from "@pillar-ui/core";
 
 const FlexWrap = ()=>{
     return(
-      <Flex gap="sm" direction='column'>
+      <Flex gap="4" direction='column'>
         <Box  />
         <Box />
         <Box  />
@@ -141,13 +141,13 @@ const FlexWrap = ()=>{
 }`
 
 export const flexNested = `
-import { Flex } from "@components/core";
+import { Flex } from "@pillar-ui/core";
 
 const FlexWrap = ()=>{
     return(
-        <Flex gap="sm" direction="column">
+        <Flex gap="4" direction="col">
           <Box className="u_flex-1" content="header" />
-            <Flex gap="sm">
+            <Flex gap="4">
               <Box className="u_flex-1" content="sidebar" />
               <Box className="u_flex-2" content="main" />
               <Box className="u_flex-1" content="sidebar" />
@@ -158,11 +158,11 @@ const FlexWrap = ()=>{
 }`
 
 export const gridTwoColumns = `
-import { Grid } from "@components/core";
+import { Grid } from "@pillar-ui/core";
 
 const GridTest = ()=>{
     return(
-      <Grid columns="1fr 1fr" gap="sm">
+      <Grid grid="1fr 1fr" gap="4">
         <Box />
         <Box />
         <Box />
@@ -173,11 +173,11 @@ const GridTest = ()=>{
     )
 }`
 export const gridColumnsDifferentValues = `
-import { Grid } from "@components/core";
+import { Grid } from "@pillar-ui/core";
 
 const GridTest = ()=>{
     return(
-      <Grid columns=".5fr 2fr auto 100px" gap="sm">
+      <Grid grid=".5fr 2fr auto 100px" gap="4">
         <Box />
         <Box />
         <Box />
@@ -195,11 +195,11 @@ const GridTest = ()=>{
 }`
 
 export const gridLayoutTemplate = `
-import { Grid } from "@components/core";
+import { Grid } from "@pillar-ui/core";
 
 const GridTest = ()=>{
     return(
-      <Grid columns="100px 1fr 100px" rows="2rem minmax(6rem, 1fr) 2rem" gap="sm">
+      <Grid grid="100px 1fr 100px" rows="2rem minmax(6rem, 1fr) 2rem" gap="4">
         <Grid.Item column="1/4" style={{ background: "var(--slate-8)" }}>Header <Grid.Item>
         <Grid.Item column="span 1" style={{ background: "var(--slate-8)" }}> sidebar </Grid.Item>
         <Grid.Item column="span 1" style={{ background: "var(--slate-8)" }}> main </Grid.Item>
@@ -210,14 +210,14 @@ const GridTest = ()=>{
 }`
 
 export const gridLayoutTwoTemplate = `
-import { Grid } from "@components/core";
+import { Grid } from "@pillar-ui/core";
 
 const GridTest = ()=>{
     return(
       <Grid
-        columns="100px 1fr 100px"
+        grid="100px 1fr 100px"
         rows="2rem minmax(6rem, 1fr) 2rem"
-        gap="sm"
+        gap="4"
       >
         <Grid.Item column="2/4" style={{ background: "var(--slate-8)" }}>
           Header

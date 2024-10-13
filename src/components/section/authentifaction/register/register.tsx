@@ -1,14 +1,14 @@
 import { Logo } from '@components/common'
-import { Button, Flex, FormController, Heading, Input, InputPassword, Separator, Text } from '@components/core'
+import { Button, Flex, FormController, Heading, Input, InputPassword, Separator, Text } from '@pillar-ui/core'
 import { Facebook, Github, Gmail, Twitter } from '@components/icons'
 import { Form, Link } from 'react-router-dom'
 
 function MediaButton({ title, icon }: any) {
   const lowercaseTitle = title.toLowerCase()
   return (
-    <Flex gap="md" as="button" items="center" className={`auth-button auth-button__${lowercaseTitle}`}>
+    <Flex gap="5" as="button" items="center" className={`auth-button auth-button__${lowercaseTitle}`}>
       <span>{icon}</span>
-      <Text size="sm" className="u_sr-only">
+      <Text size="4" className="u_sr-only">
         {title}
       </Text>
     </Flex>
@@ -23,10 +23,10 @@ const Login = () => {
         <Logo width="120" />
 
         <div>
-          <Heading size="xs" weight="medium">
+          <Heading size="3" weight="5">
             Welcome to Adminstor
           </Heading>
-          <Text color="slate" contrast="low" size="xs">
+          <Text color="b" low size="3">
             Get your Free account now.
           </Text>
         </div>
@@ -42,13 +42,13 @@ const Login = () => {
             <InputPassword name="new-password" autoComplete="new-password" />
           </FormController>
 
-          <Button variant="solid" size="lg" fluid>
+          <Button variant="solid" size="6" fluid>
             Sign in
           </Button>
         </Form>
 
-        <Flex gap="2xs" items="center">
-          <Text color="slate" contrast="low" as="span" size="sm">
+        <Flex gap="1" items="center">
+          <Text color="b" low as="span" size="4">
             Already have an account?
           </Text>
           <Button variant="link" as={Link} to="/login">
@@ -57,12 +57,12 @@ const Login = () => {
         </Flex>
 
         <Separator position="center">
-          <Text color="slate" contrast="low">
+          <Text color="b" low>
             or
           </Text>
         </Separator>
 
-        <Flex items="center" justify="center" gap="md">
+        <Flex items="center" justify="center" gap="5">
           <MediaButton title="Facebook" icon={<Facebook width="1rem" />} />
           <MediaButton title="Twitter" icon={<Twitter width="1rem" />} />
           <MediaButton title="Gmail" icon={<Gmail width="1rem" />} />

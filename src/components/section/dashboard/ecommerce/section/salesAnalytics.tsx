@@ -1,4 +1,4 @@
-import { Button, Flex, Grid, Heading, Text } from '@components/core'
+import { Button, Flex, Grid, Heading, Text } from '@pillar-ui/core'
 import { ArrowDown, Plus } from '@components/icons'
 import { useId } from 'react'
 import { Link } from 'react-router-dom'
@@ -11,36 +11,36 @@ const Article = ({ count, title }: EcommerceDashboardArticleProps) => {
 
   const statusObj: StatusObjRecord = {
     equal: {
-      color: 'slate',
+      color: 'b',
       icon: <Plus width="12" />,
     },
     negative: {
-      color: 'red',
+      color: 'd',
       icon: <ArrowDown width="20" direction="right-bottom" />,
     },
     positive: {
-      color: 'green',
+      color: 'su',
       icon: <ArrowDown width="20" direction="right-top" />,
     },
   }
   return (
     <article aria-labelledby={id} className="l_box u_flex-1 l_flow-sm">
       <Flex as="header" justify="between" items="center">
-        <Heading id={id} as="h3" size="xs" color="slate" contrast="low" weight="medium">
+        <Heading id={id} as="h3" size="3" color="b" low weight="5">
           {title}
         </Heading>
 
-        <Text as={Flex} gap="2xs" contrast="low" color={statusObj[status].color} size="sm" weight="medium">
+        <Text as={Flex} gap="1" low color={statusObj[status].color} size="4" weight="5">
           {statusObj[status].icon}
 
           <span>16.24 %</span>
         </Text>
       </Flex>
       <div>
-        <Text weight="bold">{count.current}</Text>
+        <Text weight="7">{count.current}</Text>
       </div>
       <Flex as="header" justify="between" items="center">
-        <Button as={Link} to="#" size="xs" variant="link">
+        <Button as={Link} to="#" size="3" variant="link">
           View Your Eearning
         </Button>
         <Text>16.24 %</Text>
@@ -51,7 +51,7 @@ const Article = ({ count, title }: EcommerceDashboardArticleProps) => {
 
 export const SalesAnalytics = () => {
   return (
-    <Grid columns="repeat(auto-fit, minmax(240px, 1fr)" gap="sm">
+    <Grid grid="repeat(auto-fit, minmax(240px, 1fr)" gap="4">
       <Article title="Total Sales" count={{ previous: 1000, current: 1000 }} />
       <Article title="Visitors" count={{ previous: 1000, current: 500 }} />
       <Article title="Total Order" count={{ previous: 1000, current: 1500 }} />

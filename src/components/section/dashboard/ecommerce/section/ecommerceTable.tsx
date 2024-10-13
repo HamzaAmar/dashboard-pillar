@@ -1,7 +1,6 @@
 import type { ProductsModel } from '@api/ecommerce/products/products.type'
 import { UserModel } from '@api/user/user.type'
-import { Table } from '@components/composition'
-import { Avatar, Chips, Flex, Grid, Heading, IconButton, Text } from '@components/core'
+import { Avatar, Chips, Flex, Grid, Heading, IconButton, Text, Table, TableRow, TableColumn } from '@pillar-ui/core'
 import { Dots, Star } from '@components/icons'
 import { useLoaderData } from 'react-router-dom'
 
@@ -14,47 +13,41 @@ const BestSeller = () => {
   return (
     <section aria-labelledby="best-seller-id" className="u_flex-1 l_box l_flow-md">
       <Flex as="header">
-        <Heading id="best-seller-id" as="h3" size="xs">
+        <Heading id="best-seller-id" as="h3" size="3">
           Best Seller
         </Heading>
       </Flex>
       <Table>
         <thead>
-          <Table.Row type="head">
-            <Table.Column as="th">Products</Table.Column>
-            <Table.Column as="th">Price</Table.Column>
-            <Table.Column as="th">Category</Table.Column>
-            <Table.Column as="th">Rating</Table.Column>
-            <Table.Column as="th">Orders</Table.Column>
-          </Table.Row>
+          <TableRow type="head">
+            <TableColumn as="th">Products</TableColumn>
+            <TableColumn as="th">Price</TableColumn>
+            <TableColumn as="th">Category</TableColumn>
+            <TableColumn as="th">Rating</TableColumn>
+            <TableColumn as="th">Orders</TableColumn>
+          </TableRow>
         </thead>
         <tbody>
           {users.map(({ slug, avatar, name }) => (
-            <Table.Row key={slug}>
-              <Table.Column>
-                <Flex gap="sm">
-                  <Avatar
-                    title={`${name} profile's Picture`}
-                    variant="image"
-                    image={`${avatar}`}
-                    size="md"
-                    corner="sm"
-                  />
+            <TableRow key={slug}>
+              <TableColumn>
+                <Flex gap="4">
+                  <Avatar title={`${name} profile's Picture`} image={`${avatar}`} size="5" corner="3" />
                   <div className="u_leading-sm">
-                    <Heading as="h4" size="2xs" truncate="multiline" numberLine={1} weight="medium">
+                    <Heading as="h4" size="1" truncate="1" weight="5">
                       {name}
                     </Heading>
-                    <Text size="xs" color="slate" contrast="low">
+                    <Text size="3" color="b" low>
                       28 Jul 2022
                     </Text>
                   </div>
                 </Flex>
-              </Table.Column>
-              <Table.Column>Price</Table.Column>
-              <Table.Column>Category</Table.Column>
-              <Table.Column>Rating</Table.Column>
-              <Table.Column>Rating</Table.Column>
-            </Table.Row>
+              </TableColumn>
+              <TableColumn>Price</TableColumn>
+              <TableColumn>Category</TableColumn>
+              <TableColumn>Rating</TableColumn>
+              <TableColumn>Rating</TableColumn>
+            </TableRow>
           ))}
         </tbody>
       </Table>
@@ -70,63 +63,57 @@ const BestSelling = () => {
   return (
     <section aria-labelledby="best-selling-id" className="u_flex-1 l_box l_flow-md">
       <Flex as="header">
-        <Heading id="best-selling-id" as="h3" size="xs">
+        <Heading id="best-selling-id" as="h3" size="3">
           Best Selling Products
         </Heading>
       </Flex>
       <Table>
         <thead>
-          <Table.Row type="head">
-            <Table.Column as="th">Products</Table.Column>
-            <Table.Column as="th">Price</Table.Column>
-            <Table.Column as="th">Category</Table.Column>
-            <Table.Column as="th">Rating</Table.Column>
-            <Table.Column as="th">Orders</Table.Column>
-            <Table.Column as="th">Actions</Table.Column>
-          </Table.Row>
+          <TableRow type="head">
+            <TableColumn as="th">Products</TableColumn>
+            <TableColumn as="th">Price</TableColumn>
+            <TableColumn as="th">Category</TableColumn>
+            <TableColumn as="th">Rating</TableColumn>
+            <TableColumn as="th">Orders</TableColumn>
+            <TableColumn as="th">Actions</TableColumn>
+          </TableRow>
         </thead>
         <tbody>
           {products.map(({ id, color, heroImage, title, price, rating }) => (
-            <Table.Row key={id}>
-              <Table.Column>
-                <Flex gap="sm">
-                  <Avatar
-                    title={`${color} ${title}`}
-                    variant="image"
-                    image={`/images/products/${heroImage}`}
-                    size="md"
-                    corner="sharp"
-                  />
+            <TableRow key={id}>
+              <TableColumn>
+                <Flex gap="4">
+                  <Avatar title={`${color} ${title}`} image={`/images/products/${heroImage}`} size="5" corner="0" />
                   <div className="u_leading-sm">
-                    <Heading as="h4" size="2xs" truncate="multiline" numberLine={1} weight="medium">
+                    <Heading as="h4" size="1" truncate="1" weight="5">
                       {title}
                     </Heading>
-                    <Text size="xs" color="slate" contrast="low">
+                    <Text size="3" color="b" low>
                       28 Jul 2022
                     </Text>
                   </div>
                 </Flex>
-              </Table.Column>
-              <Table.Column weight="medium">
-                <Chips variant="soft" size="lg">
+              </TableColumn>
+              <TableColumn>
+                <Chips variant="soft" size="6">
                   {price.price}
                 </Chips>
-              </Table.Column>
-              <Table.Column>Category</Table.Column>
-              <Table.Column>
-                <Flex gap="2xs">
+              </TableColumn>
+              <TableColumn>Category</TableColumn>
+              <TableColumn>
+                <Flex gap="1">
                   <Star fill="var(--orange-8)" stroke="var(--orange-8)" width="20" />
 
-                  <Text weight="bold" as="span" size="xs">
+                  <Text weight="7" as="span" size="3">
                     ({rating})
                   </Text>
                 </Flex>
-              </Table.Column>
-              <Table.Column weight="medium">#${id}</Table.Column>
-              <Table.Column weight="medium">
-                <IconButton icon={<Dots />} title="more Info" size="sm" />
-              </Table.Column>
-            </Table.Row>
+              </TableColumn>
+              <TableColumn>#${id}</TableColumn>
+              <TableColumn>
+                <IconButton icon={<Dots />} title="more Info" size="4" />
+              </TableColumn>
+            </TableRow>
           ))}
         </tbody>
       </Table>
@@ -136,7 +123,7 @@ const BestSelling = () => {
 
 export const EcommerceTables = () => {
   return (
-    <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
+    <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
       <BestSelling />
       <BestSeller />
     </Grid>

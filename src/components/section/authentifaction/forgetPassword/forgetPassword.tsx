@@ -1,13 +1,13 @@
 import { Logo } from '@components/common'
-import { Button, Flex, FormController, Heading, Input, Separator, Text } from '@components/core'
+import { Button, Flex, FormController, Heading, Input, Separator, Text } from '@pillar-ui/core'
 import { Facebook, Github, Gmail, Mail, Twitter } from '@components/icons'
 
 function MediaButton({ title, icon }: any) {
   const lowercaseTitle = title.toLowerCase()
   return (
-    <Flex gap="md" as="button" items="center" className={`auth-button auth-button__${lowercaseTitle}`}>
+    <Flex gap="5" as="button" items="center" className={`auth-button auth-button__${lowercaseTitle}`}>
       <span>{icon}</span>
-      <Text size="sm" className="u_sr-only">
+      <Text size="4" className="u_sr-only">
         {title}
       </Text>
     </Flex>
@@ -21,10 +21,10 @@ const forgetPassword = () => {
         <Logo width="120" />
 
         <div>
-          <Heading size="xs" weight="medium">
+          <Heading size="3" weight="5">
             Forget Password
           </Heading>
-          <Text color="slate" contrast="low" size="xs">
+          <Text color="b" low size="3">
             New Email Will send to you email (Please check you email)
           </Text>
         </div>
@@ -33,18 +33,18 @@ const forgetPassword = () => {
           <FormController required label="Email">
             <Input name="email" />
           </FormController>
-          <Button variant="solid" icon={<Mail />} size="lg" fluid>
+          <Button variant="solid" icon={<Mail />} size="6" fluid>
             Send
           </Button>
         </form>
 
         <Separator position="center">
-          <Text color="slate" contrast="low">
+          <Text color="b" low>
             or
           </Text>
         </Separator>
 
-        <Flex items="center" justify="center" gap="sm">
+        <Flex items="center" justify="center" gap="4">
           <MediaButton title="Facebook" icon={<Facebook width="1rem" />} />
           <MediaButton title="Twitter" icon={<Twitter width="1rem" />} />
           <MediaButton title="Gmail" icon={<Gmail width="1rem" />} />

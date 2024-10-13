@@ -3,7 +3,7 @@ import { Rating } from "@components/composite";
 
 const RatingTest = ()=>{
     return(
-      <RadioGroup direction="vertical" label="Rating" color="danger">
+      <RadioGroup direction="vertical" label="Rating" color="d">
         <Rating rating={1} />
         <Rating rating={2} />
         <Rating rating={3} />
@@ -19,9 +19,9 @@ import { Rating } from "@components/composite";
 const RatingTest = ()=>{
     return(
       <>
-        <Rating rating={3} showLabel size="sm" />
+        <Rating rating={3} showLabel size="4" />
         <Rating rating={3} showLabel />
-        <Rating rating={3.4} showLabel size="lg" />
+        <Rating rating={3.4} showLabel size="6" />
        </>
     )
 }`
@@ -32,9 +32,9 @@ import { Rating } from "@components/composite";
 const RatingTest = ()=>{
     return(
       <>
-        <Rating rating={4} size="sm" />
+        <Rating rating={4} size="4" />
         <Rating rating={4} />
-        <Rating rating={4} size="lg" />
+        <Rating rating={4} size="6" />
        </>
     )
 }`
@@ -45,12 +45,12 @@ import { Rating } from "@components/composite";
 const RatingTest = ()=>{
     return(
       <>
-        <Rating color="danger" rating={4} />
-        <Rating color="indigo" rating={4} />
-        <Rating color="primary" rating={4} />
-        <Rating color="purple" rating={4} />
-        <Rating color="success" rating={4} />
-        <Rating color="warning" rating={4} />
+        <Rating color="d" rating={4} />
+        <Rating color="i" rating={4} />
+        <Rating color="p" rating={4} />
+        <Rating color="se" rating={4} />
+        <Rating color="su" rating={4} />
+        <Rating color="w" rating={4} />
        </>
     )
 }`
@@ -61,7 +61,7 @@ import { Rating } from "@components/composite";
 const RatingTest = ()=>{
     return(
       <>
-        <Rating icon="heart" rating={4} color="danger" />
+        <Rating icon="heart" rating={4} color="d" />
         <Rating rating={4} />
       </>
     )

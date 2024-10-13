@@ -3,13 +3,13 @@ import {NotFound} from '@components/composition'
 
 function StatusStories(){
     return(
-        <NotFound color="danger" />
-        <NotFound color="success" />
-        <NotFound color="purple" />
+        <NotFound color="d" />
+        <NotFound color="su" />
+        <NotFound color="se" />
         <NotFound color="yellow" />
-        <NotFound color="indigo" />
-        <NotFound color="warning" />
-        <NotFound color="slate" />
+        <NotFound color="i" />
+        <NotFound color="w" />
+        <NotFound color="b" />
         <NotFound color="mint" />
         <NotFound />
     )
@@ -19,7 +19,7 @@ import {NotFound} from '@components/composition'
 
 function StatusStories(){
     return(
-        <NotFound variant="gradient" color="red" />
+        <NotFound variant="gradient" color="d" />
         <NotFound variant="outline" />
         <NotFound variant="solid" />
     )

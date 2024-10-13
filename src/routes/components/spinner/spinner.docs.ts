@@ -1,80 +1,80 @@
 export const spinnerColor = `
-import { Spinner } from "@components/core";
+import { Spinner } from "@pillar-ui/core";
 
 const SpinnerTest = ()=>{
     return(
-        <Spinner color="danger" label="danger" />
-        <Spinner color="success" label="success" />
-        <Spinner color="purple" label="purple" />
-        <Spinner color="indigo" label="indigo" />
-        <Spinner color="slate" label="slate" />
-        <Spinner color="warning" label="warning" />
+        <Spinner color="d" label="danger" />
+        <Spinner color="su" label="success" />
+        <Spinner color="se" label="purple" />
+        <Spinner color="i" label="indigo" />
+        <Spinner color="b" label="slate" />
+        <Spinner color="w" label="warning" />
     )
 }`
 
 export const spinnerColorInvert = `
-import { Spinner } from "@components/core";
+import { Spinner } from "@pillar-ui/core";
 
 const SpinnerTest = ()=>{
     return(
-        <Spinner invert color="danger" label="danger" />
-        <Spinner invert color="success" label="success" />
-        <Spinner invert color="purple" label="purple" />
-        <Spinner invert color="indigo" label="indigo" />
-        <Spinner invert color="slate" label="slate" />
-        <Spinner invert color="warning" label="warning" />
+        <Spinner invert color="d" label="danger" />
+        <Spinner invert color="su" label="success" />
+        <Spinner invert color="se" label="purple" />
+        <Spinner invert color="i" label="indigo" />
+        <Spinner invert color="b" label="slate" />
+        <Spinner invert color="w" label="warning" />
     )
 }`
 
 export const spinnerSize = `
-import { Spinner } from "@components/core";
+import { Spinner } from "@pillar-ui/core";
 
 const SpinnerTest = ()=>{
     return(
-        <Spinner size="sm" />
+        <Spinner size="4" />
         <Spinner />
-        <Spinner size="lg" />
+        <Spinner size="6" />
     )
 }`
 
 export const spinnerSmallSize = `
-import { Spinner } from "@components/core";
+import { Spinner } from "@pillar-ui/core";
 
 const SpinnerTest = ()=>{
     return(
-        <Spinner size="sm" color="danger" />
-        <Spinner size="sm" color="success" />
-        <Spinner size="sm" color="purple" />
-        <Spinner size="sm" color="indigo" />
-        <Spinner size="sm" color="slate" />
-        <Spinner size="sm" color="warning" />
+        <Spinner size="4" color="d" />
+        <Spinner size="4" color="su" />
+        <Spinner size="4" color="se" />
+        <Spinner size="4" color="i" />
+        <Spinner size="4" color="b" />
+        <Spinner size="4" color="w" />
     )
 }`
 
 export const spinnerMediumSize = `
-import { Spinner } from "@components/core";
+import { Spinner } from "@pillar-ui/core";
 
 const SpinnerTest = ()=>{
     return(
-        <Spinner size="sm" color="danger" />
-        <Spinner size="sm" color="success" />
-        <Spinner size="sm" color="purple" />
-        <Spinner size="sm" color="indigo" />
-        <Spinner size="sm" color="slate" />
-        <Spinner size="sm" color="warning" />
+        <Spinner size="4" color="d" />
+        <Spinner size="4" color="su" />
+        <Spinner size="4" color="se" />
+        <Spinner size="4" color="i" />
+        <Spinner size="4" color="b" />
+        <Spinner size="4" color="w" />
     )
 }`
 
 export const spinnerLargeSize = `
-import { Spinner } from "@components/core";
+import { Spinner } from "@pillar-ui/core";
 
 const SpinnerTest = ()=>{
     return(
-        <Spinner size="lg" color="danger" />
-        <Spinner size="lg" color="success" />
-        <Spinner size="lg" color="purple" />
-        <Spinner size="lg" color="indigo" />
-        <Spinner size="lg" color="slate" />
-        <Spinner size="lg" color="warning" />
+        <Spinner size="6" color="d" />
+        <Spinner size="6" color="su" />
+        <Spinner size="6" color="se" />
+        <Spinner size="6" color="i" />
+        <Spinner size="6" color="b" />
+        <Spinner size="6" color="w" />
     )
 }`

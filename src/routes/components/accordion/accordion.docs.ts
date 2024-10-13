@@ -5,7 +5,7 @@ import { Plus } from '@components/icon'
 function AccordionStories(){
     return(
         <Accordion variant="contained">
-            <Accordion.Item value="hello">
+            <AccordionItem value="hello">
             <Accordion.Trigger icon={<Plus width={16} />}>
                 SHow More Info
             </Accordion.Trigger>
@@ -15,8 +15,8 @@ function AccordionStories(){
                 omnis aliquid at. Ipsa vero tempore ipsum libero ad ex
                 obcaecati, non autem.
             </Accordion.Content>
-            </Accordion.Item>
-            <Accordion.Item value="nice">
+            </AccordionItem>
+            <AccordionItem value="nice">
             <Accordion.Trigger icon={<Plus width={16} />}>
                 Help You here
             </Accordion.Trigger>
@@ -26,10 +26,10 @@ function AccordionStories(){
                 omnis aliquid at. Ipsa vero tempore ipsum libero ad ex
                 obcaecati, non autem.
             </Accordion.Content>
-            </Accordion.Item>
+            </AccordionItem>
         </Accordion>
         <Accordion variant="filled">
-            <Accordion.Item value="hello">
+            <AccordionItem value="hello">
             <Accordion.Trigger icon={<Plus width={16} />}>
                 SHow More Info
             </Accordion.Trigger>
@@ -39,8 +39,8 @@ function AccordionStories(){
                 omnis aliquid at. Ipsa vero tempore ipsum libero ad ex
                 obcaecati, non autem.
             </Accordion.Content>
-            </Accordion.Item>
-            <Accordion.Item value="nice">
+            </AccordionItem>
+            <AccordionItem value="nice">
             <Accordion.Trigger icon={<Plus width={16} />}>
                 Help You here
             </Accordion.Trigger>
@@ -50,10 +50,10 @@ function AccordionStories(){
                 omnis aliquid at. Ipsa vero tempore ipsum libero ad ex
                 obcaecati, non autem.
             </Accordion.Content>
-            </Accordion.Item>
+            </AccordionItem>
         </Accordion>
         <Accordion variant="separate">
-            <Accordion.Item value="hello">
+            <AccordionItem value="hello">
             <Accordion.Trigger icon={<Plus width={16} />}>
                 SHow More Info
             </Accordion.Trigger>
@@ -63,8 +63,8 @@ function AccordionStories(){
                 omnis aliquid at. Ipsa vero tempore ipsum libero ad ex
                 obcaecati, non autem.
             </Accordion.Content>
-            </Accordion.Item>
-            <Accordion.Item value="nice">
+            </AccordionItem>
+            <AccordionItem value="nice">
             <Accordion.Trigger icon={<Plus width={16} />}>
                 Help You here
             </Accordion.Trigger>
@@ -74,10 +74,10 @@ function AccordionStories(){
                 omnis aliquid at. Ipsa vero tempore ipsum libero ad ex
                 obcaecati, non autem.
             </Accordion.Content>
-            </Accordion.Item>
+            </AccordionItem>
         </Accordion>
         <Accordion>
-            <Accordion.Item value="hello">
+            <AccordionItem value="hello">
             <Accordion.Trigger icon={<Plus width={16} />}>
                 SHow More Info
             </Accordion.Trigger>
@@ -87,8 +87,8 @@ function AccordionStories(){
                 omnis aliquid at. Ipsa vero tempore ipsum libero ad ex
                 obcaecati, non autem.
             </Accordion.Content>
-            </Accordion.Item>
-            <Accordion.Item value="nice">
+            </AccordionItem>
+            <AccordionItem value="nice">
             <Accordion.Trigger icon={<Plus width={16} />}>
                 Help You here
             </Accordion.Trigger>
@@ -98,7 +98,7 @@ function AccordionStories(){
                 omnis aliquid at. Ipsa vero tempore ipsum libero ad ex
                 obcaecati, non autem.
             </Accordion.Content>
-            </Accordion.Item>
+            </AccordionItem>
         </Accordion>
     )
 }
@@ -111,7 +111,7 @@ import { Plus } from '@components/icon'
 function AccordionStories(){
     return(
         <Accordion>
-            <Accordion.Item value="hello">
+            <AccordionItem value="hello">
             <Accordion.Trigger icon={<Plus width={16} />}>
                 SHow More Info
             </Accordion.Trigger>
@@ -120,8 +120,8 @@ function AccordionStories(){
                 voluptas optio dolorem esse autem maxime magni omnis aliquid at. Ipsa vero
                 tempore ipsum libero ad ex obcaecati, non autem.
             </Accordion.Content>
-            </Accordion.Item>
-        <Accordion.Item value="nice">
+            </AccordionItem>
+        <AccordionItem value="nice">
             <Accordion.Trigger icon={<Plus width={16} />}>
                 Help You here
             </Accordion.Trigger>
@@ -131,7 +131,7 @@ function AccordionStories(){
                 voluptas optio dolorem esse autem maxime magni omnis aliquid at. Ipsa vero
                 tempore ipsum libero ad ex obcaecati, non autem.
             </Accordion.Content>
-            </Accordion.Item>
+            </AccordionItem>
         </Accordion>
     )
 }

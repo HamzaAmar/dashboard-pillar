@@ -1,5 +1,5 @@
 import { InboxTypeProps } from '@api/inbox/message.type'
-import { Badge, Button, Flex, Grid, IconButton, Text } from '@components/core'
+import { Badge, Button, Flex, Grid, IconButton, Text } from '@pillar-ui/core'
 import { ArrowDown, CirclePlus } from '@components/icons'
 import useBoolean from '@hooks/useBoolean'
 import { NavLink, Outlet, useLoaderData } from 'react-router-dom'
@@ -10,9 +10,9 @@ const InboxNavItem = ({ title, href, children, icon, handleTrue }: InboxNavItemP
   return (
     <li className="inbox-nav--item">
       <Flex as={NavLink} justify="between" className="inbox-nav--item-link" to={href} onClick={handleTrue}>
-        <Flex gap="sm" items="center">
+        <Flex gap="4" items="center">
           {icon}
-          <Text size="sm" weight="medium">
+          <Text size="4" weight="5">
             {title}
           </Text>
         </Flex>
@@ -27,7 +27,7 @@ export const InboxLayout = () => {
   const { state: open, handleTrue, handleFalse } = useBoolean()
 
   return (
-    <Grid columns="250px 1fr" className="inbox chat-inbox l_box">
+    <Grid grid="250px 1fr" className="inbox chat-inbox l_box">
       <nav
         id="inbox-navigation"
         aria-label="inbox navigation"
@@ -35,7 +35,7 @@ export const InboxLayout = () => {
         data-open={!open}
       >
         <div className="inbox-compose">
-          <Button variant="soft" size="lg" fluid icon={<CirclePlus width={20} />}>
+          <Button variant="soft" size="6" fluid icon={<CirclePlus width={20} />}>
             Compose
           </Button>
         </div>
@@ -43,7 +43,7 @@ export const InboxLayout = () => {
           {INBOX_NAV.map(({ icon, id, title, href }) => {
             return (
               <InboxNavItem key={id} icon={icon} title={title} href={href} handleTrue={handleTrue}>
-                {data[href] && <Badge variant="number" max={10} number={data[href]} size="sm" color="slate" />}
+                {data[href] && <Badge type="numeric" max={10} number={data[href]} size="4" color="b" />}
               </InboxNavItem>
             )
           })}

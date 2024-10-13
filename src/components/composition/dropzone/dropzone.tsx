@@ -1,23 +1,23 @@
-import { Flex, Text } from '@components/core'
+import { Flex, Text } from '@pillar-ui/core'
 import { FileUpload } from '@components/icons'
 import { useDropzone } from 'react-dropzone'
 
 import type { DropzoneProps } from './dropzone.type'
 
 const Dropzone = ({
-  color = 'indigo',
-  corner = 'sm',
+  color = 'p',
+  corner = '4',
   // Rest Gonna be all dropzone attribute because we extends it and typescript
   ...rest
 }: DropzoneProps) => {
   const { getRootProps, getInputProps, isDragActive } = useDropzone(rest)
   return (
-    <Flex items="center" gap="md" className="dropzone--wrapper">
+    <Flex items="center" gap="5" className="dropzone--wrapper">
       <Flex
         justify="center"
         items="center"
-        direction="column"
-        gap="sm"
+        direction="col"
+        gap="4"
         className={`dropzone u_corner--${corner} u_${color}`}
         {...getRootProps()}
       >
@@ -27,7 +27,7 @@ const Dropzone = ({
         ) : (
           <>
             <FileUpload width={32} stroke="var(--color-shared-11)" />
-            <Text size="sm" color="slate" contrast="low">
+            <Text size="4" color="b" low>
               Drag 'n' drop some files here, or click to select files
             </Text>
           </>

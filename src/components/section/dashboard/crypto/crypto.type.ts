@@ -1,5 +1,5 @@
 import { CryptoPrice } from '@api/crypto'
-import { Color } from '@type/utils'
+import { Color } from '@pillar-ui/core'
 
 interface Margin {
   left: number

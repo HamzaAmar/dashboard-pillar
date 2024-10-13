@@ -1,4 +1,4 @@
-import { Breadcrumb, Button, Flex, Grid, Heading, IconButton } from '@components/core'
+import { Breadcrumb, BreadcrumbItem, Button, Flex, Grid, Heading, IconButton } from '@pillar-ui/core'
 import { Card, Facebook, Gmail, Heart, Message, Send, Twitter, User } from '@components/icons'
 import { Preview } from '@components/section'
 import * as docs from './button.docs'
@@ -7,45 +7,43 @@ export const Component = () => {
   return (
     <section aria-labelledby="button--page-id" className="l_flow-lg">
       <Flex items="center" wrap justify="between">
-        <Heading as="h1" id="button--page-id" size="xs">
+        <Heading as="h1" id="button--page-id" size="3">
           Button Docs Page
         </Heading>
-        <Breadcrumb size="sm">
-          <Breadcrumb.Item link="../../..">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Components</Breadcrumb.Item>
-          <Breadcrumb.Item link="../">Base UI</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="4">
+          <BreadcrumbItem link="../../..">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Components</BreadcrumbItem>
+          <BreadcrumbItem link="../">Base UI</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Button
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
+      <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
         <Preview
           title="Solid Variant Button"
           description="Show Button Color default Primary other values (warning,orange, danger, red,success, green,indigo , purple,yellow , slate  )"
           code={docs.solidButton}
         >
-          <Flex wrap gap="md" items="center">
+          <Flex wrap gap="5" items="center">
             <Button variant="solid">Update Profile</Button>
-            <Button variant="solid" color="danger">
+            <Button variant="solid" color="d">
               Hey
             </Button>
-            <Button variant="solid" color="warning">
+            <Button variant="solid" color="w">
               Add Cart
             </Button>
-            <Button variant="solid" color="success">
+            <Button variant="solid" color="su">
               Review
             </Button>
-            <Button variant="solid" color="indigo">
+            <Button variant="solid" color="i">
               Like
             </Button>
-            <Button variant="solid" color="purple">
+            <Button variant="solid" color="se">
               Send
             </Button>
-            <Button variant="solid" color="yellow">
-              Yellow
-            </Button>
-            <Button variant="solid" color="slate">
+
+            <Button variant="solid" color="b">
               Slate
             </Button>
           </Flex>
@@ -56,27 +54,25 @@ export const Component = () => {
           description="Show Button Color default Primary other values (warning,orange, danger, red,success, green,indigo , purple,yellow , slate  )"
           code={docs.outlineButton}
         >
-          <Flex wrap gap="md" items="center">
+          <Flex wrap gap="5" items="center">
             <Button variant="outline">Update Profile</Button>
-            <Button variant="outline" color="danger">
+            <Button variant="outline" color="d">
               Hey
             </Button>
-            <Button variant="outline" color="warning">
+            <Button variant="outline" color="w">
               Add Cart
             </Button>
-            <Button variant="outline" color="success">
+            <Button variant="outline" color="su">
               Review
             </Button>
-            <Button variant="outline" color="indigo">
+            <Button variant="outline" color="i">
               Like
             </Button>
-            <Button variant="outline" color="purple">
+            <Button variant="outline" color="se">
               Send
             </Button>
-            <Button variant="outline" color="yellow">
-              Yellow
-            </Button>
-            <Button variant="outline" color="slate">
+
+            <Button variant="outline" color="b">
               Slate
             </Button>
           </Flex>
@@ -87,27 +83,25 @@ export const Component = () => {
           description="Show Button Color default Primary other values (warning,orange, danger, red,success, green,indigo , purple,yellow , slate  )"
           code={docs.softButton}
         >
-          <Flex wrap gap="md" items="center">
+          <Flex wrap gap="5" items="center">
             <Button variant="soft">Update Profile</Button>
-            <Button variant="soft" color="danger">
+            <Button variant="soft" color="d">
               Hey
             </Button>
-            <Button variant="soft" color="warning">
+            <Button variant="soft" color="w">
               Add Cart
             </Button>
-            <Button variant="soft" color="success">
+            <Button variant="soft" color="su">
               Review
             </Button>
-            <Button variant="soft" color="indigo">
+            <Button variant="soft" color="i">
               Like
             </Button>
-            <Button variant="soft" color="purple">
+            <Button variant="soft" color="se">
               Send
             </Button>
-            <Button variant="soft" color="yellow">
-              Yellow
-            </Button>
-            <Button variant="soft" color="slate">
+
+            <Button variant="soft" color="b">
               Slate
             </Button>
           </Flex>
@@ -118,59 +112,55 @@ export const Component = () => {
           description="Show Button Color default Primary other values (warning,orange, danger, red,success, green,indigo , purple,yellow , slate  )"
           code={docs.textButton}
         >
-          <Flex wrap gap="md" items="center">
+          <Flex wrap gap="5" items="center">
             <Button variant="text">Update Profile</Button>
-            <Button variant="text" color="danger">
+            <Button variant="text" color="d">
               Hey
             </Button>
-            <Button variant="text" color="warning">
+            <Button variant="text" color="w">
               Add Cart
             </Button>
-            <Button variant="text" color="success">
+            <Button variant="text" color="su">
               Review
             </Button>
-            <Button variant="text" color="indigo">
+            <Button variant="text" color="i">
               Like
             </Button>
-            <Button variant="text" color="purple">
+            <Button variant="text" color="se">
               Send
             </Button>
-            <Button variant="text" color="yellow">
-              Yellow
-            </Button>
-            <Button variant="text" color="slate">
+
+            <Button variant="text" color="b">
               Slate
             </Button>
           </Flex>
         </Preview>
 
-        <Grid gap="sm" rows="1fr 1fr">
+        <Grid gap="4" grid="x 1fr 1fr">
           <Preview
             title="Link Button Color"
             description="Show Button Color default Primary other values (warning,orange, danger, red,success, green,indigo , purple,yellow , slate  )"
             code={docs.linkButton}
           >
-            <Flex wrap gap="md" items="center">
+            <Flex wrap gap="5" items="center">
               <Button variant="link">Update Profile</Button>
-              <Button variant="link" color="danger">
+              <Button variant="link" color="d">
                 Hey
               </Button>
-              <Button variant="link" color="warning">
+              <Button variant="link" color="w">
                 Add Cart
               </Button>
-              <Button variant="link" color="success">
+              <Button variant="link" color="su">
                 Review
               </Button>
-              <Button variant="link" color="indigo">
+              <Button variant="link" color="i">
                 Like
               </Button>
-              <Button variant="link" color="purple">
+              <Button variant="link" color="se">
                 Send
               </Button>
-              <Button variant="link" color="yellow">
-                Yellow
-              </Button>
-              <Button variant="link" color="slate">
+
+              <Button variant="link" color="b">
                 Slate
               </Button>
             </Flex>
@@ -180,40 +170,38 @@ export const Component = () => {
             description="Show Buttons With Icon In different Direction default to Start others value is end"
             code={docs.buttonWithIcon}
           >
-            <Flex wrap gap="md">
+            <Flex wrap gap="5">
               <Button variant="solid" icon={<User width={20} />}>
                 Update Profile
               </Button>
-              <Button iconPosition="end" variant="solid" icon={<Send width={20} />} color="danger">
+              <Button iconPosition="end" variant="solid" icon={<Send width={20} />} color="d">
                 Send
               </Button>
-              <Button variant="solid" icon={<Card width={20} />} color="warning">
+              <Button variant="solid" icon={<Card width={20} />} color="w">
                 Add Cart
               </Button>
-              <Button iconPosition="end" variant="solid" icon={<Message width={20} />} color="success">
+              <Button iconPosition="end" variant="solid" icon={<Message width={20} />} color="su">
                 Review
               </Button>
-              <Button variant="solid" icon={<Heart width={20} />} color="indigo">
+              <Button variant="solid" icon={<Heart width={20} />} color="i">
                 Like
               </Button>
-              <Button iconPosition="end" variant="solid" icon={<Send width={20} />} color="purple">
+              <Button iconPosition="end" variant="solid" icon={<Send width={20} />} color="se">
                 Send
               </Button>
-              <Button variant="solid" icon={<User width={20} />} color="yellow">
-                Yellow
-              </Button>
-              <Button iconPosition="end" variant="solid" icon={<User width={20} />} color="slate">
+
+              <Button iconPosition="end" variant="solid" icon={<User width={20} />} color="b">
                 Slate
               </Button>
 
-              <Button variant="solid" icon={<Gmail width={20} />} color="danger">
+              <Button variant="solid" icon={<Gmail width={20} />} color="d">
                 Gmail
               </Button>
 
-              <Button variant="solid" icon={<Facebook width={20} />} color="indigo">
+              <Button variant="solid" icon={<Facebook width={20} />} color="i">
                 Facebook
               </Button>
-              <Button variant="solid" icon={<Twitter width={20} />} color="indigo">
+              <Button variant="solid" icon={<Twitter width={20} />} color="i">
                 Twitter
               </Button>
             </Flex>
@@ -225,29 +213,27 @@ export const Component = () => {
           description="Boolean value For fuild default is false"
           code={docs.fluidButton}
         >
-          <Flex direction="column" gap="md">
+          <Flex direction="col" gap="5">
             <Button fluid variant="solid">
               Update Profile
             </Button>
-            <Button fluid variant="solid" color="danger">
+            <Button fluid variant="solid" color="d">
               Hey
             </Button>
-            <Button fluid variant="solid" color="warning">
+            <Button fluid variant="solid" color="w">
               Add Cart
             </Button>
-            <Button fluid variant="solid" color="success">
+            <Button fluid variant="solid" color="su">
               Review
             </Button>
-            <Button fluid variant="solid" color="indigo">
+            <Button fluid variant="solid" color="i">
               Like
             </Button>
-            <Button fluid variant="solid" color="purple">
+            <Button fluid variant="solid" color="se">
               Send
             </Button>
-            <Button fluid variant="solid" color="yellow">
-              Yellow
-            </Button>
-            <Button fluid variant="solid" color="slate">
+
+            <Button fluid variant="solid" color="b">
               Slate
             </Button>
           </Flex>
@@ -258,29 +244,24 @@ export const Component = () => {
           description="Show Buttons Corners default to radius and other possible values (sharp, full)"
           code={docs.solidButton}
         >
-          <Flex wrap gap="md">
+          <Flex wrap gap="5">
             <Button variant="solid">Update Profile</Button>
-            <Button variant="solid" corner="sharp">
+            <Button variant="solid" corner="0">
               Update Profile
             </Button>
-            <Button variant="solid" corner="2xs">
+            <Button variant="solid" corner="1">
               Update Profile
             </Button>
-            <Button variant="solid" corner="xs">
+            <Button variant="solid" corner="2">
               Update Profile
             </Button>
-            <Button variant="solid" corner="sm">
+            <Button variant="solid" corner="3">
               Update Profile
             </Button>
-            <Button variant="solid" corner="lg">
+            <Button variant="solid" corner="5">
               Update Profile
             </Button>
-            <Button variant="solid" corner="xl">
-              Update Profile
-            </Button>
-            <Button variant="solid" corner="2xl">
-              Update Profile
-            </Button>
+
             <Button variant="solid" corner="full">
               Update Profile
             </Button>
@@ -292,18 +273,18 @@ export const Component = () => {
           description="Show Buttons Sizes default to md and other possible values (xs , sm, lg, xl)"
           code={docs.sizeButton}
         >
-          <Flex wrap gap="md" items="center">
-            <Button variant="solid" size="xs">
+          <Flex wrap gap="5" items="center">
+            <Button variant="solid" size="3">
               Update Profile
             </Button>
-            <Button variant="solid" size="sm">
+            <Button variant="solid" size="4">
               Update Profile
             </Button>
             <Button variant="solid">Update Profile</Button>
-            <Button variant="solid" size="lg">
+            <Button variant="solid" size="6">
               Update Profile
             </Button>
-            <Button variant="solid" size="xl">
+            <Button variant="solid" size="7">
               Update Profile
             </Button>
           </Flex>
@@ -314,20 +295,20 @@ export const Component = () => {
           description="Show Buttons Sizes default to md and other possible values (xs , sm, lg, xl)"
           code={docs.sizeButtonIcon}
         >
-          <Flex wrap gap="md" items="center">
-            <Button variant="solid" icon={<User />} size="xs">
+          <Flex wrap gap="5" items="center">
+            <Button variant="solid" icon={<User />} size="3">
               Update Profile
             </Button>
-            <Button variant="solid" icon={<User />} size="sm">
+            <Button variant="solid" icon={<User />} size="4">
               Update Profile
             </Button>
             <Button variant="solid" icon={<User />}>
               Update Profile
             </Button>
-            <Button variant="solid" icon={<User />} size="lg">
+            <Button variant="solid" icon={<User />} size="6">
               Update Profile
             </Button>
-            <Button variant="solid" icon={<User />} size="xl">
+            <Button variant="solid" icon={<User />} size="7">
               Update Profile
             </Button>
           </Flex>
@@ -338,11 +319,11 @@ export const Component = () => {
           description="Show Buttons Sizes default to md and other possible values (xs , sm, lg, xl)"
           code={docs.buttonStatus}
         >
-          <Flex wrap gap="md" items="center">
-            <Button variant="solid" disabled icon={<User />} size="xs">
+          <Flex wrap gap="5" items="center">
+            <Button variant="solid" disabled icon={<User />} size="3">
               Update Profile
             </Button>
-            <Button variant="solid" state="loading" icon={<User />} size="sm">
+            <Button variant="solid" state="loading" icon={<User />} size="4">
               Update Profile
             </Button>
             <Button variant="solid" state="loading" iconPosition="end" icon={<User />}>
@@ -356,12 +337,12 @@ export const Component = () => {
           description="Show Buttons Sizes default to md and other possible values (xs , sm, lg, xl)"
           code={docs.iconButtonSize}
         >
-          <Flex wrap gap="md" items="center">
-            <IconButton icon={<User />} title="hello" size="xs" />
-            <IconButton icon={<User />} title="hello" size="sm" />
+          <Flex wrap gap="5" items="center">
+            <IconButton icon={<User />} title="hello" size="3" />
+            <IconButton icon={<User />} title="hello" size="4" />
             <IconButton icon={<User />} title="hello" />
-            <IconButton icon={<User />} title="hello" size="lg" />
-            <IconButton icon={<User />} title="hello" size="xl" />
+            <IconButton icon={<User />} title="hello" size="6" />
+            <IconButton icon={<User />} title="hello" size="7" />
           </Flex>
         </Preview>
 
@@ -370,14 +351,13 @@ export const Component = () => {
           description="Show Button Color default Primary other values (warning,orange, danger, red,success, green,indigo , purple,yellow , slate  )"
           code={docs.iconButtonSolid}
         >
-          <Flex gap="md" items="center">
-            <IconButton title="Hey" icon={<User />} variant="solid" color="danger" />
-            <IconButton variant="solid" title="Add Cart" icon={<User />} color="warning" />
-            <IconButton title="Review" icon={<User />} variant="solid" color="success" />
-            <IconButton title="Like" icon={<User />} variant="solid" color="indigo" />
-            <IconButton title="Send" icon={<User />} variant="solid" color="purple" />
-            <IconButton title="Yellow" icon={<User />} variant="solid" color="yellow" />
-            <IconButton title="Slate" icon={<User />} variant="solid" color="slate" />
+          <Flex gap="5" items="center">
+            <IconButton title="Hey" icon={<User />} variant="solid" color="d" />
+            <IconButton variant="solid" title="Add Cart" icon={<User />} color="w" />
+            <IconButton title="Review" icon={<User />} variant="solid" color="su" />
+            <IconButton title="Like" icon={<User />} variant="solid" color="i" />
+            <IconButton title="Send" icon={<User />} variant="solid" color="se" />
+            <IconButton title="Slate" icon={<User />} variant="solid" color="b" />
           </Flex>
         </Preview>
 
@@ -386,14 +366,13 @@ export const Component = () => {
           description="Show Button Color default Primary other values (warning,orange, danger, red,success, green,indigo , purple,yellow , slate  )"
           code={docs.iconButtonOutline}
         >
-          <Flex gap="md" items="center">
-            <IconButton title="Hey" icon={<User />} variant="outline" color="danger" />
-            <IconButton variant="outline" title="Add Cart" icon={<User />} color="warning" />
-            <IconButton title="Review" icon={<User />} variant="outline" color="success" />
-            <IconButton title="Like" icon={<User />} variant="outline" color="indigo" />
-            <IconButton title="Send" icon={<User />} variant="outline" color="purple" />
-            <IconButton title="Yellow" icon={<User />} variant="outline" color="yellow" />
-            <IconButton title="Slate" icon={<User />} variant="outline" color="slate" />
+          <Flex gap="5" items="center">
+            <IconButton title="Hey" icon={<User />} variant="outline" color="d" />
+            <IconButton variant="outline" title="Add Cart" icon={<User />} color="w" />
+            <IconButton title="Review" icon={<User />} variant="outline" color="su" />
+            <IconButton title="Like" icon={<User />} variant="outline" color="i" />
+            <IconButton title="Send" icon={<User />} variant="outline" color="se" />
+            <IconButton title="Slate" icon={<User />} variant="outline" color="b" />
           </Flex>
         </Preview>
 
@@ -402,14 +381,13 @@ export const Component = () => {
           description="Show Button Color default Primary other values (warning,orange, danger, red,success, green,indigo , purple,yellow , slate  )"
           code={docs.iconButtonSoft}
         >
-          <Flex gap="md" items="center">
-            <IconButton title="Hey" icon={<User />} variant="soft" color="danger" />
-            <IconButton variant="soft" title="Add Cart" icon={<User />} color="warning" />
-            <IconButton title="Review" icon={<User />} variant="soft" color="success" />
-            <IconButton title="Like" icon={<User />} variant="soft" color="indigo" />
-            <IconButton title="Send" icon={<User />} variant="soft" color="purple" />
-            <IconButton title="Yellow" icon={<User />} variant="soft" color="yellow" />
-            <IconButton title="Slate" icon={<User />} variant="soft" color="slate" />
+          <Flex gap="5" items="center">
+            <IconButton title="Hey" icon={<User />} variant="soft" color="d" />
+            <IconButton variant="soft" title="Add Cart" icon={<User />} color="w" />
+            <IconButton title="Review" icon={<User />} variant="soft" color="su" />
+            <IconButton title="Like" icon={<User />} variant="soft" color="i" />
+            <IconButton title="Send" icon={<User />} variant="soft" color="se" />
+            <IconButton title="Slate" icon={<User />} variant="soft" color="b" />
           </Flex>
         </Preview>
         <Preview
@@ -417,14 +395,13 @@ export const Component = () => {
           description="Show Button Color default Primary other values (warning,orange, danger, red,success, green,indigo , purple,yellow , slate  )"
           code={docs.iconButtonDefault}
         >
-          <Flex gap="md" items="center">
-            <IconButton title="Hey" icon={<User />} color="danger" />
-            <IconButton title="Add Cart" icon={<User />} color="warning" />
-            <IconButton title="Review" icon={<User />} color="success" />
-            <IconButton title="Like" icon={<User />} color="indigo" />
-            <IconButton title="Send" icon={<User />} color="purple" />
-            <IconButton title="Yellow" icon={<User />} color="yellow" />
-            <IconButton title="Slate" icon={<User />} color="slate" />
+          <Flex gap="5" items="center">
+            <IconButton title="Hey" icon={<User />} color="d" />
+            <IconButton title="Add Cart" icon={<User />} color="w" />
+            <IconButton title="Review" icon={<User />} color="su" />
+            <IconButton title="Like" icon={<User />} color="i" />
+            <IconButton title="Send" icon={<User />} color="se" />
+            <IconButton title="Slate" icon={<User />} color="b" />
           </Flex>
         </Preview>
 
@@ -433,9 +410,9 @@ export const Component = () => {
           description="Show Buttons Sizes default to md and other possible values (xs , sm, lg, xl)"
           code={docs.iconButtonCorner}
         >
-          <Flex wrap gap="md" items="center">
-            <IconButton icon={<User />} title="hello" corner="sharp" />
-            <IconButton icon={<User />} title="hello" corner="sm" />
+          <Flex wrap gap="5" items="center">
+            <IconButton icon={<User />} title="hello" corner="0" />
+            <IconButton icon={<User />} title="hello" corner="3" />
             <IconButton icon={<User />} title="hello" corner="full" />
           </Flex>
         </Preview>

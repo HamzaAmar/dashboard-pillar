@@ -1,4 +1,4 @@
-import { Avatar, Breadcrumb, Flex, Grid, Heading } from '@components/core'
+import { Avatar, AvatarGroup, Breadcrumb, BreadcrumbItem, Flex, Grid, Heading } from '@pillar-ui/core'
 import { User } from '@components/icons'
 import { Preview } from '@components/section'
 import * as docs from './avatar.docs'
@@ -11,46 +11,46 @@ export const Component = () => {
   return (
     <section aria-labelledby="avatar--page-id" className="l_flow-lg">
       <Flex items="center" wrap justify="between">
-        <Heading as="h1" id="avatar--page-id" size="xs">
+        <Heading as="h1" id="avatar--page-id" size="3">
           Avatar Docs Page
         </Heading>
-        <Breadcrumb size="sm">
-          <Breadcrumb.Item link="../../..">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Components</Breadcrumb.Item>
-          <Breadcrumb.Item link="../">Base UI</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="4">
+          <BreadcrumbItem link="../../..">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Components</BreadcrumbItem>
+          <BreadcrumbItem link="../">Base UI</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Avatar
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
+      <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
         <Preview title="Avatar Size" description="Show alert only with message Props" code={docs.avatarSizeCode}>
           <Flex wrap items="center">
-            <Avatar variant="image" size="xs" image={getImage(1)} title="Hello" />
-            <Avatar variant="image" size="sm" image={getImage(2)} title="Hello" />
-            <Avatar variant="image" image={getImage(3)} title="Hello" />
-            <Avatar variant="image" size="lg" image={getImage(4)} title="Hello" />
-            <Avatar variant="image" size="xl" image={getImage(5)} title="Hello" />
-            <Avatar variant="image" size="2xl" image={getImage(6)} title="Hello" />
+            <Avatar size="3" image={getImage(1)} title="Hello" />
+            <Avatar size="4" image={getImage(2)} title="Hello" />
+            <Avatar image={getImage(3)} title="Hello" />
+            <Avatar size="6" image={getImage(4)} title="Hello" />
+            <Avatar size="7" image={getImage(5)} title="Hello" />
+            <Avatar size="8" image={getImage(6)} title="Hello" />
           </Flex>
         </Preview>
 
         <Preview title="Bad Image" description="give bad image extension or url" code={docs.avatarBadImage}>
           <Flex wrap items="center">
-            <Avatar variant="image" image="/hello/hle" size="md" title="Hamza Miloud Amar" />
-            <Avatar variant="image" image="/images/crypto/bitcoin.pngs" size="md" title="Hamza Miloud Amar" />
-            <Avatar variant="image" image="/images/crypto/bitcoins.png" size="md" title="Hamza Miloud Amar" />
-            <Avatar variant="image" size="md" title="Hamza Miloud Amar" />
+            <Avatar image="/hello/hle" size="5" title="Hamza Miloud Amar" />
+            <Avatar image="/images/crypto/bitcoin.pngs" size="5" title="Hamza Miloud Amar" />
+            <Avatar image="/images/crypto/bitcoins.png" size="5" title="Hamza Miloud Amar" />
+            <Avatar size="5" title="Hamza Miloud Amar" />
           </Flex>
         </Preview>
         <Preview title="Avatar Fallback" description="Show Avatar Fallback in all sizes" code={docs.avatarFallback}>
           <Flex wrap items="center">
-            <Avatar variant="image" size="xs" title="Hamza Miloud Amar" />
-            <Avatar variant="image" size="sm" title="Nabil Labil" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" size="lg" title="Lamia T9alya" />
-            <Avatar variant="image" size="xl" title="souad Khadiri" />
-            <Avatar variant="image" size="2xl" title="Wissal Zirari" />
+            <Avatar size="3" title="Hamza Miloud Amar" />
+            <Avatar size="4" title="Nabil Labil" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar size="6" title="Lamia T9alya" />
+            <Avatar size="7" title="souad Khadiri" />
+            <Avatar size="8" title="Wissal Zirari" />
           </Flex>
         </Preview>
         <Preview
@@ -59,12 +59,12 @@ export const Component = () => {
           code={docs.avatarIcons}
         >
           <Flex wrap items="center">
-            <Avatar variant="icon" icon={<User />} size="xs" title="Hamza Miloud Amar" />
-            <Avatar variant="icon" icon={<User />} size="sm" title="Nabil Labil" />
-            <Avatar variant="icon" icon={<User />} title="Kmal Sifoun" />
-            <Avatar variant="icon" icon={<User />} size="lg" title="Lamia T9alya" />
-            <Avatar variant="icon" icon={<User />} size="xl" title="souad Khadiri" />
-            <Avatar variant="icon" icon={<User />} size="2xl" title="Wissal Zirari" />
+            <Avatar fallback={<User />} size="3" title="Hamza Miloud Amar" />
+            <Avatar fallback={<User />} size="4" title="Nabil Labil" />
+            <Avatar fallback={<User />} title="Kmal Sifoun" />
+            <Avatar fallback={<User />} size="6" title="Lamia T9alya" />
+            <Avatar fallback={<User />} size="7" title="souad Khadiri" />
+            <Avatar fallback={<User />} size="8" title="Wissal Zirari" />
           </Flex>
         </Preview>
 
@@ -74,13 +74,12 @@ export const Component = () => {
           code={docs.avatarFallbackColor}
         >
           <Flex wrap items="center">
-            <Avatar variant="image" color="success" title="Hamza Miloud Amar" />
-            <Avatar variant="image" color="indigo" title="Nabil Labil" />
-            <Avatar variant="image" color="danger" title="Kmal Sifoun" />
-            <Avatar variant="image" color="warning" title="Lamia T9alya" />
-            <Avatar variant="image" color="yellow" title="souad Khadiri" />
-            <Avatar variant="image" color="purple" title="Wissal Zirari" />
-            <Avatar variant="image" color="primary" title="Samit Moumn" />
+            <Avatar color="su" title="Hamza Miloud Amar" />
+            <Avatar color="i" title="Nabil Labil" />
+            <Avatar color="d" title="Kmal Sifoun" />
+            <Avatar color="w" title="Lamia T9alya" />
+            <Avatar color="se" title="Wissal Zirari" />
+            <Avatar color="p" title="Samit Moumn" />
           </Flex>
         </Preview>
         <Preview
@@ -89,15 +88,12 @@ export const Component = () => {
           code={docs.avatarCorner}
         >
           <Flex wrap items="center">
-            <Avatar corner="sharp" color="success" variant="image" title="Nabil Labil" />
-            <Avatar corner="2xs" color="success" variant="image" title="Nabil Labil" />
-            <Avatar corner="xs" color="warning" variant="image" title="Kmal Sifoun" />
-            <Avatar corner="sm" color="indigo" variant="image" title="Kmal Sifoun" />
-            <Avatar corner="md" color="yellow" variant="image" title="Kmal Sifoun" />
-            <Avatar corner="lg" color="mint" variant="image" title="Kmal Sifoun" />
-            <Avatar corner="xl" color="purple" variant="image" title="Kmal Sifoun" />
-            <Avatar corner="2xl" color="slate" variant="image" title="Kmal Sifoun" />
-            <Avatar corner="full" color="slate" variant="image" title="Kmal Sifoun" />
+            <Avatar corner="0" color="se" title="Nabil Labil" />
+            <Avatar corner="1" color="su" title="Nabil Labil" />
+            <Avatar corner="2" color="w" title="Kmal Sifoun" />
+            <Avatar corner="3" color="i" title="Kmal Sifoun" />
+            <Avatar corner="4" color="p" title="Kmal Sifoun" />
+            <Avatar corner="full" color="b" title="Kmal Sifoun" />
           </Flex>
         </Preview>
         <Preview
@@ -105,14 +101,14 @@ export const Component = () => {
           description="Show Avatar Without Image and show fallback text"
           code={docs.avatarGroupStack}
         >
-          <Avatar.Group color="warning" variant="stack">
-            <Avatar variant="image" title="Hamza Miloud Amar" />
-            <Avatar variant="image" title="Nabil Labil" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-          </Avatar.Group>
+          <AvatarGroup color="w" variant="stack">
+            <Avatar title="Hamza Miloud Amar" />
+            <Avatar title="Nabil Labil" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+          </AvatarGroup>
         </Preview>
 
         <Preview
@@ -120,42 +116,42 @@ export const Component = () => {
           description="Show Avatar Without Image and show fallback text"
           code={docs.avatarGroupStackLimit}
         >
-          <Avatar.Group color="purple" variant="stack" limit={7}>
-            <Avatar variant="image" title="Hamza Miloud Amar" />
-            <Avatar variant="image" title="Nabil Labil" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-          </Avatar.Group>
+          <AvatarGroup color="se" variant="stack" limit={7}>
+            <Avatar title="Hamza Miloud Amar" />
+            <Avatar title="Nabil Labil" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+          </AvatarGroup>
         </Preview>
         <Preview title="Group Avatar Grid" description="Show alert with message and title" code={docs.avatarGroupGrid}>
-          <Avatar.Group color="success" size="sm" variant="grid">
-            <Avatar variant="image" title="Hamza Miloud Amar" />
-            <Avatar variant="image" title="Nabil Labil" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-          </Avatar.Group>
+          <AvatarGroup color="su" size="4" variant="grid">
+            <Avatar title="Hamza Miloud Amar" />
+            <Avatar title="Nabil Labil" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+          </AvatarGroup>
         </Preview>
 
         <Preview
@@ -163,29 +159,29 @@ export const Component = () => {
           description="Show alert with message and title"
           code={docs.avatarGroupGridLimit}
         >
-          <Avatar.Group limit={10} size="lg" color="success" variant="grid">
-            <Avatar variant="image" title="Hamza Miloud Amar" />
-            <Avatar variant="image" title="Nabil Labil" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-            <Avatar variant="image" title="Kmal Sifoun" />
-          </Avatar.Group>
+          <AvatarGroup limit={10} size="6" color="su" variant="grid">
+            <Avatar title="Hamza Miloud Amar" />
+            <Avatar title="Nabil Labil" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+            <Avatar title="Kmal Sifoun" />
+          </AvatarGroup>
         </Preview>
       </Grid>
     </section>

@@ -40,7 +40,7 @@ ${TabComp}
 
 function TabsStories(){
     return(
-      <Grid columns="1fr 1fr" className="sm_grid-one" gap="md">
+      <Grid grid="1fr 1fr" className="sm_grid-one" gap="5">
         <TabComp variant="solid" />
         <TabComp variant="outline" />
         <TabComp variant="soft" />
@@ -57,15 +57,14 @@ ${TabComp}
 
 function TabsStories(){
     return(
-      <Grid columns="1fr 1fr" className="sm_grid-one" gap="md">
-        <TabComp color="danger" variant="solid" />
-        <TabComp color="indigo" variant="outline" />
+      <Grid grid="1fr 1fr" className="sm_grid-one" gap="5">
+        <TabComp color="d" variant="solid" />
+        <TabComp color="i" variant="outline" />
         <TabComp variant="soft" />
-        <TabComp color="purple" />
-        <TabComp color="secondary" variant="solid" />
-        <TabComp color="slate" variant="outline" />
-        <TabComp color="yellow" variant="soft" />
-        <TabComp color="warning" />
+        <TabComp color="se" />
+        <TabComp color="se" variant="solid" />
+        <TabComp color="b" variant="outline" />
+        <TabComp color="w" />
       </Grid>
     )
 }
@@ -78,10 +77,10 @@ ${TabComp}
 
 function TabsStories(){
     return(
-      <Grid columns="1fr 1fr" className="sm_grid-one" gap="md">
-        <TabComp size="sm" />
-        <TabComp size="md" />
-        <TabComp size="lg" />
+      <Grid grid="1fr 1fr" className="sm_grid-one" gap="5">
+        <TabComp size="4" />
+        <TabComp size="5" />
+        <TabComp size="6" />
         <TabComp />
       </Grid>
     )
@@ -93,20 +92,20 @@ import { Tabs } from '@components/composition'
 
 function TabsStories(){
     return(
-      <Tabs size="lg" defaultValue="one">
+      <Tabs size="6" defaultValue="one">
         <Tabs.List className="">
           <Tabs.Trigger value="one">
             <Home width="20" />
           </Tabs.Trigger>
           <Tabs.Trigger value="two">
-            <Flex items="center" gap="2xs">
+            <Flex items="center" gap="1">
               <Home width="20" />
-              <Text size="xs">Home</Text>
+              <Text size="3">Home</Text>
             </Flex>
           </Tabs.Trigger>
           <Tabs.Trigger value="three">
-            <Flex items="center" gap="2xs">
-              <Text size="xs">User</Text>
+            <Flex items="center" gap="1">
+              <Text size="3">User</Text>
               <User width="20" />
             </Flex>
           </Tabs.Trigger>

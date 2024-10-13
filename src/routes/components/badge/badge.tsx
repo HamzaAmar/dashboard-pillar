@@ -1,4 +1,4 @@
-import { Flex, Badge, Chips, Heading, Grid, Breadcrumb } from '@components/core'
+import { Flex, Badge, Chips, Heading, Grid, Breadcrumb, BreadcrumbItem } from '@pillar-ui/core'
 import { User } from '@components/icons'
 import { Preview } from '@components/section'
 import * as docs from './badge.docs'
@@ -7,65 +7,64 @@ export const Component = () => {
   return (
     <section aria-labelledby="avatar--page-id" className="l_flow-lg">
       <Flex items="center" wrap justify="between">
-        <Heading as="h1" id="avatar--page-id" size="xs">
+        <Heading as="h1" id="avatar--page-id" size="3">
           Badge Docs Page
         </Heading>
-        <Breadcrumb size="sm">
-          <Breadcrumb.Item link="../../..">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Components</Breadcrumb.Item>
-          <Breadcrumb.Item link="../">Base UI</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="4">
+          <BreadcrumbItem link="../../..">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Components</BreadcrumbItem>
+          <BreadcrumbItem link="../">Base UI</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Badge
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
+      <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
         <Preview title="Badge Variant" description="Show alert only with message Props" code={docs.badgeVariant}>
-          <Flex wrap gap="md" items="center">
-            <Badge variant="dot" />
-            <Badge variant="icon" icon={<User />} />
-            <Badge variant="number" number={10} max={20} />
+          <Flex wrap gap="5" items="center">
+            <Badge type="dot" />
+            <Badge type="icon" icon={<User />} />
+            <Badge type="numeric" number={10} max={20} />
           </Flex>
         </Preview>
 
         <Preview title="Badge Color" description="Show alert only with message Props" code={docs.badgeColors}>
-          <Flex wrap gap="md" items="center">
-            <Badge variant="number" number={10} max={20} color="danger" />
-            <Badge variant="number" number={10} max={20} color="success" />
-            <Badge variant="number" number={10} max={20} color="purple" />
-            <Badge variant="number" number={10} max={20} color="success" />
-            <Badge variant="number" number={10} max={20} color="yellow" />
-            <Badge variant="number" number={10} max={20} color="warning" />
+          <Flex wrap gap="5" items="center">
+            <Badge type="numeric" number={10} max={20} color="d" />
+            <Badge type="numeric" number={10} max={20} color="su" />
+            <Badge type="numeric" number={10} max={20} color="se" />
+            <Badge type="numeric" number={10} max={20} color="su" />
+            <Badge type="numeric" number={10} max={20} color="w" />
           </Flex>
         </Preview>
 
         <Preview title="Badge Size" description="Show alert only with message Props" code={docs.badgeSize}>
-          <Flex wrap gap="md" items="center">
-            <Badge variant="number" number={10} max={20} size="xs" />
-            <Badge variant="number" number={10} max={20} size="sm" />
-            <Badge variant="number" number={10} max={20} size="md" />
-            <Badge variant="number" number={10} max={20} size="lg" />
-            <Badge variant="number" number={10} max={20} size="xl" />
+          <Flex wrap gap="5" items="center">
+            <Badge type="numeric" number={10} max={20} size="3" />
+            <Badge type="numeric" number={10} max={20} size="4" />
+            <Badge type="numeric" number={10} max={20} size="5" />
+            <Badge type="numeric" number={10} max={20} size="6" />
+            <Badge type="numeric" number={10} max={20} size="7" />
           </Flex>
         </Preview>
 
         <Preview title="Dot Badge Size " description="Show alert only with message Props" code={docs.dotBadgeSize}>
-          <Flex wrap gap="md" items="center">
-            <Badge variant="dot" color="warning" size="xs" />
-            <Badge variant="dot" color="warning" size="sm" />
-            <Badge variant="dot" color="warning" size="md" />
-            <Badge variant="dot" color="warning" size="lg" />
-            <Badge variant="dot" color="warning" size="xl" />
+          <Flex wrap gap="5" items="center">
+            <Badge type="dot" color="w" size="3" />
+            <Badge type="dot" color="w" size="4" />
+            <Badge type="dot" color="w" size="5" />
+            <Badge type="dot" color="w" size="6" />
+            <Badge type="dot" color="w" size="7" />
           </Flex>
         </Preview>
 
         <Preview title="Icon Badge Size " description="Show alert only with message Props" code={docs.iconBadgeSize}>
-          <Flex wrap gap="md" items="center">
-            <Badge variant="icon" color="purple" icon={<User />} size="xs" />
-            <Badge variant="icon" color="purple" icon={<User />} size="sm" />
-            <Badge variant="icon" color="purple" icon={<User />} size="md" />
-            <Badge variant="icon" color="purple" icon={<User />} size="lg" />
-            <Badge variant="icon" color="purple" icon={<User />} size="xl" />
+          <Flex wrap gap="5" items="center">
+            <Badge type="icon" color="se" icon={<User />} size="3" />
+            <Badge type="icon" color="se" icon={<User />} size="4" />
+            <Badge type="icon" color="se" icon={<User />} size="5" />
+            <Badge type="icon" color="se" icon={<User />} size="6" />
+            <Badge type="icon" color="se" icon={<User />} size="7" />
           </Flex>
         </Preview>
 
@@ -74,92 +73,74 @@ export const Component = () => {
           description="Show alert only with message Props"
           code={docs.limitNumberBadge}
         >
-          <Flex wrap gap="md" items="center">
-            <Badge variant="number" color="danger" number={10} max={5} />
-            <Badge variant="number" color="danger" number={10} max={9} />
-            <Badge variant="number" color="danger" number={20} max={15} />
-            <Badge variant="number" color="danger" number={1000} max={10} />
-            <Badge variant="number" color="danger" number={99999} max={100} />
+          <Flex wrap gap="5" items="center">
+            <Badge type="numeric" color="d" number={10} max={5} />
+            <Badge type="numeric" color="d" number={10} max={9} />
+            <Badge type="numeric" color="d" number={20} max={15} />
+            <Badge type="numeric" color="d" number={1000} max={10} />
+            <Badge type="numeric" color="d" number={99999} max={100} />
           </Flex>
         </Preview>
       </Grid>
 
-      <Heading color="slate" contrast="low" size="sm">
+      <Heading color="b" low size="4">
         Chip
       </Heading>
 
-      <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
+      <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
         <Preview title="Solid Chips" description="Show alert only with message Props" code={docs.solidChipColor}>
-          <Flex wrap gap="md" items="center">
-            <Chips color="success" variant="solid">
+          <Flex wrap gap="5" items="center">
+            <Chips color="su" variant="solid">
               Hello
             </Chips>
-            <Chips color="danger" variant="solid">
+            <Chips color="d" variant="solid">
               Hello
             </Chips>
-            <Chips color="warning" variant="solid">
+            <Chips color="w" variant="solid">
               Hello
             </Chips>
-            <Chips color="purple" variant="solid">
+            <Chips color="se" variant="solid">
               Hello
             </Chips>
-            <Chips color="indigo" variant="solid">
-              Hello
-            </Chips>
-            <Chips color="mint" variant="solid">
-              Hello
-            </Chips>
-            <Chips color="yellow" variant="solid">
+            <Chips color="i" variant="solid">
               Hello
             </Chips>
           </Flex>
         </Preview>
         <Preview title="Soft Chips" description="Show alert only with message Props" code={docs.softChipColor}>
-          <Flex wrap gap="md" items="center">
-            <Chips color="success" variant="soft">
+          <Flex wrap gap="5" items="center">
+            <Chips color="su" variant="soft">
               Hello
             </Chips>
-            <Chips color="danger" variant="soft">
+            <Chips color="d" variant="soft">
               Hello
             </Chips>
-            <Chips color="warning" variant="soft">
+            <Chips color="w" variant="soft">
               Hello
             </Chips>
-            <Chips color="purple" variant="soft">
+            <Chips color="se" variant="soft">
               Hello
             </Chips>
-            <Chips color="indigo" variant="soft">
-              Hello
-            </Chips>
-            <Chips color="mint" variant="soft">
-              Hello
-            </Chips>
-            <Chips color="yellow" variant="soft">
+            <Chips color="i" variant="soft">
               Hello
             </Chips>
           </Flex>
         </Preview>
         <Preview title="Outline Chips" description="Show alert only with message Props" code={docs.outlineChipColor}>
-          <Flex wrap gap="md" items="center">
-            <Chips color="success" variant="outline">
+          <Flex wrap gap="5" items="center">
+            <Chips color="su" variant="outline">
               Hello
             </Chips>
-            <Chips color="danger" variant="outline">
+            <Chips color="d" variant="outline">
               Hello
             </Chips>
-            <Chips color="warning" variant="outline">
+            <Chips color="w" variant="outline">
               Hello
             </Chips>
-            <Chips color="purple" variant="outline">
+            <Chips color="se" variant="outline">
               Hello
             </Chips>
-            <Chips color="indigo" variant="outline">
-              Hello
-            </Chips>
-            <Chips color="mint" variant="outline">
-              Hello
-            </Chips>
-            <Chips color="yellow" variant="outline">
+            <Chips color="i" variant="outline">
               Hello
             </Chips>
           </Flex>

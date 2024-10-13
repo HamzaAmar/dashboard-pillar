@@ -1,8 +1,3 @@
-export { Accordion } from './accordion'
-export { Tabs, NormalTab } from './tab'
-export { Pagination } from './pagination'
-export { Rating } from './rating'
-export { Table } from './table'
 export { AlertDialog, CustomAlertDialog, Dialog, DialogRoot, Drawer } from './modal'
 
 export { Product, Review } from './card'

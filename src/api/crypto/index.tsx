@@ -1,4 +1,4 @@
-import { Text } from '@components/core'
+import { Text } from '@pillar-ui/core'
 
 export interface CryptoPrice {
   price: number
@@ -21,7 +21,7 @@ export const TRENDING = [
     abbr: 'BTC',
     image: '/images/crypto/bitcoin.png',
     footer: (
-      <Text contrast="low" weight="medium" size="sm" color="red">
+      <Text low weight="5" size="4" color="d">
         -0.5%
       </Text>
     ),
@@ -32,7 +32,7 @@ export const TRENDING = [
     abbr: 'BNB',
     image: '/images/crypto/bnb.png',
     footer: (
-      <Text contrast="low" weight="medium" size="sm" color="red">
+      <Text low weight="5" size="4" color="d">
         -0.2%
       </Text>
     ),
@@ -43,7 +43,7 @@ export const TRENDING = [
     image: '/images/crypto/ethereum.png',
     abbr: 'ETH',
     footer: (
-      <Text contrast="low" weight="medium" size="sm" color="green">
+      <Text low weight="5" size="4" color="su">
         +0.7%
       </Text>
     ),
@@ -54,7 +54,7 @@ export const TRENDING = [
     image: '/images/crypto/maker.png',
     abbr: 'MKR',
     footer: (
-      <Text contrast="low" weight="medium" size="sm" color="green">
+      <Text low weight="5" size="4" color="su">
         +1.1%
       </Text>
     ),
@@ -68,7 +68,7 @@ export const RECENT_ADDED = [
     abbr: 'MATIC',
     image: '/images/crypto/polygon.png',
     footer: (
-      <Text contrast="low" size="xs" color="slate">
+      <Text low size="3" color="b">
         $0.7931
       </Text>
     ),
@@ -79,7 +79,7 @@ export const RECENT_ADDED = [
     abbr: 'DOGE',
     image: '/images/crypto/dodge-coin.png',
     footer: (
-      <Text contrast="low" size="xs" color="slate">
+      <Text low size="3" color="b">
         $0.07579
       </Text>
     ),
@@ -90,7 +90,7 @@ export const RECENT_ADDED = [
     image: '/images/crypto/decred.png',
     abbr: 'DCR',
     footer: (
-      <Text contrast="low" size="xs" color="slate">
+      <Text low size="3" color="b">
         $19.35
       </Text>
     ),
@@ -101,7 +101,7 @@ export const RECENT_ADDED = [
     image: '/images/crypto/xrp.png',
     abbr: 'XRP',
     footer: (
-      <Text contrast="low" size="xs" color="slate">
+      <Text low size="3" color="b">
         $0.0035
       </Text>
     ),

@@ -12,7 +12,8 @@ import {
   Separator,
   FormGroup,
   Textarea,
-} from '@components/core'
+  BreadcrumbItem,
+} from '@pillar-ui/core'
 import { Facebook, Github, Gmail, Twitter } from '@components/icons'
 import { Preview } from '@components/section'
 import { Form, Link } from 'react-router-dom'
@@ -21,9 +22,9 @@ import { signIN } from './bestPractice.docs'
 function MediaButton({ title, icon }: any) {
   const lowercaseTitle = title.toLowerCase()
   return (
-    <Flex gap="md" as="button" items="center" className={`auth-button auth-button__${lowercaseTitle}`}>
+    <Flex gap="5" as="button" items="center" className={`auth-button auth-button__${lowercaseTitle}`}>
       <span>{icon}</span>
-      <Text size="sm" className="u_sr-only">
+      <Text size="4" className="u_sr-only">
         {title}
       </Text>
     </Flex>
@@ -34,14 +35,14 @@ const FormLayout = () => {
   return (
     <section className="l_flow-md">
       <Flex justify="between" items="center">
-        <Heading size="sm">Form Elements</Heading>
+        <Heading size="4">Form Elements</Heading>
 
-        <Breadcrumb size="md">
-          <Breadcrumb.Item link="../../">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Form</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="5">
+          <BreadcrumbItem link="../../">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Form</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Form Layout
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
 
@@ -51,10 +52,10 @@ const FormLayout = () => {
             <Logo width="120" />
 
             <div>
-              <Heading size="xs" weight="medium">
+              <Heading size="3" weight="5">
                 Welcome to Adminstor{' '}
               </Heading>
-              <Text color="slate" contrast="low" size="xs">
+              <Text color="b" low size="3">
                 Get your Free account now.
               </Text>
             </div>
@@ -67,21 +68,21 @@ const FormLayout = () => {
                 <InputPassword name="current-password" autoComplete="current-password" />
               </FormController>
 
-              <Flex justify="between" items="center" gap="sm">
+              <Flex justify="between" items="center" gap="4">
                 <Checkbox name="checkbox" label="Rememeber Me" />
 
-                <Button size="sm" variant="link" as={Link} to="/forgetPassword">
+                <Button size="4" variant="link" as={Link} to="/forgetPassword">
                   Forget Password
                 </Button>
               </Flex>
 
-              <Button id="sign-in" variant="solid" size="lg" fluid>
+              <Button id="sign-in" variant="solid" size="6" fluid>
                 Sign in
               </Button>
             </Form>
 
             <div>
-              <Text color="slate" contrast="low" as="span" size="sm">
+              <Text color="b" low as="span" size="4">
                 New on our platform?
               </Text>
               <Button variant="link" as={Link} to="/register">
@@ -90,12 +91,12 @@ const FormLayout = () => {
             </div>
 
             <Separator position="center">
-              <Text color="slate" contrast="low">
+              <Text color="b" low>
                 or
               </Text>
             </Separator>
 
-            <Flex items="center" justify="center" gap="sm">
+            <Flex items="center" justify="center" gap="4">
               <MediaButton title="Facebook" icon={<Facebook width="1rem" />} />
               <MediaButton title="Twitter" icon={<Twitter width="1rem" />} />
               <MediaButton title="Gmail" icon={<Gmail width="1rem" />} />
@@ -110,10 +111,10 @@ const FormLayout = () => {
             <Logo width="120" />
 
             <div>
-              <Heading size="xs" weight="medium">
+              <Heading size="3" weight="5">
                 Welcome to Adminstor{' '}
               </Heading>
-              <Text color="slate" contrast="low" size="xs">
+              <Text color="b" low size="3">
                 Get your Free account now.
               </Text>
             </div>
@@ -131,13 +132,13 @@ const FormLayout = () => {
 
               <Checkbox name="checkbox" label="Rememeber Me" />
 
-              <Button id="sign-up" variant="solid" size="lg" fluid>
+              <Button id="sign-up" variant="solid" size="6" fluid>
                 Sign Up
               </Button>
             </Form>
 
             <div>
-              <Text color="slate" contrast="low" as="span" size="sm">
+              <Text color="b" low as="span" size="4">
                 You already have an account?
               </Text>
               <Button variant="link" as={Link} to="/register">
@@ -146,12 +147,12 @@ const FormLayout = () => {
             </div>
 
             <Separator position="center">
-              <Text color="slate" contrast="low">
+              <Text color="b" low>
                 or
               </Text>
             </Separator>
 
-            <Flex items="center" justify="center" gap="sm">
+            <Flex items="center" justify="center" gap="4">
               <MediaButton title="Facebook" icon={<Facebook width="1rem" />} />
               <MediaButton title="Twitter" icon={<Twitter width="1rem" />} />
               <MediaButton title="Gmail" icon={<Gmail width="1rem" />} />
@@ -162,10 +163,10 @@ const FormLayout = () => {
       </Preview>
       <Preview title="Address Form" description="Show alert only with message Props" code={signIN}>
         <Form aria-labelledby="shipping-billing-address" className="l_flow-lg">
-          <Heading size="sm" weight="medium" id="shipping-billing-address" as="h2">
+          <Heading size="4" weight="5" id="shipping-billing-address" as="h2">
             Add You Address (Shipping, Billing) Info
           </Heading>
-          <FormGroup showLabel title="Shipping Address">
+          <FormGroup title="Shipping Address">
             <FormController required label="address">
               <Textarea name="shipping-address" autoComplete="shipping street-address"></Textarea>
             </FormController>
@@ -182,7 +183,7 @@ const FormLayout = () => {
               <Input name="shipping-postal-code" autoComplete="postal-code" />
             </FormController>
           </FormGroup>
-          <FormGroup showLabel title="Billing Address">
+          <FormGroup title="Billing Address">
             <Checkbox name="" label="Same As Shipping" />
             <FormController required label="address">
               <Textarea name="billing-address" autoComplete="billing street-address"></Textarea>

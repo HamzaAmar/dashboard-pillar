@@ -1,4 +1,4 @@
-import { Button, Flex } from '@components/core'
+import { Button, Flex } from '@pillar-ui/core'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { Drawer } from '..'
 
@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof Drawer> = (args) => <Drawer {...args} />
 
 export const NormalDrawer = () => {
   return (
-    <Flex direction="column" gap="md">
+    <Flex direction="col" gap="5">
       <Drawer title="Filter" trigger={<Button>RIght</Button>}>
         <h1>hello</h1>
         <h1>hello</h1>
@@ -49,22 +49,22 @@ export const NormalDrawer = () => {
 
 export const DrawerSize = () => {
   return (
-    <Flex direction="column" gap="md">
-      <Drawer title="Filter" size="sm" position="right" trigger={<Button>Right SMALL</Button>}>
+    <Flex direction="col" gap="5">
+      <Drawer title="Filter" size="4" position="right" trigger={<Button>Right SMALL</Button>}>
         <h1>hello</h1>
         <h1>hello</h1>
         <h1>hello</h1>
         <h1>hello</h1>
         <h1>hello</h1>
       </Drawer>
-      <Drawer title="Filter" size="md" position="right" trigger={<Button>Right Medium</Button>}>
+      <Drawer title="Filter" size="5" position="right" trigger={<Button>Right Medium</Button>}>
         <h1>hello</h1>
         <h1>hello</h1>
         <h1>hello</h1>
         <h1>hello</h1>
         <h1>hello</h1>
       </Drawer>
-      <Drawer title="Filter" size="lg" position="right" trigger={<Button>Right Large</Button>}>
+      <Drawer title="Filter" size="6" position="right" trigger={<Button>Right Large</Button>}>
         <h1>hello</h1>
         <h1>hello</h1>
         <h1>hello</h1>
@@ -78,21 +78,21 @@ export const DrawerSize = () => {
         <h1>hello</h1>
         <h1>hello</h1>
       </Drawer>
-      <Drawer title="Filter" size="sm" position="top" trigger={<Button>Right Small</Button>}>
+      <Drawer title="Filter" size="4" position="top" trigger={<Button>Right Small</Button>}>
         <h1>hello</h1>
         <h1>hello</h1>
         <h1>hello</h1>
         <h1>hello</h1>
         <h1>hello</h1>
       </Drawer>
-      <Drawer title="Filter" size="md" position="top" trigger={<Button>Right Medium</Button>}>
+      <Drawer title="Filter" size="5" position="top" trigger={<Button>Right Medium</Button>}>
         <h1>hello</h1>
         <h1>hello</h1>
         <h1>hello</h1>
         <h1>hello</h1>
         <h1>hello</h1>
       </Drawer>
-      <Drawer title="Filter" size="lg" position="top" trigger={<Button>Right Large</Button>}>
+      <Drawer title="Filter" size="6" position="top" trigger={<Button>Right Large</Button>}>
         <h1>hello</h1>
         <h1>hello</h1>
         <h1>hello</h1>

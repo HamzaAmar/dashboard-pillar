@@ -1,9 +1,9 @@
 export const formControllerFilledState = `
-import  {Flex, FormController, Input} from '@components/core'
+import  {Flex, FormController, Input} from '@pillar-ui/core'
 
 function formControllerStories(){
     return(
-      <Flex direction="column" gap="2xs">
+      <Flex direction="col" gap="1">
         <FormController label="Name">
             <Input name="Name" variant="filled" placeholder="default input" />
         </FormController>
@@ -31,11 +31,11 @@ function formControllerStories(){
     )
 }`
 export const formControllerOutlineState = `
-import  {Flex, FormController, Input} from '@components/core'
+import  {Flex, FormController, Input} from '@pillar-ui/core'
 
 function formControllerStories(){
     return(
-      <Flex direction="column" gap="2xs">
+      <Flex direction="col" gap="1">
         <FormController label="Name">
             <Input name="Name"  placeholder="default input" />
         </FormController>
@@ -56,11 +56,11 @@ function formControllerStories(){
 }`
 
 export const formControllerPrefixSuffix = `
-import  {Flex, FormController, Input} from '@components/core'
+import  {Flex, FormController, Input} from '@pillar-ui/core'
 
 function formControllerStories(){
     return(
-      <Flex direction="column" gap="2xs">
+      <Flex direction="col" gap="1">
         <FormController label="Name">
             <Input
                 name="Name"
@@ -91,38 +91,38 @@ function formControllerStories(){
 }`
 
 export const formControllerSize = `
-import  {Flex, FormController, Input} from '@components/core'
+import  {Flex, FormController, Input} from '@pillar-ui/core'
 
 function formControllerStories(){
     return(
-      <Flex direction="column" gap="2xs">
+      <Flex direction="col" gap="1">
         <FormController label="Name">
-            <Input name="Name" size="xs" />
+            <Input name="Name" size="3" />
         </FormController>
         <FormController label="Name">
-            <Input name="Name" size="sm" />
+            <Input name="Name" size="4" />
         </FormController>
         <FormController label="Name">
-            <Input name="Name" size="md" />
+            <Input name="Name" size="5" />
         </FormController>
         <FormController label="Name">
-            <Input name="Name" size="lg" />
+            <Input name="Name" size="6" />
         </FormController>
         <FormController label="Name">
-            <Input name="Name" size="xl" />
+            <Input name="Name" size="7" />
         </FormController>
       </Flex>
     )
 }`
 
 export const formControllerCorner = `
-import  {Flex, FormController, Input} from '@components/core'
+import  {Flex, FormController, Input} from '@pillar-ui/core'
 
 function formControllerStories(){
     return(
-      <Flex direction="column" gap="2xs">
+      <Flex direction="col" gap="1">
         <FormController label="Name">
-            <Input name="Name" corner="sharp" />
+            <Input name="Name" corner="0" />
         </FormController>
         <FormController label="Name">
             <Input name="Name" />
@@ -135,11 +135,11 @@ function formControllerStories(){
 }`
 
 export const formControllerType = `
-import  {Flex, FormController, InputFile, InputPassword , InputSearch, TextArea, InputNumber} from '@components/core'
+import  {Flex, FormController, InputFile, InputPassword , InputSearch, TextArea, InputNumber} from '@pillar-ui/core'
 
 function formControllerStories(){
     return(
-      <Flex direction="column" gap="2xs">
+      <Flex direction="col" gap="1">
         <FormController label="Name">
           <InputNumber name="Name" />
         </FormController>

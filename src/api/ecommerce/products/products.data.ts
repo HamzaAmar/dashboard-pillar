@@ -7,6 +7,7 @@ PRODUCT_CORE.set(1, {
   price: {
     price: 210,
   },
+  quantity: 10,
   rating: 5,
   color: 'black',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -18,6 +19,7 @@ PRODUCT_CORE.set(2, {
   price: {
     price: 75,
   },
+  quantity: 10,
   rating: 4,
   color: 'white',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -27,6 +29,7 @@ PRODUCT_CORE.set(3, {
   heroImage: ['nike3.webp'],
   title: "Nike Blazer Mid'77 Vintage",
   price: { price: 123 },
+  quantity: 48,
   rating: 3,
   color: 'green',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -37,6 +40,7 @@ PRODUCT_CORE.set(4, {
   heroImage: ['nike4.webp'],
   title: 'Air Jordan 1 Mid',
   price: { price: 123 },
+  quantity: 48,
   rating: 4,
   color: 'white',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -49,6 +53,7 @@ PRODUCT_CORE.set(5, {
     price: 110,
     discount: 14,
   },
+  quantity: 10,
   rating: 5,
   color: 'black',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -61,6 +66,7 @@ PRODUCT_CORE.set(6, {
   price: {
     price: 75,
   },
+  quantity: 10,
   rating: 5,
   color: 'black',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -72,6 +78,7 @@ PRODUCT_CORE.set(7, {
   price: {
     price: 295,
   },
+  quantity: 10,
   rating: 4,
   color: 'white',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -85,6 +92,7 @@ PRODUCT_CORE.set(8, {
     price: 70,
     discount: 27,
   },
+  quantity: 10,
   rating: 5,
   color: 'black',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -97,6 +105,7 @@ PRODUCT_CORE.set(9, {
     price: 65,
     discount: 15,
   },
+  quantity: 10,
   rating: 5,
   color: 'black',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -106,6 +115,7 @@ PRODUCT_CORE.set(10, {
   heroImage: ['nike10.webp'],
   title: 'Air Jordan 7 Retro',
   price: { price: 200 },
+  quantity: 15,
   rating: 5,
   color: 'black',
 
@@ -116,6 +126,7 @@ PRODUCT_CORE.set(11, {
   heroImage: ['nike11.webp'],
   title: "Nike Air Force 1 '07",
   price: { price: 200 },
+  quantity: 98,
   rating: 5,
   color: 'black',
 
@@ -126,6 +137,7 @@ PRODUCT_CORE.set(12, {
   heroImage: ['nike12.webp'],
   title: 'Air Jordan 12 Retro',
   price: { price: 200 },
+  quantity: 10,
   rating: 5,
   color: 'black',
 
@@ -138,6 +150,7 @@ PRODUCT_CORE.set(13, {
   price: {
     price: 125,
   },
+  quantity: 10,
   rating: 5,
   color: 'black',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -150,6 +163,7 @@ PRODUCT_CORE.set(14, {
     price: 120.97,
     discount: 13,
   },
+  quantity: 10,
   rating: 5,
   color: 'black',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -161,6 +175,7 @@ PRODUCT_CORE.set(15, {
   price: {
     price: 130,
   },
+  quantity: 10,
   rating: 5,
   color: 'black',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -172,6 +187,7 @@ PRODUCT_CORE.set(16, {
   price: {
     price: 135,
   },
+  quantity: 10,
   rating: 5,
   color: 'black',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -183,6 +199,7 @@ PRODUCT_CORE.set(17, {
   price: {
     price: 130,
   },
+  quantity: 10,
   rating: 5,
   color: 'black',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -194,6 +211,7 @@ PRODUCT_CORE.set(18, {
   price: {
     price: 200,
   },
+  quantity: 10,
   rating: 5,
   color: 'black',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -205,6 +223,7 @@ PRODUCT_CORE.set(19, {
   price: {
     price: 130,
   },
+  quantity: 10,
   rating: 5,
   color: 'black',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -217,6 +236,7 @@ PRODUCT_CORE.set(20, {
     price: 120,
     discount: 19,
   },
+  quantity: 10,
   rating: 5,
   color: 'black',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -228,6 +248,7 @@ PRODUCT_CORE.set(21, {
   price: {
     price: 110,
   },
+  quantity: 10,
   rating: 5,
   color: 'black',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -240,6 +261,7 @@ PRODUCT_CORE.set(22, {
     discount: 19,
     price: 150,
   },
+  quantity: 10,
   rating: 5,
   color: 'black',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -251,6 +273,7 @@ PRODUCT_CORE.set(23, {
   price: {
     price: 185,
   },
+  quantity: 10,
   rating: 5,
   color: 'black',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
@@ -262,6 +285,7 @@ PRODUCT_CORE.set(24, {
   price: {
     price: 210,
   },
+  quantity: 10,
   rating: 5,
   color: 'black',
   sizes: [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],

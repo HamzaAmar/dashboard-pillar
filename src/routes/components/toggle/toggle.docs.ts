@@ -1,19 +1,19 @@
 export const toggleColor = `
-import { Radio } from "@components/core";
+import { Radio } from "@pillar-ui/core";
 
 const RadioTest = ()=>{
     return(
-        <Toggle label="hello" defaultPressed color="danger" />
-        <Toggle label="hello" defaultPressed color="success" />
-        <Toggle label="hello" defaultPressed color="purple" />
-        <Toggle label="hello" defaultPressed color="indigo" />
-        <Toggle label="hello" defaultPressed color="slate" />
-        <Toggle label="hello" defaultPressed color="warning" />
+        <Toggle label="hello" defaultPressed color="d" />
+        <Toggle label="hello" defaultPressed color="su" />
+        <Toggle label="hello" defaultPressed color="se" />
+        <Toggle label="hello" defaultPressed color="i" />
+        <Toggle label="hello" defaultPressed color="b" />
+        <Toggle label="hello" defaultPressed color="w" />
     )
 }`
 
 export const toggleSize = `
-import { Radio } from "@components/core";
+import { Radio } from "@pillar-ui/core";
 
 const RadioTest = ()=>{
     return(
@@ -24,15 +24,15 @@ const RadioTest = ()=>{
 }`
 
 export const toggleDisabled = `
-import { Radio } from "@components/core";
+import { Radio } from "@pillar-ui/core";
 
 const RadioTest = ()=>{
     return(
-        <Toggle label="hello" disabled color="danger" />
-        <Toggle label="hello" disabled color="success" />
-        <Toggle label="hello" disabled color="purple" />
-        <Toggle label="hello" disabled color="indigo" />
-        <Toggle label="hello" disabled color="slate" />
-        <Toggle label="hello" disabled color="warning" />
+        <Toggle label="hello" disabled color="d" />
+        <Toggle label="hello" disabled color="su" />
+        <Toggle label="hello" disabled color="se" />
+        <Toggle label="hello" disabled color="i" />
+        <Toggle label="hello" disabled color="b" />
+        <Toggle label="hello" disabled color="w" />
     )
 }`

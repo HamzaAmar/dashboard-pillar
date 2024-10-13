@@ -1,6 +1,6 @@
 import { CSSProperties, useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react'
-import { Flex, IconButton } from '@components/core'
+import { Flex, IconButton } from '@pillar-ui/core'
 import { ChevronDown } from '@components/icons'
 
 import type { CarouselProps } from './carousel.type'
@@ -101,7 +101,7 @@ const Carousel = ({
         title="Previous"
         onClick={handlePrevious}
         variant="outline"
-        color="slate"
+        color="b"
         disabled={!emblaApi?.canScrollPrev()}
       />
       <div className="carousel--viewport" style={{ '--per-view-carousel': perView } as CSSProperties} ref={carouselRef}>
@@ -124,12 +124,12 @@ const Carousel = ({
         title="Next"
         onClick={handleNext}
         variant="outline"
-        color="slate"
+        color="b"
         disabled={!emblaApi?.canScrollNext()}
       />
 
       {withIndicators && (
-        <Flex className="carousel--indicators" gap="xs" justify="center" items="center">
+        <Flex className="carousel--indicators" gap="3" justify="center" items="center">
           {indicators}
         </Flex>
       )}

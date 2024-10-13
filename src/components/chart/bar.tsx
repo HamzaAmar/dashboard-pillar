@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import { Bar } from '@visx/shape'
 import { Group } from '@visx/group'
 import letterFrequency, { LetterFrequency } from '@visx/mock-data/lib/mocks/letterFrequency'

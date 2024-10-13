@@ -1,7 +1,7 @@
 export const formMasking = `
 import {useState} from 'react'
 import { Calendar, Card, Clock, Phone } from '@components/icons'
-import { Flex, Input, FormController } from '@components/core'
+import { Flex, Input, FormController } from '@pillar-ui/core'
 import InputMask from 'react-input-mask'
 
 const initialVal = {
@@ -21,7 +21,7 @@ function FormMasking(){
         [name]: value,
       }))
     return(
-        <Flex wrap gap="md">
+        <Flex wrap gap="5">
           <FormController required label="Number Phone">
             <InputMask value={value.phone} name="phone" onChange={handleChange} mask="(+1) 999 999 9999">
               <Input prefixInput={<Phone />} placeholder="type you phone number" type="tel" />

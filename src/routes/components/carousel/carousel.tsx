@@ -1,5 +1,5 @@
 import { Carousel } from '@components/composition'
-import { Breadcrumb, Flex, Grid, Heading } from '@components/core'
+import { Breadcrumb, BreadcrumbItem, Flex, Grid, Heading } from '@pillar-ui/core'
 import { Preview } from '@components/section'
 import * as docs from './carousel.docs'
 
@@ -11,20 +11,20 @@ export const Component = () => {
   return (
     <section aria-labelledby="carousel--page-id" className="l_flow-lg">
       <Flex items="center" wrap justify="between">
-        <Heading as="h1" id="carousel--page-id" size="xs">
+        <Heading as="h1" id="carousel--page-id" size="3">
           Carousel Docs Page
         </Heading>
-        <Breadcrumb size="sm">
-          <Breadcrumb.Item link="../../..">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Components</Breadcrumb.Item>
-          <Breadcrumb.Item link="../">Composite</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="4">
+          <BreadcrumbItem link="../../..">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Components</BreadcrumbItem>
+          <BreadcrumbItem link="../">Composite</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Carousel
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
       <Preview title="Carousel Controls" description="Carousel Controls and indicators" code={docs.controlsCarousel}>
-        <Grid columns="repeat(2, 1fr)" className="md_grid-one" gap="sm">
+        <Grid grid="repeat(2, 1fr)" className="md_grid-one" gap="4">
           <Carousel content={slides} />
           <Carousel content={slides} withIndicators />
           <Carousel content={slides} withControls />
@@ -32,20 +32,20 @@ export const Component = () => {
         </Grid>
       </Preview>
       <Preview title="Carousel Options" description="Carousel Controls and indicators" code={docs.optionsCarousel}>
-        <Grid columns="repeat(2, 1fr)" className="md_grid-one" gap="sm">
+        <Grid grid="repeat(2, 1fr)" className="md_grid-one" gap="4">
           <Carousel content={slides} withIndicators loop />
           <Carousel content={slides} withIndicators dragFree />
           <Carousel content={slides} withControls withIndicators draggable={false} />
         </Grid>
       </Preview>
       <Preview
-        direction="column"
+        direction="col"
         title="PerView Carousel"
         description="perView props accept number of the item per view default is 1"
         code={docs.perViewCarousel}
       >
-        <Carousel withControls content={slides} perView={3} containScroll="trimSnaps" gap="sm" />
-        <Carousel withControls content={slides} perView={3.5} containScroll="trimSnaps" gap="sm" />
+        <Carousel withControls content={slides} perView={3} containScroll="trimSnaps" gap="4" />
+        <Carousel withControls content={slides} perView={3.5} containScroll="trimSnaps" gap="4" />
         <Carousel
           content={slides}
           perView={3.5}
@@ -53,7 +53,7 @@ export const Component = () => {
           withControls
           withIndicators
           align="start"
-          gap="sm"
+          gap="4"
         />
         <Carousel
           content={slides}
@@ -62,22 +62,22 @@ export const Component = () => {
           withControls
           withIndicators
           align="end"
-          gap="sm"
+          gap="4"
         />
       </Preview>
       <Preview
-        direction="column"
+        direction="col"
         title="Carousel Gap"
         description="no Default value possible values(2xs, xs , sm, md , lg, xl, 2xl)"
         code={docs.gapCarousel}
       >
-        <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="2xs" />
-        <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="xs" />
-        <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="sm" />
-        <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="md" />
-        <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="lg" />
-        <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="xl" />
-        <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="2xl" />
+        <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="1" />
+        <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="3" />
+        <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="4" />
+        <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="5" />
+        <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="6" />
+        <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="7" />
+        <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="8" />
       </Preview>
     </section>
   )

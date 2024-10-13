@@ -21,6 +21,7 @@ export interface ProductCore {
   rating: number
   sizes: number[]
   color: string
+  quantity: number
 }
 
 export interface ProductsModel extends ProductCore {

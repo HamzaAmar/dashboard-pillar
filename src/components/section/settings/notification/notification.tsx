@@ -1,4 +1,4 @@
-import { Flex, Heading, Text, Toggle } from '@components/core'
+import { Flex, Heading, Text, Switch } from '@pillar-ui/core'
 import { useId } from 'react'
 
 export interface NotificationItemProps {
@@ -11,14 +11,14 @@ const NotificationItem = ({ title, description }: NotificationItemProps) => {
   return (
     <Flex aria-labelledby={id} as="article" justify="between" items="center">
       <div>
-        <Heading as="h3" id={id} size="xs" weight="medium">
+        <Heading as="h3" id={id} size="3" weight="5">
           {title}
         </Heading>
-        <Text size="xs" color="slate" contrast="low">
+        <Text size="3" color="b" low>
           {description}
         </Text>
       </div>
-      <Toggle name="Hello" label="Hello" />
+      <Switch name="Hello" label="Hello" />
     </Flex>
   )
 }

@@ -1,4 +1,4 @@
-import { Button, Flex, Input, Textarea, FormController } from '@components/core'
+import { Button, Flex, Input, Textarea, FormController } from '@pillar-ui/core'
 
 const PersonalDetail = () => {
   return (

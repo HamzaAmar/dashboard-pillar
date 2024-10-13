@@ -1,7 +1,8 @@
-import { Breadcrumb, Flex, Grid, Heading, Slider, Text } from '@components/core'
+import { Breadcrumb, BreadcrumbItem, Flex, Grid, Heading, Text } from '@pillar-ui/core'
 import { CirclePlus, Minus, Volume, VolumeOff } from '@components/icons'
 import { Preview } from '@components/section'
 import * as docs from './slider.docs'
+import { Slider } from '@components/composition/slider'
 
 const slider = () => {
   const squareStyle = {
@@ -14,58 +15,47 @@ const slider = () => {
   return (
     <section aria-labelledby="slider--page-id" className="l_flow-lg">
       <Flex items="center" wrap justify="between">
-        <Heading as="h1" id="slider--page-id" size="xs">
+        <Heading as="h1" id="slider--page-id" size="3">
           Slider Docs Page
         </Heading>
-        <Breadcrumb size="sm">
-          <Breadcrumb.Item link="../../..">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Components</Breadcrumb.Item>
-          <Breadcrumb.Item link="../">Base UI</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="4">
+          <BreadcrumbItem link="../../..">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Components</BreadcrumbItem>
+          <BreadcrumbItem link="../">Base UI</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Slider
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
+      <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
         <Preview
           title="Slider Color"
           description="Slider Color default is primary possible values( danger, success, warning, purple , yellow, slate, mint, indigo )"
           code={docs.sliderColor}
         >
-          <Flex wrap gap="md" direction="column" color="danger">
+          <Flex wrap gap="5" direction="col" color="d">
             <Slider defaultValue={[55]}>
               <Slider.Track />
               <Slider.Thumb label="volume" />
             </Slider>
-            <Slider defaultValue={[55]} color="success">
+            <Slider defaultValue={[55]} color="su">
               <Slider.Track />
               <Slider.Thumb label="volume" />
             </Slider>
-            <Slider defaultValue={[55]} color="warning">
+            <Slider defaultValue={[55]} color="w">
               <Slider.Track />
               <Slider.Thumb label="volume" />
             </Slider>
-            <Slider defaultValue={[55]} color="indigo">
+            <Slider defaultValue={[55]} color="i">
               <Slider.Track />
               <Slider.Thumb label="volume" />
             </Slider>
-            <Slider defaultValue={[55]} color="purple">
+            <Slider defaultValue={[55]} color="se">
               <Slider.Track />
               <Slider.Thumb label="volume" />
             </Slider>
-            <Slider defaultValue={[55]} color="yellow">
-              <Slider.Track />
-              <Slider.Thumb label="volume" />
-            </Slider>
-            <Slider defaultValue={[55]} color="mint">
-              <Slider.Track />
-              <Slider.Thumb label="volume" />
-            </Slider>
-            <Slider defaultValue={[55]} color="slate">
-              <Slider.Track />
-              <Slider.Thumb label="volume" />
-            </Slider>
-            <Slider defaultValue={[55]} color="mint">
+
+            <Slider defaultValue={[55]} color="b">
               <Slider.Track />
               <Slider.Thumb label="volume" />
             </Slider>
@@ -76,12 +66,12 @@ const slider = () => {
           description="default value is horizontal possible values (horizontal, vertical)"
           code={docs.sliderOrientation}
         >
-          <Flex wrap gap="md" direction="column" color="danger">
+          <Flex wrap gap="5" direction="col" color="d">
             <Slider orientation="vertical" defaultValue={[55]}>
               <Slider.Track />
               <Slider.Thumb label="volume" />
             </Slider>
-            <Slider defaultValue={[55]} color="success">
+            <Slider defaultValue={[55]} color="su">
               <Slider.Track />
               <Slider.Thumb label="volume" />
             </Slider>
@@ -93,7 +83,7 @@ const slider = () => {
           description="Prefix and suffix is a React Node can accept react element or string or number"
           code={docs.sliderPrefixSuffix}
         >
-          <Flex wrap gap="md" direction="column" color="danger">
+          <Flex wrap gap="5" direction="col" color="d">
             <Slider sliderPrefix="0" SliderSuffix="100" defaultValue={[55]}>
               <Slider.Track />
               <Slider.Thumb label="volume" />
@@ -102,16 +92,16 @@ const slider = () => {
               sliderPrefix={<VolumeOff width="20" />}
               SliderSuffix={<Volume width="20" />}
               defaultValue={[55]}
-              color="success"
+              color="su"
             >
               <Slider.Track />
               <Slider.Thumb label="volume" />
             </Slider>
             <Slider
-              sliderPrefix={<Text size="xs">A</Text>}
-              SliderSuffix={<Text weight="bold">A</Text>}
+              sliderPrefix={<Text size="3">A</Text>}
+              SliderSuffix={<Text weight="7">A</Text>}
               defaultValue={[55]}
-              color="warning"
+              color="w"
             >
               <Slider.Track />
               <Slider.Thumb label="volume" />
@@ -128,7 +118,7 @@ const slider = () => {
                 </Flex>
               }
               defaultValue={[55]}
-              color="warning"
+              color="w"
             >
               <Slider.Track />
               <Slider.Thumb label="volume" />
@@ -137,18 +127,18 @@ const slider = () => {
         </Preview>
 
         <Preview title="Slider Thumb Size" description="default " code={docs.sliderThumbSize}>
-          <Flex wrap gap="md" direction="column" color="danger">
+          <Flex wrap gap="5" direction="col" color="d">
             <Slider defaultValue={[55]}>
               <Slider.Track />
-              <Slider.Thumb label="volume" size="sm" />
+              <Slider.Thumb label="volume" size="4" />
             </Slider>
-            <Slider defaultValue={[55]} color="success">
+            <Slider defaultValue={[55]} color="su">
               <Slider.Track />
-              <Slider.Thumb size="md" label="volume" />
+              <Slider.Thumb size="5" label="volume" />
             </Slider>
-            <Slider defaultValue={[55]} color="warning">
+            <Slider defaultValue={[55]} color="w">
               <Slider.Track />
-              <Slider.Thumb size="lg" label="volume" />
+              <Slider.Thumb size="6" label="volume" />
             </Slider>
           </Flex>
         </Preview>
@@ -158,12 +148,12 @@ const slider = () => {
           description="default solid possible values(solid, outline)"
           code={docs.sliderThumbVariant}
         >
-          <Flex wrap gap="md" direction="column" color="danger">
+          <Flex wrap gap="5" direction="col" color="d">
             <Slider defaultValue={[55]}>
               <Slider.Track />
               <Slider.Thumb variant="outline" label="volume" />
             </Slider>
-            <Slider defaultValue={[55]} color="success">
+            <Slider defaultValue={[55]} color="su">
               <Slider.Track />
               <Slider.Thumb variant="solid" label="volume" />
             </Slider>
@@ -175,36 +165,28 @@ const slider = () => {
           description="default circle possible values (circle, radius, sharp)"
           code={docs.sliderThumbCorner}
         >
-          <Flex wrap gap="md" direction="column" color="danger">
-            <Slider defaultValue={[55]} color="success">
+          <Flex wrap gap="5" direction="col" color="d">
+            <Slider defaultValue={[55]} color="su">
               <Slider.Track />
-              <Slider.Thumb label="volume" corner="sharp" />
+              <Slider.Thumb label="volume" corner="0" />
             </Slider>
             <Slider defaultValue={[55]}>
               <Slider.Track />
-              <Slider.Thumb label="volume" corner="2xs" />
+              <Slider.Thumb label="volume" corner="1" />
             </Slider>
             <Slider defaultValue={[55]}>
               <Slider.Track />
-              <Slider.Thumb label="volume" corner="xs" />
+              <Slider.Thumb label="volume" corner="2" />
             </Slider>
-            <Slider defaultValue={[55]} color="success">
+            <Slider defaultValue={[55]} color="su">
               <Slider.Track />
-              <Slider.Thumb label="volume" corner="sm" />
+              <Slider.Thumb label="volume" corner="3" />
             </Slider>
-            <Slider defaultValue={[55]} color="success">
+            <Slider defaultValue={[55]} color="su">
               <Slider.Track />
-              <Slider.Thumb label="volume" corner="lg" />
+              <Slider.Thumb label="volume" corner="5" />
             </Slider>
 
-            <Slider defaultValue={[55]} color="success">
-              <Slider.Track />
-              <Slider.Thumb label="volume" corner="xl" />
-            </Slider>
-            <Slider defaultValue={[55]} color="success">
-              <Slider.Track />
-              <Slider.Thumb label="volume" corner="2xl" />
-            </Slider>
             <Slider defaultValue={[55]}>
               <Slider.Track />
               <Slider.Thumb label="volume" corner="full" />

@@ -1,5 +1,5 @@
 import { getUsers } from '@api/user'
-import { Avatar, Button, Flex, Grid, Heading, IconButton, Text } from '@components/core'
+import { Avatar, Button, Flex, Grid, Heading, IconButton, Text } from '@pillar-ui/core'
 import { Camera, Dots, Facebook, Github, Linkdin, Setting, Twitter } from '@components/icons'
 import { NavLink, Outlet } from 'react-router-dom'
 
@@ -16,12 +16,12 @@ const layout = () => {
           <img className="account-settings--cover" src="/images/hero.jfif" alt="" />
         </div>
         <div className="account-settings--button">
-          <Button variant="soft" color="slate" icon={<Camera width="22" />}>
+          <Button variant="soft" color="b" icon={<Camera width="22" />}>
             Cover Image
           </Button>
         </div>
       </header>
-      <Grid gap="sm" columns="240px 1fr" className="account-settings--content sm_grid-one">
+      <Grid gap="4" grid="240px 1fr" className="account-settings--content sm_grid-one">
         <div className="account-settings--sidebar">
           <section aria-labelledby="user-info">
             <Heading as="h2" id="user-info" className="u_sr-only">
@@ -34,42 +34,42 @@ const layout = () => {
                 className="l_box l_flow-md"
                 justify="center"
                 items="center"
-                direction="column"
+                direction="col"
               >
-                <Avatar size="2xl" variant="image" image={me.avatar} title={me.name} />
+                <Avatar size="8" image={me.avatar} title={me.name} />
                 <div className="account-settings-user-name">
-                  <Text weight="medium"> {me.name} </Text>
-                  <Text size="xs" contrast="low" color="slate">
+                  <Text weight="5"> {me.name} </Text>
+                  <Text size="3" low color="b">
                     {me.role}
                   </Text>
                 </div>
-                <Flex justify="around" gap="xs">
-                  <Flex items="center" gap="2xs" direction="column">
-                    <Text weight="medium" size="sm">
+                <Flex justify="around" gap="3">
+                  <Flex items="center" gap="1" direction="col">
+                    <Text weight="5" size="4">
                       34K
                     </Text>
-                    <Text size="xs" color="slate" contrast="low">
+                    <Text size="3" color="b" low>
                       Followers
                     </Text>
                   </Flex>
-                  <Flex items="center" gap="2xs" direction="column">
-                    <Text weight="medium" size="sm">
+                  <Flex items="center" gap="1" direction="col">
+                    <Text weight="5" size="4">
                       34K
                     </Text>
-                    <Text size="xs" color="slate" contrast="low">
+                    <Text size="3" color="b" low>
                       Following
                     </Text>
                   </Flex>
-                  <Flex items="center" gap="2xs" direction="column">
-                    <Text weight="medium" size="sm">
+                  <Flex items="center" gap="1" direction="col">
+                    <Text weight="5" size="4">
                       120
                     </Text>
-                    <Text size="xs" color="slate" contrast="low">
+                    <Text size="3" color="b" low>
                       POSTS
                     </Text>
                   </Flex>
                 </Flex>
-                <Flex gap="xs" items="center">
+                <Flex gap="3" items="center">
                   <Button icon={<Setting />} fluid>
                     Settings
                   </Button>
@@ -78,35 +78,35 @@ const layout = () => {
               </Flex>
               <article aria-labelledby="social-media-id" className="l_box l_flow-md">
                 <Flex as="header" justify="between" items="center">
-                  <Heading id="social-media-id" weight="medium" size="2xs" as="h3">
+                  <Heading id="social-media-id" weight="5" size="1" as="h3">
                     Social Media
                   </Heading>
-                  <Button size="sm" variant="link">
+                  <Button size="4" variant="link">
                     Edit
                   </Button>
                 </Flex>
                 <div className="l_flow-sm">
-                  <Flex gap="xs" items="center">
+                  <Flex gap="3" items="center">
                     <Facebook width={20} />
-                    <Text size="sm" color="slate" contrast="low">
+                    <Text size="4" color="b" low>
                       @hamzaamar
                     </Text>
                   </Flex>
-                  <Flex gap="xs" items="center">
+                  <Flex gap="3" items="center">
                     <Linkdin width={20} />
-                    <Text size="sm" color="slate" contrast="low">
+                    <Text size="4" color="b" low>
                       @hamzaamar
                     </Text>
                   </Flex>
-                  <Flex gap="xs" items="center">
+                  <Flex gap="3" items="center">
                     <Twitter width={20} />
-                    <Text size="sm" color="slate" contrast="low">
+                    <Text size="4" color="b" low>
                       @hamzaamar123
                     </Text>
                   </Flex>
-                  <Flex gap="xs" items="center">
+                  <Flex gap="3" items="center">
                     <Github width={20} />
-                    <Text size="sm" color="slate" contrast="low">
+                    <Text size="4" color="b" low>
                       @miloudamar93
                     </Text>
                   </Flex>
@@ -118,14 +118,14 @@ const layout = () => {
         <section className="account-settings-content--section  l_box">
           <header className="account-settings-content--header">
             <nav className="account-settings-content--navigation">
-              <Flex as="ul" gap="xs" className="account-settings-content--list">
+              <Flex as="ul" gap="3" className="account-settings-content--list">
                 <li className="account-settings-content--item">
                   <Heading as="h2">
                     <Text
                       as={NavLink}
-                      weight="medium"
-                      size="xs"
-                      color="slate"
+                      weight="5"
+                      size="3"
+                      color="b"
                       className="account-settings-content-link"
                       to="personal-info"
                     >
@@ -137,9 +137,9 @@ const layout = () => {
                   <Heading as="h2">
                     <Text
                       as={NavLink}
-                      size="xs"
-                      color="slate"
-                      weight="medium"
+                      size="3"
+                      color="b"
+                      weight="5"
                       className="account-settings-content-link"
                       to="experience"
                     >
@@ -151,9 +151,9 @@ const layout = () => {
                   <Heading as="h2">
                     <Text
                       as={NavLink}
-                      size="xs"
-                      color="slate"
-                      weight="medium"
+                      size="3"
+                      color="b"
+                      weight="5"
                       className="account-settings-content-link"
                       to="reset-password"
                     >
@@ -165,9 +165,9 @@ const layout = () => {
                   <Heading as="h2">
                     <Text
                       as={NavLink}
-                      size="xs"
-                      color="slate"
-                      weight="medium"
+                      size="3"
+                      color="b"
+                      weight="5"
                       className="account-settings-content-link"
                       to="notification"
                     >

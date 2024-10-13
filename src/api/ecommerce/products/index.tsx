@@ -59,6 +59,7 @@ export function getProducts({ current = 1, pageSize = 10 }: GetProductProps = {}
       reviews: getRandomReview(),
       date: getDate({ days: -index }),
       category: CATEGORIES_LIST[category],
+      quantity: 10,
       user: {
         slug,
         name,

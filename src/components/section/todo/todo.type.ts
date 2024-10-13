@@ -1,6 +1,5 @@
-import { TASKS } from '@api/todo/todo.data'
 import { TaskProps } from '@api/todo/todo.type'
-import type { Color } from '@type/utils'
+import { Color } from '@pillar-ui/core'
 import type { ReactNode } from 'react'
 
 export type BadgeColor = Record<string, Color>

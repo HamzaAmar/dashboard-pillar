@@ -51,14 +51,12 @@ Crypto Page
 .crypto-currency {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--S3);
 }
 
 .crypto-curr--header {
   border-bottom: 1px solid var(--opacity-6);
   padding-bottom: 0.5rem;
-}
-
-.history-trading-container {
 }
 
 /*

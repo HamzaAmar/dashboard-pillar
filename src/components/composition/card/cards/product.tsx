@@ -1,5 +1,4 @@
-import { Avatar, Button, Chips, Flex, IconButton, Text } from '@components/core'
-import { Rating } from '@components/composition'
+import { Avatar, Button, Chips, Flex, IconButton, Rating, Text } from '@pillar-ui/core'
 import { Cart, Heart } from '@components/icons'
 import { formatPrice } from '@utils/formatNumber'
 
@@ -25,9 +24,9 @@ const product = ({
   return (
     <Flex
       data-variant={variant}
-      direction={variant === 'horizontal' ? 'row' : 'column'}
+      direction={variant === 'horizontal' ? 'row' : 'col'}
       as="article"
-      gap="sm"
+      gap="4"
       className="product-card l_box"
     >
       <header className="product-card--header">
@@ -37,51 +36,51 @@ const product = ({
 
       <div className="l_flow-md">
         <div className="product-card--main">
-          <Text color="slate" weight="medium">
+          <Text color="b" weight="5">
             {title}
           </Text>
 
-          <Flex items="center" gap="2xs">
+          <Flex items="center" gap="1">
             <Rating rating={rating} />
-            <Text color="slate" contrast="low" size="xs">
+            <Text color="b" low size="3">
               ({numberRating})
             </Text>
           </Flex>
 
-          <Flex items="center" gap="sm">
-            <Text weight="medium" size="sm" as="span">
+          <Flex items="center" gap="4">
+            <Text weight="5" size="4" as="span">
               {formatPrice({ number: priceOrPriceWithDiscount })}
             </Text>
 
             {price.discount && (
               <>
-                <Text color="slate" decoration="line-through" contrast="low" size="xs" as="span">
+                <Text color="b" decoration="through" low size="3" as="span">
                   {formatPrice({ number: price.price })}
                 </Text>
-                <Text color="green" contrast="low" weight="medium" size="xs" as="span">
+                <Text color="su" low weight="5" size="3" as="span">
                   {price.discount}% Discount
                 </Text>
               </>
             )}
           </Flex>
           {variant === 'horizontal' && (
-            <Text size="sm" color="slate" contrast="low" numberLine={2} truncate="multiline">
+            <Text size="4" color="b" low truncate="2">
               {description}
             </Text>
           )}
         </div>
-        <Flex as="footer" direction="column" className="product-card--footer l_flow-md">
-          <Flex items="center" gap="xs">
-            <Avatar variant="image" image={user.avatar} title={user.name} />
-            <Flex direction="column" gap="2xs">
-              <Text color="slate" contrast="low" size="sm">
+        <Flex as="footer" direction="col" className="product-card--footer l_flow-md">
+          <Flex items="center" gap="3">
+            <Avatar image={user.avatar} title={user.name} />
+            <Flex direction="col" gap="1">
+              <Text color="b" low size="4">
                 {user.name}
               </Text>
-              <Flex wrap gap="xs">
-                <Chips color="warning" variant="soft">
+              <Flex wrap gap="3">
+                <Chips color="w" variant="soft">
                   Best Seller
                 </Chips>
-                <Chips color="purple" variant="soft">
+                <Chips color="se" variant="soft">
                   Free Shipping
                 </Chips>
               </Flex>
@@ -89,7 +88,7 @@ const product = ({
           </Flex>
 
           {variant === 'vertical' && (
-            <Button className="product-card--add-cart" icon={<Cart />} variant="solid" color="primary" fluid>
+            <Button className="product-card--add-cart" icon={<Cart />} variant="solid" color="p" fluid>
               Add To Card
             </Button>
           )}

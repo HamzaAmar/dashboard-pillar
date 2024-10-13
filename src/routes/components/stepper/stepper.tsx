@@ -1,4 +1,4 @@
-import { Stepper } from '@components/core'
+import { Stepper } from '@pillar-ui/core'
 
 const stepper = () => {
   return <div>stepper</div>

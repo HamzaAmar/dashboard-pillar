@@ -1,6 +1,6 @@
-import { Gap } from '@type/utils'
+import type { Size } from '@pillar-ui/core'
 import type { EmblaOptionsType } from 'embla-carousel-react'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 type Orientation = 'vertical' | 'horizontal'
 
@@ -12,5 +12,5 @@ export interface CarouselProps extends EmblaOptionsType {
   withIndicators?: boolean
   orientation?: Orientation
   perView?: number
-  gap?: Gap
+  gap?: Size
 }

@@ -1,4 +1,4 @@
-import { Avatar, Button, Flex, Text } from '@components/core'
+import { Avatar, Button, Flex, Text } from '@pillar-ui/core'
 import { Globe, Message } from '@components/icons'
 import type { UserPosterProps } from './userPoster.type'
 import * as HoverCard from '@radix-ui/react-hover-card'
@@ -26,22 +26,22 @@ export const UserCardHover = ({ children, user }: any) => {
 export const UserPoster = forwardRef<HTMLDivElement, UserPosterProps>(({ user, ...rest }, forwardedRef) => {
   return (
     <article ref={forwardedRef} {...rest} className="user-poster l_box l_flow-md">
-      <Flex gap="sm">
-        <Avatar variant="image" image={user.avatar} title={user.name} />
+      <Flex gap="4">
+        <Avatar image={user.avatar} title={user.name} />
         <div>
-          <Text weight="medium">{user.name}</Text>
-          <Text size="sm" color="slate" truncate="multiline" numberLine={4} contrast="low">
+          <Text weight="5">{user.name}</Text>
+          <Text size="4" color="b" truncate="4" low>
             {user.description}
           </Text>
         </div>
       </Flex>
-      <Flex justify="center" className="user-poster--common-friends" gap="sm">
+      <Flex justify="center" className="user-poster--common-friends" gap="4">
         <Globe width={16} />
         <div>
-          <Text truncate="multiline" numberLine={1} weight="medium" size="xs">
+          <Text truncate="1" weight="5" size="3">
             6 friends in Common
           </Text>
-          <Text truncate="multiline" numberLine={1} size="sm">
+          <Text truncate="1" size="4">
             Samir Lmoud , Ryan Helper and Kent
           </Text>
         </div>

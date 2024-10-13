@@ -2,126 +2,121 @@ const item = `
 const Items = (props: Omit<TimelineItemProps, "children">) => {
     return (
       <>
-        <Timeline.Item {...props}>
-          <Heading size="xs">Hello</Heading>
-          <Text size="xs">
+        <TimelineItem {...props}>
+          <Heading size="3">Hello</Heading>
+          <Text size="3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
             laboriosam cumque voluptatem magnam ad. Aspernatur explicabo a, est
             similique sed debitis eveniet alias repellendus doloremque nobis nisi
             odit! Nihil, quae.
           </Text>
-        </Timeline.Item>
-        <Timeline.Item {...props}>
-          <Heading size="xs">Hello</Heading>
-          <Text size="xs">
+        </TimelineItem>
+        <TimelineItem {...props}>
+          <Heading size="3">Hello</Heading>
+          <Text size="3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
             laboriosam cumque voluptatem magnam ad. Aspernatur explicabo a, est
             similique sed debitis eveniet alias repellendus doloremque nobis nisi
             odit! Nihil, quae.
           </Text>
-        </Timeline.Item>
-        <Timeline.Item {...props}>
-          <Heading size="xs">Hello</Heading>
-          <Text size="xs">
+        </TimelineItem>
+        <TimelineItem {...props}>
+          <Heading size="3">Hello</Heading>
+          <Text size="3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
             laboriosam cumque voluptatem magnam ad. Aspernatur explicabo a, est
             similique sed debitis eveniet alias repellendus doloremque nobis nisi
             odit! Nihil, quae.
           </Text>
-        </Timeline.Item>
+        </TimelineItem>
       </>
     );
 }`
 
 export const timelineColor = `
-import { Timeline } from "@components/core";
+import { Timeline } from "@pillar-ui/core";
 ${item}
 
 const TimelineTest = ()=>{
     return(
-        <Timeline color="slate">
+        <Timeline color="b">
             <Items />
         </Timeline>
 
-        <Timeline color="indigo">
+        <Timeline color="i">
             <Items />
         </Timeline>
-        <Timeline color="green">
+        <Timeline color="su">
             <Items />
         </Timeline>
-        <Timeline color="red">
+        <Timeline color="d">
             <Items />
         </Timeline>
-        <Timeline color="orange">
+        <Timeline color="w">
             <Items />
         </Timeline>
-        <Timeline color="purple">
+        <Timeline color="se">
             <Items />
         </Timeline>
     )
 }`
 export const timelineSize = `
-import { Timeline } from "@components/core";
+import { Timeline } from "@pillar-ui/core";
 
 ${item}
 
 const TimelineTest = ()=>{
     return(
-      <Timeline size="xs">
+      <Timeline size="3">
         <Items />
       </Timeline>
-      <Timeline size="sm">
+      <Timeline size="4">
         <Items />
       </Timeline>
-      <Timeline size="md">
+      <Timeline size="5">
         <Items />
       </Timeline>
-      <Timeline size="lg">
+      <Timeline size="6">
         <Items />
       </Timeline>
-      <Timeline size="xl">
+      <Timeline size="7">
         <Items />
       </Timeline>
     )
 }`
 export const timelineCorner = `
-import { Timeline } from "@components/core";
+import { Timeline } from "@pillar-ui/core";
 
 ${item}
 
 const TimelineTest = ()=>{
     return(
-      <Timeline corner="sharp">
+      <Timeline corner="0">
         <Items />
       </Timeline>
-      <Timeline corner="xs">
+      <Timeline corner="2">
         <Items />
       </Timeline>
-      <Timeline corner="2xs">
+      <Timeline corner="1">
         <Items />
       </Timeline>
-      <Timeline corner="sm">
+      <Timeline corner="3">
         <Items />
       </Timeline>
-      <Timeline corner="md">
+      <Timeline corner="4">
         <Items />
       </Timeline>
-      <Timeline corner="lg">
+      <Timeline corner="5">
         <Items />
       </Timeline>
-      <Timeline corner="xl">
-        <Items />
-      </Timeline>
-      <Timeline corner="2xl">
-        <Items />
-      </Timeline>
+     
       <Timeline>
         <Items />
       </Timeline>
     )
 }`
 export const timelineVariant = `
-import { Timeline } from "@components/core";
+import { Timeline } from "@pillar-ui/core";
 
 const TimelineTest = ()=>{
     return(
@@ -135,96 +130,96 @@ const TimelineTest = ()=>{
             <Items />
           </Timeline>
           <Timeline variant="dashed">
-            <Timeline.Item variant="solid">
-              <Heading size="xs">Hello</Heading>
-              <Text size="xs">
+            <TimelineItem variant="solid">
+              <Heading size="3">Hello</Heading>
+              <Text size="3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
                 laboriosam cumque voluptatem magnam ad. Aspernatur explicabo a,
                 est similique sed debitis eveniet alias repellendus doloremque
                 nobis nisi odit! Nihil, quae.
               </Text>
-            </Timeline.Item>
-            <Timeline.Item variant="dotted">
-              <Heading size="xs">Hello</Heading>
-              <Text size="xs">
+            </TimelineItem>
+            <TimelineItem variant="dotted">
+              <Heading size="3">Hello</Heading>
+              <Text size="3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
                 laboriosam cumque voluptatem magnam ad. Aspernatur explicabo a,
                 est similique sed debitis eveniet alias repellendus doloremque
                 nobis nisi odit! Nihil, quae.
               </Text>
-            </Timeline.Item>
-            <Timeline.Item>
-              <Heading size="xs">Hello</Heading>
-              <Text size="xs">
+            </TimelineItem>
+            <TimelineItem>
+              <Heading size="3">Hello</Heading>
+              <Text size="3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
                 laboriosam cumque voluptatem magnam ad. Aspernatur explicabo a,
                 est similique sed debitis eveniet alias repellendus doloremque
                 nobis nisi odit! Nihil, quae.
               </Text>
-            </Timeline.Item>
-            <Timeline.Item>
-              <Heading size="xs">Hello</Heading>
-              <Text size="xs">
+            </TimelineItem>
+            <TimelineItem>
+              <Heading size="3">Hello</Heading>
+              <Text size="3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
                 laboriosam cumque voluptatem magnam ad. Aspernatur explicabo a,
                 est similique sed debitis eveniet alias repellendus doloremque
                 nobis nisi odit! Nihil, quae.
               </Text>
-            </Timeline.Item>
+            </TimelineItem>
           </Timeline>
     )
 }`
 export const timelineCustomBullet = `
-import { Timeline } from "@components/core";
+import { Timeline } from "@pillar-ui/core";
 
 const TimelineTest = ()=>{
     return(
         <Timeline>
-        <Timeline.Item bullet={<Cross />}>
-          <Heading size="xs">Hello</Heading>
-          <Text size="xs">
+        <TimelineItem bullet={<Cross />}>
+          <Heading size="3">Hello</Heading>
+          <Text size="3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
             laboriosam cumque voluptatem magnam ad. Aspernatur explicabo a,
             est similique sed debitis eveniet alias repellendus doloremque
             nobis nisi odit! Nihil, quae.
           </Text>
-        </Timeline.Item>
-        <Timeline.Item
+        </TimelineItem>
+        <TimelineItem
           bullet={
             <Avatar
-              variant="image"
-              size="xs"
+              
+              size="3"
               image="https://picsum.photos/id/152/40/40"
               title="hello"
             />
           }
         >
-          <Heading size="xs">Hello</Heading>
-          <Text size="xs">
+          <Heading size="3">Hello</Heading>
+          <Text size="3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
             laboriosam cumque voluptatem magnam ad. Aspernatur explicabo a,
             est similique sed debitis eveniet alias repellendus doloremque
             nobis nisi odit! Nihil, quae.
           </Text>
-        </Timeline.Item>
-        <Timeline.Item>
-          <Heading size="xs">Hello</Heading>
-          <Text size="xs">
+        </TimelineItem>
+        <TimelineItem>
+          <Heading size="3">Hello</Heading>
+          <Text size="3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
             laboriosam cumque voluptatem magnam ad. Aspernatur explicabo a,
             est similique sed debitis eveniet alias repellendus doloremque
             nobis nisi odit! Nihil, quae.
           </Text>
-        </Timeline.Item>
-        <Timeline.Item>
-          <Heading size="xs">Hello</Heading>
-          <Text size="xs">
+        </TimelineItem>
+        <TimelineItem>
+          <Heading size="3">Hello</Heading>
+          <Text size="3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
             laboriosam cumque voluptatem magnam ad. Aspernatur explicabo a,
             est similique sed debitis eveniet alias repellendus doloremque
             nobis nisi odit! Nihil, quae.
           </Text>
-        </Timeline.Item>
+        </TimelineItem>
       </Timeline>
     )
 }`

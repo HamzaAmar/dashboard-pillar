@@ -1,10 +1,10 @@
 import { Cross } from '@components/icons'
 import * as DialogRadix from '@radix-ui/react-dialog'
-import { Flex, IconButton } from '../../core'
+import { Flex, IconButton } from '@pillar-ui/core'
 
 import type { DialogProps } from './modal.type'
 
-export const DialogRoot = ({ trigger, children, description, title, size = 'md' }: DialogProps) => {
+export const DialogRoot = ({ trigger, children, description, title, size = '5' }: DialogProps) => {
   return (
     <DialogRadix.Root>
       <DialogRadix.Trigger asChild>{trigger}</DialogRadix.Trigger>
@@ -28,7 +28,7 @@ export const DialogRoot = ({ trigger, children, description, title, size = 'md' 
   )
 }
 
-export const Dialog = ({ trigger, title, description, children, size = 'md' }: DialogProps) => {
+export const Dialog = ({ trigger, title, description, children, size = '5' }: DialogProps) => {
   return (
     <DialogRoot size={size} trigger={trigger} title={title} description={description}>
       {children}

@@ -1,22 +1,35 @@
-import { Table, Pagination } from '@components/composition'
+import {} from '@components/composition'
 import { useLoaderData } from 'react-router-dom'
 
 import type { OrderModel, OrderStatusUnion } from '@api/ecommerce/orders/orders.type'
-import { Breadcrumb, Button, Chips, Flex, Heading, IconButton, Text } from '@components/core'
+import {
+  Breadcrumb,
+  Button,
+  Chips,
+  Flex,
+  Heading,
+  IconButton,
+  Text,
+  Table,
+  Pagination,
+  BreadcrumbItem,
+  TableRow,
+  TableColumn,
+  Color,
+} from '@pillar-ui/core'
 import { Pen, Trash } from '@components/icons'
-import type { ChipsColor } from '@components/core/chips'
 import { formatDate } from '@utils/date'
 
-const statusColor: Record<OrderStatusUnion, ChipsColor> = {
-  pending: 'indigo',
-  refund: 'danger',
-  canceled: 'danger',
-  shipped: 'success',
-  complete: 'mint',
-  'partially-shipped': 'purple',
-  'awaiting-pickup': 'yellow',
-  paid: 'success',
-  'awaiting-shipping': 'mint',
+const statusColor: Record<OrderStatusUnion, Color> = {
+  pending: 'i',
+  refund: 'd',
+  canceled: 'd',
+  shipped: 'su',
+  complete: 'se',
+  'partially-shipped': 'p',
+  'awaiting-pickup': 'w',
+  paid: 'su',
+  'awaiting-shipping': 'se',
 }
 
 const Orders = () => {
@@ -24,59 +37,59 @@ const Orders = () => {
   return (
     <section className="l_flow-md">
       <Flex justify="between" items="center">
-        <Heading weight="medium" size="sm">
+        <Heading weight="5" size="4">
           Products Details
         </Heading>
-        <Breadcrumb size="md">
-          <Breadcrumb.Item link="../../">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">E-commerce</Breadcrumb.Item>
-          <Breadcrumb.Item link="../" current>
+        <Breadcrumb size="5">
+          <BreadcrumbItem link="../../">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">E-commerce</BreadcrumbItem>
+          <BreadcrumbItem link="../" current>
             Orders
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
 
-      <Table variant="head-color" color="primary">
+      <Table variant="head-color" color="p">
         <thead>
-          <Table.Row type="head">
-            <Table.Column as="th">Order ID</Table.Column>
-            <Table.Column as="th">Customer Name </Table.Column>
-            <Table.Column as="th">Date</Table.Column>
-            <Table.Column as="th">Total</Table.Column>
-            <Table.Column as="th">Payment Status</Table.Column>
-            <Table.Column as="th">View Details</Table.Column>
-            <Table.Column as="th">Action</Table.Column>
-          </Table.Row>
+          <TableRow type="head">
+            <TableColumn as="th">Order ID</TableColumn>
+            <TableColumn as="th">Customer Name </TableColumn>
+            <TableColumn as="th">Date</TableColumn>
+            <TableColumn as="th">Total</TableColumn>
+            <TableColumn as="th">Payment Status</TableColumn>
+            <TableColumn as="th">View Details</TableColumn>
+            <TableColumn as="th">Action</TableColumn>
+          </TableRow>
         </thead>
         <tbody>
           {data.map(({ id, customer, total, status, date }) => (
-            <Table.Row key={id}>
-              <Table.Column weight="medium">#{id}</Table.Column>
-              <Table.Column>{customer.name}</Table.Column>
-              <Table.Column>
-                <Text weight="medium" size="xs">
+            <TableRow key={id}>
+              <TableColumn weight="medium">#{id}</TableColumn>
+              <TableColumn>{customer.name}</TableColumn>
+              <TableColumn>
+                <Text weight="5" size="3">
                   {formatDate(date)}
                 </Text>
-              </Table.Column>
+              </TableColumn>
               {/* TODO: Get The currency also from the back */}
-              <Table.Column weight="medium">{total ? `${total} $` : '_'} </Table.Column>
-              <Table.Column>
+              <TableColumn weight="medium">{total ? `${total} $` : '_'} </TableColumn>
+              <TableColumn>
                 <Chips color={statusColor[status]} variant="soft">
                   {status}
                 </Chips>
-              </Table.Column>
-              <Table.Column>
-                <Button size="xs" variant="soft" corner="full">
+              </TableColumn>
+              <TableColumn>
+                <Button size="3" variant="soft" corner="full">
                   View Details
                 </Button>
-              </Table.Column>
-              <Table.Column>
-                <Flex gap="2xs">
-                  <IconButton variant="soft" color="danger" size="xs" icon={<Trash />} title="delete Order" />
-                  <IconButton size="xs" variant="soft" color="indigo" icon={<Pen />} title="delete Order" />
+              </TableColumn>
+              <TableColumn>
+                <Flex gap="1">
+                  <IconButton variant="soft" color="d" size="3" icon={<Trash />} title="delete Order" />
+                  <IconButton size="3" variant="soft" color="i" icon={<Pen />} title="delete Order" />
                 </Flex>
-              </Table.Column>
-            </Table.Row>
+              </TableColumn>
+            </TableRow>
           ))}
         </tbody>
       </Table>

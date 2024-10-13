@@ -1,4 +1,4 @@
-import { Button, Flex, Grid, Heading, Text } from '@components/core'
+import { Button, Flex, Heading, Text } from '@pillar-ui/core'
 import { Highlight } from '..'
 import useBoolean from '@hooks/useBoolean'
 import type { PreviewProps } from './preview.type'
@@ -12,24 +12,24 @@ const Preview = ({ children, title, description, code, full, style, ...rest }: P
     <Flex
       aria-labelledby={articleId}
       as="article"
-      direction="column"
+      direction="col"
       {...classnames('preview-code l_box', { preview__full: full })}
     >
       <Flex as="header" className="preview-code--header" justify="between" items="center">
         <div className="u_leading__sm">
-          <Heading id={articleId} as="h2" size="xs" weight="medium">
+          <Heading id={articleId} as="h2" size="3" weight="5">
             {title}
           </Heading>
-          <Text color="slate" contrast="low" size="xs">
+          <Text color="b" low size="3">
             {description}
           </Text>
         </div>
-        <Button size="xs" onClick={handleToggle} variant="outline">
+        <Button size="3" onClick={handleToggle} variant="outline">
           {showCode ? 'Hide' : 'Show'} Code
         </Button>
       </Flex>
 
-      <Flex style={style} gap="sm" className="preview-code--main" {...rest}>
+      <Flex style={style} gap="4" className="preview-code--main" {...rest}>
         {children}
       </Flex>
       {showCode && <Highlight code={code}>{children}</Highlight>}

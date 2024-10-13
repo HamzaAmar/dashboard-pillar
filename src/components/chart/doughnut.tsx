@@ -5,7 +5,7 @@ import { Group } from '@visx/group'
 
 import browserUsage, { BrowserUsage as Browsers } from '@visx/mock-data/lib/mocks/browserUsage'
 import { animated, useTransition, interpolate, SpringValues } from '@react-spring/web'
-import { Color } from '@type/utils'
+import { Color } from '@pillar-ui/core'
 
 // data and types
 type BrowserNames = keyof Browsers
@@ -50,13 +50,7 @@ export type PieProps = {
   color?: Color
 }
 
-export default function Example({
-  width,
-  height,
-  margin = defaultMargin,
-  animate = true,
-  color = 'primary',
-}: PieProps) {
+export default function Example({ width, height, margin = defaultMargin, animate = true, color = 'p' }: PieProps) {
   const [selectedBrowser, setSelectedBrowser] = useState<string | null>(null)
 
   if (width < 10) return null

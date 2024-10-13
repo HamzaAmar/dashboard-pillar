@@ -1,10 +1,9 @@
-import { Breadcrumb, Flex, Grid, Heading } from '@components/core'
+import { Breadcrumb, BreadcrumbItem, Color, Flex, Grid, GridItem, Heading } from '@pillar-ui/core'
 import { Preview } from '@components/section'
-import type { Color } from '@type/utils'
 import * as docs from './layout.docs'
 
 const Box = ({
-  color = 'slate',
+  color = 'b',
   content = 'Hello',
   className,
 }: {
@@ -23,26 +22,26 @@ const layout = () => {
   return (
     <section aria-labelledby="avatar--page-id" className="l_flow-lg">
       <Flex items="center" wrap justify="between">
-        <Heading as="h1" id="avatar--page-id" size="xs">
+        <Heading as="h1" id="avatar--page-id" size="3">
           Layout Docs Page
         </Heading>
-        <Breadcrumb size="sm">
-          <Breadcrumb.Item link="../../..">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Components</Breadcrumb.Item>
-          <Breadcrumb.Item link="../">Base UI</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="4">
+          <BreadcrumbItem link="../../..">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Components</BreadcrumbItem>
+          <BreadcrumbItem link="../">Base UI</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Layout
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
+      <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
         <Preview
           title="Flex Layout"
           description="Default Flex with small gap gap possibles values(xs,sm,md,lg,xl)"
-          direction="column"
+          direction="col"
           code={docs.defaultFlex}
         >
-          <Flex gap="sm">
+          <Flex gap="4">
             <Box />
             <Box />
             <Box />
@@ -54,10 +53,10 @@ const layout = () => {
         <Preview
           title="centered flex"
           description="Make the flex item center in horizontal and vertical direction with justify (justify-content), items (align-items) props"
-          direction="column"
+          direction="col"
           code={docs.centeredFlex}
         >
-          <Flex gap="sm" items="center" justify="center">
+          <Flex gap="4" items="center" justify="center">
             <Box />
             <Box />
             <Box />
@@ -66,13 +65,8 @@ const layout = () => {
             <Box />
           </Flex>
         </Preview>
-        <Preview
-          title="title Alert"
-          description="Flex Justify Between"
-          direction="column"
-          code={docs.justifyBetweenFlex}
-        >
-          <Flex gap="sm" items="center" justify="between">
+        <Preview title="title Alert" description="Flex Justify Between" direction="col" code={docs.justifyBetweenFlex}>
+          <Flex gap="4" items="center" justify="between">
             <Box />
             <Box />
             <Box />
@@ -81,13 +75,8 @@ const layout = () => {
             <Box />
           </Flex>
         </Preview>
-        <Preview
-          title="Justify Around"
-          description="Justify Flex Around"
-          direction="column"
-          code={docs.justifyAroundFlex}
-        >
-          <Flex gap="sm" items="center" justify="around">
+        <Preview title="Justify Around" description="Justify Flex Around" direction="col" code={docs.justifyAroundFlex}>
+          <Flex gap="4" items="center" justify="around">
             <Box />
             <Box />
             <Box />
@@ -97,13 +86,8 @@ const layout = () => {
           </Flex>
         </Preview>
 
-        <Preview
-          title="Justify Evenly"
-          description="Justify Flex Evenly"
-          direction="column"
-          code={docs.justifyEvenlyFlex}
-        >
-          <Flex gap="sm" items="center" justify="evenly">
+        <Preview title="Justify Evenly" description="Justify Flex Evenly" direction="col" code={docs.justifyEvenlyFlex}>
+          <Flex gap="4" items="center" justify="evenly">
             <Box />
             <Box />
             <Box />
@@ -116,10 +100,10 @@ const layout = () => {
         <Preview
           title="Flex Wrap"
           description="Flex Wrap To make item wrap when more content exist"
-          direction="column"
+          direction="col"
           code={docs.wrapFlex}
         >
-          <Flex gap="sm" wrap>
+          <Flex gap="4" wrap>
             <Box />
             <Box />
             <Box />
@@ -137,10 +121,10 @@ const layout = () => {
         <Preview
           title="Flex Grow"
           description="For Equal column size use u_flex-1 (flex-1, flex-2 , flex-auto, flex-none)"
-          direction="column"
+          direction="col"
           code={docs.flexGrowEqual}
         >
-          <Flex gap="sm" wrap>
+          <Flex gap="4" wrap>
             <Box className="u_flex-1" />
             <Box className="u_flex-1" />
             <Box className="u_flex-1" />
@@ -150,10 +134,10 @@ const layout = () => {
         <Preview
           title="Flex Grow"
           description="For Different class we have only 1 and 2 for more advanced please check Grid"
-          direction="column"
+          direction="col"
           code={docs.flexGrowDifferent}
         >
-          <Flex gap="sm" wrap>
+          <Flex gap="4" wrap>
             <Box className="u_flex-1" />
             <Box className="u_flex-2" />
             <Box className="u_flex-1" />
@@ -162,10 +146,10 @@ const layout = () => {
         <Preview
           title="Flex Direction Column"
           description="Flex direction default value is row possible values(row , column)"
-          direction="column"
+          direction="col"
           code={docs.flexDirectionCol}
         >
-          <Flex gap="sm" direction="column">
+          <Flex gap="4" direction="col">
             <Box className="u_flex-1" />
             <Box className="u_flex-2" />
             <Box className="u_flex-1" />
@@ -174,12 +158,12 @@ const layout = () => {
         <Preview
           title="Flex Direction Nested"
           description="We can use nested flex to make any layout we need but Prefer to use grid for complex layout"
-          direction="column"
+          direction="col"
           code={docs.flexNested}
         >
-          <Flex gap="sm" direction="column">
+          <Flex gap="4" direction="col">
             <Box className="u_flex-1" content="header" />
-            <Flex gap="sm">
+            <Flex gap="4">
               <Box className="u_flex-1" content="sidebar" />
               <Box className="u_flex-2" content="main" />
               <Box className="u_flex-1" content="sidebar" />
@@ -188,12 +172,12 @@ const layout = () => {
           </Flex>
         </Preview>
         <Preview
-          title="Grid Columns"
+          title="Grid grid"
           description="grid 2 equal columns 1fr 1fr equal in css ( grid-template-columns:1fr 1fr)"
-          direction="column"
+          direction="col"
           code={docs.gridTwoColumns}
         >
-          <Grid columns="1fr 1fr" gap="sm">
+          <Grid grid="1fr 1fr" gap="4">
             <Box />
             <Box />
             <Box />
@@ -203,12 +187,12 @@ const layout = () => {
           </Grid>
         </Preview>
         <Preview
-          title="Grid columns More Detail"
+          title="Grid grid More Detail"
           description="the value of the columns props accept every value that grid-template-columns accept px fr auto rem em ch and so one choose the best value for you need"
-          direction="column"
+          direction="col"
           code={docs.gridColumnsDifferentValues}
         >
-          <Grid columns=".5fr 2fr auto 100px" gap="sm">
+          <Grid grid=".5fr 2fr auto 100px" gap="4">
             <Box />
             <Box />
             <Box />
@@ -226,49 +210,49 @@ const layout = () => {
         <Preview
           title="Complex Grid"
           description="Show layout with message and title"
-          direction="column"
+          direction="col"
           code={docs.gridLayoutTemplate}
         >
-          <Grid columns="100px 1fr 100px" rows="2rem minmax(6rem, 1fr) 2rem" gap="sm">
-            <Grid.Item column="1/4" style={{ background: 'var(--slate-8)' }}>
+          <Grid grid="100px 1fr 100px x 2rem minmax(6rem, 1fr) 2rem" gap="4">
+            <GridItem placement="1/4" style={{ background: 'var(--slate-8)' }}>
               Header
-            </Grid.Item>
-            <Grid.Item column="span 1" style={{ background: 'var(--slate-8)' }}>
+            </GridItem>
+            <GridItem placement="span 1" style={{ background: 'var(--slate-8)' }}>
               sidebar
-            </Grid.Item>
-            <Grid.Item column="span 1" style={{ background: 'var(--slate-8)' }}>
+            </GridItem>
+            <GridItem placement="span 1" style={{ background: 'var(--slate-8)' }}>
               main
-            </Grid.Item>
-            <Grid.Item column="span 1" style={{ background: 'var(--slate-8)' }}>
+            </GridItem>
+            <GridItem placement="span 1" style={{ background: 'var(--slate-8)' }}>
               sidebar
-            </Grid.Item>
-            <Grid.Item column="span 3" style={{ background: 'var(--slate-8)' }}>
+            </GridItem>
+            <GridItem placement="span 3" style={{ background: 'var(--slate-8)' }}>
               Footer
-            </Grid.Item>
+            </GridItem>
           </Grid>
         </Preview>
         <Preview
           title="Complex Grid Two"
           description="Show layout with message and title"
-          direction="column"
+          direction="col"
           code={docs.gridLayoutTwoTemplate}
         >
-          <Grid columns="100px 1fr 100px" rows="2rem minmax(6rem, 1fr) 2rem" gap="sm">
-            <Grid.Item column="2/4" style={{ background: 'var(--slate-8)' }}>
+          <Grid grid="100px 1fr 100px / 2rem minmax(6rem, 1fr) 2rem" gap="4">
+            <GridItem placement="2/4" style={{ background: 'var(--slate-8)' }}>
               Header
-            </Grid.Item>
-            <Grid.Item column="span 1" row="1 / span 3" style={{ background: 'var(--slate-8)' }}>
+            </GridItem>
+            <GridItem placement="span 1 x 1 / span 3" style={{ background: 'var(--slate-8)' }}>
               sidebar
-            </Grid.Item>
-            <Grid.Item column="2 / 3" style={{ background: 'var(--slate-8)' }}>
+            </GridItem>
+            <GridItem placement="2 / 3" style={{ background: 'var(--slate-8)' }}>
               main
-            </Grid.Item>
-            <Grid.Item column="3 / 4" style={{ background: 'var(--slate-8)' }}>
+            </GridItem>
+            <GridItem placement="3 / 4" style={{ background: 'var(--slate-8)' }}>
               sidebar
-            </Grid.Item>
-            <Grid.Item column="2 / span 2" style={{ background: 'var(--slate-8)' }}>
+            </GridItem>
+            <GridItem placement="2 / span 2" style={{ background: 'var(--slate-8)' }}>
               Footer
-            </Grid.Item>
+            </GridItem>
           </Grid>
         </Preview>
       </Grid>

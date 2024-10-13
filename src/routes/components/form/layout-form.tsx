@@ -9,26 +9,27 @@ import {
   Checkbox,
   FormGroup,
   Grid,
-} from '@components/core'
+  BreadcrumbItem,
+} from '@pillar-ui/core'
 
 export const Component = () => {
   return (
     <section className="l_flow-md">
       <Flex justify="between" items="center">
-        <Heading size="sm">Form Elements</Heading>
+        <Heading size="4">Form Elements</Heading>
 
-        <Breadcrumb size="md">
-          <Breadcrumb.Item link="../../">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Form</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="5">
+          <BreadcrumbItem link="../../">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Form</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Form Layout
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
 
-      <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
+      <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
         <article className="u_flex-1 l_box l_flow-md">
-          <Heading size="xs" weight="medium">
+          <Heading size="3" weight="5">
             Form Grid Layout
           </Heading>
           <form className="l_flow-md">
@@ -43,16 +44,16 @@ export const Component = () => {
             </FormController>
 
             <Checkbox label="Remember Me" name="hello" />
-            <Flex gap="sm">
+            <Flex gap="4">
               <Button variant="solid">Register</Button>
-              <Button color="slate" variant="soft">
+              <Button color="b" variant="soft">
                 Login
               </Button>
             </Flex>
           </form>
         </article>
         <article className="u_flex-1 l_box l_flow-md">
-          <Heading size="xs" weight="medium">
+          <Heading size="3" weight="5">
             Form Grid Layout
           </Heading>
           <form className="l_flow-md">
@@ -72,9 +73,9 @@ export const Component = () => {
             </FormGroup>
 
             <Checkbox label="Remember Me" name="hello" />
-            <Flex gap="sm">
+            <Flex gap="4">
               <Button variant="solid">Register</Button>
-              <Button color="slate" variant="soft">
+              <Button color="b" variant="soft">
                 Login
               </Button>
             </Flex>

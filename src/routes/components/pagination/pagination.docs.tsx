@@ -12,9 +12,9 @@ import { Pagination } from '@components/composition'
 
 function PaginationTest(){
   return(
-    <Pagination color="slate" title="hello" count={10} current={1} />
-    <Pagination color="slate" variant="soft" title="hello" count={10} current={1} />
-    <Pagination color="slate" variant="solid" title="hello" count={10} current={1} />
+    <Pagination color="b" title="hello" count={10} current={1} />
+    <Pagination color="b" variant="soft" title="hello" count={10} current={1} />
+    <Pagination color="b" variant="solid" title="hello" count={10} current={1} />
   )
 }
 `
@@ -24,13 +24,11 @@ import { Pagination } from '@components/composition'
 
 function PaginationTest(){
   return(
-    <Pagination corner="sharp" title="hello" count={10} current={1} />
-    <Pagination corner="2xs" title="hello" count={10} current={1} />
-    <Pagination corner="xs" title="hello" count={10} current={1} />
-    <Pagination corner="sm" title="hello" count={10} current={1} />
-    <Pagination corner="lg" title="hello" count={10} current={1} />
-    <Pagination corner="xl" title="hello" count={10} current={1} />
-    <Pagination corner="2xl" title="hello" count={10} current={1} />
+    <Pagination corner="0" title="hello" count={10} current={1} />
+    <Pagination corner="1" title="hello" count={10} current={1} />
+    <Pagination corner="2" title="hello" count={10} current={1} />
+    <Pagination corner="3" title="hello" count={10} current={1} />
+    <Pagination corner="5" title="hello" count={10} current={1} />
     <Pagination corner="full" title="hello" count={10} current={1} />
   )
 }
@@ -41,11 +39,11 @@ import { Pagination } from '@components/composition'
 
 function PaginationTest(){
   return(
-    <Pagination size="xs" title="hello" count={10} current={1} />
-    <Pagination size="sm" title="hello" count={10} current={1} />
-    <Pagination size="md" title="hello" count={10} current={1} />
-    <Pagination size="lg" title="hello" count={10} current={1} />
-    <Pagination size="xl" title="hello" count={10} current={1} />
+    <Pagination size="3" title="hello" count={10} current={1} />
+    <Pagination size="4" title="hello" count={10} current={1} />
+    <Pagination size="5" title="hello" count={10} current={1} />
+    <Pagination size="6" title="hello" count={10} current={1} />
+    <Pagination size="7" title="hello" count={10} current={1} />
   )
 }
 `
@@ -55,13 +53,13 @@ import { Pagination } from '@components/composition'
 
 function PaginationTest(){
   return(
-    <Pagination color="slate" title="hello" count={10} current={1} />
-    <Pagination color="red" title="hello" count={10} current={1} />
-    <Pagination color="green" title="hello" count={10} current={1} />
+    <Pagination color="b" title="hello" count={10} current={1} />
+    <Pagination color="d" title="hello" count={10} current={1} />
+    <Pagination color="su" title="hello" count={10} current={1} />
     <Pagination color="yellow" title="hello" count={10} current={1} />
-    <Pagination color="purple" title="hello" count={10} current={1} />
-    <Pagination color="orange" title="hello" count={10} current={1} />
-    <Pagination color="indigo" title="hello" count={10} current={1} />
+    <Pagination color="se" title="hello" count={10} current={1} />
+    <Pagination color="w" title="hello" count={10} current={1} />
+    <Pagination color="i" title="hello" count={10} current={1} />
     <Pagination color="mint" title="hello" count={10} current={1} />
   )
 }

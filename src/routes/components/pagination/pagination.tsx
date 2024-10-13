@@ -1,5 +1,4 @@
-import { Pagination } from '@components/composition'
-import { Breadcrumb, Flex, Grid, Heading } from '@components/core'
+import { Breadcrumb, BreadcrumbItem, Flex, Grid, Heading, Pagination } from '@pillar-ui/core'
 // import { Pagination } from '@components/composition'
 import { Preview } from '@components/section'
 import * as docs from './pagination.docs'
@@ -8,21 +7,21 @@ const pagination = () => {
   return (
     <section aria-labelledby="pagination--page-id" className="l_flow-lg">
       <Flex items="center" wrap justify="between">
-        <Heading as="h1" id="pagination--page-id" size="xs">
+        <Heading as="h1" id="pagination--page-id" size="3">
           Pagination Docs Page
         </Heading>
-        <Breadcrumb size="sm">
-          <Breadcrumb.Item link="../../..">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Components</Breadcrumb.Item>
-          <Breadcrumb.Item link="../">Composite</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="4">
+          <BreadcrumbItem link="../../..">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Components</BreadcrumbItem>
+          <BreadcrumbItem link="../">Composite</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Pagination
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Grid columns="1fr 1fr" gap="sm" className="md_grid-one">
+      <Grid grid="1fr 1fr" gap="4" className="md_grid-one">
         <Preview
-          direction="column"
+          direction="col"
           title="Default Pagination"
           description="Default Pagination required property count  and current (page) "
           code={docs.defaultPagination}
@@ -30,56 +29,52 @@ const pagination = () => {
           <Pagination title="hello" count={10} current={1} />
         </Preview>
         <Preview
-          direction="column"
+          direction="col"
           title="Pagination Variant"
           description="default outline possible values(outline, soft , solid)"
           code={docs.VariantPagination}
         >
-          <Pagination color="slate" title="hello" count={10} current={1} />
-          <Pagination color="slate" variant="soft" title="hello" count={10} current={1} />
-          <Pagination color="slate" variant="solid" title="hello" count={10} current={1} />
+          <Pagination color="b" title="hello" count={10} current={1} />
+          <Pagination color="b" variant="soft" title="hello" count={10} current={1} />
+          <Pagination color="b" variant="solid" title="hello" count={10} current={1} />
         </Preview>
         <Preview
-          direction="column"
+          direction="col"
           title="pagination Corner"
           description="default radius possible values (sharp, radius, circle)"
           code={docs.CornerPagination}
         >
-          <Pagination corner="sharp" title="hello" count={10} current={1} />
-          <Pagination corner="2xs" title="hello" count={10} current={1} />
-          <Pagination corner="xs" title="hello" count={10} current={1} />
-          <Pagination corner="sm" title="hello" count={10} current={1} />
-          <Pagination corner="lg" title="hello" count={10} current={1} />
-          <Pagination corner="xl" title="hello" count={10} current={1} />
-          <Pagination corner="2xl" title="hello" count={10} current={1} />
+          <Pagination corner="0" title="hello" count={10} current={1} />
+          <Pagination corner="1" title="hello" count={10} current={1} />
+          <Pagination corner="2" title="hello" count={10} current={1} />
+          <Pagination corner="3" title="hello" count={10} current={1} />
+          <Pagination corner="5" title="hello" count={10} current={1} />
           <Pagination corner="full" title="hello" count={10} current={1} />
         </Preview>
         <Preview
-          direction="column"
+          direction="col"
           title="Pagination Size"
           description="default md Possible values (xs, sm, md, lg, xl)"
           code={docs.SizePagination}
         >
-          <Pagination size="xs" title="hello" count={10} current={1} />
-          <Pagination size="sm" title="hello" count={10} current={1} />
-          <Pagination size="md" title="hello" count={10} current={1} />
-          <Pagination size="lg" title="hello" count={10} current={1} />
-          <Pagination size="xl" title="hello" count={10} current={1} />
+          <Pagination size="3" title="hello" count={10} current={1} />
+          <Pagination size="4" title="hello" count={10} current={1} />
+          <Pagination size="5" title="hello" count={10} current={1} />
+          <Pagination size="6" title="hello" count={10} current={1} />
+          <Pagination size="7" title="hello" count={10} current={1} />
         </Preview>
         <Preview
-          direction="column"
+          direction="col"
           title="Pagination Color"
           code={docs.ColorPagination}
           description="default slate possible values(red, danger, success, green , warning, orange , purple , indigo, primary, mint, yellow, slate)"
         >
-          <Pagination color="slate" title="hello" count={10} current={1} />
-          <Pagination color="red" title="hello" count={10} current={1} />
-          <Pagination color="green" title="hello" count={10} current={1} />
-          <Pagination color="yellow" title="hello" count={10} current={1} />
-          <Pagination color="purple" title="hello" count={10} current={1} />
-          <Pagination color="orange" title="hello" count={10} current={1} />
-          <Pagination color="indigo" title="hello" count={10} current={1} />
-          <Pagination color="mint" title="hello" count={10} current={1} />
+          <Pagination color="b" title="hello" count={10} current={1} />
+          <Pagination color="d" title="hello" count={10} current={1} />
+          <Pagination color="su" title="hello" count={10} current={1} />
+          <Pagination color="se" title="hello" count={10} current={1} />
+          <Pagination color="w" title="hello" count={10} current={1} />
+          <Pagination color="i" title="hello" count={10} current={1} />
         </Preview>
       </Grid>
     </section>

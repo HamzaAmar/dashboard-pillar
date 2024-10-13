@@ -1,22 +1,22 @@
 import { useId } from 'react'
 import { RECENT_ADDED, TOP_ACCOUNT, TRENDING } from '@api/crypto'
-import { Avatar, Button, Flex, Grid, Heading, Text } from '@components/core'
+import { Avatar, Button, Flex, Heading, Text } from '@pillar-ui/core'
 import { ArrowDown, ChevronDown, CircleCheck, Clock, Like, User } from '@components/icons'
 
 // TODO: Remove any from the project
 const CryptoItem = ({ title, icon, children }: any) => {
   const id = `feature-${useId()}`
   return (
-    <Flex as="article" aria-labelledby={id} direction="column" justify="between" className="l_box l_flow-sm">
+    <Flex as="article" aria-labelledby={id} direction="col" justify="between" className="l_box l_flow-sm">
       <Flex className="crypto-curr--header" justify="between" items="center">
-        <Flex gap="xs">
+        <Flex gap="3">
           {icon}
-          <Heading as="h3" id={id} weight="medium" size="xs">
+          <Heading as="h3" id={id} weight="5" size="3">
             {title}
           </Heading>
         </Flex>
         <Button
-          size="xs"
+          size="3"
           iconPosition="end"
           variant="text"
           className="u_font-medium"
@@ -33,12 +33,12 @@ const CryptoItem = ({ title, icon, children }: any) => {
 const MarketCryptoItem = ({ title, abbr, footer, image }: any) => {
   return (
     <Flex as="article" justify="between">
-      <Flex gap="xs" items="center">
+      <Flex gap="3" items="center">
         <img src={image} width={28} height={28} alt="bitcoin" />
-        <Text size="xs" weight="medium">
+        <Text size="3" weight="5">
           {title}
         </Text>
-        <Text size="xs" color="slate" contrast="low">
+        <Text size="3" color="b" low>
           {abbr}
         </Text>
       </Flex>
@@ -51,14 +51,14 @@ export const CryptoCurrency = () => {
   return (
     <section className="l_flow-md">
       <div>
-        <Heading as="h2" size="xs">
+        <Heading as="h2" size="3">
           Today Featured Content
         </Heading>
-        <Text size="xs" color="slate" contrast="low">
+        <Text size="3" color="b" low>
           The global crypto market cap is $809.65B, a 0.15% decrease over the last day.Read More
         </Text>
       </div>
-      <Grid gap="sm" className="crypto-currency">
+      <div className="crypto-currency">
         <CryptoItem title="Trending" icon={<ArrowDown direction="right-top" width={24} />}>
           {TRENDING.map((trend) => (
             <MarketCryptoItem key={trend.id} {...trend} />
@@ -73,27 +73,27 @@ export const CryptoCurrency = () => {
         <CryptoItem title="Top Account" icon={<Like direction="right-top" width={24} />}>
           {TOP_ACCOUNT.map(({ id, title, abbr, image }) => (
             <Flex key={id} as="article" justify="between">
-              <Flex gap="xs" items="center">
-                <Avatar variant="image" image={image} width={28} height={28} size="xs" title="bitcoin" />
-                <Flex gap="xs" items="start">
+              <Flex gap="3" items="center">
+                <Avatar image={image} size="3" title="bitcoin" />
+                <Flex gap="3" items="start">
                   <div>
-                    <Text size="xs" weight="medium">
+                    <Text size="3" weight="5">
                       {title}
                     </Text>
-                    <Text size="xs" color="slate" contrast="low">
+                    <Text size="3" color="b" low>
                       {abbr}
                     </Text>
                   </div>
                   <CircleCheck width={16} fill="var(--indigo-9)" stroke="var(--slate-1)" />
                 </Flex>
               </Flex>
-              <Button icon={<User />} variant="soft" size="xs" color="slate">
+              <Button icon={<User />} variant="soft" size="3" color="b">
                 Follow
               </Button>
             </Flex>
           ))}
         </CryptoItem>
-      </Grid>
+      </div>
     </section>
   )
 }

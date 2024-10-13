@@ -1,13 +1,13 @@
-import { Flex, IconButton, Text } from '@components/core'
+import { Flex, IconButton, Text } from '@pillar-ui/core'
 import { Facebook, Github, Linkdin, Twitter } from '@components/icons'
 
 const footer = () => {
   return (
     <Flex className="footer" as="footer" items="center" justify="between">
-      <Text size="xs" color="slate" contrast="low" weight="medium" align="center">
+      <Text size="3" color="b" low weight="5" align="center">
         © {new Date().getFullYear()} Made By Hamza Miloud Amar
       </Text>
-      <Flex as="ul" gap="xs">
+      <Flex as="ul" gap="3">
         <li>
           <IconButton
             as="a"

@@ -1,10 +1,10 @@
 export const controlsCarousel = `
-import { Grid } from '@components/core'
+import { Grid } from '@pillar-ui/core'
 import { Carousel } from '@components/composition'
 
 function CarouselStory(){
     return(
-        <Grid columns="repeat(2, 1fr)" className="md_grid-one" gap="sm">
+        <Grid grid="repeat(2, 1fr)" className="md_grid-one" gap="4">
           <Carousel content={slides} />
           <Carousel content={slides} withIndicators />
           <Carousel content={slides} withControls />
@@ -15,12 +15,12 @@ function CarouselStory(){
 `
 
 export const optionsCarousel = `
-import { Grid } from '@components/core'
+import { Grid } from '@pillar-ui/core'
 import { Carousel } from '@components/composition'
 
 function CarouselStory(){
     return(
-        <Grid columns="repeat(2, 1fr)" className="md_grid-one" gap="sm">
+        <Grid grid="repeat(2, 1fr)" className="md_grid-one" gap="4">
           <Carousel content={slides} />
           <Carousel content={slides} withIndicators />
           <Carousel content={slides} withControls />
@@ -30,33 +30,33 @@ function CarouselStory(){
 }
 `
 export const gapCarousel = `
-import { Grid } from '@components/core'
+import { Grid } from '@pillar-ui/core'
 import { Carousel } from '@components/composition'
 
 function CarouselStory(){
     return(
-        <Grid columns="repeat(2, 1fr)" className="md_grid-one" gap="sm">
-            <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="2xs" />
-            <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="xs" />
-            <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="sm" />
-            <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="md" />
-            <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="lg" />
-            <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="xl" />
-            <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="2xl" />
+        <Grid grid="repeat(2, 1fr)" className="md_grid-one" gap="4">
+            <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="1" />
+            <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="3" />
+            <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="4" />
+            <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="5" />
+            <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="6" />
+            <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="7" />
+            <Carousel content={slides} containScroll="trimSnaps" withControls perView={4} gap="8" />
         </Grid>
     )
 }
 `
 
 export const perViewCarousel = `
-import { Grid } from '@components/core'
+import { Grid } from '@pillar-ui/core'
 import { Carousel } from '@components/composition'
 
 function CarouselStory(){
     return(
-        <Grid columns="repeat(2, 1fr)" className="md_grid-one" gap="sm">
-            <Carousel withControls content={slides} perView={3} containScroll="trimSnaps" gap="sm" />
-            <Carousel withControls content={slides} perView={3.5} containScroll="trimSnaps" gap="sm" />
+        <Grid grid="repeat(2, 1fr)" className="md_grid-one" gap="4">
+            <Carousel withControls content={slides} perView={3} containScroll="trimSnaps" gap="4" />
+            <Carousel withControls content={slides} perView={3.5} containScroll="trimSnaps" gap="4" />
             <Carousel
             content={slides}
             perView={3.5}
@@ -64,7 +64,7 @@ function CarouselStory(){
             withControls
             withIndicators
             align="start"
-            gap="sm"
+            gap="4"
             />
             <Carousel
             content={slides}
@@ -73,7 +73,7 @@ function CarouselStory(){
             withControls
             withIndicators
             align="end"
-            gap="sm"
+            gap="4"
             />
         </Grid>
     )

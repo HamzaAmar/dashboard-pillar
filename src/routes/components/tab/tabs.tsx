@@ -1,5 +1,4 @@
-import { NormalTab, Tabs } from '@components/composition'
-import { Breadcrumb, Flex, Grid, Heading, Text } from '@components/core'
+import { Breadcrumb, BreadcrumbItem, Flex, Grid, Heading, Text, Tabs } from '@pillar-ui/core'
 import { Home, User } from '@components/icons'
 import { Preview } from '@components/section'
 import * as docs from './tabs.docs'
@@ -8,25 +7,25 @@ export const Component = () => {
   return (
     <section aria-labelledby="status--page-id" className="l_flow-lg">
       <Flex items="center" wrap justify="between">
-        <Heading as="h1" id="status--page-id" size="xs">
+        <Heading as="h1" id="status--page-id" size="3">
           Tab Docs Page
         </Heading>
-        <Breadcrumb size="sm">
-          <Breadcrumb.Item link="../../..">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Components</Breadcrumb.Item>
-          <Breadcrumb.Item link="../">Composite</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="4">
+          <BreadcrumbItem link="../../..">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Components</BreadcrumbItem>
+          <BreadcrumbItem link="../">Composite</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Tab
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Grid columns="1fr" className="md_grid-one" gap="md">
+      {/* <Grid grid="1fr" className="md_grid-one" gap="5">
         <Preview
           title="Tab Variants"
           description="variant props default to link possible other values (solid ,outline, soft, link)"
           code={docs.tabVariant}
         >
-          <Grid columns="1fr 1fr" className="sm_grid-one" gap="md">
+          <Grid grid="1fr 1fr" className="sm_grid-one" gap="5">
             <NormalTab variant="solid" />
             <NormalTab variant="outline" />
             <NormalTab variant="soft" />
@@ -39,14 +38,14 @@ export const Component = () => {
           description="color props default to primary possible other values (warning, secondary, slate, yellow, danger, indigo, primary, purple)"
           code={docs.tabColor}
         >
-          <Grid columns="1fr 1fr" className="sm_grid-one" gap="md">
-            <NormalTab color="danger" variant="solid" />
-            <NormalTab color="indigo" variant="outline" />
+          <Grid grid="1fr 1fr" className="sm_grid-one" gap="5">
+            <NormalTab color="d" variant="solid" />
+            <NormalTab color="i" variant="outline" />
             <NormalTab variant="soft" />
-            <NormalTab color="purple" />
-            <NormalTab color="slate" variant="outline" />
+            <NormalTab color="se" />
+            <NormalTab color="b" variant="outline" />
             <NormalTab color="yellow" variant="soft" />
-            <NormalTab color="warning" />
+            <NormalTab color="w" />
           </Grid>
         </Preview>
 
@@ -55,35 +54,35 @@ export const Component = () => {
           description="size props default to link possible other values (solid ,outline, soft, link)"
           code={docs.tabSize}
         >
-          <Grid columns="1fr 1fr" className="sm_grid-one" gap="md">
-            <NormalTab size="sm" />
-            <NormalTab size="md" />
-            <NormalTab size="lg" />
+          <Grid grid="1fr 1fr" className="sm_grid-one" gap="5">
+            <NormalTab size="4" />
+            <NormalTab size="5" />
+            <NormalTab size="6" />
             <NormalTab />
           </Grid>
         </Preview>
         <Preview title="Tab Icons" description="Custom Tab to Allow icons in tab list trigger " code={docs.tabIcon}>
-          <Tabs size="lg" defaultValue="one">
-            <Tabs.List className="">
+          <Tabs size="6" defaultValue="one">
+            <Tabs className="">
               <Tabs.Trigger value="one">
                 <Home width="20" />
-                <Text className="u_sr-only" size="xs">
+                <Text className="u_sr-only" size="3">
                   Home
                 </Text>
               </Tabs.Trigger>
               <Tabs.Trigger value="two">
-                <Flex items="center" gap="2xs">
+                <Flex items="center" gap="1">
                   <Home width="20" />
-                  <Text size="xs">Home</Text>
+                  <Text size="3">Home</Text>
                 </Flex>
               </Tabs.Trigger>
               <Tabs.Trigger value="three">
-                <Flex items="center" gap="2xs">
-                  <Text size="xs">User</Text>
+                <Flex items="center" gap="1">
+                  <Text size="3">User</Text>
                   <User width="20" />
                 </Flex>
               </Tabs.Trigger>
-            </Tabs.List>
+            </Tabs>
             <Tabs.Content value="one">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, ipsam consectetur et impedit hic
               molestiae libero, perferendis iure pariatur, quidem obcaecati dolore blanditiis? Ut, vero similique.
@@ -101,7 +100,7 @@ export const Component = () => {
             </Tabs.Content>
           </Tabs>
         </Preview>
-      </Grid>
+      </Grid> */}
     </section>
   )
 }

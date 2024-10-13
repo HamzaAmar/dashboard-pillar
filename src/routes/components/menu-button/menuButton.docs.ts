@@ -1,6 +1,6 @@
 export const menButtonRadio = `
 import {useState} from 'react'
-import  {Text, MenuButton, Button}  from '@components/core'
+import  {Text, MenuButton, Button}  from '@pillar-ui/core'
 import  {Caret}  from '@components/icons'
 
 const MenuButtonComp = () => {
@@ -9,7 +9,7 @@ const MenuButtonComp = () => {
     return (
       <MenuButton
         trigger={
-          <Button iconPosition="end" size="sm" icon={<Caret />} variant="outline" color="slate">
+          <Button iconPosition="end" size="4" icon={<Caret />} variant="outline" color="b">
             Sort by
           </Button>
         }
@@ -17,22 +17,22 @@ const MenuButtonComp = () => {
         <MenuButton.Content>
           <MenuButton.RadioGroup value={state} onValueChange={setState}>
             <MenuButton.Radio value="lowest-price">
-              <Text size="xs" weight={state === 'lowest-price' ? 'medium' : 'normal'}>
+              <Text size="3" weight={state === 'lowest-price' ? 'medium' : 'normal'}>
                 Lowest Price
               </Text>
             </MenuButton.Radio>
             <MenuButton.Radio value="highest-price">
-              <Text size="xs" weight={state === 'highest-price' ? 'medium' : 'normal'}>
+              <Text size="3" weight={state === 'highest-price' ? 'medium' : 'normal'}>
                 Highest Price
               </Text>
             </MenuButton.Radio>
             <MenuButton.Radio value={'top-review'}>
-              <Text size="xs" weight={state === 'top-review' ? 'medium' : 'normal'}>
+              <Text size="3" weight={state === 'top-review' ? 'medium' : 'normal'}>
                 Top Customers Review
               </Text>
             </MenuButton.Radio>
             <MenuButton.Radio value="recent">
-              <Text size="xs" weight={state === 'recent' ? 'medium' : 'normal'}>
+              <Text size="3" weight={state === 'recent' ? 'medium' : 'normal'}>
                 Most Recent
               </Text>
             </MenuButton.Radio>
@@ -45,15 +45,15 @@ const MenuButtonComp = () => {
 
 export const ProfileMenu = `
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
-import  {Flex, Avatar, Text, MenuButton, Button}  from '@components/core'
+import  {Flex, Avatar, Text, MenuButton, Button}  from '@pillar-ui/core'
 import  * as Icons  from '@components/icons'
 
 function ProfileMenuButton() {
     return (
       <DropdownMenu.Root>
         <DropdownMenu.Trigger asChild>
-          <Flex className="custom-button" as="button" items="center" gap="2xs">
-            <Avatar variant="image" title={user.name} />
+          <Flex className="custom-button" as="button" items="center" gap="1">
+            <Avatar  title={user.name} />
             <Icons.ChevronDown width="16" />
           </Flex>
         </DropdownMenu.Trigger>
@@ -61,13 +61,13 @@ function ProfileMenuButton() {
         <DropdownMenu.Content align="end" sideOffset={16} className="menu-button--container">
           <DropdownMenu.Group>
             <DropdownMenu.Item asChild>
-              <Flex as={Link} to="pages/profile" gap="xs" className="menu-button--item">
-                <Avatar title={user.name} variant="image" image={user.avatar} />
+              <Flex as={Link} to="pages/profile" gap="3" className="menu-button--item">
+                <Avatar title={user.name}  src={user.avatar} />
                 <div>
-                  <Text size="sm" weight="medium">
+                  <Text size="4" weight="5">
                     {user.name}
                   </Text>
-                  <Text color="slate" contrast="low" size="xs">
+                  <Text color="b" low size="3">
                     {user.role}
                   </Text>
                 </div>
@@ -78,35 +78,35 @@ function ProfileMenuButton() {
   
           <DropdownMenu.Group>
             <DropdownMenu.Item asChild>
-              <Flex gap="xs" as={Link} className="menu-button--item" to="pages/profile">
+              <Flex gap="3" as={Link} className="menu-button--item" to="pages/profile">
                 <Icons.User width="20" />
-                <Text size="xs" weight="medium">
+                <Text size="3" weight="5">
                   View Profile
                 </Text>
               </Flex>
             </DropdownMenu.Item>
             <DropdownMenu.Item asChild>
-              <Flex gap="xs" as={Link} className="menu-button--item" to="pages/emails">
+              <Flex gap="3" as={Link} className="menu-button--item" to="pages/emails">
                 <Icons.Envelop width="20" />
-                <Text size="xs" weight="medium">
+                <Text size="3" weight="5">
                   {' '}
                   Inbox
                 </Text>
               </Flex>
             </DropdownMenu.Item>
             <DropdownMenu.Item asChild>
-              <Flex gap="xs" as={Link} className="menu-button--item" to="pages/chat">
+              <Flex gap="3" as={Link} className="menu-button--item" to="pages/chat">
                 <Icons.Messages width="20" />
-                <Text size="xs" weight="medium">
+                <Text size="3" weight="5">
                   {' '}
                   Chat
                 </Text>
               </Flex>
             </DropdownMenu.Item>
             <DropdownMenu.Item asChild>
-              <Flex gap="xs" className="menu-button--item" as={Link} to="pages/todo">
+              <Flex gap="3" className="menu-button--item" as={Link} to="pages/todo">
                 <Icons.Checkbox width="20" />
-                <Text size="xs" weight="medium">
+                <Text size="3" weight="5">
                   {' '}
                   Task board
                 </Text>
@@ -116,18 +116,18 @@ function ProfileMenuButton() {
           <DropdownMenu.Separator className="menu-button--separator" />
           <DropdownMenu.Group>
             <DropdownMenu.Item asChild>
-              <Flex gap="xs" as={Link} className="menu-button--item" to="pages/account-settings">
+              <Flex gap="3" as={Link} className="menu-button--item" to="pages/account-settings">
                 <Icons.Setting width="20" />
-                <Text size="xs" weight="medium">
+                <Text size="3" weight="5">
                   {' '}
                   Account Settings
                 </Text>
               </Flex>
             </DropdownMenu.Item>
             <DropdownMenu.Item asChild>
-              <Flex gap="xs" as={Link} className="menu-button--item" to="pages/faq">
+              <Flex gap="3" as={Link} className="menu-button--item" to="pages/faq">
                 <Icons.Help width="20" />
-                <Text size="xs" weight="medium">
+                <Text size="3" weight="5">
                   {' '}
                   Faq
                 </Text>
@@ -143,7 +143,7 @@ function ProfileMenuButton() {
 
 export const MessageMenu = `
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
-import  {Flex, Avatar, Text, MenuButton, Button}  from '@components/core'
+import  {Flex, Avatar, Text, MenuButton, Button}  from '@pillar-ui/core'
 import  * as Icons  from '@components/icons'
 
 function MessageMenuButton() {
@@ -158,10 +158,10 @@ function MessageMenuButton() {
             <DropdownMenu.Group>
               <DropdownMenu.Item className="menu-button--item">
                 <Flex as="header" items="center" justify="between">
-                  <Text size="sm" weight="medium">
+                  <Text size="4" weight="5">
                     Message
                   </Text>
-                  <Button size="xs" variant="text">
+                  <Button size="3" variant="text">
                     Settings
                   </Button>
                 </Flex>
@@ -173,19 +173,19 @@ function MessageMenuButton() {
               {getMessages(10).map(({ from, id, date, unread, message }) => (
                 <DropdownMenu.Item asChild key={id}>
                   <Flex justify="between" className="menu-button--item">
-                    <Flex gap="xs">
-                      <Avatar variant="image" image={from.avatar} title={from.name} />
+                    <Flex gap="3">
+                      <Avatar  src={from.avatar} title={from.name} />
                       <div className="u_flex-1">
-                        <Text weight="medium" size="xs">
+                        <Text weight="5" size="3">
                           {from.name}
                         </Text>
-                        <Text truncate="multiline" contrast="low" color="slate" numberLine={2} size="xs">
+                        <Text truncate="multiline" low color="b" numberLine={2} size="3">
                           {message}
                         </Text>
                       </div>
                     </Flex>
-                    <Flex flex="none" items="end" justify="between" direction="column">
-                      <Text color="slate" contrast="low" size="xs">
+                    <Flex flex="none" items="end" justify="between" direction="col">
+                      <Text color="b" low size="3">
                         {formatDate(date)}
                       </Text>
   
@@ -200,7 +200,7 @@ function MessageMenuButton() {
             <DropdownMenu.Group>
               <DropdownMenu.Item className="menu-button--item">
                 <Button
-                  size="sm"
+                  size="4"
                   // className="menu-button--item"
                   variant="text"
                   fluid

@@ -1,4 +1,4 @@
-import { Flex, Grid, Heading, Text } from '@components/core'
+import { Color, Flex, Heading, Text } from '@pillar-ui/core'
 import { ParentSize } from '@visx/responsive'
 import { curveMonotoneX } from '@visx/curve'
 import { useId, useMemo } from 'react'
@@ -9,18 +9,17 @@ import { LinePath } from '@visx/shape'
 import { CryptoCurrencyItemProps } from '../../dashboard.type'
 import { CRYPTO_CURRENCY } from '@api/crypto'
 import { LineChartCryptoProps } from '../crypto.type'
-import { Color } from '@type/utils'
 
 const colors: Record<number, Color> = {
-  0: 'orange',
-  1: 'mint',
-  2: 'indigo',
-  3: 'yellow',
-  4: 'slate',
-  5: 'purple',
-  6: 'slate',
-  7: 'orange',
-  8: 'yellow',
+  0: 'w',
+  1: 'p',
+  2: 'i',
+  3: 'se',
+  4: 'b',
+  5: 'su',
+  6: 'd',
+  7: 'p',
+  8: 'o',
 }
 
 const getDate = (d: any) => new Date(d.time)
@@ -29,7 +28,7 @@ const getStockValue = (d: any) => d.price
 export const LineChart = ({
   width,
   height,
-  color = 'primary',
+  color = 'p',
   prices,
   margin = { left: 0, top: 0, right: 0, bottom: 0 },
 }: LineChartCryptoProps) => {
@@ -70,16 +69,16 @@ const CryptoCurrencyItem = ({ color, name, image, prices, currency, total }: Cry
   return (
     <Flex as="article" aria-labelledby={id} justify="between" items="center" className="l_box u_flex-1">
       <div>
-        <Flex gap="sm" items="center">
+        <Flex gap="4" items="center">
           <img src={`/images/crypto/${image}`} width="36" height="36" alt={name} />
-          <Heading id={id} as="h3" size="xs" weight="medium">
+          <Heading id={id} as="h3" size="3" weight="5">
             {name}
           </Heading>
         </Flex>
-        <Text size="lg" weight="medium">
+        <Text size="6" weight="5">
           {prices[0].price} {currency}
         </Text>
-        <Text size="sm" color="slate" contrast="low">
+        <Text size="4" color="b" low>
           {total} {currency}
         </Text>
       </div>
@@ -94,18 +93,18 @@ export const CryptoAnalytics = () => {
   return (
     <section aria-labelledby="crypto-market-id" className="l_flow-md">
       <div>
-        <Heading as="h2" id="crypto-market-id" size="xs">
+        <Heading as="h2" id="crypto-market-id" size="3">
           Today's Cryptocurrency Prices by Market Cap
         </Heading>
-        <Text size="xs" color="slate" contrast="low">
+        <Text size="3" color="b" low>
           The global crypto market cap is $809.65B, a 0.15% decrease over the last day.Read More
         </Text>
       </div>
-      <Grid gap="sm" className="crypto-currency">
+      <div className="crypto-currency">
         {CRYPTO_CURRENCY.map((crypto, index) => (
           <CryptoCurrencyItem key={crypto.name} color={colors[index]} {...crypto} />
         ))}
-      </Grid>
+      </div>
     </section>
   )
 }

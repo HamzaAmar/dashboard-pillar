@@ -1,14 +1,14 @@
 import type { ReactNode } from 'react'
-import type { ButtonProps } from '../../core/button/button.type'
 import type { AlertDialogProps as AlertDialogPropsRoot } from '@radix-ui/react-alert-dialog'
 import type { DialogProps as RadixDialogProps } from '@radix-ui/react-dialog'
+import { ButtonProps, Size } from '@pillar-ui/core'
 
-type Size = 'sm' | 'md' | 'lg' | 'full'
+type DSize = Size | 'full'
 
 export interface AlertDialogRootProps extends AlertDialogPropsRoot {
   children: ReactNode
   trigger: ReactNode
-  size?: Size
+  size?: DSize
 }
 
 export interface AlertDialogProps extends Omit<AlertDialogRootProps, 'children'> {
@@ -27,12 +27,12 @@ export interface DialogProps {
   description?: string
   trigger: ReactNode
   children?: ReactNode
-  size?: Size
+  size?: DSize
 }
 export interface DrawerDialogProps extends RadixDialogProps {
   trigger: ReactNode
   children: ReactNode
   title: ReactNode
   position?: 'top' | 'bottom' | 'left' | 'right'
-  size?: Size
+  size?: DSize
 }

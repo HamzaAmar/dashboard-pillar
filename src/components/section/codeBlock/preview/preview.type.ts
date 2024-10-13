@@ -1,4 +1,4 @@
-import type { FlexProps } from '@components/core/flex/flex.type'
+import type { FlexProps } from '@pillar-ui/core'
 import type { CSSProperties, ReactNode } from 'react'
 
 export interface PreviewProps extends FlexProps {
@@ -7,6 +7,5 @@ export interface PreviewProps extends FlexProps {
   description: string
   code?: string
   full?: boolean
-  direction?: 'row' | 'column'
   style?: CSSProperties
 }

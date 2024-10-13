@@ -1,4 +1,4 @@
-import { Flex, IconButton, Text } from '@components/core'
+import { Flex, IconButton, Text } from '@pillar-ui/core'
 import * as Icons from '@components/icons'
 import { forwardRef } from 'react'
 import { Link, NavLink } from 'react-router-dom'
@@ -20,13 +20,13 @@ export const SidebarItem = forwardRef(({ isShrink, children, title, icon, as: Ta
 
   return (
     <li className="sidebar--nav-item" data-type={isShrink ? 'shrink' : 'regular'} {...current}>
-      <Flex as={Tag} items="center" className="sidebar--nav-button" gap="sm" ref={ref} {...rest}>
+      <Flex as={Tag} items="center" className="sidebar--nav-button" gap="4" ref={ref} {...rest}>
         <span className="u_flex-none" data-nested={Boolean(children) ? true : false}>
           {icon}
         </span>
 
         <Flex className="sidebar--nav-item-content  u_flex-1" items="center" justify="between">
-          <Text weight="medium" size="xs">
+          <Text weight="5" size="3">
             {title}
           </Text>
           {children && <Icons.ChevronDown width="20" />}
@@ -119,7 +119,7 @@ export const SidebarDrawer = () => {
           <Logo width={100} />
         </Flex>
       }
-      size="sm"
+      size="4"
       position="left"
       trigger={<IconButton className="drawer--sidebar" icon={<Icons.Menu />} title={drawerTriggerLabel} />}
     >

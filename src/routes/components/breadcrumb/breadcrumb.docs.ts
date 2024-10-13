@@ -4,9 +4,9 @@ import { Breadcrumb } from "@components/composite";
 const breadcrumb = () =>{
   return(
     <Breadcrumb>
-      <Breadcrumb.Item link="../..">components</Breadcrumb.Item>
-      <Breadcrumb.Item link="../">base-ui</Breadcrumb.Item>
-      <Breadcrumb.Item link="./" current> breadcrumb </Breadcrumb.Item>
+      <BreadcrumbItem link="../..">components</BreadcrumbItem>
+      <BreadcrumbItem link="../">base-ui</BreadcrumbItem>
+      <BreadcrumbItem link="./" current> breadcrumb </BreadcrumbItem>
     </Breadcrumb>
   )
 }
@@ -18,21 +18,21 @@ import { Breadcrumb } from "@components/composite";
 const breadcrumb = () =>{
   return(
     <Breadcrumb separator="-">
-        <Breadcrumb.Item link="../..">components</Breadcrumb.Item>
-        <Breadcrumb.Item link="../">base-ui</Breadcrumb.Item>
-        <Breadcrumb.Item link="./" current> breadcrumb </Breadcrumb.Item>
+        <BreadcrumbItem link="../..">components</BreadcrumbItem>
+        <BreadcrumbItem link="../">base-ui</BreadcrumbItem>
+        <BreadcrumbItem link="./" current> breadcrumb </BreadcrumbItem>
     </Breadcrumb>
     
     <Breadcrumb separator="*">
-        <Breadcrumb.Item link="../..">components</Breadcrumb.Item>
-        <Breadcrumb.Item link="../">base-ui</Breadcrumb.Item>
-        <Breadcrumb.Item link="./" current> breadcrumb </Breadcrumb.Item>
+        <BreadcrumbItem link="../..">components</BreadcrumbItem>
+        <BreadcrumbItem link="../">base-ui</BreadcrumbItem>
+        <BreadcrumbItem link="./" current> breadcrumb </BreadcrumbItem>
     </Breadcrumb>
     
     <Breadcrumb separator={<Minus width={10} />}>
-        <Breadcrumb.Item link="../..">components</Breadcrumb.Item>
-        <Breadcrumb.Item link="../">base-ui</Breadcrumb.Item>
-        <Breadcrumb.Item link="./" current> breadcrumb </Breadcrumb.Item>
+        <BreadcrumbItem link="../..">components</BreadcrumbItem>
+        <BreadcrumbItem link="../">base-ui</BreadcrumbItem>
+        <BreadcrumbItem link="./" current> breadcrumb </BreadcrumbItem>
     </Breadcrumb>
   )
 }
@@ -44,45 +44,45 @@ import { Breadcrumb } from "@components/composite";
 const breadcrumb = () =>{
   return(
     <Breadcrumb>
-        <Breadcrumb.Item link="../../..">
+        <BreadcrumbItem link="../../..">
             Home
             <Home width={16} />
-        </Breadcrumb.Item>
+        </BreadcrumbItem>
 
-        <Breadcrumb.Item link="../..">
+        <BreadcrumbItem link="../..">
             components
             <Component width={16} />
-        </Breadcrumb.Item>
+        </BreadcrumbItem>
 
-        <Breadcrumb.Item link="../">
+        <BreadcrumbItem link="../">
             base-ui
             <Home width={16} />
-        </Breadcrumb.Item>
-        <Breadcrumb.Item link="./" current>
+        </BreadcrumbItem>
+        <BreadcrumbItem link="./" current>
             breadcrumb
             <LinkIcon width={16} />
-        </Breadcrumb.Item>
+        </BreadcrumbItem>
     </Breadcrumb>
 
     <Breadcrumb>
-        <Breadcrumb.Item link="../../..">
+        <BreadcrumbItem link="../../..">
             <Home width={16} />
             Home
-        </Breadcrumb.Item>
+        </BreadcrumbItem>
 
-        <Breadcrumb.Item link="../..">
+        <BreadcrumbItem link="../..">
             <Component width={16} />
             components
-        </Breadcrumb.Item>
+        </BreadcrumbItem>
 
-        <Breadcrumb.Item link="../">
+        <BreadcrumbItem link="../">
             <Home width={16} />
             base-ui
-        </Breadcrumb.Item>
-        <Breadcrumb.Item link="./" current>
+        </BreadcrumbItem>
+        <BreadcrumbItem link="./" current>
             <LinkIcon width={16} />
             breadcrumb
-        </Breadcrumb.Item>
+        </BreadcrumbItem>
     </Breadcrumb>
   )
 }
@@ -94,21 +94,21 @@ import { Breadcrumb } from "@components/composite";
 const breadcrumb = () =>{
   return(
     <Breadcrumb separator="-">
-        <Breadcrumb.Item link="../..">components</Breadcrumb.Item>
-        <Breadcrumb.Item link="../">base-ui</Breadcrumb.Item>
-        <Breadcrumb.Item link="./" current> breadcrumb </Breadcrumb.Item>
+        <BreadcrumbItem link="../..">components</BreadcrumbItem>
+        <BreadcrumbItem link="../">base-ui</BreadcrumbItem>
+        <BreadcrumbItem link="./" current> breadcrumb </BreadcrumbItem>
     </Breadcrumb>
 
-    <Breadcrumb size="md" separator="/">
-        <Breadcrumb.Item link="../..">components</Breadcrumb.Item>
-        <Breadcrumb.Item link="../">base-ui</Breadcrumb.Item>
-        <Breadcrumb.Item link="./" current> breadcrumb </Breadcrumb.Item>
+    <Breadcrumb size="5" separator="/">
+        <BreadcrumbItem link="../..">components</BreadcrumbItem>
+        <BreadcrumbItem link="../">base-ui</BreadcrumbItem>
+        <BreadcrumbItem link="./" current> breadcrumb </BreadcrumbItem>
     </Breadcrumb>
 
-    <Breadcrumb size="lg">
-        <Breadcrumb.Item link="../..">components</Breadcrumb.Item>
-        <Breadcrumb.Item link="../">base-ui</Breadcrumb.Item>
-        <Breadcrumb.Item link="./" current> breadcrumb </Breadcrumb.Item>
+    <Breadcrumb size="6">
+        <BreadcrumbItem link="../..">components</BreadcrumbItem>
+        <BreadcrumbItem link="../">base-ui</BreadcrumbItem>
+        <BreadcrumbItem link="./" current> breadcrumb </BreadcrumbItem>
     </Breadcrumb>
   )
 }

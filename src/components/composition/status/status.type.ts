@@ -1,4 +1,4 @@
-import { Color } from '@type/utils'
+import { Color } from '@pillar-ui/core'
 
 export interface ErrorProps {
   variant?: 'gradient' | 'outline' | 'solid'

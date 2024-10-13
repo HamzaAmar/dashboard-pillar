@@ -1,5 +1,5 @@
 import { USERS_LIST } from '@api/user/users.data'
-import { Button, Flex, Input, FormController, Textarea } from '@components/core'
+import { Button, Flex, Input, FormController, Textarea } from '@pillar-ui/core'
 import { useState } from 'react'
 
 const me = USERS_LIST[0]
@@ -16,7 +16,7 @@ const PersonalDetail = () => {
       <FormController label="Name">
         <Input name="name" autoComplete="name" defaultValue={fields.name} />
       </FormController>
-      <Flex className="account-settings--form-field" gap="sm">
+      <Flex className="account-settings--form-field" gap="4">
         <FormController className="u_flex-1" label="Phone Number">
           <Input autoComplete="tel" defaultValue={fields.number} name="phone" type="tel" />
         </FormController>

@@ -1,4 +1,4 @@
-import { Breadcrumb, Flex, Grid, Heading, Spinner } from '@components/core'
+import { Breadcrumb, BreadcrumbItem, Flex, Grid, Heading, Spinner } from '@pillar-ui/core'
 import { Preview } from '@components/section'
 import * as docs from './spinner.docs'
 
@@ -6,31 +6,31 @@ const spinner = () => {
   return (
     <section aria-labelledby="spinner--page-id" className="l_flow-lg">
       <Flex items="center" wrap justify="between">
-        <Heading as="h1" id="spinner--page-id" size="xs">
+        <Heading as="h1" id="spinner--page-id" size="3">
           Spinner Docs Page
         </Heading>
-        <Breadcrumb size="sm">
-          <Breadcrumb.Item link="../../..">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Components</Breadcrumb.Item>
-          <Breadcrumb.Item link="../">Base UI</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="4">
+          <BreadcrumbItem link="../../..">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Components</BreadcrumbItem>
+          <BreadcrumbItem link="../">Base UI</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Spinner
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
+      <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
         <Preview
           title="Small Spinner Color"
           description="Progress bar color default is primary possible values(danger, success, mint, yellow, purple, indigo, warning, slate)"
           code={docs.spinnerColor}
         >
-          <Flex wrap gap="md" items="center">
-            <Spinner color="danger" />
-            <Spinner color="success" />
-            <Spinner color="purple" />
-            <Spinner color="indigo" />
-            <Spinner color="slate" />
-            <Spinner color="warning" />
+          <Flex wrap gap="5" items="center">
+            <Spinner color="d" />
+            <Spinner color="su" />
+            <Spinner color="se" />
+            <Spinner color="i" />
+            <Spinner color="b" />
+            <Spinner color="w" />
           </Flex>
         </Preview>
 
@@ -39,13 +39,13 @@ const spinner = () => {
           description="Boolean Value default false when its is true it invert the color"
           code={docs.spinnerColorInvert}
         >
-          <Flex wrap gap="md" items="center">
-            <Spinner invert color="danger" />
-            <Spinner invert color="success" />
-            <Spinner invert color="purple" />
-            <Spinner invert color="indigo" />
-            <Spinner invert color="slate" />
-            <Spinner invert color="warning" />
+          <Flex wrap gap="5" items="center">
+            <Spinner invert color="d" />
+            <Spinner invert color="su" />
+            <Spinner invert color="se" />
+            <Spinner invert color="i" />
+            <Spinner invert color="b" />
+            <Spinner invert color="w" />
           </Flex>
         </Preview>
 
@@ -54,13 +54,13 @@ const spinner = () => {
           description="Default check is Boolean value default to false"
           code={docs.spinnerMediumSize}
         >
-          <Flex wrap gap="md" items="center">
-            <Spinner size="md" color="danger" />
-            <Spinner size="md" color="success" />
-            <Spinner size="md" color="purple" />
-            <Spinner size="md" color="indigo" />
-            <Spinner size="md" color="slate" />
-            <Spinner size="md" color="warning" />
+          <Flex wrap gap="5" items="center">
+            <Spinner size="5" color="d" />
+            <Spinner size="5" color="su" />
+            <Spinner size="5" color="se" />
+            <Spinner size="5" color="i" />
+            <Spinner size="5" color="b" />
+            <Spinner size="5" color="w" />
           </Flex>
         </Preview>
 
@@ -69,21 +69,21 @@ const spinner = () => {
           description="Disabled is Boolean value default to false"
           code={docs.spinnerLargeSize}
         >
-          <Flex wrap gap="md" items="center">
-            <Spinner size="lg" color="danger" />
-            <Spinner size="lg" color="success" />
-            <Spinner size="lg" color="purple" />
-            <Spinner size="lg" color="indigo" />
-            <Spinner size="lg" color="slate" />
-            <Spinner size="lg" color="warning" />
+          <Flex wrap gap="5" items="center">
+            <Spinner size="6" color="d" />
+            <Spinner size="6" color="su" />
+            <Spinner size="6" color="se" />
+            <Spinner size="6" color="i" />
+            <Spinner size="6" color="b" />
+            <Spinner size="6" color="w" />
           </Flex>
         </Preview>
 
         <Preview title="Spinner Size" description="Show alert only with message Props" code={docs.spinnerSize}>
-          <Flex wrap gap="md" items="center">
-            <Spinner size="sm" />
+          <Flex wrap gap="5" items="center">
+            <Spinner size="4" />
             <Spinner />
-            <Spinner size="lg" />
+            <Spinner size="6" />
           </Flex>
         </Preview>
       </Grid>

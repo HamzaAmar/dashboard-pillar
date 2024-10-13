@@ -1,4 +1,4 @@
-import { Breadcrumb, Flex, Grid, Heading, Toggle } from '@components/core'
+import { Breadcrumb, BreadcrumbItem, Flex, Grid, Heading, Switch } from '@pillar-ui/core'
 import { Preview } from '@components/section'
 import * as docs from './toggle.docs'
 
@@ -6,71 +6,71 @@ const toggle = () => {
   return (
     <section aria-labelledby="toggle--page-id" className="l_flow-lg">
       <Flex items="center" wrap justify="between">
-        <Heading as="h1" id="toggle--page-id" size="xs">
-          Toggle Docs Page
+        <Heading as="h1" id="toggle--page-id" size="3">
+          Switch Docs Page
         </Heading>
-        <Breadcrumb size="sm">
-          <Breadcrumb.Item link="../../..">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Components</Breadcrumb.Item>
-          <Breadcrumb.Item link="../">Base UI</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
-            Toggle
-          </Breadcrumb.Item>
+        <Breadcrumb size="4">
+          <BreadcrumbItem link="../../..">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Components</BreadcrumbItem>
+          <BreadcrumbItem link="../">Base UI</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
+            Switch
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
-        <Preview title="Small Toggle Color" description="Show alert only with message Props" code={docs.toggleColor}>
-          <Flex wrap gap="md" items="center">
-            <Toggle label="hello" defaultPressed color="danger" />
-            <Toggle label="hello" defaultPressed color="success" />
-            <Toggle label="hello" defaultPressed color="purple" />
-            <Toggle label="hello" defaultPressed color="indigo" />
-            <Toggle label="hello" defaultPressed color="slate" />
-            <Toggle label="hello" defaultPressed color="warning" />
+      <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
+        <Preview title="Small Switch Color" description="Show alert only with message Props" code={docs.toggleColor}>
+          <Flex wrap gap="5" items="center">
+            <Switch label="hello" defaultPressed color="d" />
+            <Switch label="hello" defaultPressed color="su" />
+            <Switch label="hello" defaultPressed color="se" />
+            <Switch label="hello" defaultPressed color="i" />
+            <Switch label="hello" defaultPressed color="b" />
+            <Switch label="hello" defaultPressed color="w" />
           </Flex>
         </Preview>
 
         <Preview
-          title="Medium Toggle Default Check"
+          title="Medium Switch Default Check"
           description="Default check is Boolean value default to false"
           code={docs.toggleSize}
         >
-          <Flex wrap gap="md" items="center">
-            <Toggle label="hello" size="md" color="danger" />
-            <Toggle label="hello" size="md" color="success" />
-            <Toggle label="hello" size="md" color="purple" />
-            <Toggle label="hello" size="md" color="indigo" />
-            <Toggle label="hello" size="md" color="slate" />
-            <Toggle label="hello" size="md" color="warning" />
+          <Flex wrap gap="5" items="center">
+            <Switch label="hello" size="5" color="d" />
+            <Switch label="hello" size="5" color="su" />
+            <Switch label="hello" size="5" color="se" />
+            <Switch label="hello" size="5" color="i" />
+            <Switch label="hello" size="5" color="b" />
+            <Switch label="hello" size="5" color="w" />
           </Flex>
         </Preview>
 
         <Preview
-          title="Toggle Disabled"
+          title="Switch Disabled"
           description="Disabled is Boolean value default to false"
           code={docs.toggleDisabled}
         >
-          <Flex wrap gap="md" items="center">
-            <Toggle label="hello" disabled color="danger" />
-            <Toggle label="hello" disabled color="success" />
-            <Toggle label="hello" disabled color="purple" />
-            <Toggle label="hello" disabled color="indigo" />
-            <Toggle label="hello" disabled color="slate" />
-            <Toggle label="hello" disabled color="warning" />
+          <Flex wrap gap="5" items="center">
+            <Switch label="hello" disabled color="d" />
+            <Switch label="hello" disabled color="su" />
+            <Switch label="hello" disabled color="se" />
+            <Switch label="hello" disabled color="i" />
+            <Switch label="hello" disabled color="b" />
+            <Switch label="hello" disabled color="w" />
           </Flex>
         </Preview>
 
         <Preview
-          title="Toggle Size"
-          description="Toggle Button Size Default Value SM Possible Values (xs , sm, md , lg, xl)"
+          title="Switch Size"
+          description="Switch Button Size Default Value SM Possible Values (xs , sm, md , lg, xl)"
           code={docs.toggleSize}
         >
-          <Flex wrap gap="md" items="center">
-            <Toggle label="hello" />
-            <Toggle label="hello" size="sm" />
-            <Toggle label="hello" size="md" />
-            <Toggle label="hello" size="lg" />
-            <Toggle label="hello" size="xl" />
+          <Flex wrap gap="5" items="center">
+            <Switch label="hello" />
+            <Switch label="hello" size="4" />
+            <Switch label="hello" size="5" />
+            <Switch label="hello" size="6" />
+            <Switch label="hello" size="7" />
           </Flex>
         </Preview>
       </Grid>

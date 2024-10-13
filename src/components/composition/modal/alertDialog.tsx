@@ -1,9 +1,9 @@
 import * as AlertDialogRadix from '@radix-ui/react-alert-dialog'
-import { Flex, Button, Text, Heading } from '../../core'
+import { Flex, Button, Text, Heading } from '@pillar-ui/core'
 
 import type { AlertDialogActionButtonProps, AlertDialogProps, AlertDialogRootProps } from './modal.type'
 
-export const AlertDialog = ({ children, trigger, size = 'md', ...rest }: AlertDialogRootProps) => {
+export const AlertDialog = ({ children, trigger, size = '5', ...rest }: AlertDialogRootProps) => {
   return (
     <AlertDialogRadix.Root {...rest}>
       <AlertDialogRadix.Trigger asChild>{trigger}</AlertDialogRadix.Trigger>
@@ -27,23 +27,23 @@ export const CustomAlertDialog = ({
   return (
     <AlertDialog trigger={trigger}>
       <AlertDialogRadix.Title asChild>
-        <Heading size="sm" contrast="low" color="slate">
+        <Heading size="4" low color="b">
           {title}
         </Heading>
       </AlertDialogRadix.Title>
       <AlertDialogRadix.Description asChild>
-        <Text size="xs" contrast="low" color="slate">
+        <Text size="3" low color="b">
           {description}
         </Text>
       </AlertDialogRadix.Description>
-      <Flex gap="sm" justify="end">
+      <Flex gap="4" justify="end">
         <AlertDialogRadix.Action asChild>
-          <Button variant="solid" color="primary">
+          <Button variant="solid" color="p">
             {actionTitle}
           </Button>
         </AlertDialogRadix.Action>
         <AlertDialogRadix.Cancel asChild>
-          <Button variant="soft" color="danger">
+          <Button variant="soft" color="d">
             {cancelTitle}
           </Button>
         </AlertDialogRadix.Cancel>
@@ -55,7 +55,7 @@ export const CustomAlertDialog = ({
 export const Title = ({ children }: any) => {
   return (
     <AlertDialogRadix.Title>
-      <Heading as="h2" size="sm">
+      <Heading as="h2" size="4">
         {children}
       </Heading>
     </AlertDialogRadix.Title>
@@ -64,7 +64,7 @@ export const Title = ({ children }: any) => {
 export const Description = ({ children }: any) => {
   return (
     <AlertDialogRadix.Description asChild>
-      <Text size="sm" color="slate" contrast="low">
+      <Text size="4" color="b" low>
         {children}
       </Text>
     </AlertDialogRadix.Description>
@@ -74,7 +74,7 @@ export const Description = ({ children }: any) => {
 export const CancelButton = ({ children, ...rest }: AlertDialogActionButtonProps) => {
   return (
     <AlertDialogRadix.Cancel asChild>
-      <Button variant="solid" color="purple" {...rest}>
+      <Button variant="solid" color="se" {...rest}>
         {children}
       </Button>
     </AlertDialogRadix.Cancel>
@@ -83,7 +83,7 @@ export const CancelButton = ({ children, ...rest }: AlertDialogActionButtonProps
 export const ActionButton = ({ children, ...rest }: AlertDialogActionButtonProps) => {
   return (
     <AlertDialogRadix.Action asChild>
-      <Button variant="soft" color="danger" {...rest}>
+      <Button variant="soft" color="d" {...rest}>
         {children}
       </Button>
     </AlertDialogRadix.Action>

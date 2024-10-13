@@ -1,5 +1,6 @@
 import {
   Breadcrumb,
+  BreadcrumbItem,
   Flex,
   FormController,
   Grid,
@@ -11,7 +12,7 @@ import {
   InputSearch,
   Select,
   Textarea,
-} from '@components/core'
+} from '@pillar-ui/core'
 import { Dollar, Globe } from '@components/icons'
 import { Preview } from '@components/section'
 import * as docs from './formController.docs'
@@ -20,25 +21,25 @@ const formController = () => {
   return (
     <section aria-labelledby="form-controller--page-id" className="l_flow-lg">
       <Flex items="center" wrap justify="between">
-        <Heading as="h1" id="form-controller--page-id" size="xs">
+        <Heading as="h1" id="form-controller--page-id" size="3">
           Form Controller Docs Page
         </Heading>
-        <Breadcrumb size="sm">
-          <Breadcrumb.Item link="../../..">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Components</Breadcrumb.Item>
-          <Breadcrumb.Item link="../">Base UI</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="4">
+          <BreadcrumbItem link="../../..">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Components</BreadcrumbItem>
+          <BreadcrumbItem link="../">Base UI</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Form Controller
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
+      <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
         <Preview
           title="Input  Outline Text State"
           description="Show All input State regular is the default state possible value (disabled)"
           code={docs.formControllerFilledState}
         >
-          <Flex direction="column" gap="2xs">
+          <Flex direction="col" gap="1">
             <FormController label="Name">
               <Input name="Name" placeholder="default input" />
             </FormController>
@@ -62,7 +63,7 @@ const formController = () => {
           description="default value outline possible values (outline, filled )"
           code={docs.formControllerOutlineState}
         >
-          <Flex direction="column" gap="2xs">
+          <Flex direction="col" gap="1">
             <FormController label="Name">
               <Input name="Name" variant="filled" placeholder="default input" />
             </FormController>
@@ -86,7 +87,7 @@ const formController = () => {
           description="prefixInput and suffixInput "
           code={docs.formControllerPrefixSuffix}
         >
-          <Flex direction="column" gap="2xs">
+          <Flex direction="col" gap="1">
             <FormController label="Name">
               <Input name="Name" prefixInput="Hello" suffixInput="Hello" placeholder="default input" />
             </FormController>
@@ -110,21 +111,21 @@ const formController = () => {
           description="default md possible values(xs,sm,md,lg, xl)"
           code={docs.formControllerSize}
         >
-          <Flex direction="column" gap="2xs">
+          <Flex direction="col" gap="1">
             <FormController label="Name">
-              <Input name="Name" size="xs" />
+              <Input name="Name" size="3" />
             </FormController>
             <FormController label="Name">
-              <Input name="Name" size="sm" />
+              <Input name="Name" size="4" />
             </FormController>
             <FormController label="Name">
-              <Input name="Name" size="md" />
+              <Input name="Name" size="5" />
             </FormController>
             <FormController label="Name">
-              <Input name="Name" size="lg" />
+              <Input name="Name" size="6" />
             </FormController>
             <FormController label="Name">
-              <Input name="Name" size="xl" />
+              <Input name="Name" size="7" />
             </FormController>
           </Flex>
         </Preview>
@@ -134,9 +135,9 @@ const formController = () => {
           description="default radius possible values(circle, radius, sharp) "
           code={docs.formControllerCorner}
         >
-          <Flex direction="column" gap="2xs">
+          <Flex direction="col" gap="1">
             <FormController label="Name">
-              <Input name="Name" corner="sharp" />
+              <Input name="Name" corner="0" />
             </FormController>
             <FormController label="Name">
               <Input name="Name" />
@@ -152,7 +153,7 @@ const formController = () => {
           description="default radius possible values(circle, radius, sharp) "
           code={docs.formControllerType}
         >
-          <Flex direction="column" gap="2xs">
+          <Flex direction="col" gap="1">
             <FormController label="Name">
               <InputNumber name="Name" />
             </FormController>

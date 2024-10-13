@@ -1,4 +1,4 @@
-import { Alert, Breadcrumb, Flex, Grid, Heading } from '@components/core'
+import { Alert, Breadcrumb, BreadcrumbItem, Flex, Grid, Heading } from '@pillar-ui/core'
 import { Preview } from '@components/section'
 import * as docs from './alert.docs'
 
@@ -6,63 +6,63 @@ export const Component = () => {
   return (
     <section aria-labelledby="alert--page-id" className="l_flow-lg">
       <Flex items="center" wrap justify="between">
-        <Heading as="h1" id="alert--page-id" size="xs">
+        <Heading as="h1" id="alert--page-id" size="3">
           Alert Docs Page
         </Heading>
-        <Breadcrumb size="sm">
-          <Breadcrumb.Item link="../../..">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Components</Breadcrumb.Item>
-          <Breadcrumb.Item link="../">Base UI</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="4">
+          <BreadcrumbItem link="../../..">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Components</BreadcrumbItem>
+          <BreadcrumbItem link="../">Base UI</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Alert
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
+      <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
         <Preview
           title="outline Alert"
           description="Show alert only with message Props"
-          direction="column"
+          direction="col"
           code={docs.outlineAlert}
         >
-          <Alert message="Hello world I like this message" type="danger" />
-          <Alert message="Hello world I like this message" type="info" />
-          <Alert message="Hello world I like this message" type="warning" />
-          <Alert message="Hello world I like this message" type="success" />
+          <Alert message="Hello world I like this message" color="d" />
+          <Alert message="Hello world I like this message" color="i" />
+          <Alert message="Hello world I like this message" color="w" />
+          <Alert message="Hello world I like this message" color="su" />
         </Preview>
         <Preview
           title="Filled  Alert"
           description="Show alert only with message Props"
-          direction="column"
+          direction="col"
           code={docs.fillAlert}
         >
-          <Alert variant="fill" message="Hello world I like this message" type="danger" />
-          <Alert variant="fill" message="Hello world I like this message" type="info" />
-          <Alert variant="fill" message="Hello world I like this message" type="warning" />
-          <Alert variant="fill" message="Hello world I like this message" type="success" />
+          <Alert variant="fill" message="Hello world I like this message" color="d" />
+          <Alert variant="fill" message="Hello world I like this message" color="i" />
+          <Alert variant="fill" message="Hello world I like this message" color="w" />
+          <Alert variant="fill" message="Hello world I like this message" color="su" />
         </Preview>
         <Preview
           title="title Alert"
           description="Show alert with message and title"
-          direction="column"
+          direction="col"
           code={docs.outlineAlertTitle}
         >
-          <Alert title="Error" message="Hello world I like this message" type="danger" />
-          <Alert title="Error" message="Hello world I like this message" type="info" />
-          <Alert title="Error" message="Hello world I like this message" type="warning" />
-          <Alert title="Error" message="Hello world I like this message" type="success" />
+          <Alert title="Error" message="Hello world I like this message" color="d" />
+          <Alert title="Error" message="Hello world I like this message" color="i" />
+          <Alert title="Error" message="Hello world I like this message" color="w" />
+          <Alert title="Error" message="Hello world I like this message" color="su" />
         </Preview>
 
         <Preview
           title="Outline icon Alert"
           description="Show alert with message and title"
-          direction="column"
+          direction="col"
           code={docs.outlineAlertIcon}
         >
-          <Alert showIcon title="Error" message="Hello world I like this message" type="danger" />
-          <Alert showIcon title="Error" message="Hello world I like this message" type="info" />
-          <Alert showIcon title="Error" message="Hello world I like this message" type="warning" />
-          <Alert showIcon title="Error" message="Hello world I like this message" type="success" />
+          <Alert title="Error" message="Hello world I like this message" color="d" />
+          <Alert title="Error" message="Hello world I like this message" color="i" />
+          <Alert title="Error" message="Hello world I like this message" color="w" />
+          <Alert title="Error" message="Hello world I like this message" color="su" />
         </Preview>
       </Grid>
     </section>

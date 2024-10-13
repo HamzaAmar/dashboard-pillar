@@ -1,5 +1,5 @@
 import { UserModel } from '@api/user/user.type'
-import { Avatar, Breadcrumb, Button, Flex, Grid, Heading, IconButton, Text } from '@components/core'
+import { Avatar, Breadcrumb, BreadcrumbItem, Button, Flex, Grid, Heading, IconButton, Text } from '@pillar-ui/core'
 import { CirclePlus, Dots, Envelop, Eye, Info, Message, Phone, Video } from '@components/icons'
 import { useLoaderData } from 'react-router-dom'
 import { ContactCardProps } from './contact.type'
@@ -8,22 +8,22 @@ const Card = ({ name, email, avatar, phone }: ContactCardProps) => {
   return (
     <article className="contact-card l_box l_flow-lg">
       <Flex justify="between">
-        <Flex as="header" gap="xs">
+        <Flex as="header" gap="3">
           <Avatar
-            size="lg"
-            // corner="sharp"
-            variant="image"
+            size="6"
+            // corner="0"
+
             title={name}
             image={avatar}
           />
           <div className="u_leading__sm">
-            <Heading weight="medium" size="xs">
+            <Heading weight="5" size="3">
               {name}
             </Heading>
-            <Text size="sm" color="slate" contrast="low">
+            <Text size="4" color="b" low>
               {email}
             </Text>
-            <Text weight="medium" size="sm" color="primary" contrast="low">
+            <Text weight="5" size="4" color="p" low>
               {phone}
             </Text>
           </div>
@@ -33,14 +33,14 @@ const Card = ({ name, email, avatar, phone }: ContactCardProps) => {
       </Flex>
 
       <Flex justify="between" items="center">
-        <Flex gap="2xs">
-          <IconButton size="lg" icon={<Phone />} title={`Voice Call ${name}`} />
-          <IconButton size="lg" icon={<Message />} title={`Video Message ${name}`} />
-          <IconButton size="lg" icon={<Envelop />} title={`Send Email ${name}`} />
-          <IconButton size="lg" icon={<Video />} title={`Video Call ${name}`} />
-          <IconButton size="lg" icon={<Eye />} title={`View  ${name} Profile `} />
+        <Flex gap="1">
+          <IconButton size="6" icon={<Phone />} title={`Voice Call ${name}`} />
+          <IconButton size="6" icon={<Message />} title={`Video Message ${name}`} />
+          <IconButton size="6" icon={<Envelop />} title={`Send Email ${name}`} />
+          <IconButton size="6" icon={<Video />} title={`Video Call ${name}`} />
+          <IconButton size="6" icon={<Eye />} title={`View  ${name} Profile `} />
         </Flex>
-        <Button icon={<Info />} color="danger" variant="text" size="sm">
+        <Button icon={<Info />} color="d" variant="text" size="4">
           Report
         </Button>
       </Flex>
@@ -53,13 +53,13 @@ const Contact = () => {
   return (
     <section className="l_flow-lg">
       <Flex justify="between" items="center">
-        <Heading size="xs">Manage Contact List</Heading>
-        <Breadcrumb size="sm">
-          <Breadcrumb.Item link="../../">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Dashboard</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Heading size="3">Manage Contact List</Heading>
+        <Breadcrumb size="4">
+          <BreadcrumbItem link="../../">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Dashboard</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Contact
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
       <Flex justify="end">
@@ -67,7 +67,7 @@ const Contact = () => {
           New Contact
         </Button>
       </Flex>
-      <Grid columns="repeat(auto-fit, minmax(310px,1fr))" gap="md">
+      <Grid grid="repeat(auto-fit, minmax(310px,1fr))" gap="5">
         {users.map((user) => (
           <Card key={user.slug} {...user} />
         ))}

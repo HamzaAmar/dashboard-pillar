@@ -1,4 +1,4 @@
-import { Button, Flex, InputPassword, FormController } from '@components/core'
+import { Button, Flex, InputPassword, FormController } from '@pillar-ui/core'
 
 const resetPassword = () => {
   return (

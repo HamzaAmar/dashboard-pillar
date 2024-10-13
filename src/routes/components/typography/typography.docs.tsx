@@ -1,21 +1,21 @@
 export const textSize = `
-import { Text } from "@components/core";
+import { Text } from "@pillar-ui/core";
 
 const TextSize = ()=>{
     return(
-      <Text size="3xs">
+      <Text size="1">
         Test Your text is better than nothing here you can find all size
         that we have (3xs)
       </Text>
-      <Text size="2xs">
+      <Text size="1">
         Test Your text is better than nothing here you can find all size
         that we have (2xs)
       </Text>
-      <Text size="xs">
+      <Text size="3">
         Test Your text is better than nothing here you can find all size
         that we have (xs)
       </Text>
-      <Text size="sm">
+      <Text size="4">
         Test Your text is better than nothing here you can find all size
         that we have (sm)
       </Text>
@@ -23,19 +23,19 @@ const TextSize = ()=>{
         Test Your text is better than nothing here you can find all size
         that we have (md)
       </Text>
-      <Text size="lg">
+      <Text size="6">
         Test Your text is better than nothing here you can find all size
         that we have (lg)
       </Text>
-      <Text size="xl">
+      <Text size="7">
         Test Your text is better than nothing here you can find all size
         that we have (xl)
       </Text>
-      <Text size="2xl">
+      <Text size="8">
         Test Your text is better than nothing here you can find all size
         that we have (2xl)
       </Text>
-      <Text size="3xl">
+      <Text size="9">
         Test Your text is better than nothing here you can find all size
         that we have (3xl)
       </Text>
@@ -43,24 +43,24 @@ const TextSize = ()=>{
 }`
 
 export const textLineHeight = `
-import { Text } from "@components/core";
+import { Text } from "@pillar-ui/core";
 
 const TextLineHeight = ()=>{
     return(
-      <Text size="lg" leading="none">
+      <Text size="6" leading="none">
         Test Your text is better than nothing here you can find all size
         that we have (lg)
       </Text>
-      <Text size="xl" leading="lg">
+      <Text size="7" leading="lg">
         Test Your text is better than nothing here you can find all size
         that we have Test Your text is better than nothing here you can find
         all size that we have (Large Leading)
       </Text>
-      <Text size="2xl" leading="md">
+      <Text size="8" leading="md">
         Test Your text is better than nothing here you can find all size
         that we have (2xl) (Medium Leading)
       </Text>
-      <Text size="3xl" leading="sm">
+      <Text size="9" leading="sm">
         Test Your text is better than nothing here you can find all size
         that we have (Small Leading)
       </Text>
@@ -68,20 +68,20 @@ const TextLineHeight = ()=>{
 }`
 
 export const textTransform = `
-import { Text } from "@components/core";
+import { Text } from "@pillar-ui/core";
 
 const TextTransform = ()=>{
     return(
-        <Text size="lg" transform="uppercase">
+        <Text size="6" transform="uppercase">
             Test Your text is better than nothing here you can find all size
             that we have (lg)
         </Text>
-        <Text size="xl" transform="capitalize">
+        <Text size="7" transform="capitalize">
             Test Your text is better than nothing here you can find all size
             that we have Test Your text is better than nothing here you can find
             all size that we have (Large Leading)
         </Text>
-        <Text size="2xl" transform="lowercase">
+        <Text size="8" transform="lowercase">
             Test Your text is better than nothing here you can find all size
             that we have (2xl) (Medium Leading)
         </Text>
@@ -89,20 +89,20 @@ const TextTransform = ()=>{
 }`
 
 export const textWeight = `
-import { Text } from "@components/core";
+import { Text } from "@pillar-ui/core";
 
 const TextWeight = ()=>{
     return(
       <>
-        <Text weight="thin">
+        <Text weight="2">
           Test Your text is better than nothing here you can find all size
           that we have (thin)
         </Text>
-        <Text weight="extra-light">
+        <Text weight="1">
           Test Your text is better than nothing here you can find all size
           that we have (extra-light)
         </Text>
-        <Text weight="light">
+        <Text weight="3">
           Test Your text is better than nothing here you can find all size
           that we have (light)
         </Text>
@@ -110,19 +110,19 @@ const TextWeight = ()=>{
           Test Your text is better than nothing here you can find all size
           that we have (normal)
         </Text>
-        <Text weight="medium">
+        <Text weight="5">
           Test Your text is better than nothing here you can find all size
           that we have (normal)
         </Text>
-        <Text weight="bold">
+        <Text weight="7">
           Test Your text is better than nothing here you can find all size
           that we have (bold)
         </Text>
-        <Text weight="extra-bold">
+        <Text weight="8">
           Test Your text is better than nothing here you can find all size
           that we have (extra-bold)
         </Text>
-        <Text weight="black">
+        <Text weight="9">
           Test Your text is better than nothing here you can find all size
           that we have (black)
         </Text>
@@ -132,12 +132,12 @@ const TextWeight = ()=>{
 }`
 
 export const textDecoration = `
-import { Text } from "@components/core";
+import { Text } from "@pillar-ui/core";
 
 const TextDecoration = ()=>{
     return(
       <>
-        <Text decoration="line-through">
+        <Text decoration="through">
           Test Your text is better than nothing here you can find all size that we
           have (line-through)
         </Text>
@@ -156,12 +156,12 @@ const TextDecoration = ()=>{
 }`
 
 export const textTruncate = `
-import { Text } from "@components/core";
+import { Text } from "@pillar-ui/core";
 
 const TextTruncate = ()=>{
     return(
       <>
-        <Text truncate="multiline" numberLine={1}>
+        <Text truncate="1" >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit fugiat
         voluptatum dolor voluptas itaque neque minima tenetur ipsam adipisci
         nam quo, vitae quia laboriosam deleniti libero tempore numquam, a
@@ -170,7 +170,7 @@ const TextTruncate = ()=>{
         veritatis dolorem possimus ex quisquam quia pariatur quas! Labore,
         iusto harum?
       </Text>
-      <Text truncate="multiline" numberLine={2}>
+      <Text truncate="2" >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit fugiat
         voluptatum dolor voluptas itaque neque minima tenetur ipsam adipisci
         nam quo, vitae quia laboriosam deleniti libero tempore numquam, a
@@ -180,7 +180,7 @@ const TextTruncate = ()=>{
         iusto harum? Test Your text is better than nothing here you can find
         all size that we have
       </Text>
-      <Text truncate="multiline" numberLine={3}>
+      <Text truncate="3">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit fugiat
         voluptatum dolor voluptas itaque neque minima tenetur ipsam adipisci
         nam quo, vitae quia laboriosam deleniti libero tempore numquam, a
@@ -189,7 +189,7 @@ const TextTruncate = ()=>{
         veritatis dolorem possimus ex quisquam quia pariatur quas! Labore,
         iusto harum?
       </Text>
-      <Text truncate="multiline" numberLine={4}>
+      <Text truncate="4" >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit fugiat
         voluptatum dolor voluptas itaque neque minima tenetur ipsam adipisci
         nam quo, vitae quia laboriosam deleniti libero tempore numquam, a
@@ -205,41 +205,41 @@ const TextTruncate = ()=>{
 }`
 
 export const textColor = `
-import { Text } from "@components/core";
+import { Text } from "@pillar-ui/core";
 
 const TextTruncate = ()=>{
     return(
       <>
-        <Text color="indigo">
+        <Text color="i">
         Lorem ipsum dolor sit amet consectetur adipisicing elit
         </Text>
-        <Text color="indigo" contrast="low">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit
-        </Text>
-        
-        <Text color="slate">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit
-        </Text>
-        <Text color="slate" contrast="low">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit
-        </Text>
-        <Text color="purple">
+        <Text color="i" low>
         Lorem ipsum dolor sit amet consectetur adipisicing elit
         </Text>
         
-        <Text color="purple" contrast="low">
+        <Text color="b">
         Lorem ipsum dolor sit amet consectetur adipisicing elit
         </Text>
-        <Text color="orange">
+        <Text color="b" low>
         Lorem ipsum dolor sit amet consectetur adipisicing elit
         </Text>
-        <Text color="orange" contrast="low">
+        <Text color="se">
         Lorem ipsum dolor sit amet consectetur adipisicing elit
         </Text>
-        <Text color="red">
+        
+        <Text color="se" low>
         Lorem ipsum dolor sit amet consectetur adipisicing elit
         </Text>
-        <Text color="red" contrast="low">
+        <Text color="w">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit
+        </Text>
+        <Text color="w" low>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit
+        </Text>
+        <Text color="d">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit
+        </Text>
+        <Text color="d" low>
         Lorem ipsum dolor sit amet consectetur adipisicing elit
         </Text>
       </>

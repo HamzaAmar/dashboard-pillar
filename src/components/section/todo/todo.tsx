@@ -1,8 +1,10 @@
 import { useRef, useEffect, useState, forwardRef, useId } from 'react'
 import {
   Avatar,
+  AvatarGroup,
   Badge,
   Breadcrumb,
+  BreadcrumbItem,
   Button,
   Chips,
   Flex,
@@ -11,7 +13,7 @@ import {
   ProgressBar,
   Text,
   Textarea,
-} from '@components/core'
+} from '@pillar-ui/core'
 import { CirclePlus, Dots, Plus } from '@components/icons'
 import useBoolean from '@hooks/useBoolean'
 import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd'
@@ -21,13 +23,13 @@ import type { AddNoteParams, BadgeColor, TodoCardProps, TodoItemProps } from './
 import { TODO_LISTS } from '@api/todo/todo.data'
 
 const badgeColors: BadgeColor = {
-  0: 'danger',
-  1: 'indigo',
-  2: 'purple',
-  3: 'slate',
-  4: 'success',
-  5: 'warning',
-  6: 'yellow',
+  0: 'd',
+  1: 'i',
+  2: 'se',
+  3: 'b',
+  4: 'su',
+  5: 'w',
+  6: 'o',
 }
 
 /*
@@ -55,44 +57,44 @@ const TodoCard = ({ tags, title, tasks, done, participants, index, id }: TodoCar
             data-drag={snapshot.isDragging}
             aria-labelledby={taskId}
           >
-            <Flex as="header" gap="xs" justify="between" items="center">
-              <Heading as="h3" id={taskId} size="2xs">
+            <Flex as="header" gap="3" justify="between" items="center">
+              <Heading as="h3" id={taskId} size="1">
                 <button onClick={() => alert()} className="todo-card--button">
                   {title}
                 </button>
               </Heading>
-              <IconButton size="sm" icon={<Dots />} title="Add New Column" />
+              <IconButton size="4" icon={<Dots />} title="Add New Column" />
             </Flex>
             {!Number.isNaN(value) ? (
               <div className="l_flow-sm">
-                <Flex gap="xs" items="center" justify="between">
-                  <Flex gap="xs" items="center">
-                    <Text as="span" size="sm" color="slate" contrast="low">
+                <Flex gap="3" items="center" justify="between">
+                  <Flex gap="3" items="center">
+                    <Text as="span" size="4" color="b" low>
                       Tasks
                     </Text>
-                    <Text as="span" weight="medium" size="xs">
+                    <Text as="span" weight="5" size="3">
                       {doneLength}/{tasksLength}
                     </Text>
                   </Flex>
-                  <Text as="span" weight="medium" size="xs" color="primary" contrast="low">
+                  <Text as="span" weight="5" size="3" color="p" low>
                     {Math.floor(value)}%
                   </Text>
                 </Flex>
                 <ProgressBar value={value} label={`${doneLength} of ${tasks} tasks`} />
               </div>
             ) : (
-              <Text size="xs" color="slate" contrast="low">
+              <Text size="3" color="b" low>
                 No Task Added Please Click the ({title}) above to add new Tasks
               </Text>
             )}
-            <Flex as="footer" gap="xs" items="center" justify="between">
+            <Flex as="footer" gap="3" items="center" justify="between">
               {tags?.length && (
-                <Flex wrap gap="2xs">
+                <Flex wrap gap="1">
                   {tags.map((tag, index) => {
                     const badgeColor = badgeColors[index]
 
                     return (
-                      <Chips key={tag} size="sm" variant="soft" color={badgeColor}>
+                      <Chips key={tag} size="4" variant="soft" color={badgeColor}>
                         {tag}
                       </Chips>
                     )
@@ -100,11 +102,11 @@ const TodoCard = ({ tags, title, tasks, done, participants, index, id }: TodoCar
                 </Flex>
               )}
               {tags?.length && (
-                <Avatar.Group size="xs">
+                <AvatarGroup size="3">
                   {participants?.map(({ avatar, name, slug }) => (
-                    <Avatar key={slug} variant="image" image={avatar} title={name} />
+                    <Avatar key={slug} image={avatar} title={name} />
                   ))}
-                </Avatar.Group>
+                </AvatarGroup>
               )}
             </Flex>
           </article>
@@ -148,25 +150,25 @@ const TodoItem = forwardRef<HTMLElement, TodoItemProps>(
         {...rest}
       >
         <Flex as="header" className="todo--item-header" justify="between">
-          <Flex items="center" gap="xs">
-            <Badge color="slate" size="sm" max={100} variant="number" number={length} />
-            <Heading id={columnId} color="slate" contrast="low" as="h2" weight="medium" size="xs">
+          <Flex items="center" gap="3">
+            <Badge color="b" size="4" max={100} type="numeric" number={length} />
+            <Heading id={columnId} color="b" low as="h2" weight="5" size="3">
               {title}
             </Heading>
           </Flex>
-          <Flex items="center" gap="xs">
-            <IconButton onClick={handleToggle} size="sm" icon={<Plus />} title="Add New Column" />
-            <IconButton size="sm" icon={<Dots />} title="Add New Column" />
+          <Flex items="center" gap="3">
+            <IconButton onClick={handleToggle} size="4" icon={<Plus />} title="Add New Column" />
+            <IconButton size="4" icon={<Dots />} title="Add New Column" />
           </Flex>
         </Flex>
         {state && (
           <form className="l_flow-sm" action="">
-            <Textarea ref={textareaRef} size="sm" placeholder="Type Your Note" name=""></Textarea>
-            <Flex gap="sm">
-              <Button onClick={_addNote} type="button" size="sm" variant="solid" fluid>
+            <Textarea ref={textareaRef} size="4" placeholder="Type Your Note" name=""></Textarea>
+            <Flex gap="4">
+              <Button onClick={_addNote} type="button" size="4" variant="solid" fluid>
                 Add Note
               </Button>
-              <Button size="sm" type="button" onClick={handleFalse} variant="solid" color="slate" fluid>
+              <Button size="4" type="button" onClick={handleFalse} variant="solid" color="b" fluid>
                 Cancel
               </Button>
             </Flex>
@@ -272,15 +274,15 @@ const Todo = () => {
   return (
     <section aria-labelledby="todo--page-id">
       <Flex items="center" justify="between">
-        <Heading as="h1" id="todo--page-id" size="xs">
+        <Heading as="h1" id="todo--page-id" size="3">
           TODO Page
         </Heading>
-        <Breadcrumb size="sm">
-          <Breadcrumb.Item link="../../">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Pages</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="4">
+          <BreadcrumbItem link="../../">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Pages</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Jobs
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
       <DragDropContext onDragEnd={handleDragEnd}>
@@ -292,7 +294,7 @@ const Todo = () => {
                 ref={provider.innerRef}
                 className="todo-container"
                 {...provider.droppableProps}
-                gap="lg"
+                gap="6"
               >
                 {lists.columnOrder.map((column, index) => {
                   return (
@@ -335,7 +337,7 @@ const Todo = () => {
                   )
                 })}
                 <Flex justify="center" items="center" className="todo--item todo--item-add l_box ">
-                  <Button size="sm" fluid variant="link" icon={<CirclePlus />}>
+                  <Button size="4" fluid variant="link" icon={<CirclePlus />}>
                     Add New Column
                   </Button>
                 </Flex>

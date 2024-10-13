@@ -1,4 +1,4 @@
-import { Breadcrumb, Flex, Heading, Input, FormController } from '@components/core'
+import { Breadcrumb, Flex, Heading, Input, FormController, BreadcrumbItem } from '@pillar-ui/core'
 import { Calendar, Card, Clock, Phone } from '@components/icons'
 import { Preview } from '@components/section'
 import { FormEvent, useState } from 'react'
@@ -25,19 +25,19 @@ const FormLayout = () => {
   return (
     <section className="l_flow-md">
       <Flex justify="between" items="center">
-        <Heading size="sm">Form Elements</Heading>
+        <Heading size="4">Form Elements</Heading>
 
-        <Breadcrumb size="md">
-          <Breadcrumb.Item link="../../">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../..">Form</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="5">
+          <BreadcrumbItem link="../../">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../..">Form</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Form Layout
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
 
       <Preview title="Input Mask" description="Show alert only with message Props" code={formMasking}>
-        <Flex wrap gap="md">
+        <Flex wrap gap="5">
           <FormController required label="Number Phone">
             <InputMask key="phone" value={value.phone} name="phone" onChange={handleChange} mask="(+1) 999 999 9999">
               <Input prefixInput={<Phone />} placeholder="type you phone number" type="tel" />

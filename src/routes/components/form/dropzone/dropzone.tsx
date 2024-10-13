@@ -1,22 +1,22 @@
-import { Flex, Heading, Checkbox, Grid } from '@components/core'
+import { Flex, Heading, Checkbox, Grid } from '@pillar-ui/core'
 import { Preview } from '@components/section'
 import * as docs from './dropzone.docs'
 
 const dropzonePage = () => {
   return (
     <div className="l_flow-md">
-      <Heading color="slate" contrast="low" size="sm">
+      <Heading color="b" low size="4">
         CheckBox
       </Heading>
-      <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
+      <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
         <Preview title="Checkbox Color" description="Show alert only with message Props" code={docs.defaultDropzone}>
-          <Flex wrap gap="md" items="center">
-            <Checkbox color="danger" label="danger" />
-            <Checkbox color="success" label="success" />
-            <Checkbox color="purple" label="purple" />
-            <Checkbox color="indigo" label="indigo" />
-            <Checkbox color="slate" label="slate" />
-            <Checkbox color="warning" label="warning" />
+          <Flex wrap gap="5" items="center">
+            <Checkbox color="d" label="danger" />
+            <Checkbox color="su" label="success" />
+            <Checkbox color="se" label="purple" />
+            <Checkbox color="i" label="indigo" />
+            <Checkbox color="b" label="slate" />
+            <Checkbox color="w" label="warning" />
           </Flex>
         </Preview>
       </Grid>

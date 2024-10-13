@@ -10,7 +10,7 @@ import { LinearGradient } from '@visx/gradient'
 import { max, extent, bisector } from 'd3-array'
 import { timeFormat } from 'd3-time-format'
 import { MarkerCircle } from '@visx/marker'
-import { Color } from '@type/utils'
+import { Color } from '@pillar-ui/core'
 
 type TooltipData = AppleStock
 
@@ -47,7 +47,7 @@ export default withTooltip<AreaProps, TooltipData>(
     tooltipData,
     tooltipTop = 0,
     tooltipLeft = 0,
-    color = 'primary',
+    color = 'p',
   }: AreaProps & WithTooltipProvidedProps<TooltipData>) => {
     if (width < 10) return null
 

@@ -1,5 +1,6 @@
 import { RouterProvider } from 'react-router-dom'
 import '@scss/main.scss'
+import '@pillar-ui/core/main.css'
 import { routers } from './routes'
 import { useLanguage } from '@hooks/useCurrentLanguage'
 import { useMode } from '@hooks/useMode'

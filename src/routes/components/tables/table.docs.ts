@@ -7,10 +7,10 @@ ${TableComp}
 
 function TablesStories(){
   return(
-   <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
-    <TableComp  size="sm" />
+   <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
+    <TableComp  size="4" />
     <TableComp  />
-    <TableComp  size="lg" />
+    <TableComp  size="6" />
   </Grid>
   )  
 }
@@ -23,12 +23,11 @@ ${TableComp}
 
 function TablesStories(){
   return(
-   <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
-    <TableComp color="danger" variant="striped" />
-    <TableComp color="success" variant="striped" />
-    <TableComp color="purple" variant="striped" />
-    <TableComp color="yellow" variant="striped" />
-    <TableComp color="indigo" variant="striped" />
+   <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
+    <TableComp color="d" variant="striped" />
+    <TableComp color="su" variant="striped" />
+    <TableComp color="se" variant="striped" />
+    <TableComp color="i" variant="striped" />
   </Grid>
   )  
 }
@@ -41,36 +40,32 @@ ${TableComp}
 
 function TablesStories(){
   return(
-    <Flex direction="column" gap="sm">
-         <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
-        <TableComp  color="danger" variant="striped" />
-        <TableComp  color="success" variant="striped" />
-        <TableComp  color="purple" variant="striped" />
-        <TableComp  color="yellow" variant="striped" />
-        <TableComp  color="indigo" variant="striped" />
+    <Flex direction="col" gap="4">
+         <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
+        <TableComp  color="d" variant="striped" />
+        <TableComp  color="su" variant="striped" />
+        <TableComp  color="se" variant="striped" />
+        <TableComp  color="i" variant="striped" />
         </Grid>
 
-         <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
-        <TableComp  color="danger" />
-        <TableComp  color="success" />
-        <TableComp  color="purple" />
-        <TableComp  color="yellow" />
-        <TableComp  color="indigo" />
+         <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
+        <TableComp  color="d" />
+        <TableComp  color="su" />
+        <TableComp  color="se" />
+        <TableComp  color="i" />
         </Grid>
-         <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
-        <TableComp  variant="soft" color="danger" />
-        <TableComp  variant="soft" color="success" />
-        <TableComp  variant="soft" color="purple" />
-        <TableComp  variant="soft" color="yellow" />
-        <TableComp  variant="soft" color="indigo" />
+         <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
+        <TableComp  variant="soft" color="d" />
+        <TableComp  variant="soft" color="su" />
+        <TableComp  variant="soft" color="se" />
+        <TableComp  variant="soft" color="i" />
         <TableComp  variant="soft" />
         </Grid>
-         <Grid columns="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="sm">
-        <TableComp  variant="head-color" color="danger" />
-        <TableComp  variant="head-color" color="success" />
-        <TableComp  variant="head-color" color="purple" />
-        <TableComp  variant="head-color" color="yellow" />
-        <TableComp  variant="head-color" color="indigo" />
+         <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
+        <TableComp  variant="head-color" color="d" />
+        <TableComp  variant="head-color" color="su" />
+        <TableComp  variant="head-color" color="se" />
+        <TableComp  variant="head-color" color="i" />
         <TableComp  variant="head-color" />
         </Grid>
     </Flex>

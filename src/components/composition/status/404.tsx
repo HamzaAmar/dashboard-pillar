@@ -1,22 +1,22 @@
-import { Button, Flex, Heading, Text } from '@components/core'
+import { Button, Flex, Heading, Text } from '@pillar-ui/core'
 import { Home, Message } from '@components/icons'
 import type { ErrorProps } from './status.type'
 
 const notFound = ({ variant = 'gradient', color }: ErrorProps) => {
   return (
-    <Flex className={`status l_box l_flow-sm u_${color}`} direction="column" justify="center" items="center">
-      <Heading className={`status--${variant}`} size="4xl">
+    <Flex className={`status l_box l_flow-sm u_${color}`} direction="col" justify="center" items="center">
+      <Heading className={`status--${variant}`} size="9">
         404
       </Heading>
-      <Text size="xl" weight="bold">
+      <Text size="7" weight="7">
         Page Not Found
       </Text>
-      <Text size="sm" color="slate" contrast="low">
+      <Text size="4" color="b" low>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, voluptate nesciunt deleniti quae nihil fugiat quasi
         soluta illo esse assumenda exercitationem eaque sapiente magnam ipsum consequatur, quidem voluptatibus
         perferendis facere.
       </Text>
-      <Flex wrap justify="center" gap="sm">
+      <Flex wrap justify="center" gap="4">
         <Button variant="solid" icon={<Home />}>
           Go Back Home
         </Button>

@@ -1,5 +1,4 @@
-import { Avatar, Button, Flex, Text } from '@components/core'
-import { Rating } from '@components/composition'
+import { Avatar, Button, Flex, Text, Rating } from '@pillar-ui/core'
 import { getDateFormat } from '@utils/date'
 import { Dislike, Eye, Like } from '@components/icons'
 
@@ -9,35 +8,35 @@ const ReviewComp = ({ user, rating, date, review }: ReviewCardProps) => {
   return (
     <article className="l_box l_flow-md">
       <Flex as="header" items="center" justify="between">
-        <Flex items="center" gap="xs">
-          <Avatar variant="image" image={user?.avatar} title={user.name} />
+        <Flex items="center" gap="3">
+          <Avatar image={user?.avatar} title={user.name} />
           <div>
-            <Text weight="medium" size="sm">
+            <Text weight="5" size="4">
               {user.name}
             </Text>
             <Rating rating={rating} />
           </div>
         </Flex>
-        <Text color="slate" contrast="low" size="xs">
+        <Text color="b" low size="3">
           {getDateFormat(date)}
         </Text>
       </Flex>
       <div className="">
-        <Text size="sm" color="slate" contrast="low">
+        <Text size="4" color="b" low>
           {review}
         </Text>
       </div>
       <footer>
         <Flex items="center" justify="between">
-          <Flex gap="xs">
-            <Button icon={<Like />} variant="soft" color="slate" size="sm">
+          <Flex gap="3">
+            <Button icon={<Like />} variant="soft" color="b" size="4">
               Like
             </Button>
-            <Button icon={<Dislike />} variant="soft" color="slate" size="sm">
+            <Button icon={<Dislike />} variant="soft" color="b" size="4">
               Dislike
             </Button>
           </Flex>
-          <Button icon={<Eye />} variant="text" color="danger" size="sm">
+          <Button icon={<Eye />} variant="text" color="d" size="4">
             Report Review
           </Button>
         </Flex>

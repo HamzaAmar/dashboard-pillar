@@ -1,5 +1,4 @@
-import { Color, Corner } from '@type/utils'
-
+import { Color, Corner } from '@pillar-ui/core'
 import type { DropzoneOptions } from 'react-dropzone'
 
 export interface DropzoneProps extends DropzoneOptions {

@@ -1,4 +1,4 @@
-import { Button, Flex, Text } from '@components/core'
+import { Button, Flex, Text } from '@pillar-ui/core'
 import { Check, Cross, Info, Warning } from '@components/icons'
 import type { StatusProps } from './status.type'
 
@@ -23,17 +23,17 @@ const statusObj = {
 
 const danger = ({ title, description, status }: StatusProps) => {
   return (
-    <Flex className="status l_box l_flow-sm" direction="column" justify="center" items="center">
+    <Flex className="status l_box l_flow-sm" direction="col" justify="center" items="center">
       <div className={`danger-icon-wrapper u_${statusObj[status].color}`}>{statusObj[status].icon}</div>
-      <Text size="xl" weight="bold">
+      <Text size="7" weight="7">
         {title}
       </Text>
-      <Text size="sm" color="slate" contrast="low">
+      <Text size="4" color="b" low>
         {description}
       </Text>
-      <Flex gap="sm">
+      <Flex gap="4">
         <Button variant="solid">OK</Button>
-        <Button variant="soft" color="slate" icon={<Cross />}>
+        <Button variant="soft" color="b" icon={<Cross />}>
           Cancel
         </Button>
       </Flex>

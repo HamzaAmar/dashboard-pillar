@@ -1,4 +1,4 @@
-import { Grid, Heading } from '@components/core'
+import { Grid, Heading } from '@pillar-ui/core'
 import { range } from '@utils/randomNumber'
 
 const profilePhotos = () => {
@@ -14,7 +14,7 @@ const profilePhotos = () => {
       <Heading className="u_sr-only" as="h3">
         Gallery List
       </Heading>
-      <Grid as="section" gap="md" columns="repeat(3,1fr)" className="md_grid-two">
+      <Grid as="section" gap="5" grid="repeat(3,1fr)" className="md_grid-two">
         {numbers.map((photo, index) => (
           <div className="profile-photos--wrapper" key={index}>
             <img

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Drawer, Product } from '@components/composition'
 import {
   Breadcrumb,
+  BreadcrumbItem,
   Button,
   Checkbox,
   Flex,
@@ -9,15 +10,15 @@ import {
   Grid,
   Heading,
   IconButton,
-  MenuButton,
   Radio,
   RadioGroup,
   Text,
-} from '@components/core'
+} from '@pillar-ui/core'
 import { Caret, Filter, LayoutGrid, Menu, Star } from '@components/icons'
 import { useLoaderData } from 'react-router-dom'
 
 import type { ProductsModel } from '@api/ecommerce'
+import { MenuButton } from '@components/composition/menuButton'
 
 /*
 ====================================================================================================
@@ -36,9 +37,9 @@ type Current = 'grid' | 'list'
 function CheckBoxStarContent({ number }: any) {
   return (
     <div>
-      <Text size="xs" as="div">
-        <Flex items="center" gap="2xs">
-          <Text size="sm" color="primary" contrast="low" weight="bold">
+      <Text size="3" as="div">
+        <Flex items="center" gap="1">
+          <Text size="4" color="p" low weight="7">
             {number}
           </Text>
           <Star width="16" fill="var(--orange-8)" stroke="var(--orange-8)" />
@@ -53,22 +54,22 @@ const ProductFilter = () => {
   return (
     <Drawer
       trigger={
-        <Button size="sm" icon={<Filter />} variant="outline" color="slate">
+        <Button size="4" icon={<Filter />} variant="outline" color="b">
           Filters
         </Button>
       }
       title="Products Filter"
       position="right"
-      size="sm"
+      size="4"
     >
-      <FormGroup showLabel direction="column" title="Customer Rating">
+      <FormGroup direction="col" title="Customer Rating">
         <Checkbox name="hello" label={<CheckBoxStarContent number={1} />} title="hello" />
         <Checkbox name="hello" label={<CheckBoxStarContent number={2} />} title="hello" />
         <Checkbox name="hello" label={<CheckBoxStarContent number={3} />} title="hello" />
         <Checkbox name="hello" label={<CheckBoxStarContent number={4} />} title="hello" />
         <Checkbox name="hello" label={<CheckBoxStarContent number={5} />} title="hello" />
       </FormGroup>
-      <FormGroup showLabel direction="row" title="Color">
+      <FormGroup direction="row" title="Color">
         <Checkbox name="hello" label="red" title="hello" />
         <Checkbox name="hello" label="white" title="hello" />
         <Checkbox name="hello" label="orange" title="hello" />
@@ -79,7 +80,7 @@ const ProductFilter = () => {
         <Checkbox name="hello" label="beige" title="hello" />
         <Checkbox name="hello" label="gray" title="hello" />
       </FormGroup>
-      <RadioGroup showLabel name="sex" label="Color">
+      <RadioGroup name="sex" label="Color">
         <Radio name="hello" label="red" title="men" />
         <Radio name="hello" label="white" title="kids" />
         <Radio name="hello" label="orange" title="women" />
@@ -95,7 +96,7 @@ const SortProducts = () => {
   return (
     <MenuButton
       trigger={
-        <Button iconPosition="end" size="sm" icon={<Caret />} variant="outline" color="slate">
+        <Button iconPosition="end" size="4" icon={<Caret />} variant="outline" color="b">
           Sort by
         </Button>
       }
@@ -103,22 +104,22 @@ const SortProducts = () => {
       <MenuButton.Content>
         <MenuButton.RadioGroup value={state} onValueChange={setState}>
           <MenuButton.Radio value="lowest-price">
-            <Text size="xs" weight={state === 'lowest-price' ? 'medium' : 'normal'}>
+            <Text size="3" weight={state === 'lowest-price' ? '5' : '4'}>
               Lowest Price
             </Text>
           </MenuButton.Radio>
           <MenuButton.Radio value="highest-price">
-            <Text size="xs" weight={state === 'highest-price' ? 'medium' : 'normal'}>
+            <Text size="3" weight={state === 'highest-price' ? '5' : '4'}>
               Highest Price
             </Text>
           </MenuButton.Radio>
           <MenuButton.Radio value={'top-review'}>
-            <Text size="xs" weight={state === 'top-review' ? 'medium' : 'normal'}>
+            <Text size="3" weight={state === 'top-review' ? '5' : '4'}>
               Top Customers Review
             </Text>
           </MenuButton.Radio>
           <MenuButton.Radio value="recent">
-            <Text size="xs" weight={state === 'recent' ? 'medium' : 'normal'}>
+            <Text size="3" weight={state === 'recent' ? '5' : '4'}>
               Most Recent
             </Text>
           </MenuButton.Radio>
@@ -144,40 +145,40 @@ const Products = () => {
 
   return (
     <section className="l_flow-md">
-      <Flex gap="md" items="center">
-        <Heading size="sm" color="slate" contrast="low">
+      <Flex gap="5" items="center">
+        <Heading size="4" color="b" low>
           Men Shoes
         </Heading>
-        <Breadcrumb size="md">
-          <Breadcrumb.Item link="../..">Home</Breadcrumb.Item>
-          <Breadcrumb.Item link="../">E-commerce</Breadcrumb.Item>
-          <Breadcrumb.Item link="./" current>
+        <Breadcrumb size="5">
+          <BreadcrumbItem link="../..">Home</BreadcrumbItem>
+          <BreadcrumbItem link="../">E-commerce</BreadcrumbItem>
+          <BreadcrumbItem link="./" current>
             Products
-          </Breadcrumb.Item>
+          </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Flex wrap gap="sm" items="center" justify="between">
-        <Flex items="center" gap="sm">
+      <Flex wrap gap="4" items="center" justify="between">
+        <Flex items="center" gap="4">
           <ProductFilter />
           <SortProducts />
         </Flex>
-        <Flex style={{ marginLeft: 'auto' }} items="center" gap="xs">
-          <Text size="sm" contrast="low" color="slate">
+        <Flex style={{ marginLeft: 'auto' }} items="center" gap="3">
+          <Text size="4" low color="b">
             Product View
           </Text>
           <IconButton
             variant={view === 'grid' ? 'solid' : 'outline'}
-            size="sm"
+            size="4"
             corner="full"
             icon={<LayoutGrid />}
             title="hello"
-            color="primary"
+            color="p"
             onClick={handleCurrent('grid')}
           />
           <IconButton
             variant={view === 'list' ? 'solid' : 'outline'}
-            color="primary"
-            size="sm"
+            color="p"
+            size="4"
             corner="full"
             icon={<Menu />}
             title="primary"
@@ -186,7 +187,7 @@ const Products = () => {
         </Flex>
       </Flex>
 
-      <Grid gap="sm" className="md_grid-two sm_grid-one" columns={view === 'grid' ? 'repeat(3, 1fr)' : '1fr'}>
+      <Grid gap="4" md="1fr 1fr" sm="1fr" grid={view === 'grid' ? 'repeat(3, 1fr)' : '1fr'}>
         {data.map((product) => (
           <Product variant={view === 'grid' ? 'vertical' : 'horizontal'} key={product.id} {...product} />
         ))}

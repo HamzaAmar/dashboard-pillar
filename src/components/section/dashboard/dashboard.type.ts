@@ -1,5 +1,5 @@
 import type { CryptoPrices } from '@api/crypto'
-import type { Color } from '@type/utils'
+import { Color } from '@pillar-ui/core'
 import type { ReactNode } from 'react'
 
 export type StatusUnion = 'positive' | 'negative' | 'equal'

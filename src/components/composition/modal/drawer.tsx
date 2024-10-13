@@ -1,10 +1,10 @@
-import { Flex, Heading, IconButton } from '@components/core'
+import { Flex, Heading, IconButton } from '@pillar-ui/core'
 import { Cross } from '@components/icons'
 import * as DialogRadix from '@radix-ui/react-dialog'
 
 import type { DrawerDialogProps } from './modal.type'
 
-export const Drawer = ({ trigger, children, title, position = 'right', size = 'md' }: DrawerDialogProps) => {
+export const Drawer = ({ trigger, children, title, position = 'right', size = '5' }: DrawerDialogProps) => {
   return (
     <DialogRadix.Root>
       <DialogRadix.Trigger asChild>{trigger}</DialogRadix.Trigger>
@@ -13,7 +13,7 @@ export const Drawer = ({ trigger, children, title, position = 'right', size = 'm
         <DialogRadix.Content className={`modal--content drawer drawer__${position} drawer__${size} l_box l_flow-md`}>
           <Flex className="drawer-content--header" justify="between" items="center">
             <DialogRadix.Title asChild>
-              <Heading size="sm" weight="medium">
+              <Heading size="4" weight="5">
                 {title}
               </Heading>
             </DialogRadix.Title>
