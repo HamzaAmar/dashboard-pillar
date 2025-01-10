@@ -1,6 +1,7 @@
 import { Logo } from '@components/common'
-import { Button, Flex, FormController, Heading, Input, Separator, Text } from '@pillar-ui/core'
+import { Button, Flex, FormController, Heading, Input, Paper, Separator, Text } from '@pillar-ui/core'
 import { Facebook, Github, Gmail, Mail, Twitter } from '@components/icons'
+import { Form } from 'react-router-dom'
 
 function MediaButton({ title, icon }: any) {
   const lowercaseTitle = title.toLowerCase()
@@ -14,10 +15,10 @@ function MediaButton({ title, icon }: any) {
   )
 }
 
-const forgetPassword = () => {
+export const ForgetPassword = () => {
   return (
     <Flex items="center" justify="center" className="auth-container">
-      <div className="auth l_box l_flow-md">
+      <Paper flow="5" className="auth l_box">
         <Logo width="120" />
 
         <div>
@@ -29,14 +30,14 @@ const forgetPassword = () => {
           </Text>
         </div>
 
-        <form className="l_flow-md">
+        <Paper flow="5" as={Form} method="post">
           <FormController required label="Email">
             <Input name="email" />
           </FormController>
           <Button variant="solid" icon={<Mail />} size="6" fluid>
-            Send
+            Forget Password
           </Button>
-        </form>
+        </Paper>
 
         <Separator position="center">
           <Text color="b" low>
@@ -44,15 +45,21 @@ const forgetPassword = () => {
           </Text>
         </Separator>
 
-        <Flex items="center" justify="center" gap="4">
-          <MediaButton title="Facebook" icon={<Facebook width="1rem" />} />
-          <MediaButton title="Twitter" icon={<Twitter width="1rem" />} />
-          <MediaButton title="Gmail" icon={<Gmail width="1rem" />} />
-          <MediaButton title="Github" icon={<Github width="1rem" />} />
+        <Flex items="center" justify="center" gap="5">
+          <Button color="p" icon={<Facebook width="1rem" />}>
+            Facebook
+          </Button>
+          <Button color="i" icon={<Twitter width="1rem" />}>
+            Twitter
+          </Button>
+          <Button color="d" icon={<Gmail width="1rem" />}>
+            Gmail
+          </Button>
+          <Button color="b" icon={<Github width="1rem" />}>
+            Github
+          </Button>
         </Flex>
-      </div>
+      </Paper>
     </Flex>
   )
 }
-
-export default forgetPassword

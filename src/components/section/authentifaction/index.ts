@@ -1,3 +1,3 @@
-export { default as Login } from './login'
-export { default as Register } from './register'
-export { default as ForgetPassword } from './forgetPassword'
+export { Login } from './login'
+export { Register } from './register'
+export { ForgetPassword } from './forgetPassword'

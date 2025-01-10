@@ -1,13 +1,12 @@
 .auth-container {
-  background: radial-gradient(circle, var(--primary-6) 0%, var(--primary-11) 100%);
+  background: radial-gradient(circle, var(--P6) 0%, var(--P11) 100%);
   margin: -1rem;
   height: calc(100% + 2rem);
-  height: 100%;
 }
 
 .auth {
   min-width: 280px;
-  width: 40%;
+  max-width: 800px;
 }
 .auth-button {
   color: white;
@@ -17,25 +16,4 @@
   overflow: hidden;
   border-radius: 0.25rem;
   background-color: var(--background);
-}
-.auth-button:hover {
-  filter: brightness(0.85);
-}
-
-.auth-button__facebook {
-  --background: hsl(221, 44%, 41%);
-}
-
-.auth-button__github {
-  --background: #444444;
-}
-.auth-button__twitter {
-  --background: hsl(206, 82%, 63%);
-}
-.auth-button__gmail {
-  --background: hsl(7, 71%, 55%);
-}
-
-.auth-button:focus {
-  outline: 2px solid var(--background);
 }

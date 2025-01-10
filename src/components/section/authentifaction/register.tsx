@@ -1,25 +1,12 @@
 import { Logo } from '@components/common'
-import { Button, Flex, FormController, Heading, Input, InputPassword, Separator, Text } from '@pillar-ui/core'
+import { Button, Flex, FormController, Heading, Input, InputPassword, Paper, Separator, Text } from '@pillar-ui/core'
 import { Facebook, Github, Gmail, Twitter } from '@components/icons'
 import { Form, Link } from 'react-router-dom'
 
-function MediaButton({ title, icon }: any) {
-  const lowercaseTitle = title.toLowerCase()
-  return (
-    <Flex gap="5" as="button" items="center" className={`auth-button auth-button__${lowercaseTitle}`}>
-      <span>{icon}</span>
-      <Text size="4" className="u_sr-only">
-        {title}
-      </Text>
-    </Flex>
-  )
-}
-
-const Login = () => {
-  // const action = useActionData()
+export const Register = () => {
   return (
     <Flex items="center" justify="center" className="auth-container">
-      <div className="auth l_box l_flow-md">
+      <Paper flow="5" className="auth l_box">
         <Logo width="120" />
 
         <div>
@@ -31,7 +18,7 @@ const Login = () => {
           </Text>
         </div>
 
-        <Form method="post" className="l_flow-md">
+        <Paper as={Form} flow="5" method="post">
           <FormController required label="Name">
             <Input name="name" autoComplete="name" />
           </FormController>
@@ -45,13 +32,13 @@ const Login = () => {
           <Button variant="solid" size="6" fluid>
             Sign in
           </Button>
-        </Form>
+        </Paper>
 
-        <Flex gap="1" items="center">
+        <Flex gap="3" items="center">
           <Text color="b" low as="span" size="4">
             Already have an account?
           </Text>
-          <Button variant="link" as={Link} to="/login">
+          <Button variant="link" as={Link} to="/pages/login">
             Login Instead
           </Button>
         </Flex>
@@ -63,14 +50,20 @@ const Login = () => {
         </Separator>
 
         <Flex items="center" justify="center" gap="5">
-          <MediaButton title="Facebook" icon={<Facebook width="1rem" />} />
-          <MediaButton title="Twitter" icon={<Twitter width="1rem" />} />
-          <MediaButton title="Gmail" icon={<Gmail width="1rem" />} />
-          <MediaButton title="Github" icon={<Github width="1rem" />} />
+          <Button color="p" icon={<Facebook width="1rem" />}>
+            Facebook
+          </Button>
+          <Button color="i" icon={<Twitter width="1rem" />}>
+            Twitter
+          </Button>
+          <Button color="d" icon={<Gmail width="1rem" />}>
+            Gmail
+          </Button>
+          <Button color="b" icon={<Github width="1rem" />}>
+            Github
+          </Button>
         </Flex>
-      </div>
+      </Paper>
     </Flex>
   )
 }
-
-export default Login
