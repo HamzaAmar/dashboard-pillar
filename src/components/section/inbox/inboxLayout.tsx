@@ -27,7 +27,7 @@ export const InboxLayout = () => {
   const { state: open, handleTrue, handleFalse } = useBoolean()
 
   return (
-    <Grid grid="250px 1fr" className="inbox chat-inbox l_box">
+    <Grid cols={{ default: '250px 1fr' }} className="inbox chat-inbox l_box">
       <nav
         id="inbox-navigation"
         aria-label="inbox navigation"
