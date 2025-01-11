@@ -49,7 +49,6 @@ const compositeChildren = [
   { id: 'modal', title: 'Modal', icon: <Icons.BoxMargin width={20} />, to: 'components/compose-ui/modal' },
   { id: 'pagination', title: 'Pagination', icon: <Icons.Users width={20} />, to: 'components/compose-ui/pagination' },
   { id: 'status', title: 'Status', icon: <Icons.NotFound width={20} />, to: 'components/compose-ui/status' },
-  { id: 'stepper', title: 'Stepper', icon: <Icons.Layer width={20} />, to: 'components/compose-ui/stepper' },
   { id: 'tab', title: 'Tab', icon: <Icons.Checkbox width={20} />, to: 'components/compose-ui/tab' },
   { id: 'table', title: 'Table', icon: <Icons.Columns width={20} />, to: 'components/compose-ui/tables' },
   { id: 'rating', title: 'Rating', icon: <Icons.Star width={20} />, to: 'components/compose-ui/rating' },
@@ -71,7 +70,6 @@ const formChildren = [
     icon: <Icons.CircleCheck width={20} />,
     to: 'components/form/validation-form',
   },
-  { id: 'wizard-form', title: 'Wizard Form', icon: <Icons.Switches width={20} />, to: 'components/form/wizard-form' },
   { id: 'file-upload', title: 'Upload File', icon: <Icons.FileUpload width={20} />, to: 'components/form/file-upload' },
   { id: 'dropzone', title: 'Dropzone', icon: <Icons.CloudUpload width={20} />, to: 'components/form/dropzone' },
   {

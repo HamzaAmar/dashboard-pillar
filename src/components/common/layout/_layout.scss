@@ -1,12 +1,10 @@
 .admin-layout {
   --header-footer-height: 4rem;
   display: grid;
-  background-color: var(--slate-3);
+  background-color: var(--B3);
   grid-template-columns: auto 1fr;
-  grid-template-rows: var(--header-footer-height) 1fr var(
-      --header-footer-height
-    );
-  grid-template-areas: "sidebar header" "sidebar main" "sidebar footer";
+  grid-template-rows: var(--header-footer-height) 1fr var(--header-footer-height);
+  grid-template-areas: 'sidebar header' 'sidebar main' 'sidebar footer';
   transition: grid-template-columns 1s;
 }
 

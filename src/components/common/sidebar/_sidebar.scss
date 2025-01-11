@@ -1,7 +1,7 @@
 @use '../../../scss/_settings/media' as *; // Sidebar Section Style Start
 .sidebar {
   align-self: start;
-  background-color: var(--slate-1);
+  background-color: var(--B1);
   box-shadow: 5px 0 10px -5px var(--opacity-3);
   grid-area: sidebar;
   height: 100vh;
@@ -35,7 +35,7 @@
 
 .sidebar--nav-item[data-type='shrink'] {
   position: relative;
-  background-color: var(--slate-2);
+  background-color: var(--B2);
 
   &:hover,
   &:focus-within {
@@ -48,14 +48,14 @@
   }
 
   .sidebar-item--nested-list {
-    box-shadow: 4px 4px 8px -4px var(--slate-8);
+    box-shadow: 4px 4px 8px -4px var(--B8);
     border-left: 1px solid var(--opacity-6);
     position: absolute;
     transition: transform 0.3s, opacity 0.2s;
     transform-origin: left;
     left: 100%;
     top: 0;
-    background-color: var(--slate-2);
+    background-color: var(--B2);
     z-index: -2;
     transform: translateX(-100%);
     opacity: 0;
@@ -65,6 +65,7 @@
       opacity: 1;
       width: auto;
       height: auto;
+      flex: 1;
     }
   }
   .sidebar--nav-item-content {
@@ -97,13 +98,13 @@
 }
 
 .sidebar--nav-button:focus-visible {
-  outline: 2px dashed var(--primary-8);
+  outline: 2px dashed var(--P8);
   outline-offset: -2px;
 }
 
 .sidebar--nav-button[aria-current='page'] {
-  border-color: var(--primary-9);
-  background-color: var(--primary-4);
+  border-color: var(--P9);
+  background-color: var(--P4);
 }
 
 li ul {
@@ -122,4 +123,4 @@ li ul {
   .sidebar {
     display: none;
   }
-} ;
+}

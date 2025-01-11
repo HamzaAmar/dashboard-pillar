@@ -47,7 +47,7 @@ function ProfileMenuButton() {
         <DropdownMenu.Group>
           <DropdownMenu.Item asChild>
             <Flex as={Link} to="pages/profile" gap="3" className="menu-button--item">
-              <Avatar title={me.name} image={me.avatar} />
+              <Avatar title={me.name} src={me.avatar} />
               <div>
                 <Text size="4" weight="5">
                   {me.name}
@@ -66,7 +66,6 @@ function ProfileMenuButton() {
             <Flex gap="3" as={Link} className="menu-button--item" to="pages/profile">
               <User width="20" />
               <Text size="3" weight="5">
-                {' '}
                 View Profile
               </Text>
             </Flex>
@@ -75,7 +74,6 @@ function ProfileMenuButton() {
             <Flex gap="3" as={Link} className="menu-button--item" to="pages/emails">
               <Envelop width="20" />
               <Text size="3" weight="5">
-                {' '}
                 Inbox
               </Text>
             </Flex>
@@ -84,7 +82,6 @@ function ProfileMenuButton() {
             <Flex gap="3" as={Link} className="menu-button--item" to="pages/chat">
               <Messages width="20" />
               <Text size="3" weight="5">
-                {' '}
                 Chat
               </Text>
             </Flex>
@@ -93,7 +90,6 @@ function ProfileMenuButton() {
             <Flex gap="3" className="menu-button--item" as={Link} to="pages/todo">
               <Checkbox width="20" />
               <Text size="3" weight="5">
-                {' '}
                 Task board
               </Text>
             </Flex>
@@ -105,7 +101,6 @@ function ProfileMenuButton() {
             <Flex gap="3" as={Link} className="menu-button--item" to="pages/account-settings">
               <Setting width="20" />
               <Text size="3" weight="5">
-                {' '}
                 Account Settings
               </Text>
             </Flex>
@@ -114,7 +109,6 @@ function ProfileMenuButton() {
             <Flex gap="3" as={Link} className="menu-button--item" to="pages/faq">
               <Help width="20" />
               <Text size="3" weight="5">
-                {' '}
                 Faq
               </Text>
             </Flex>
@@ -194,7 +188,7 @@ function MessageMenuButton() {
               <DropdownMenu.Item asChild key={id}>
                 <Flex justify="between" className="menu-button--item">
                   <Flex gap="3">
-                    <Avatar image={from.avatar} title={from.name} />
+                    <Avatar src={from.avatar} title={from.name} />
                     <div className="u_flex-1">
                       <Text weight="5" size="3">
                         {from.name}
@@ -267,7 +261,7 @@ function NotificationMenuButton() {
               <DropdownMenu.Item className="menu-button--item" key={id}>
                 <Flex justify="between">
                   <Flex gap="3">
-                    <Avatar image={user.avatar} title={user.name} />
+                    <Avatar src={user.avatar} title={user.name} />
                     <div>
                       <Text
                         truncate="2"
@@ -309,7 +303,7 @@ function NotificationMenuButton() {
 Header Content Section
  ============================================================================================ */
 
-const Header = ({ handleToggle, isShrink }: any) => {
+export const Header = ({ handleToggle, isShrink }: any) => {
   const { state, changeMode } = useSettings()
   const nextMode = state.mode === 'dark' ? 'light' : 'dark'
   const sidebarLabel = isShrink ? 'Expand Sidebar' : 'Shrink Sidebar'
@@ -342,5 +336,3 @@ const Header = ({ handleToggle, isShrink }: any) => {
     </Flex>
   )
 }
-
-export default Header

@@ -1,12 +1,11 @@
 import { Drawer } from '@components/composition'
-import { CustomRadio, Flex, IconButton, RadioGroup, Text } from '@pillar-ui/core'
+import { IconButton, Text } from '@pillar-ui/core'
 import { Setting } from '@components/icons'
 import useBoolean from '@hooks/useBoolean'
-import useSettings from '@hooks/useSettings/useSettings'
 
 const Settings = () => {
   const { state, handleToggle } = useBoolean(false)
-  const { state: settings, changeMode, changePrimary } = useSettings()
+  // const { state: settings, changeMode, changePrimary } = useSettings()
   return (
     <Drawer
       title="Page Customize"
@@ -34,7 +33,7 @@ const Settings = () => {
                 Choose Your Prefered Light Mode
               </Text>
             </div>
-            <RadioGroup showLabel={false} label="Choose Your Prefered Light Mode" name="mode-color" direction="row">
+            {/* <RadioGroup showLabel={false} label="Choose Your Prefered Light Mode" name="mode-color" direction="row">
               <CustomRadio
                 className="customize--white-color-text"
                 label="Light"
@@ -53,7 +52,7 @@ const Settings = () => {
               >
                 <div className="customize--primary-color-box  customize--black-color-box" />
               </CustomRadio>
-            </RadioGroup>
+            </RadioGroup> */}
           </article>
           <article className="l_flow-md">
             <div>
@@ -62,7 +61,7 @@ const Settings = () => {
                 Choose the preferred Primary color you want
               </Text>
             </div>
-            <RadioGroup label="Choose the preferred Primary color you want" name="primary-color" direction="row">
+            {/* <RadioGroup label="Choose the preferred Primary color you want" name="primary-color" direction="row">
               <CustomRadio
                 defaultChecked={settings.primary === 'green'}
                 onChange={changePrimary('green')}
@@ -123,7 +122,7 @@ const Settings = () => {
               >
                 <div className="customize--primary-color-box"></div>
               </CustomRadio>
-            </RadioGroup>
+            </RadioGroup> */}
           </article>
         </div>
       </section>

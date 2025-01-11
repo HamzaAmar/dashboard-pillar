@@ -46,7 +46,7 @@
 .settings--content {
   min-width: 240px;
   height: calc(100vh - 4rem);
-  background-color: var(--slate-1);
+  background-color: var(--B1);
   box-shadow: 0 0 12px -4px var(--opacity-6);
   pointer-events: visible;
 }
@@ -54,7 +54,7 @@
   color: white;
 }
 .settings--content-header {
-  background-color: var(--slate-2);
+  background-color: var(--B2);
 }
 
 .settings--button {

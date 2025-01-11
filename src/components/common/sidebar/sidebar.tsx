@@ -1,6 +1,6 @@
 import { Flex, IconButton, Text } from '@pillar-ui/core'
 import * as Icons from '@components/icons'
-import { forwardRef } from 'react'
+import { Children, forwardRef } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Logo } from '..'
 import type { ForwardRefComponent } from '@type/polymorphic.type'
@@ -17,15 +17,16 @@ import { SIDEBAR_CONTENT } from './sidebar.data'
 
 export const SidebarItem = forwardRef(({ isShrink, children, title, icon, as: Tag = 'button', open, ...rest }, ref) => {
   const current = open ? { 'data-current': 'page' } : {}
+  const IS_NESTED = Children.count(children) > 0
 
   return (
     <li className="sidebar--nav-item" data-type={isShrink ? 'shrink' : 'regular'} {...current}>
       <Flex as={Tag} items="center" className="sidebar--nav-button" gap="4" ref={ref} {...rest}>
-        <span className="u_flex-none" data-nested={Boolean(children) ? true : false}>
+        <span className="u_flex-none" data-nested={IS_NESTED}>
           {icon}
         </span>
 
-        <Flex className="sidebar--nav-item-content  u_flex-1" items="center" justify="between">
+        <Flex className="sidebar--nav-item-content fl-1" items="center" justify="between">
           <Text weight="5" size="3">
             {title}
           </Text>
@@ -53,11 +54,6 @@ export const SidebarItem = forwardRef(({ isShrink, children, title, icon, as: Ta
 export const Sidebar = ({ isShrink }: any) => {
   const [open, setOpen] = useState<string | null>(null)
 
-  const openItem = (title: string) => {
-    const opened = open === title
-    return opened
-  }
-
   const handleOpen = (title: string) => () => {
     setOpen((open) => (open === title ? null : title))
   }
@@ -78,7 +74,7 @@ export const Sidebar = ({ isShrink }: any) => {
         <ul className="sidebar--list">
           {SIDEBAR_CONTENT.map(({ id, title, icon, to, children }) => {
             // TODO: Figure a good type for this
-            const obj = to ? ({ to, as: NavLink } as any) : { open: openItem(title), onClick: handleOpen(title) }
+            const obj = to ? ({ to, as: NavLink } as any) : { open: open === title, onClick: handleOpen(title) }
             return (
               <SidebarItem key={id} isShrink={isShrink} icon={icon} title={title} {...obj}>
                 {children?.map(({ id, title, icon, to }) => (
@@ -100,7 +96,7 @@ export const SidebarDrawer = () => {
     const opened = open === title
     return opened
   }
-  const drawerTriggerLabel = open ? 'Close Sidebar' : 'Open Sidebar'
+  const TRIGGER_LABEL = open ? 'Close Sidebar' : 'Open Sidebar'
 
   const handleOpen = (title: string) => () => {
     setOpen((open) => (open === title ? null : title))
@@ -110,7 +106,7 @@ export const SidebarDrawer = () => {
       title={
         <Flex
           as={Link}
-          to="/sss"
+          to="/"
           justify="center"
           items="center"
           className="sidebar--header"
@@ -121,7 +117,7 @@ export const SidebarDrawer = () => {
       }
       size="4"
       position="left"
-      trigger={<IconButton className="drawer--sidebar" icon={<Icons.Menu />} title={drawerTriggerLabel} />}
+      trigger={<IconButton className="drawer--sidebar" icon={<Icons.Menu />} title={TRIGGER_LABEL} />}
     >
       <nav className="sidebar--nav">
         <ul className="sidebar--list">
