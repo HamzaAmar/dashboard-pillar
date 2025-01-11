@@ -1,7 +1,7 @@
 import { Flex, Grid, Text } from '@pillar-ui/core'
 import { ChevronDown } from '@components/icons'
 
-import type { JobOptionProps } from '../jobs.type'
+import type { JobOptionProps } from './jobs.type'
 
 export const Option = ({ title, number }: JobOptionProps) => {
   return (
@@ -21,7 +21,7 @@ export const Option = ({ title, number }: JobOptionProps) => {
 
 export const JobOptions = () => {
   return (
-    <Grid grid="repeat(auto-fit, minmax(250px, 1fr)" gap="4">
+    <Grid cols={{ default: 'repeat(auto-fit, minmax(250px, 1fr)' }} gap="4">
       <Option title="New Condidates to Review" number={120} />
       <Option title="Schedule for today" number={5} />
       <Option title="Message Received" number={10} />

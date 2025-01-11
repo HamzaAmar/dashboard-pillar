@@ -1,7 +1,7 @@
 import { USERS_LIST } from '@api/user/users.data'
-import { Avatar, Button, Flex, Grid, Heading, IconButton, ProgressBar, Text } from '@pillar-ui/core'
+import { Avatar, Button, Flex, Grid, Heading, IconButton, Paper, ProgressBar, Text } from '@pillar-ui/core'
 import { ChevronDown, Dots, Setting, User } from '@components/icons'
-import { StoreVisitProgressProps } from '../../dashboard.type'
+import { StoreVisitProgressProps } from '../dashboard.type'
 
 const me = USERS_LIST[0]
 
@@ -23,10 +23,10 @@ const StoreVisitProgress = ({ value, title, color }: StoreVisitProgressProps) =>
 
 export const StoreVisit = () => {
   return (
-    <Grid as="section" grid="300px 1fr" className="sm_grid-one" gap="4">
-      <article aria-label="user analytics" className="l_flow-md">
-        <Flex className="l_box l_flow-md" justify="center" items="center" direction="col">
-          <Avatar size="8" title={`${me.name} Profile Picture`} image={me.avatar} />
+    <Grid as="section" cols={{ default: '1fr', md: '300px 1fr' }} gap="4">
+      <article aria-label="user analytics">
+        <Flex className="l_box" justify="center" items="center" direction="col" gap="4">
+          <Avatar size="8" title={`${me.name} Profile Picture`} src={me.avatar} />
           <div className="account-settings-user-name">
             <Text weight="5"> {me.name} </Text>
             <Text size="3" low color="b">
@@ -68,10 +68,10 @@ export const StoreVisit = () => {
         </Flex>
       </article>
 
-      <article aria-labelledby="store-visit-id" className="l_box l_flow-lg">
+      <Paper as="article" flow="5" aria-labelledby="store-visit-id" className="l_box">
         <Flex as="header" justify="between">
           <div className="u_leading__sm">
-            <Heading as="h3" id="store-visit-id" size="3">
+            <Heading as="h3" id="store-visit-id" size="4">
               Store Visit
             </Heading>
             <Text size="3" color="b" low>
@@ -96,15 +96,15 @@ export const StoreVisit = () => {
           </Flex>
 
           <div>
-            <ChevronDown stroke="var(--slate-11)" direction="right" width={20} />
+            <ChevronDown stroke="var(--B11)" direction="right" width={20} />
           </div>
         </Flex>
-        <div className="l_flow-md">
+        <Paper flow="3">
           <StoreVisitProgress value={30} color="d" title="Men" />
           <StoreVisitProgress value={55} color="su" title="Women" />
           <StoreVisitProgress value={15} color="se" title="Kids" />
-        </div>
-      </article>
+        </Paper>
+      </Paper>
     </Grid>
   )
 }

@@ -1,5 +1,5 @@
 import { useId } from 'react'
-import { Avatar, Button, Chips, Flex, Grid, Heading, IconButton, Text } from '@pillar-ui/core'
+import { Avatar, Button, Chips, Flex, Grid, Heading, IconButton, Paper, Text } from '@pillar-ui/core'
 import { useLoaderData } from 'react-router-dom'
 import { ArrowDown, CircleCheck, Dots, Message } from '@components/icons'
 
@@ -8,14 +8,14 @@ import type { JobsProps } from '@api/jobs/todo.type'
 export const Job = ({ image, title, description }: JobsProps) => {
   const id = `job-${useId()}-item`
   return (
-    <article aria-labelledby={id} className="l_box l_flow-md">
+    <Paper flow="5" as="article" aria-labelledby={id} className="l_box">
       <Flex justify="between" items="center">
-        <Avatar image={`/images/jobs/${image}`} title="job" corner="0" />
+        <Avatar src={`/images/jobs/${image}`} title="job" corner="0" />
         <IconButton icon={<Dots />} title="more info" />
       </Flex>
-      <div className="l_flow-sm">
+      <Paper flow="4">
         <div>
-          <Heading id={id} as="h3" size="3" className="u_leading__sm" weight="5">
+          <Heading id={id} as="h3" className="u_leading__sm" weight="5">
             {title}
           </Heading>
           <Text truncate="4" size="3" color="b" low>
@@ -33,16 +33,16 @@ export const Job = ({ image, title, description }: JobsProps) => {
             Hello
           </Chips>
         </Flex>
-      </div>
-      <Flex gap="3" wrap>
+      </Paper>
+      <Grid gap="3" cols={{ default: '1fr auto' }}>
         <Button size="4" icon={<CircleCheck />} fluid>
           Apply Now
         </Button>
-        <Button size="4" icon={<Message />} fluid color="b">
+        <Button variant="soft" size="4" icon={<Message />} color="b">
           Message
         </Button>
-      </Flex>
-    </article>
+      </Grid>
+    </Paper>
   )
 }
 
@@ -50,20 +50,24 @@ export const Jobs = () => {
   const { jobs } = useLoaderData() as { jobs: JobsProps[] }
 
   return (
-    <section aria-labelledby="latest-jobs-id" className="l_flow-md">
-      <Heading id="latest-jobs-id" as="h2" size="3">
+    <Paper as="section" flow="5" aria-labelledby="latest-jobs-id">
+      <Heading id="latest-jobs-id" as="h2">
         Latest Jobs
       </Heading>
       <Flex items="center" direction="col" gap="5">
-        <Grid grid="repeat(3,1fr)" gap="4" className="jobs-list md_grid-two sm_grid-one">
+        <Grid
+          cols={{ default: '1fr', md: '1fr 1fr', lg: 'repeat(3,1fr)' }}
+          gap="4"
+          className="jobs-list md_grid-two sm_grid-one"
+        >
           {jobs.map((job) => (
             <Job key={job.id} {...job} />
           ))}
         </Grid>
-        <Button size="6" iconPosition="end" variant="link" icon={<ArrowDown direction="right-top" />}>
+        <Button iconPosition="end" color="b" variant="soft" icon={<ArrowDown direction="right-top" />}>
           More Jobs
         </Button>
       </Flex>
-    </section>
+    </Paper>
   )
 }

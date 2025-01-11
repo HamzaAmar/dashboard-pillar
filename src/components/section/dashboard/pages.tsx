@@ -87,7 +87,7 @@ const pages = () => {
     <section className="pages-section l_flow-md">
       <Heading size="4">Pages</Heading>
 
-      <Grid grid="repeat(auto-fit, minmax(260px, 1fr))" gap="4">
+      <Grid cols={{ default: 'repeat(auto-fit, minmax(260px, 1fr))' }} gap="4">
         {pagesArr.map((page) => (
           <Article key={page.id} {...page} />
         ))}

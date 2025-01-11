@@ -1,8 +1,8 @@
-import { Button, Flex, Grid, Heading, Text } from '@pillar-ui/core'
+import { Button, Flex, Grid, Heading, Paper, Text } from '@pillar-ui/core'
 import { ArrowDown, Plus } from '@components/icons'
 import { useId } from 'react'
 import { Link } from 'react-router-dom'
-import { EcommerceDashboardArticleProps, StatusObjRecord, StatusUnion } from '../../dashboard.type'
+import { EcommerceDashboardArticleProps, StatusObjRecord, StatusUnion } from '../dashboard.type'
 
 const Article = ({ count, title }: EcommerceDashboardArticleProps) => {
   const id = `article-${useId()}-analytics`
@@ -24,7 +24,7 @@ const Article = ({ count, title }: EcommerceDashboardArticleProps) => {
     },
   }
   return (
-    <article aria-labelledby={id} className="l_box u_flex-1 l_flow-sm">
+    <Paper as="article" flow="4" aria-labelledby={id} className="l_box u_flex-1">
       <Flex as="header" justify="between" items="center">
         <Heading id={id} as="h3" size="3" color="b" low weight="5">
           {title}
@@ -40,18 +40,18 @@ const Article = ({ count, title }: EcommerceDashboardArticleProps) => {
         <Text weight="7">{count.current}</Text>
       </div>
       <Flex as="header" justify="between" items="center">
-        <Button as={Link} to="#" size="3" variant="link">
+        <Button as={Link} to="#" size="3" variant="soft" color="b">
           View Your Eearning
         </Button>
         <Text>16.24 %</Text>
       </Flex>
-    </article>
+    </Paper>
   )
 }
 
 export const SalesAnalytics = () => {
   return (
-    <Grid grid="repeat(auto-fit, minmax(240px, 1fr)" gap="4">
+    <Grid cols={{ default: 'repeat(auto-fit, minmax(240px, 1fr)' }} gap="4">
       <Article title="Total Sales" count={{ previous: 1000, current: 1000 }} />
       <Article title="Visitors" count={{ previous: 1000, current: 500 }} />
       <Article title="Total Order" count={{ previous: 1000, current: 1500 }} />

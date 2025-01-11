@@ -68,15 +68,7 @@ const BarChart = ({ width, height }: ChartCore) => {
           const barX = xScale(d.day)
 
           return (
-            <Bar
-              key={`bar-${day}`}
-              x={barX}
-              y={barY}
-              width={barWidth}
-              height={barHeight}
-              fill="var(--primary-9)"
-              rx={5}
-            />
+            <Bar key={`bar-${day}`} x={barX} y={barY} width={barWidth} height={barHeight} fill="var(--P9)" rx={5} />
           )
         })}
         <AxisBottom scale={xScale} top={height - 25} hideTicks hideAxisLine />
@@ -127,7 +119,7 @@ const Doghnut = ({ width, height }: ChartCore) => {
         <VisxText textAnchor="middle" fontSize={25}>
           {active == null ? 'Total' : active.category}
         </VisxText>
-        <VisxText textAnchor="middle" dy={20} fontSize={15} color="var(--slate-11)" fontWeight="500">
+        <VisxText textAnchor="middle" dy={20} fontSize={15} color="var(--B11)" fontWeight="500">
           {`${active == null ? totalPrice : active.price * active.totalSale}$`}
         </VisxText>
       </Group>
@@ -137,13 +129,12 @@ const Doghnut = ({ width, height }: ChartCore) => {
 
 export const SalesCharts = () => {
   return (
-    <Grid grid="1.3fr 1.7fr" className="md_grid-one" gap="4">
+    <Grid cols={{ default: '1fr', lg: '1.3fr 1.7fr' }} gap="4">
       <section className="l_box">
         <Heading size="3" as="h3">
           Generated Leads
         </Heading>
         <Text size="3" color="b" low>
-          {' '}
           Monthly Report
         </Text>
 
@@ -153,7 +144,7 @@ export const SalesCharts = () => {
               <Flex items="center" gap="1">
                 <Dollar width="20" />
                 <Text color="b" size="3">
-                  All Price in dollar{' '}
+                  All Price in dollar
                 </Text>
               </Flex>
               <Text color="b" size="4" low>
@@ -176,7 +167,6 @@ export const SalesCharts = () => {
           Generated Leads
         </Heading>
         <Text size="3" color="b" low>
-          {' '}
           Monthly Report
         </Text>
 

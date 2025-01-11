@@ -1,6 +1,6 @@
 import { useId } from 'react'
 import { RECENT_ADDED, TOP_ACCOUNT, TRENDING } from '@api/crypto'
-import { Avatar, Button, Flex, Heading, Text } from '@pillar-ui/core'
+import { Avatar, Button, Flex, Heading, Paper, Text } from '@pillar-ui/core'
 import { ArrowDown, ChevronDown, CircleCheck, Clock, Like, User } from '@components/icons'
 
 // TODO: Remove any from the project
@@ -49,11 +49,9 @@ const MarketCryptoItem = ({ title, abbr, footer, image }: any) => {
 
 export const CryptoCurrency = () => {
   return (
-    <section className="l_flow-md">
+    <Paper flow="5" as="section">
       <div>
-        <Heading as="h2" size="3">
-          Today Featured Content
-        </Heading>
+        <Heading as="h2">Today Featured Content</Heading>
         <Text size="3" color="b" low>
           The global crypto market cap is $809.65B, a 0.15% decrease over the last day.Read More
         </Text>
@@ -74,7 +72,7 @@ export const CryptoCurrency = () => {
           {TOP_ACCOUNT.map(({ id, title, abbr, image }) => (
             <Flex key={id} as="article" justify="between">
               <Flex gap="3" items="center">
-                <Avatar image={image} size="3" title="bitcoin" />
+                <Avatar src={image} size="3" title="bitcoin" />
                 <Flex gap="3" items="start">
                   <div>
                     <Text size="3" weight="5">
@@ -84,7 +82,7 @@ export const CryptoCurrency = () => {
                       {abbr}
                     </Text>
                   </div>
-                  <CircleCheck width={16} fill="var(--indigo-9)" stroke="var(--slate-1)" />
+                  <CircleCheck width={16} fill="var(--indigo-9)" stroke="var(--B1)" />
                 </Flex>
               </Flex>
               <Button icon={<User />} variant="soft" size="3" color="b">
@@ -94,6 +92,6 @@ export const CryptoCurrency = () => {
           ))}
         </CryptoItem>
       </div>
-    </section>
+    </Paper>
   )
 }

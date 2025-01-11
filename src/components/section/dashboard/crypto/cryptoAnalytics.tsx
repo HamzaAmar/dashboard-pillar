@@ -1,4 +1,4 @@
-import { Color, Flex, Heading, Text } from '@pillar-ui/core'
+import { Color, Flex, Heading, Paper, Text } from '@pillar-ui/core'
 import { ParentSize } from '@visx/responsive'
 import { curveMonotoneX } from '@visx/curve'
 import { useId, useMemo } from 'react'
@@ -6,9 +6,9 @@ import { scaleLinear, scaleTime } from '@visx/scale'
 import { extent, max } from 'd3-array'
 import { LinearGradient } from '@visx/gradient'
 import { LinePath } from '@visx/shape'
-import { CryptoCurrencyItemProps } from '../../dashboard.type'
+import { CryptoCurrencyItemProps } from '../dashboard.type'
 import { CRYPTO_CURRENCY } from '@api/crypto'
-import { LineChartCryptoProps } from '../crypto.type'
+import { LineChartCryptoProps } from './crypto.type'
 
 const colors: Record<number, Color> = {
   0: 'w',
@@ -91,13 +91,13 @@ const CryptoCurrencyItem = ({ color, name, image, prices, currency, total }: Cry
 
 export const CryptoAnalytics = () => {
   return (
-    <section aria-labelledby="crypto-market-id" className="l_flow-md">
+    <Paper flow="5" as="section" aria-labelledby="crypto-market-id">
       <div>
-        <Heading as="h2" id="crypto-market-id" size="3">
+        <Heading as="h2" id="crypto-market-id">
           Today's Cryptocurrency Prices by Market Cap
         </Heading>
         <Text size="3" color="b" low>
-          The global crypto market cap is $809.65B, a 0.15% decrease over the last day.Read More
+          The global crypto market cap is $809.65B, a 0.15% decrease over the last day.
         </Text>
       </div>
       <div className="crypto-currency">
@@ -105,6 +105,6 @@ export const CryptoAnalytics = () => {
           <CryptoCurrencyItem key={crypto.name} color={colors[index]} {...crypto} />
         ))}
       </div>
-    </section>
+    </Paper>
   )
 }

@@ -1,17 +1,19 @@
-import { Breadcrumb, BreadcrumbItem, Flex, Heading } from '@pillar-ui/core'
-import { CryptoAnalytics, CryptoCurrency, HistoryTrading } from './section'
+import { Breadcrumb, BreadcrumbItem, Flex, Heading, Paper } from '@pillar-ui/core'
+import { CryptoAnalytics } from './cryptoAnalytics'
+import { CryptoCurrency } from './cryptoCurrency'
+import { HistoryTrading } from './historyTrading'
 
 const Crypto = () => {
   return (
-    <section aria-labelledby="crypto-page-id" className="l_flow-lg">
+    <Paper as="section" flow="7" aria-labelledby="crypto-page-id">
       <Flex items="center" wrap justify="between">
-        <Heading size="4" weight="5" id="crypto-page-id" as="h1">
+        <Heading size="7" weight="5" id="crypto-page-id">
           Crypto Page
         </Heading>
-        <Breadcrumb size="4">
-          <BreadcrumbItem link="../../">Home</BreadcrumbItem>
-          <BreadcrumbItem link="../">Pages</BreadcrumbItem>
-          <BreadcrumbItem link="./" current>
+        <Breadcrumb>
+          <BreadcrumbItem href="../../">Home</BreadcrumbItem>
+          <BreadcrumbItem href="../">Pages</BreadcrumbItem>
+          <BreadcrumbItem href="./" current>
             Crypto
           </BreadcrumbItem>
         </Breadcrumb>
@@ -19,7 +21,7 @@ const Crypto = () => {
       <CryptoAnalytics />
       <CryptoCurrency />
       <HistoryTrading />
-    </section>
+    </Paper>
   )
 }
 

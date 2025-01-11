@@ -32,7 +32,7 @@ const BestSeller = () => {
             <TableRow key={slug}>
               <TableColumn>
                 <Flex gap="4">
-                  <Avatar title={`${name} profile's Picture`} image={`${avatar}`} size="5" corner="3" />
+                  <Avatar title={`${name} profile's Picture`} src={`${avatar}`} size="5" corner="3" />
                   <div className="u_leading-sm">
                     <Heading as="h4" size="1" truncate="1" weight="5">
                       {name}
@@ -83,7 +83,7 @@ const BestSelling = () => {
             <TableRow key={id}>
               <TableColumn>
                 <Flex gap="4">
-                  <Avatar title={`${color} ${title}`} image={`/images/products/${heroImage}`} size="5" corner="0" />
+                  <Avatar title={`${color} ${title}`} src={`/images/products/${heroImage}`} size="5" corner="0" />
                   <div className="u_leading-sm">
                     <Heading as="h4" size="1" truncate="1" weight="5">
                       {title}
@@ -102,7 +102,7 @@ const BestSelling = () => {
               <TableColumn>Category</TableColumn>
               <TableColumn>
                 <Flex gap="1">
-                  <Star fill="var(--orange-8)" stroke="var(--orange-8)" width="20" />
+                  <Star fill="var(--W8)" stroke="var(--W8)" width="20" />
 
                   <Text weight="7" as="span" size="3">
                     ({rating})
@@ -123,7 +123,7 @@ const BestSelling = () => {
 
 export const EcommerceTables = () => {
   return (
-    <Grid grid="minmax(0,1fr) minmax(0,1fr)" className="md_grid-one" gap="4">
+    <Grid cols={{ default: 'minmax(0,1fr) minmax(0,1fr)' }} className="md_grid-one" gap="4">
       <BestSelling />
       <BestSeller />
     </Grid>

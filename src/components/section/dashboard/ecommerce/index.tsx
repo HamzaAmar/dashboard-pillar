@@ -1,37 +1,39 @@
-import { Breadcrumb, BreadcrumbItem, Flex, Heading } from '@pillar-ui/core'
-
-import { EcommerceTables, SalesAnalytics, SalesCharts, StoreVisit } from './section'
+import { Breadcrumb, BreadcrumbItem, Flex, Heading, Paper } from '@pillar-ui/core'
+import { StoreVisit } from './storeVisit'
+import { SalesAnalytics } from './salesAnalytics'
+import { SalesCharts } from './salesCharts'
+import { EcommerceTables } from './ecommerceTable'
 
 const Ecommerce = () => {
   return (
-    <div className="l_flow-md">
+    <Paper flow="7">
       <Flex items="center" wrap justify="between">
-        <Heading as="h1" size="4" weight="5">
+        <Heading as="h1" size="7" weight="5">
           Ecommerce Dashboard
         </Heading>
-        <Breadcrumb size="4">
-          <BreadcrumbItem link="../../">Home</BreadcrumbItem>
-          <BreadcrumbItem link="../..">E-commerce</BreadcrumbItem>
-          <BreadcrumbItem link="./" current>
+        <Breadcrumb>
+          <BreadcrumbItem href="../../">Home</BreadcrumbItem>
+          <BreadcrumbItem href="../..">E-commerce</BreadcrumbItem>
+          <BreadcrumbItem href="./" current>
             Checkout
           </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <section aria-labelledby="store-analytics-id" className="l_flow-md">
-        <Heading id="store-analytics-id" as="h2" size="3">
+      <Paper flow="5" as="section" aria-labelledby="store-analytics-id">
+        <Heading id="store-analytics-id" as="h2" size="5" weight="5">
           Store Analytics
         </Heading>
         <StoreVisit />
         <SalesAnalytics />
         <SalesCharts />
-      </section>
-      <section aria-labelledby="store-sell-id" className="l_flow-md">
-        <Heading id="store-sell-id" as="h2" size="3">
+      </Paper>
+      <Paper flow="5" as="section" aria-labelledby="store-sell-id">
+        <Heading id="store-sell-id" as="h2" size="5" weight="5">
           Store sell
         </Heading>
         <EcommerceTables />
-      </section>
-    </div>
+      </Paper>
+    </Paper>
   )
 }
 

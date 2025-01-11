@@ -1,12 +1,23 @@
 import { UserModel } from '@api/user/user.type'
-import { Avatar, Breadcrumb, BreadcrumbItem, Button, Flex, Grid, Heading, IconButton, Text } from '@pillar-ui/core'
+import {
+  Avatar,
+  Breadcrumb,
+  BreadcrumbItem,
+  Button,
+  Flex,
+  Grid,
+  Heading,
+  IconButton,
+  Paper,
+  Text,
+} from '@pillar-ui/core'
 import { CirclePlus, Dots, Envelop, Eye, Info, Message, Phone, Video } from '@components/icons'
 import { useLoaderData } from 'react-router-dom'
 import { ContactCardProps } from './contact.type'
 
 const Card = ({ name, email, avatar, phone }: ContactCardProps) => {
   return (
-    <article className="contact-card l_box l_flow-lg">
+    <Paper as="article" flow="6" className="contact-card l_box">
       <Flex justify="between">
         <Flex as="header" gap="3">
           <Avatar
@@ -14,7 +25,7 @@ const Card = ({ name, email, avatar, phone }: ContactCardProps) => {
             // corner="0"
 
             title={name}
-            image={avatar}
+            src={avatar}
           />
           <div className="u_leading__sm">
             <Heading weight="5" size="3">
@@ -44,20 +55,20 @@ const Card = ({ name, email, avatar, phone }: ContactCardProps) => {
           Report
         </Button>
       </Flex>
-    </article>
+    </Paper>
   )
 }
 
 const Contact = () => {
   const { users } = useLoaderData() as { users: UserModel[] }
   return (
-    <section className="l_flow-lg">
+    <Paper as="section" flow="6">
       <Flex justify="between" items="center">
         <Heading size="3">Manage Contact List</Heading>
-        <Breadcrumb size="4">
-          <BreadcrumbItem link="../../">Home</BreadcrumbItem>
-          <BreadcrumbItem link="../..">Dashboard</BreadcrumbItem>
-          <BreadcrumbItem link="./" current>
+        <Breadcrumb>
+          <BreadcrumbItem href="../../">Home</BreadcrumbItem>
+          <BreadcrumbItem href="../..">Dashboard</BreadcrumbItem>
+          <BreadcrumbItem href="./" current>
             Contact
           </BreadcrumbItem>
         </Breadcrumb>
@@ -67,12 +78,12 @@ const Contact = () => {
           New Contact
         </Button>
       </Flex>
-      <Grid grid="repeat(auto-fit, minmax(310px,1fr))" gap="5">
+      <Grid cols={{ default: 'repeat(auto-fit, minmax(310px,1fr))' }} gap="5">
         {users.map((user) => (
           <Card key={user.slug} {...user} />
         ))}
       </Grid>
-    </section>
+    </Paper>
   )
 }
 

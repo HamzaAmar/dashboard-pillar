@@ -1,5 +1,5 @@
 import { CRYPTO_CURRENCY } from '@api/crypto'
-import { Button, Flex, Grid, Heading, IconButton, TableRow, Text, Table, TableColumn } from '@pillar-ui/core'
+import { Button, Flex, Grid, Heading, IconButton, TableRow, Text, Table, TableColumn, Paper } from '@pillar-ui/core'
 import { Card, Dots, Heart } from '@components/icons'
 import { formatPrice } from '@utils/formatNumber'
 
@@ -19,7 +19,7 @@ const CurrencyRow = ({ name, currency, total, prices }: any) => {
           </Text>
         </Flex>
       </TableColumn>
-      <TableColumn weight="medium">{formatPrice({ number: prices[0].price })}</TableColumn>
+      <TableColumn weight="5">{formatPrice({ number: prices[0].price })}</TableColumn>
       <TableColumn>
         <Text as="span" color="d" size="3" low weight="5">
           0.02%
@@ -30,8 +30,8 @@ const CurrencyRow = ({ name, currency, total, prices }: any) => {
           0.15%
         </Text>
       </TableColumn>
-      <TableColumn weight="medium">{formatPrice({ number: total })}</TableColumn>
-      <TableColumn weight="medium">
+      <TableColumn weight="5">{formatPrice({ number: total })}</TableColumn>
+      <TableColumn weight="5">
         <Text size="3">{formatPrice({ number: total })}</Text>
         <Text size="3" color="b" low>
           {prices[0].price} {currency}
@@ -51,10 +51,10 @@ const CurrencyRow = ({ name, currency, total, prices }: any) => {
 
 const CurrencyTable = () => {
   return (
-    <section style={{ overflow: 'hidden' }} className="trading-activity l_flow-md">
+    <Paper flow="5" as="section" style={{ overflow: 'hidden' }} className="trading-activity">
       <Flex justify="between" items="center">
         <div>
-          <Heading size="3">Recent Trading Activities</Heading>
+          <Heading>Recent Trading Activities</Heading>
           <Text size="3" color="b" low>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </Text>
@@ -83,7 +83,7 @@ const CurrencyTable = () => {
           ))}
         </tbody>
       </Table>
-    </section>
+    </Paper>
   )
 }
 
@@ -125,7 +125,7 @@ const HistoryCurrency = () => {
 
 export const HistoryTrading = () => {
   return (
-    <Grid gap="4" grid="minmax(1px , 1fr) 350px" className="history-trading-container">
+    <Grid gap="4" cols={{ default: 'minmax(1px , 1fr) 350px' }} className="history-trading-container">
       <CurrencyTable />
       <HistoryCurrency />
     </Grid>
