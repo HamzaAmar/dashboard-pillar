@@ -1,4 +1,4 @@
-import { Button, Grid, Heading, Text } from '@pillar-ui/core'
+import { Button, Grid, Heading, Paper, Text } from '@pillar-ui/core'
 import { Link } from 'react-router-dom'
 
 import type { PagesProps } from './dashboard.type'
@@ -66,7 +66,7 @@ const Article = ({ title, description, href, image }: PagesProps) => {
   return (
     <article className="page--article">
       <img className="page--article-image" src={image} height="140" alt="Hello" />
-      <div className="page--article-content  l_flow-sm">
+      <Paper flow="3" className="page--article-content">
         <Heading as="h2" size="3" weight="5">
           {title}
         </Heading>
@@ -77,14 +77,14 @@ const Article = ({ title, description, href, image }: PagesProps) => {
         <Button fluid variant="soft" as={Link} to={href}>
           Go TO
         </Button>
-      </div>
+      </Paper>
     </article>
   )
 }
 
 const pages = () => {
   return (
-    <section className="pages-section l_flow-md">
+    <Paper as="section" flow="7" className="pages-section">
       <Heading size="4">Pages</Heading>
 
       <Grid cols={{ default: 'repeat(auto-fit, minmax(260px, 1fr))' }} gap="4">
@@ -92,7 +92,7 @@ const pages = () => {
           <Article key={page.id} {...page} />
         ))}
       </Grid>
-    </section>
+    </Paper>
   )
 }
 

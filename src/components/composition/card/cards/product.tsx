@@ -1,4 +1,4 @@
-import { Avatar, Button, Chips, Flex, IconButton, Rating, Text } from '@pillar-ui/core'
+import { Avatar, Button, Chips, Flex, IconButton, Paper, Rating, Text } from '@pillar-ui/core'
 import { Cart, Heart } from '@components/icons'
 import { formatPrice } from '@utils/formatNumber'
 
@@ -34,7 +34,7 @@ const product = ({
         <IconButton className="product-card--heart-icon" icon={<Heart />} title="Add to Favorites" variant="soft" />
       </header>
 
-      <div className="l_flow-md">
+      <Paper flow="7">
         <div className="product-card--main">
           <Text color="b" weight="5">
             {title}
@@ -69,9 +69,9 @@ const product = ({
             </Text>
           )}
         </div>
-        <Flex as="footer" direction="col" className="product-card--footer l_flow-md">
+        <Flex as="footer" direction="col" gap="4" className="product-card--footer">
           <Flex items="center" gap="3">
-            <Avatar image={user.avatar} title={user.name} />
+            <Avatar src={user.avatar} title={user.name} />
             <Flex direction="col" gap="1">
               <Text color="b" low size="4">
                 {user.name}
@@ -93,7 +93,7 @@ const product = ({
             </Button>
           )}
         </Flex>
-      </div>
+      </Paper>
     </Flex>
   )
 }

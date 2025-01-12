@@ -1,7 +1,7 @@
 import { useId } from 'react'
 import { getUsers } from '@api/user'
 import { USERS_LIST } from '@api/user/users.data'
-import { Avatar, AvatarGroup, Button, Flex, Heading, Text } from '@pillar-ui/core'
+import { Avatar, AvatarGroup, Button, Flex, Heading, Paper, Text } from '@pillar-ui/core'
 import { Camera } from '@components/icons'
 import { NavLink } from 'react-router-dom'
 
@@ -32,9 +32,9 @@ const hero = () => {
         </Button>
       </div>
 
-      <div className="hero--content l_flow-md">
+      <Paper flow="4" className="hero--content">
         <Flex gap="4" className="hero--avatar-wrapper">
-          <Avatar size="8" image={avatar} title={name} />
+          <Avatar size="8" src={avatar} title={name} />
           <div className="u_leading--sm">
             <Heading as="h1" size="4" weight="5">
               {name}
@@ -42,7 +42,7 @@ const hero = () => {
             <Text>{role}</Text>
             <AvatarGroup size="4">
               {friends.map(({ slug, avatar, name }) => (
-                <Avatar image={avatar} key={slug} title={name} />
+                <Avatar src={avatar} key={slug} title={name} />
               ))}
             </AvatarGroup>
           </div>
@@ -56,7 +56,7 @@ const hero = () => {
             <SectionItem to="photos" title="Photos" />
           </Flex>
         </nav>
-      </div>
+      </Paper>
     </section>
   )
 }

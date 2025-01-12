@@ -13,7 +13,7 @@ const frequency = (d: LetterFrequency) => d.frequency
 // color scales
 const getLetterFrequencyColor = scaleOrdinal({
   domain: letters.map((l) => l.letter),
-  range: ['var(--primary-11)', 'var(--primary-10)', 'var(--primary-8)', 'var(--primary-7)'],
+  range: ['var(--P11)', 'var(--P10)', 'var(--P8)', 'var(--P7)'],
 })
 
 const defaultMargin = { top: 20, right: 20, bottom: 20, left: 20 }

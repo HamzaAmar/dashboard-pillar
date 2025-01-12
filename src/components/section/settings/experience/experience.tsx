@@ -1,8 +1,8 @@
-import { Button, Flex, Input, Textarea, FormController } from '@pillar-ui/core'
+import { Button, Flex, Input, Textarea, FormController, Paper } from '@pillar-ui/core'
 
 const PersonalDetail = () => {
   return (
-    <form className="l_flow-md">
+    <Paper as="form" flow="5" className="l_flow-md">
       <FormController label="Title">
         <Input name="title" />
       </FormController>
@@ -15,7 +15,7 @@ const PersonalDetail = () => {
       <Flex justify="end">
         <Button>Update</Button>
       </Flex>
-    </form>
+    </Paper>
   )
 }
 

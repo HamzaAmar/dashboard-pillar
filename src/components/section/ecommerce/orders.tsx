@@ -16,6 +16,7 @@ import {
   TableRow,
   TableColumn,
   Color,
+  Paper,
 } from '@pillar-ui/core'
 import { Pen, Trash } from '@components/icons'
 import { formatDate } from '@utils/date'
@@ -35,15 +36,15 @@ const statusColor: Record<OrderStatusUnion, Color> = {
 const Orders = () => {
   const data = useLoaderData() as OrderModel[]
   return (
-    <section className="l_flow-md">
+    <Paper as="section" flow="5">
       <Flex justify="between" items="center">
         <Heading weight="5" size="4">
           Products Details
         </Heading>
         <Breadcrumb size="5">
-          <BreadcrumbItem link="../../">Home</BreadcrumbItem>
-          <BreadcrumbItem link="../..">E-commerce</BreadcrumbItem>
-          <BreadcrumbItem link="../" current>
+          <BreadcrumbItem href="../../">Home</BreadcrumbItem>
+          <BreadcrumbItem href="../..">E-commerce</BreadcrumbItem>
+          <BreadcrumbItem href="../" current>
             Orders
           </BreadcrumbItem>
         </Breadcrumb>
@@ -64,7 +65,7 @@ const Orders = () => {
         <tbody>
           {data.map(({ id, customer, total, status, date }) => (
             <TableRow key={id}>
-              <TableColumn weight="medium">#{id}</TableColumn>
+              <TableColumn weight="5">#{id}</TableColumn>
               <TableColumn>{customer.name}</TableColumn>
               <TableColumn>
                 <Text weight="5" size="3">
@@ -72,7 +73,7 @@ const Orders = () => {
                 </Text>
               </TableColumn>
               {/* TODO: Get The currency also from the back */}
-              <TableColumn weight="medium">{total ? `${total} $` : '_'} </TableColumn>
+              <TableColumn weight="5">{total ? `${total} $` : '_'} </TableColumn>
               <TableColumn>
                 <Chips color={statusColor[status]} variant="soft">
                   {status}
@@ -96,7 +97,7 @@ const Orders = () => {
       <Flex justify="center">
         <Pagination title="ecoomerce pagination" current={1} count={5} />
       </Flex>
-    </section>
+    </Paper>
   )
 }
 

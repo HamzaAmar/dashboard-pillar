@@ -67,7 +67,7 @@ export const LineChart = ({
 const CryptoCurrencyItem = ({ color, name, image, prices, currency, total }: CryptoCurrencyItemProps) => {
   const id = `currency-${useId()}-crypto`
   return (
-    <Flex as="article" aria-labelledby={id} justify="between" items="center" className="l_box u_flex-1">
+    <Flex as="article" aria-labelledby={id} justify="between" items="center" className="l_box fl-1">
       <div>
         <Flex gap="4" items="center">
           <img src={`/images/crypto/${image}`} width="36" height="36" alt={name} />

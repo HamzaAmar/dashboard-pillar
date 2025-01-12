@@ -29,15 +29,15 @@ export type BarStackProps = {
   events?: boolean
 }
 
-const red = 'var(--red-9)'
-const green = 'var(--green-9)'
-export const mint = 'var(--mint-9)'
-export const background = 'var(--slate-3)'
+const red = 'var(--D10)'
+const green = 'var(--Se10)'
+export const mint = 'var(--W10)'
+export const background = 'var(--B3)'
 
 const defaultMargin = { top: 40, right: 0, bottom: 0, left: 0 }
 const tooltipStyles = {
   ...defaultStyles,
-  backgroundColor: 'var(--slate-5)',
+  backgroundColor: 'var(--B5)',
 }
 
 const data = cityTemperature.slice(0, 7)
@@ -70,7 +70,7 @@ const temperatureScale = scaleLinear<number>({
 })
 const colorScale = scaleOrdinal<CityName, string>({
   domain: keys,
-  range: [red, green, mint],
+  range: [red, mint, green],
 })
 
 let tooltipTimeout: number
@@ -79,14 +79,10 @@ export default function Example({ width, height, events = false, margin = defaul
   const { tooltipOpen, tooltipLeft, tooltipTop, tooltipData, hideTooltip, showTooltip } = useTooltip<TooltipData>()
 
   const { containerRef, TooltipInPortal } = useTooltipInPortal({
-    // TooltipInPortal is rendered in a separate child of <body /> and positioned
-    // with page coordinates which should be updated on scroll. consider using
-    // Tooltip or TooltipWithBounds if you don't need to render inside a Portal
     scroll: true,
   })
 
   if (width < 10) return null
-  // bounds
   const xMax = width
   const yMax = height - margin.top - 30
 
@@ -101,17 +97,8 @@ export default function Example({ width, height, events = false, margin = defaul
       }}
     >
       <svg ref={containerRef} width={width} height={height}>
-        <rect x={0} y={0} width={width} height={height} fill="var(--slate-1)" rx={14} />
-        {/* <Grid
-          top={margin.top}
-          left={margin.left}
-          xScale={dateScale}
-          yScale={temperatureScale}
-          width={xMax}
-          height={yMax}
-          stroke="var(--opacity-6)"
-          xOffset={dateScale.bandwidth() / 2}
-        /> */}
+        <rect x={0} y={0} width={width} height={height} fill="var(--B1)" rx={14} />
+
         <Group top={margin.top}>
           <BarStack<CityTemperature, CityName>
             data={data}
@@ -143,9 +130,6 @@ export default function Example({ width, height, events = false, margin = defaul
                     }}
                     onMouseMove={(event) => {
                       if (tooltipTimeout) clearTimeout(tooltipTimeout)
-                      // TooltipInPortal expects coordinates to be relative to containerRef
-                      // localPoint returns coordinates relative to the nearest SVG, which
-                      // is what containerRef is set to in this example.
                       const eventSvgCoords = localPoint(event)
                       const left = bar.x + bar.width / 2
                       showTooltip({
@@ -164,11 +148,11 @@ export default function Example({ width, height, events = false, margin = defaul
           top={yMax + margin.top}
           scale={dateScale}
           tickFormat={formatDate}
-          stroke={'var(--slate-9)'}
-          tickStroke={'var(--slate-9)'}
+          stroke={'var(--B9)'}
+          tickStroke={'var(--B9)'}
           tickLabelProps={() => ({
-            fill: 'var(--slate-9)',
-            fontSize: 14,
+            fill: 'var(--B11)',
+            fontSize: 16,
             textAnchor: 'middle',
           })}
           hideTicks

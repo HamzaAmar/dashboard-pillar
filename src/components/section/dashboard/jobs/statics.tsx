@@ -31,7 +31,7 @@ export const JobStaticArticle = ({ city, number, color }: JobStaticArticleProps)
 
 export const JobStatics = () => {
   return (
-    <Paper as="section" flow="5" className="l_box u_flex-1">
+    <Paper as="section" flow="5" className="l_box fl-1">
       <header>
         <Heading as="h2">Job Statistics</Heading>
         <Text size="3" color="b" low>

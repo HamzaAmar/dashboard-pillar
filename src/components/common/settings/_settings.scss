@@ -20,7 +20,7 @@
   height: 2rem;
   border-radius: 0.5rem;
   background-color: var(--customize-color, var(--color-shared-9));
-  border: 1px solid var(--opacity-7);
+  border: 1px solid var(--O7);
   color: white;
 }
 .customize--white-color-box {
@@ -35,7 +35,7 @@
 }
 
 .settings--content > * + * {
-  border-top: 1px solid var(--opacity-6);
+  border-top: 1px solid var(--O6);
 }
 
 .settings-section[data-open='true'] {
@@ -47,7 +47,7 @@
   min-width: 240px;
   height: calc(100vh - 4rem);
   background-color: var(--B1);
-  box-shadow: 0 0 12px -4px var(--opacity-6);
+  box-shadow: 0 0 12px -4px var(--O6);
   pointer-events: visible;
 }
 .preferred-color--radio {
@@ -58,7 +58,7 @@
 }
 
 .settings--button {
-  box-shadow: 0 0 16px var(--opacity-8);
+  box-shadow: 0 0 16px var(--O8);
   position: fixed;
   top: 50%;
   right: 0;

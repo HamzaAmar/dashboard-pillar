@@ -7,7 +7,7 @@ import { ArrowDown, ChevronDown, CircleCheck, Clock, Like, User } from '@compone
 const CryptoItem = ({ title, icon, children }: any) => {
   const id = `feature-${useId()}`
   return (
-    <Flex as="article" aria-labelledby={id} direction="col" justify="between" className="l_box l_flow-sm">
+    <Flex as="article" aria-labelledby={id} direction="col" gap="3" justify="between" className="l_box">
       <Flex className="crypto-curr--header" justify="between" items="center">
         <Flex gap="3">
           {icon}
@@ -25,7 +25,7 @@ const CryptoItem = ({ title, icon, children }: any) => {
           More
         </Button>
       </Flex>
-      <div className="l_flow-sm">{children}</div>
+      <Paper flow="5">{children}</Paper>
     </Flex>
   )
 }

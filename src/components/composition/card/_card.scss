@@ -1,7 +1,7 @@
 // TODO: Fix Horizontal Problem
 .product-card {
   overflow: hidden;
-  box-shadow: 0 3px 9px -3px var(--opacity-6);
+  box-shadow: 0 3px 9px -3px var(--O6);
   &[data-variant='horizontal'] {
     .product-card--image {
       margin: -1rem;

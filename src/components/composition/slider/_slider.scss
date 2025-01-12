@@ -39,7 +39,7 @@
    ============================================================================================ */
 
 .slider--track {
-  background-color: var(--slate-4);
+  background-color: var(--B4);
   position: relative;
   flex-grow: 1;
   border-radius: 9999px;
@@ -73,9 +73,9 @@
   display: block;
   width: 1em;
   height: 1em;
-  box-shadow: 0 0 8px var(--opacity-6);
+  box-shadow: 0 0 8px var(--O6);
   transition: transform 0.3s;
-  border: 1px solid var(--slate-8);
+  border: 1px solid var(--B8);
 }
 
 .slider--thumb:hover {
@@ -97,9 +97,9 @@
 }
 
 .slider--thumb__solid {
-  background-color: var(--slate-1);
+  background-color: var(--B1);
 }
 .slider--thumb__outline {
-  background-color: var(--slate-1);
+  background-color: var(--B1);
   border: 5px solid var(--color-shared-8);
 }

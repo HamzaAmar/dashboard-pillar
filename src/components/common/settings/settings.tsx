@@ -1,5 +1,5 @@
 import { Drawer } from '@components/composition'
-import { IconButton, Text } from '@pillar-ui/core'
+import { IconButton, Paper, Text } from '@pillar-ui/core'
 import { Setting } from '@components/icons'
 import useBoolean from '@hooks/useBoolean'
 
@@ -25,8 +25,8 @@ const Settings = () => {
       open={state}
     >
       <section className="settings--content">
-        <div className="l_flow-md">
-          <article className="l_flow-md">
+        <Paper flow="7">
+          <Paper flow="7" as="article">
             <div>
               <Text weight="5"> Color Scheme</Text>
               <Text color="b" low size="3">
@@ -53,8 +53,8 @@ const Settings = () => {
                 <div className="customize--primary-color-box  customize--black-color-box" />
               </CustomRadio>
             </RadioGroup> */}
-          </article>
-          <article className="l_flow-md">
+          </Paper>
+          <Paper flow="7" as="article">
             <div>
               <Text weight="5"> Primary Color</Text>
               <Text color="b" low size="3">
@@ -123,8 +123,8 @@ const Settings = () => {
                 <div className="customize--primary-color-box"></div>
               </CustomRadio>
             </RadioGroup> */}
-          </article>
-        </div>
+          </Paper>
+        </Paper>
       </section>
     </Drawer>
   )

@@ -162,7 +162,7 @@ export const SalesCharts = () => {
           <Doghnut width={150} height={150} />
         </Flex>
       </section>
-      <section className="l_box u_flex-1">
+      <section className="l_box fl-1">
         <Heading size="3" as="h3">
           Generated Leads
         </Heading>

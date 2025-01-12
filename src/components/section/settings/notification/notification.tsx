@@ -1,4 +1,4 @@
-import { Flex, Heading, Text, Switch } from '@pillar-ui/core'
+import { Flex, Heading, Text, Switch, Paper } from '@pillar-ui/core'
 import { useId } from 'react'
 
 export interface NotificationItemProps {
@@ -25,7 +25,7 @@ const NotificationItem = ({ title, description }: NotificationItemProps) => {
 
 const notification = () => {
   return (
-    <div className="l_flow-lg">
+    <Paper flow="7">
       <NotificationItem
         title="Show desktop notifications"
         description='   Choose the option you want as your default setting. Block a site: Next to "Not allowed to send
@@ -49,7 +49,7 @@ const notification = () => {
         title="Show Jobs notifications"
         description="Get real-time Jobs alerts to make me respond fast to the best opportunity."
       />
-    </div>
+    </Paper>
   )
 }
 

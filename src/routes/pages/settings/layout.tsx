@@ -1,12 +1,13 @@
 import { SettingsLayout } from '@components/section'
+import { Paper } from '@pillar-ui/core'
 import { Outlet } from 'react-router-dom'
 
 export const Component = () => {
   return (
-    <div className="l_flow-md">
+    <Paper flow="5">
       <SettingsLayout />
       {<Outlet />}
-    </div>
+    </Paper>
   )
 }
 

@@ -4,7 +4,7 @@
   min-width: 260px;
   box-shadow: 0 4px 5px -2px rgba(0 0 0 / 10%);
   max-height: 500px;
-  background-color: var(--slate-1);
+  background-color: var(--B1);
   border-top: var(--color-primary-5) 2px solid;
   border-radius: 0.25rem;
   overflow: auto;
@@ -30,17 +30,17 @@
 }
 
 .menu-button--item:focus-visible {
-  background-color: var(--primary-3);
-  outline: 3px solid var(--primary-8);
+  background-color: var(--P3);
+  outline: 3px solid var(--P8);
   outline-offset: -3px;
 }
 
 .menu-button--item:hover {
-  background-color: var(--slate-5);
+  background-color: var(--B5);
 }
 
 .menu-button--separator {
-  border-bottom: 1px solid var(--opacity-6);
+  border-bottom: 1px solid var(--O6);
 }
 
 .menu-button--main {

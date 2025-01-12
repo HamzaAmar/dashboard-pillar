@@ -14,7 +14,7 @@ const profilePhotos = () => {
       <Heading className="u_sr-only" as="h3">
         Gallery List
       </Heading>
-      <Grid as="section" gap="5" grid="repeat(3,1fr)" className="md_grid-two">
+      <Grid as="section" gap="5" cols={{ default: '1fr 1fr', lg: 'repeat(3,1fr)' }}>
         {numbers.map((photo, index) => (
           <div className="profile-photos--wrapper" key={index}>
             <img

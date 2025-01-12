@@ -11,6 +11,7 @@ import {
   Text,
   Rating,
   Table,
+  Paper,
 } from '@pillar-ui/core'
 import { CircleCheck, CircleCross } from '@components/icons'
 import type { BillingArticleProps, CompanyRatingProps, Current, PlanFeatureProps, ReviewProps } from './pricing.type'
@@ -20,7 +21,7 @@ const CompanyRating = ({ company, image, reviews, rating }: CompanyRatingProps) 
   const ratingTrunc = Math.trunc(rating)
   return (
     <Flex items="start">
-      <Avatar image={`/images/jobs/${image}`} title={company} />
+      <Avatar src={`/images/jobs/${image}`} title={company} />
       <div>
         <Flex gap="1">
           <Rating rating={ratingTrunc} size="4" />
@@ -47,7 +48,8 @@ const PlanFeature = ({ icon, title, description }: PlanFeatureProps) => {
       justify="center"
       direction="col"
       items="center"
-      className="l_flow-md l_box"
+      gap="4"
+      className="l_box"
     >
       <div className="plan-feature--icon-wrapper">{icon}</div>
       <Heading align="center" id="plan-feature-id" size="3" as="h3" weight="5">
@@ -63,9 +65,11 @@ const PlanFeature = ({ icon, title, description }: PlanFeatureProps) => {
 const Billing = ({ title, price, description, handlePricing, value, slug, features }: BillingArticleProps) => {
   const id = `billing-${useId()}-item`
   return (
-    <article aria-labelledby={id} className="billing-item u_flex-1">
-      <button
-        className="billing-trigger l_box l_flow-md"
+    <article aria-labelledby={id} className="billing-item fl-1">
+      <Paper
+        as="button"
+        flow="5"
+        className="billing-trigger l_box"
         data-current={value === slug}
         onClick={() => handlePricing(slug)}
       >
@@ -81,12 +85,12 @@ const Billing = ({ title, price, description, handlePricing, value, slug, featur
               </Text>
             </div>
             <Flex justify="center" items="center" className="icon-wrapper">
-              <CircleCheck className="billing-check" width="24" stroke="var(--slate-12)" />
+              <CircleCheck className="billing-check" width="24" stroke="var(--B12)" />
             </Flex>
           </Flex>
         </header>
         <div>
-          <ul className="l_flow-md">
+          <Paper as="ul" flow="4">
             {features.map((feature, index) => (
               <li key={index}>
                 <Flex as={Text} gap="3" items="center" size="4" color="b" low>
@@ -97,16 +101,16 @@ const Billing = ({ title, price, description, handlePricing, value, slug, featur
                 </Flex>
               </li>
             ))}
-          </ul>
+          </Paper>
         </div>
-      </button>
+      </Paper>
     </article>
   )
 }
 
 const Testimonials = ({ id, user, description, title, company }: ReviewProps) => {
   return (
-    <Flex direction="col" as="article" gap="3" key={id} className="pricing-review l_box l_flow-md">
+    <Flex direction="col" as="article" gap="3" key={id} className="pricing-review l_box">
       <div>
         <Heading as="h3" size="3" weight="5">
           {title}
@@ -117,7 +121,7 @@ const Testimonials = ({ id, user, description, title, company }: ReviewProps) =>
       </div>
 
       <Flex gap="4" className="pricing-review--footer">
-        <Avatar image={user.avatar} title={user.name} />
+        <Avatar src={user.avatar} title={user.name} />
         <div>
           <Text size="4" weight="5">
             {user.name}
@@ -132,7 +136,7 @@ const Testimonials = ({ id, user, description, title, company }: ReviewProps) =>
 }
 
 function featureOrNot(feature: boolean) {
-  return feature ? <CircleCheck width={20} /> : <CircleCross stroke="var(--slate-11)" width={20} />
+  return feature ? <CircleCheck width={20} /> : <CircleCross stroke="var(--B11)" width={20} />
 }
 
 export const PricingSection = () => {
@@ -143,7 +147,7 @@ export const PricingSection = () => {
   }
 
   return (
-    <section aria-labelledby="pricing-page-id" className="l_flow-lg">
+    <Paper as="section" flow="7" aria-labelledby="pricing-page-id">
       <Flex justify="between" items="center">
         <div>
           <Heading id="pricing-page-id" as="h1" size="4">
@@ -154,18 +158,18 @@ export const PricingSection = () => {
           </Text>
         </div>
         <Breadcrumb size="5">
-          <BreadcrumbItem link="../../">Home</BreadcrumbItem>
-          <BreadcrumbItem link="../">Pages</BreadcrumbItem>
-          <BreadcrumbItem link="." current>
+          <BreadcrumbItem href="../../">Home</BreadcrumbItem>
+          <BreadcrumbItem href="../">Pages</BreadcrumbItem>
+          <BreadcrumbItem href="." current>
             Pricing
           </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <section className="l_flow-sm">
+      <Paper as="section" flow="5">
         <Heading as="h2" size="4" weight="5">
           Belling Plans
         </Heading>
-        <Grid grid="repeat(auto-fit, minmax(250px , 1fr))" gap="4">
+        <Grid cols={{ default: 'repeat(auto-fit, minmax(250px , 1fr))' }} gap="4">
           <Billing
             price={10}
             slug="basic"
@@ -209,11 +213,11 @@ export const PricingSection = () => {
             ]}
           />
         </Grid>
-      </section>
-      <div className="l_flow-lg">
+      </Paper>
+      <Paper flow="5">
         <Flex as="section" aria-labelledby="trusted-company-id" direction="col" gap="4">
           <Heading as="h2" size="4" id="trusted-company-id" weight="5">
-            Trusted By 3000+ company around the globe{' '}
+            Trusted By 3000+ company around the globe
           </Heading>
           <Flex wrap gap="6">
             <CompanyRating image="dice.jfif" company="Dice" rating={5} reviews={230} />
@@ -225,7 +229,7 @@ export const PricingSection = () => {
           </Flex>
         </Flex>
 
-        <section aria-labelledby="testimonials-id" className="l_flow-sm">
+        <Paper as="section" flow="5" aria-labelledby="testimonials-id">
           <Heading size="4" id="testimonials-id" weight="5" as="h2">
             Testimonials
           </Heading>
@@ -234,9 +238,9 @@ export const PricingSection = () => {
               <Testimonials key={review.id} {...review} />
             ))}
           </div>
-        </section>
-      </div>
-      <Flex as="section" aria-labelledby="pick-plan-id" direction="col" className="l_flow-lg">
+        </Paper>
+      </Paper>
+      <Flex as="section" aria-labelledby="pick-plan-id" direction="col" gap="6">
         <div>
           <Heading size="4" weight="5" id="pick-plan-id" as="h2">
             Pick a plan that works best for you
@@ -263,7 +267,7 @@ export const PricingSection = () => {
           <tbody>
             {PRICING_FEATURES.body.map(({ slug, title, feature }) => (
               <TableRow key={slug}>
-                <TableColumn weight="medium">{title}</TableColumn>
+                <TableColumn weight="5">{title}</TableColumn>
                 {feature.map((value, index) => (
                   <TableColumn key={index}>{featureOrNot(value)}</TableColumn>
                 ))}
@@ -272,16 +276,16 @@ export const PricingSection = () => {
           </tbody>
         </Table>
       </Flex>
-      <Flex as="section" aria-labelledby="personalization-plan-id" direction="col" className="l_flow-lg">
+      <Flex as="section" aria-labelledby="personalization-plan-id" direction="col" gap="4">
         <Heading as="h2" size="4" weight="5" id="personalization-plan-id">
           Personalization Plan features
         </Heading>
-        <Grid grid="repeat(4, 1fr)" gap="4" className="plan-features md_grid-two sm_grid-one">
+        <Grid cols={{ default: '1fr', md: '1fr 1fr', lg: 'repeat(4, 1fr)' }} gap="4" className="plan-features">
           {FEATURES_PLAN.map((plan) => (
             <PlanFeature key={plan.slug} {...plan} />
           ))}
         </Grid>
       </Flex>
-    </section>
+    </Paper>
   )
 }

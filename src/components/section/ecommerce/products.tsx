@@ -10,8 +10,7 @@ import {
   Grid,
   Heading,
   IconButton,
-  Radio,
-  RadioGroup,
+  Paper,
   Text,
 } from '@pillar-ui/core'
 import { Caret, Filter, LayoutGrid, Menu, Star } from '@components/icons'
@@ -42,7 +41,7 @@ function CheckBoxStarContent({ number }: any) {
           <Text size="4" color="p" low weight="7">
             {number}
           </Text>
-          <Star width="16" fill="var(--orange-8)" stroke="var(--orange-8)" />
+          <Star width="16" fill="var(--W8)" stroke="var(--W8)" />
           And Above
         </Flex>
       </Text>
@@ -63,28 +62,62 @@ const ProductFilter = () => {
       size="4"
     >
       <FormGroup direction="col" title="Customer Rating">
-        <Checkbox name="hello" label={<CheckBoxStarContent number={1} />} title="hello" />
-        <Checkbox name="hello" label={<CheckBoxStarContent number={2} />} title="hello" />
-        <Checkbox name="hello" label={<CheckBoxStarContent number={3} />} title="hello" />
-        <Checkbox name="hello" label={<CheckBoxStarContent number={4} />} title="hello" />
-        <Checkbox name="hello" label={<CheckBoxStarContent number={5} />} title="hello" />
+        <Checkbox name="hello" title="hello">
+          <CheckBoxStarContent number={1} />
+        </Checkbox>
+        <Checkbox name="hello" title="hello">
+          <CheckBoxStarContent number={2} />
+        </Checkbox>
+        <Checkbox name="hello" title="hello">
+          <CheckBoxStarContent number={3} />
+        </Checkbox>
+        <Checkbox name="hello" title="hello">
+          <CheckBoxStarContent number={4} />
+        </Checkbox>
+        <Checkbox name="hello" title="hello">
+          <CheckBoxStarContent number={5} />
+        </Checkbox>
       </FormGroup>
       <FormGroup direction="row" title="Color">
-        <Checkbox name="hello" label="red" title="hello" />
-        <Checkbox name="hello" label="white" title="hello" />
-        <Checkbox name="hello" label="orange" title="hello" />
-        <Checkbox name="hello" label="black" title="hello" />
-        <Checkbox name="hello" label="beige" title="hello" />
-        <Checkbox name="hello" label="gray" title="hello" />
-        <Checkbox name="hello" label="black" title="hello" />
-        <Checkbox name="hello" label="beige" title="hello" />
-        <Checkbox name="hello" label="gray" title="hello" />
+        <Checkbox name="hello" title="hello">
+          red
+        </Checkbox>
+        <Checkbox name="hello" title="hello">
+          white
+        </Checkbox>
+        <Checkbox name="hello" title="hello">
+          white
+        </Checkbox>
+        <Checkbox name="hello" title="hello">
+          white
+        </Checkbox>
+        <Checkbox name="hello" title="hello">
+          white
+        </Checkbox>
+        <Checkbox name="hello" title="hello">
+          white
+        </Checkbox>
+        <Checkbox name="hello" title="hello">
+          white
+        </Checkbox>
+        <Checkbox name="hello" title="hello">
+          white
+        </Checkbox>
+        <Checkbox name="hello" title="hello">
+          white
+        </Checkbox>
       </FormGroup>
-      <RadioGroup name="sex" label="Color">
-        <Radio name="hello" label="red" title="men" />
-        <Radio name="hello" label="white" title="kids" />
-        <Radio name="hello" label="orange" title="women" />
-      </RadioGroup>
+      {/* <RadioGroup name="sex">
+        <Radio name="hello" title="men">
+          white
+        </Radio>
+        <Radio name="hello" title="kids">
+          white
+        </Radio>
+        <Radio name="hello" title="women">
+          white
+        </Radio>
+      </RadioGroup> */}
     </Drawer>
   )
 }
@@ -144,15 +177,15 @@ const Products = () => {
   }
 
   return (
-    <section className="l_flow-md">
+    <Paper as="section" flow="5">
       <Flex gap="5" items="center">
         <Heading size="4" color="b" low>
           Men Shoes
         </Heading>
         <Breadcrumb size="5">
-          <BreadcrumbItem link="../..">Home</BreadcrumbItem>
-          <BreadcrumbItem link="../">E-commerce</BreadcrumbItem>
-          <BreadcrumbItem link="./" current>
+          <BreadcrumbItem href="../..">Home</BreadcrumbItem>
+          <BreadcrumbItem href="../">E-commerce</BreadcrumbItem>
+          <BreadcrumbItem href="./" current>
             Products
           </BreadcrumbItem>
         </Breadcrumb>
@@ -187,12 +220,12 @@ const Products = () => {
         </Flex>
       </Flex>
 
-      <Grid gap="4" md="1fr 1fr" sm="1fr" grid={view === 'grid' ? 'repeat(3, 1fr)' : '1fr'}>
+      <Grid gap="4" cols={{ default: '1fr', md: '1fr 1fr', lg: view === 'grid' ? 'repeat(3, 1fr)' : '1fr' }}>
         {data.map((product) => (
           <Product variant={view === 'grid' ? 'vertical' : 'horizontal'} key={product.id} {...product} />
         ))}
       </Grid>
-    </section>
+    </Paper>
   )
 }
 

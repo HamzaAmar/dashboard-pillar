@@ -183,13 +183,13 @@ function MessageMenuButton() {
           </DropdownMenu.Group>
           <DropdownMenu.Separator className="menu-button--separator" />
 
-          <DropdownMenu.Group className="menu-button--main l_flow-md">
+          <DropdownMenu.Group className="menu-button--main">
             {getMessages(15).map(({ from, id, date, unread, message }) => (
               <DropdownMenu.Item asChild key={id}>
                 <Flex justify="between" className="menu-button--item">
                   <Flex gap="3">
                     <Avatar src={from.avatar} title={from.name} />
-                    <div className="u_flex-1">
+                    <div className="fl-1">
                       <Text weight="5" size="3">
                         {from.name}
                       </Text>
@@ -256,7 +256,7 @@ function NotificationMenuButton() {
             </DropdownMenu.Item>
           </DropdownMenu.Group>
           <DropdownMenu.Separator className="menu-button--separator" />
-          <DropdownMenu.Group className="menu-button--main l_flow-md">
+          <DropdownMenu.Group className="menu-button--main">
             {getNotifications(15).map(({ user, id, date, unread, request }) => (
               <DropdownMenu.Item className="menu-button--item" key={id}>
                 <Flex justify="between">

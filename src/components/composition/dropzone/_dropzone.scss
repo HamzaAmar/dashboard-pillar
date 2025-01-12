@@ -19,12 +19,12 @@
 }
 
 .preview {
-  background-color: var(--slate-1);
+  background-color: var(--B1);
   border-radius: 0.5rem;
   width: 100px;
   height: 100px;
   position: relative;
-  border: 1px solid var(--opacity-6);
+  border: 1px solid var(--O6);
 }
 
 .preview--image {
@@ -37,5 +37,5 @@
   position: absolute;
   right: 0.25rem;
   top: 0.25rem;
-  background-color: var(--slate-1);
+  background-color: var(--B1);
 }

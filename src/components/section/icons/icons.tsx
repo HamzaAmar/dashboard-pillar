@@ -1,4 +1,4 @@
-import { Flex, Grid, Heading, Text } from '@pillar-ui/core'
+import { Flex, Grid, Heading, Paper, Text } from '@pillar-ui/core'
 import { useClipboard } from '@hooks/useClipboard'
 import { ICONS_DATA } from './icons.data'
 import type { IconProps } from './icon.type'
@@ -13,12 +13,12 @@ const IconItem = ({ icon, title, code }: IconProps) => {
       aria-label={`Click To Copy ${title}`}
       className="icon-item-container l_box"
     >
-      <div className="icon-content l_flow-sm">
+      <Paper flow="3" className="icon-content">
         <span>{icon}</span>
         <Text size="1" weight="5">
           {title}
         </Text>
-      </div>
+      </Paper>
       <Flex
         className="icon-copy-text"
         data-visible={copied}
@@ -43,14 +43,14 @@ const IconItem = ({ icon, title, code }: IconProps) => {
 
 const icons = () => {
   return (
-    <div className="l_flow-lg">
+    <Paper as="section" flow="7">
       <Heading size="4"> Icons List </Heading>
-      <Grid grid="repeat(auto-fit, minmax(5.75rem, 1fr))" gap="4">
+      <Grid cols={{ default: 'repeat(auto-fit, minmax(5.75rem, 1fr))' }} gap="4">
         {ICONS_DATA.map(({ slug, ...rest }) => (
           <IconItem {...rest} key={slug} />
         ))}
       </Grid>
-    </div>
+    </Paper>
   )
 }
 

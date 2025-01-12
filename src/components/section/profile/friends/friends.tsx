@@ -8,7 +8,7 @@ const Friend = () => {
       <Heading id="user-friends-list-id" as="h3" className="u_sr-only">
         User Friends List
       </Heading>
-      <Grid gap="4" grid="1fr 1fr 1fr" className="friends-lists md_grid-two sm_grid-one">
+      <Grid gap="4" cols={{ default: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }} className="friends-lists">
         {USERS_LIST.map((user) => {
           return <FriendCard key={user.slug} user={user} />
         })}

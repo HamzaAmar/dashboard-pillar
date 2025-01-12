@@ -44,7 +44,7 @@ const JobsSection = () => {
       <Grid cols={{ default: '1fr', lg: '1fr 1fr' }} gap="5">
         <JobStatics />
         <Paper flow="5">
-          <section aria-labelledby="applicant summary-id" className="l_flow-sm l_box">
+          <Paper as="section" flow="3" aria-labelledby="applicant summary-id" className="l_box">
             <Heading as="h3" id="applicant summary-id">
               Applicant Summary
             </Heading>
@@ -73,8 +73,8 @@ const JobsSection = () => {
                 <button>SCSS 15%</button>
               </ProgressBarStackItem>
             </ProgressBarStack>
-          </section>
-          <section aria-labelledby="job-open-id" className="l_flow-sm">
+          </Paper>
+          <Paper as="section" flow="3" aria-labelledby="job-open-id">
             <div className="l_box">
               <Heading as="h3" id="job-open-id">
                 Job Open
@@ -86,7 +86,7 @@ const JobsSection = () => {
                 Jobs Opened
               </Text>
             </div>
-          </section>
+          </Paper>
         </Paper>
       </Grid>
       <Grid as="section" gap="4" cols={{ default: '1fr', md: '1fr 1fr', lg: 'repeat(3, 1fr)' }}>

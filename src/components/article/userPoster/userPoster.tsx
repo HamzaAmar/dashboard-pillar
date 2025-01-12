@@ -1,4 +1,4 @@
-import { Avatar, Button, Flex, Text } from '@pillar-ui/core'
+import { Avatar, Button, Flex, Text, Paper } from '@pillar-ui/core'
 import { Globe, Message } from '@components/icons'
 import type { UserPosterProps } from './userPoster.type'
 import * as HoverCard from '@radix-ui/react-hover-card'
@@ -25,9 +25,9 @@ export const UserCardHover = ({ children, user }: any) => {
 
 export const UserPoster = forwardRef<HTMLDivElement, UserPosterProps>(({ user, ...rest }, forwardedRef) => {
   return (
-    <article ref={forwardedRef} {...rest} className="user-poster l_box l_flow-md">
+    <Paper as="article" flow="5" ref={forwardedRef} {...rest} className="user-poster l_box">
       <Flex gap="4">
-        <Avatar image={user.avatar} title={user.name} />
+        <Avatar src={user.avatar} title={user.name} />
         <div>
           <Text weight="5">{user.name}</Text>
           <Text size="4" color="b" truncate="4" low>
@@ -51,7 +51,7 @@ export const UserPoster = forwardRef<HTMLDivElement, UserPosterProps>(({ user, .
           Message
         </Button>
       </footer>
-    </article>
+    </Paper>
   )
 })
 

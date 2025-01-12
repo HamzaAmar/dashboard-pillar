@@ -1,5 +1,5 @@
 import { InboxTypeProps } from '@api/inbox/message.type'
-import { Badge, Button, Flex, Grid, IconButton, Text } from '@pillar-ui/core'
+import { Badge, Button, Flex, Grid, IconButton, Paper, Text } from '@pillar-ui/core'
 import { ArrowDown, CirclePlus } from '@components/icons'
 import useBoolean from '@hooks/useBoolean'
 import { NavLink, Outlet, useLoaderData } from 'react-router-dom'
@@ -28,10 +28,12 @@ export const InboxLayout = () => {
 
   return (
     <Grid cols={{ default: '250px 1fr' }} className="inbox chat-inbox l_box">
-      <nav
+      <Paper
+        as="nav"
+        flow="5"
         id="inbox-navigation"
         aria-label="inbox navigation"
-        className="inbox-nav  chat-inbox--sidebar l_flow-md"
+        className="inbox-nav  chat-inbox--sidebar"
         data-open={!open}
       >
         <div className="inbox-compose">
@@ -48,7 +50,7 @@ export const InboxLayout = () => {
             )
           })}
         </ul>
-      </nav>
+      </Paper>
       <div className="inbox inbox-content chat-inbox--content" data-open={open}>
         <div className="back--button">
           <IconButton onClick={handleFalse} icon={<ArrowDown direction="left" />} title="get Back" />

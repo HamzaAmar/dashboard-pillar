@@ -53,9 +53,9 @@
 }
 
 .account-settings-content-link[aria-current='page'] {
-  color: var(--primary-11);
-  border-bottom-color: var(--primary-8);
-  background-color: var(--primary-3);
+  color: var(--P11);
+  border-bottom-color: var(--P8);
+  background-color: var(--P3);
 }
 .account-settings-content-link[aria-current='page']::before {
   transform: scaleX(1);
@@ -63,7 +63,7 @@
 
 // Settings Content Section Style Start
 .account-settings-content--section {
-  background-color: var(--slate-1);
+  background-color: var(--B1);
   padding: 0;
   overflow: hidden;
 }
@@ -73,7 +73,7 @@
 }
 
 .account-settings-content--list {
-  border-bottom: 1px solid var(--opacity-6);
+  border-bottom: 1px solid var(--O6);
 }
 
 // Settings Content Section Style End

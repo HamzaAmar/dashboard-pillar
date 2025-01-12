@@ -26,7 +26,7 @@ export const Chat = () => {
           <div className="back--button">
             <IconButton onClick={handleBack} icon={<ArrowDown direction="left" />} title="Go Back" />
           </div>
-          <Avatar image={user.avatar} title={user.name} />
+          <Avatar src={user.avatar} title={user.name} size="4" />
           <div>
             <Text weight="5" size="4">
               {user.name}
@@ -37,9 +37,9 @@ export const Chat = () => {
           </div>
         </Flex>
         <Flex gap="3">
-          <IconButton icon={<Dots />} title="More actions" />
-          <IconButton icon={<Search />} title="Search in this chat" />
-          <IconButton icon={<Phone />} title="Call" />
+          <IconButton size="4" icon={<Dots />} title="More actions" />
+          <IconButton size="4" icon={<Search />} title="Search in this chat" />
+          <IconButton size="4" icon={<Phone />} title="Call" />
         </Flex>
       </Flex>
       <div className="chat--content--main">
@@ -50,11 +50,10 @@ export const Chat = () => {
 
               return (
                 <div className="chat-content--item" data-variant={sender} key={id}>
-                  <Text size="4">{message}</Text>
+                  <Text size="3">{message}</Text>
                 </div>
               )
             })}
-            )
           </Flex>
         ) : (
           <EmptyChat.Chat />
@@ -62,7 +61,7 @@ export const Chat = () => {
       </div>
       <Flex gap="4" className="chat--content--footer" as="footer" items="center">
         <IconButton icon={<Face />} title="More actions" />
-        <Input placeholder="type your message" fluid className="u_flex-1" />
+        <Input placeholder="type your message" fluid />
         <IconButton variant="solid" corner="full" icon={<Send />} title="Send Message" />
       </Flex>
     </section>

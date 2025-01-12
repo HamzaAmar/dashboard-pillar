@@ -85,7 +85,7 @@ export default function Example({ width, height, events = false }: BarsProps) {
 
   return width < 10 ? null : (
     <svg width={width} height={height}>
-      <rect width={width} height={height} fill="var(--slate-2)" rx={14} />
+      <rect width={width} height={height} fill="var(--B2)" rx={14} />
       <Group top={verticalMargin / 2}>
         {data.map((d) => {
           const letter = getLetter(d)

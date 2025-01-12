@@ -24,9 +24,11 @@ export const TodoItem = forwardRef<HTMLElement, TodoItemProps>(
     }, [state])
 
     return (
-      <article
+      <Paper
+        as="article"
+        flow="3"
         aria-labelledby={columnId}
-        className="todo-item-list l_box todo--item l_flow-sm"
+        className="todo-item-list l_box todo--item"
         data-drag-over={isDragOver}
         ref={ref}
         {...rest}
@@ -44,7 +46,7 @@ export const TodoItem = forwardRef<HTMLElement, TodoItemProps>(
           </Flex>
         </Flex>
         {state && (
-          <form className="l_flow-sm" action="">
+          <Paper as="form" flow="4" action="">
             <Textarea ref={textareaRef} size="4" placeholder="Type Your Note" name=""></Textarea>
             <Flex gap="4">
               <Button onClick={_addNote} type="button" size="4" variant="solid" fluid>
@@ -54,12 +56,12 @@ export const TodoItem = forwardRef<HTMLElement, TodoItemProps>(
                 Cancel
               </Button>
             </Flex>
-          </form>
+          </Paper>
         )}
         <Paper flow="4" className="todo--item-main">
           {children}
         </Paper>
-      </article>
+      </Paper>
     )
   }
 )

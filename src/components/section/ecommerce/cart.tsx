@@ -13,6 +13,7 @@ import {
   TableRow,
   TableColumn,
   BreadcrumbItem,
+  Paper,
 } from '@pillar-ui/core'
 import { getDiscountPrice } from '@utils/price'
 import { ArrowDown, Card, CircleCheck, Trash } from '@components/icons'
@@ -31,23 +32,21 @@ const CartRow = ({ quantity, price, heroImage, title }: ProductCore) => {
     <TableRow type="head">
       <TableColumn>
         <Flex gap="4">
-          <Avatar corner="3" image={`/images/products/${heroImage[0]}`} title="helo" />
+          <Avatar corner="3" src={`/images/products/${heroImage[0]}`} title="helo" />
           <div>
             <Text size="4" weight="5">
               {title}
             </Text>
             <Text color="b" low size="4" as="span">
               color :
-            </Text>{' '}
+            </Text>
             <Text size="4" weight="5" as="span">
               Red
             </Text>
           </div>
         </Flex>
       </TableColumn>
-      <TableColumn weight="medium">
-        {getDiscountPrice({ price: price.price, discount: price.discount ?? 0 })}
-      </TableColumn>
+      <TableColumn weight="5">{getDiscountPrice({ price: price.price, discount: price.discount ?? 0 })}</TableColumn>
       <TableColumn>
         <InputNumber
           aria-label="product-quantity"
@@ -57,7 +56,7 @@ const CartRow = ({ quantity, price, heroImage, title }: ProductCore) => {
           size="4"
         />
       </TableColumn>
-      <TableColumn weight="medium">{formatPrice({ number: price.price * productQuantity })}</TableColumn>
+      <TableColumn weight="5">{formatPrice({ number: price.price * productQuantity })}</TableColumn>
       <TableColumn>
         <IconButton variant="soft" color="d" icon={<Trash />} title="remove Product" />
       </TableColumn>
@@ -84,21 +83,21 @@ function TableCart() {
 
 const cart = () => {
   return (
-    <section className="l_flow-md">
+    <Paper as="section" flow="5">
       <Flex justify="between" items="center">
         <Heading weight="5" size="4">
           Cart
         </Heading>
         <Breadcrumb size="5">
-          <BreadcrumbItem link="../../">Home</BreadcrumbItem>
-          <BreadcrumbItem link="../..">E-commerce</BreadcrumbItem>
-          <BreadcrumbItem link="./" current>
+          <BreadcrumbItem href="../../">Home</BreadcrumbItem>
+          <BreadcrumbItem href="../..">E-commerce</BreadcrumbItem>
+          <BreadcrumbItem href="./" current>
             Cart
           </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Grid grid="1fr 350px" gap="5" className="md_grid-one">
-        <div className="l_flow-md">
+      <Grid cols={{ default: '1fr', lg: '1fr 350px' }} gap="5" className="md_grid-one">
+        <Paper flow="5">
           <TableCart />
           <Flex justify="between" items="center">
             <Button as={Link} to="../products" color="b" variant="solid" icon={<ArrowDown direction="left" />}>
@@ -108,9 +107,9 @@ const cart = () => {
               Checkout
             </Button>
           </Flex>
-        </div>
-        <div className="cart--aside l_flow-sm">
-          <article className="l_box l_flow-md">
+        </Paper>
+        <Paper as="article" flow="5" className="cart--aside">
+          <Paper flow="5" className="l_box">
             <Heading as="h2" size="3">
               ACCEPTED PAYMENT METHODS
             </Heading>
@@ -131,8 +130,8 @@ const cart = () => {
                 </Text>
               </div>
             </Flex>
-          </article>
-          <article className="cart-summary l_flow-md l_box">
+          </Paper>
+          <Paper as="article" flow="4" className="cart-summary l_box">
             <Heading as="h2" size="3">
               Order Summary
             </Heading>
@@ -154,10 +153,10 @@ const cart = () => {
                 <span>Total:</span> <span>$ 1,857</span>
               </Flex>
             </div>
-          </article>
-        </div>
+          </Paper>
+        </Paper>
       </Grid>
-    </section>
+    </Paper>
   )
 }
 

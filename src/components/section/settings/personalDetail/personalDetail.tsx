@@ -1,5 +1,5 @@
 import { USERS_LIST } from '@api/user/users.data'
-import { Button, Flex, Input, FormController, Textarea } from '@pillar-ui/core'
+import { Button, Flex, Input, FormController, Textarea, Paper } from '@pillar-ui/core'
 import { useState } from 'react'
 
 const me = USERS_LIST[0]
@@ -12,15 +12,15 @@ const PersonalDetail = () => {
     description: me.description,
   })
   return (
-    <form className="l_flow-md">
+    <Paper as="form" flow="5">
       <FormController label="Name">
         <Input name="name" autoComplete="name" defaultValue={fields.name} />
       </FormController>
       <Flex className="account-settings--form-field" gap="4">
-        <FormController className="u_flex-1" label="Phone Number">
+        <FormController className="fl-1" label="Phone Number">
           <Input autoComplete="tel" defaultValue={fields.number} name="phone" type="tel" />
         </FormController>
-        <FormController className="u_flex-1" label="Email Address">
+        <FormController className="fl-1" label="Email Address">
           <Input autoComplete="street-address" defaultValue={fields.address} name="email" type="email" />
         </FormController>
       </Flex>
@@ -30,7 +30,7 @@ const PersonalDetail = () => {
       <Flex justify="end">
         <Button>Update</Button>
       </Flex>
-    </form>
+    </Paper>
   )
 }
 

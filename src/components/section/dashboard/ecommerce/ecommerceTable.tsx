@@ -1,6 +1,18 @@
 import type { ProductsModel } from '@api/ecommerce/products/products.type'
 import { UserModel } from '@api/user/user.type'
-import { Avatar, Chips, Flex, Grid, Heading, IconButton, Text, Table, TableRow, TableColumn } from '@pillar-ui/core'
+import {
+  Avatar,
+  Chips,
+  Flex,
+  Grid,
+  Heading,
+  IconButton,
+  Text,
+  Table,
+  TableRow,
+  TableColumn,
+  Paper,
+} from '@pillar-ui/core'
 import { Dots, Star } from '@components/icons'
 import { useLoaderData } from 'react-router-dom'
 
@@ -11,7 +23,7 @@ const BestSeller = () => {
   }
   // const [current, setCurrent] = useState(1);
   return (
-    <section aria-labelledby="best-seller-id" className="u_flex-1 l_box l_flow-md">
+    <Paper as="section" aria-labelledby="best-seller-id" className="fl-1 l_box">
       <Flex as="header">
         <Heading id="best-seller-id" as="h3" size="3">
           Best Seller
@@ -51,7 +63,7 @@ const BestSeller = () => {
           ))}
         </tbody>
       </Table>
-    </section>
+    </Paper>
   )
 }
 
@@ -61,7 +73,7 @@ const BestSelling = () => {
     users: UserModel[]
   }
   return (
-    <section aria-labelledby="best-selling-id" className="u_flex-1 l_box l_flow-md">
+    <Paper as="section" aria-labelledby="best-selling-id" className="fl-1 l_box">
       <Flex as="header">
         <Heading id="best-selling-id" as="h3" size="3">
           Best Selling Products
@@ -117,7 +129,7 @@ const BestSelling = () => {
           ))}
         </tbody>
       </Table>
-    </section>
+    </Paper>
   )
 }
 

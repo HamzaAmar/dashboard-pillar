@@ -4,7 +4,7 @@ import type { ErrorProps } from './status.type'
 
 const notFound = ({ variant = 'gradient', color }: ErrorProps) => {
   return (
-    <Flex className={`status l_box l_flow-sm u_${color}`} direction="col" justify="center" items="center">
+    <Flex className={`status l_box u_${color}`} direction="col" gap="5" justify="center" items="center">
       <Heading className={`status--${variant}`} size="9">
         404
       </Heading>

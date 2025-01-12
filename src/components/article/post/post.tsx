@@ -13,7 +13,7 @@ const Post = ({ children, user = fallbackUser }: PostProps) => {
     <Flex as="article" aria-labelledby={id} justify="between" gap="4" direction="col" className="post l_box">
       <Flex as="header" justify="between" items="center">
         <Flex gap="5">
-          <Avatar image={user.avatar} title={user.name} />
+          <Avatar src={user.avatar} title={user.name} />
           <div className="leading-1">
             <Heading as="h4" id={id} truncate="1" size="3" weight="5">
               {user.name}

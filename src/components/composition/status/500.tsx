@@ -4,7 +4,7 @@ import type { ErrorProps } from './status.type'
 
 const Error500 = ({ variant = 'gradient', color }: ErrorProps) => {
   return (
-    <Flex className="status l_box l_flow-sm" direction="col" justify="center" items="center">
+    <Flex className="status l_box " direction="col" justify="center" gap="5" items="center">
       <Heading className={`status--${variant}`} size="9">
         500
       </Heading>

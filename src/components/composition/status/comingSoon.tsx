@@ -4,7 +4,7 @@ import type { ErrorProps } from './status.type'
 
 const commingSoon = ({ variant = 'gradient', color }: ErrorProps) => {
   return (
-    <Flex className="status l_box l_flow-sm" direction="col" justify="center" items="center">
+    <Flex className="status l_box" gap="5" direction="col" justify="center" items="center">
       <Heading className={`status--${variant}`} align="center" size="9">
         Coming Soon
       </Heading>

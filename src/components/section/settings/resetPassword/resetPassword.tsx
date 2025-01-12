@@ -1,8 +1,8 @@
-import { Button, Flex, InputPassword, FormController } from '@pillar-ui/core'
+import { Button, Flex, InputPassword, FormController, Paper } from '@pillar-ui/core'
 
 const resetPassword = () => {
   return (
-    <form className="l_flow-md">
+    <Paper as="form" flow="5">
       <input name="username" type="hidden" autoComplete="username" />
       <FormController label="Old Password">
         <InputPassword name="old-password" autoComplete="current-password" />
@@ -13,7 +13,7 @@ const resetPassword = () => {
       <Flex justify="end">
         <Button>Update</Button>
       </Flex>
-    </form>
+    </Paper>
   )
 }
 

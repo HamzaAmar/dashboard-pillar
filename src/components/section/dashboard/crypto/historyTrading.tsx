@@ -89,7 +89,7 @@ const CurrencyTable = () => {
 
 const HistoryCurrency = () => {
   return (
-    <Flex as="section" direction="col" justify="between" className="history-section l_box l_flow-md">
+    <Flex as="section" direction="col" gap="3" justify="between" className="history-section l_box">
       <Heading as="h2" size="3">
         History
       </Heading>

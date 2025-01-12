@@ -1,4 +1,4 @@
-import { Avatar, Badge, Chips, Flex, Heading, IconButton, Text } from '@pillar-ui/core'
+import { Avatar, Badge, Chips, Flex, Heading, IconButton, Paper, Text } from '@pillar-ui/core'
 import { Dots } from '@components/icons'
 import { classnames } from '@utils/classnames'
 import { getNotifications } from '@api/notifacation'
@@ -12,8 +12,8 @@ const NotificationCard = ({ user, unread, request, type, description, ...rest }:
   return (
     <Flex as="article" {...NotificationItemClassname} items="center" justify="between">
       <Flex gap="4" items="center">
-        <Avatar title="hello" image={user.avatar} />
-        <div className="l_flow-sm">
+        <Avatar title="hello" src={user.avatar} />
+        <Paper flow="3">
           <div>
             <Heading as="h2" truncate="1" size="1" weight="5">
               {user.name}
@@ -29,7 +29,7 @@ const NotificationCard = ({ user, unread, request, type, description, ...rest }:
             <Chips>{type}</Chips>
             <Chips variant="soft">{request}</Chips>
           </Flex>
-        </div>
+        </Paper>
       </Flex>
       <Flex gap="3" items="center">
         {unread && <Badge className="notification-badge" type="dot" />}
@@ -42,7 +42,7 @@ const NotificationCard = ({ user, unread, request, type, description, ...rest }:
 const notification = () => {
   const notifications = getNotifications()
   return (
-    <section aria-labelledby="notification-page-id" className="l_flow-md">
+    <Paper flow="5" as="section" aria-labelledby="notification-page-id">
       <Heading id="notification-page-id" as="h1" size="4">
         All Notification
       </Heading>
@@ -51,7 +51,7 @@ const notification = () => {
           <NotificationCard key={notification.id} {...notification} />
         ))}
       </div>
-    </section>
+    </Paper>
   )
 }
 

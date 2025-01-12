@@ -5,7 +5,7 @@ import type { JobOptionProps } from './jobs.type'
 
 export const Option = ({ title, number }: JobOptionProps) => {
   return (
-    <Flex as="article" justify="between" items="center" className="l_box u_flex-1">
+    <Flex as="article" justify="between" items="center" className="l_box fl-1">
       <Flex gap="3" items="center">
         <Text as="span" weight="7" size="9">
           {number}

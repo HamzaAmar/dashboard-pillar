@@ -98,11 +98,11 @@ export default withTooltip<AreaProps, TooltipData>(
     return (
       <div className={`u_${color}`}>
         <svg width={width} height={height}>
-          <rect x={0} y={0} width={width} height={height} fill="var(--slate-3)" rx={14} />
+          <rect x={0} y={0} width={width} height={height} fill="var(--B3)" rx={14} />
           <MarkerCircle
             id="marker-circle"
             fill="var(--color-shared-11)"
-            stroke="var(--slate-2)"
+            stroke="var(--B2)"
             strokeWidth={2}
             size={3}
             refX={2}
@@ -143,7 +143,7 @@ export default withTooltip<AreaProps, TooltipData>(
               <Line
                 from={{ x: tooltipLeft, y: margin.top }}
                 to={{ x: tooltipLeft, y: innerHeight + margin.top }}
-                stroke="var(--slate-9)"
+                stroke="var(--B9)"
                 strokeWidth={2}
                 pointerEvents="none"
                 strokeDasharray="5,2"

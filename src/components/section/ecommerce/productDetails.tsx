@@ -5,16 +5,15 @@ import {
   Avatar,
   Breadcrumb,
   Button,
-  CustomRadio,
   Flex,
   FormController,
   Grid,
   Heading,
-  RadioGroup,
   Text,
   Textarea,
   Rating,
   BreadcrumbItem,
+  Paper,
 } from '@pillar-ui/core'
 import { Cart, Heart } from '@components/icons'
 import { formatPrice } from '@utils/formatNumber'
@@ -32,20 +31,20 @@ export const ProductDetailsSection = () => {
       })
     : product.price.price
   return (
-    <section className="l_flow-lg">
+    <Paper as="section" flow="7">
       <Flex wrap justify="between">
         <Heading size="4">Products Details</Heading>
-        <Breadcrumb size="4">
-          <BreadcrumbItem link="../../">Home</BreadcrumbItem>
-          <BreadcrumbItem link="../..">E-commerce</BreadcrumbItem>
-          <BreadcrumbItem link="../">Products</BreadcrumbItem>
-          <BreadcrumbItem link="./" current>
+        <Breadcrumb>
+          <BreadcrumbItem href="../../">Home</BreadcrumbItem>
+          <BreadcrumbItem href="../..">E-commerce</BreadcrumbItem>
+          <BreadcrumbItem href="../">Products</BreadcrumbItem>
+          <BreadcrumbItem href="./" current>
             134443
           </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Grid grid="minmax(0, .9fr) minmax(0, 1fr)" className="sm_grid-one" gap="5">
-        <Grid gap="4" grid="repeat(5,1fr) / 400px auto">
+      <Grid cols={{ default: '1fr', md: 'minmax(0, .9fr) minmax(0, 1fr)' }} gap="5">
+        <Grid gap="4" cols={{ default: 'repeat(5,1fr)' }} rows={{ default: '400px auto' }}>
           <div className="product-image--wrapper product-image--wrapper-hero">
             <img className="product-image" src={`/images/products/${product.heroImage[0]}`} alt="" />
           </div>
@@ -55,7 +54,7 @@ export const ProductDetailsSection = () => {
             </div>
           ))}
         </Grid>
-        <div className="l_flow-sm">
+        <Paper flow="5">
           <Heading as="h2" weight="5" size="4">
             {product.title}
           </Heading>
@@ -64,7 +63,7 @@ export const ProductDetailsSection = () => {
           <Text size="4" color="b" low>
             {product.description}
           </Text>
-          <div className="l_flow-md">
+          <Paper flow="5">
             <Text color="su" low weight="5" size="4" as="span">
               {product.price.discount}% Discount
             </Text>
@@ -82,7 +81,7 @@ export const ProductDetailsSection = () => {
               )}
             </Flex>
             <div>
-              <RadioGroup label="product Color" direction="row" name="product-color" showLabel>
+              {/* <RadioGroup label="product Color" direction="row" name="product-color" showLabel>
                 <CustomRadio label="indigo">
                   <div className="product--color u_indigo" />
                 </CustomRadio>
@@ -98,27 +97,28 @@ export const ProductDetailsSection = () => {
                 <CustomRadio label="green">
                   <div className="product--color u_green" />
                 </CustomRadio>
-              </RadioGroup>
+              </RadioGroup> */}
             </div>
 
             <Heading size="3" as="h3">
-              Free Shipping{' '}
+              Free Shipping
             </Heading>
             <Text color="b" low size="4">
               All Our products benifits free shipping To all over the ground The estimate day to ship the product is 7
               day to the farest country from our stock
             </Text>
-          </div>
+          </Paper>
           <Flex gap="1" wrap>
-            <RadioGroup direction="row" showLabel label="Shoes Availible Sizes" color="b">
+            Hello
+            {/* <RadioGroup direction="row" showLabel label="Shoes Availible Sizes" color="b">
               {product.sizes.map((size) => (
-                <CustomRadio key={size} name="size" label={`shoes size ${size}`}>
-                  <Button as="span" color="b" variant="outline">
-                    {size}
-                  </Button>
-                </CustomRadio>
+                // <CustomRadio key={size} name="size" label={`shoes size ${size}`}>
+                //   <Button as="span" color="b" variant="outline">
+                //     {size}
+                //   </Button>
+                // </CustomRadio>
               ))}
-            </RadioGroup>
+            </RadioGroup> */}
           </Flex>
           <Flex gap="5" wrap>
             <Button corner="full" fluid size="6" icon={<Cart />}>
@@ -128,20 +128,20 @@ export const ProductDetailsSection = () => {
               Favorite
             </Button>
           </Flex>
-        </div>
+        </Paper>
       </Grid>
-      <section className="l_flow-md">
+      <Paper as="section" flow="5">
         <Heading as="h2" size="3">
           You May also like
         </Heading>
-      </section>
-      <div className="l_flow-md">
+      </Paper>
+      <Paper flow="5">
         {product.reviews.map((review) => {
           return <Review {...review} />
         })}
         <Flex gap="4" as="form">
-          <Avatar image={user.avatar} title={user.name} />
-          <div className="l_flow-md" style={{ flex: 1 }}>
+          <Avatar src={user.avatar} title={user.name} />
+          <Paper as="section" flow="5" style={{ flex: 1 }}>
             <FormController hideLabel label="Review">
               <Textarea name="review" fluid placeholder="Type Your Review" />
             </FormController>
@@ -150,9 +150,9 @@ export const ProductDetailsSection = () => {
                 Add Review
               </Button>
             </Flex>
-          </div>
+          </Paper>
         </Flex>
-      </div>
-    </section>
+      </Paper>
+    </Paper>
   )
 }

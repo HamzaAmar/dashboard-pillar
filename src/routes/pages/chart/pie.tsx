@@ -1,12 +1,13 @@
 import { DonutChart, PieChart } from '@components/chart'
+import { Paper } from '@pillar-ui/core'
 
 const bar = () => {
   return (
     <div>
-      <section className="l_box l_flow-lg">
+      <Paper as="section" flow="7" className="l_box">
         <DonutChart width={1000} height={500} />
         <PieChart width={1000} height={500} />
-      </section>
+      </Paper>
     </div>
   )
 }

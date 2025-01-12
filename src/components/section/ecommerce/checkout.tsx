@@ -6,6 +6,7 @@ import {
   FormController,
   Heading,
   Input,
+  Paper,
   Text,
   Textarea,
 } from '@pillar-ui/core'
@@ -22,15 +23,15 @@ const Checkout = () => {
   }
 
   return (
-    <section className="l_flow-md">
+    <Paper as="section" flow="5">
       <Flex justify="between" items="center">
         <Heading weight="5" size="4">
           Products Details
         </Heading>
         <Breadcrumb size="5">
-          <BreadcrumbItem link="../../">Home</BreadcrumbItem>
-          <BreadcrumbItem link="../..">E-commerce</BreadcrumbItem>
-          <BreadcrumbItem link="./" current>
+          <BreadcrumbItem href="../../">Home</BreadcrumbItem>
+          <BreadcrumbItem href="../..">E-commerce</BreadcrumbItem>
+          <BreadcrumbItem href="./" current>
             Checkout
           </BreadcrumbItem>
         </Breadcrumb>
@@ -59,9 +60,10 @@ const Checkout = () => {
       <div className="checkout--content">
         <Flex
           as="section"
+          gap="4"
           direction="col"
           data-current={info === 'shipping'}
-          className="checkout--content-shipping l_box l_flow-md"
+          className="checkout--content-shipping l_box"
         >
           <div>
             <Heading as="h2" size="3">
@@ -71,7 +73,7 @@ const Checkout = () => {
               Fill all information below filled with * is (required)
             </Text>
           </div>
-          <form className="l_flow-md u_flex-1">
+          <Paper as="form" flow="5" className="fl-1">
             <FormController required label="name">
               <Input />
             </FormController>
@@ -95,9 +97,9 @@ const Checkout = () => {
                 Next
               </Button>
             </Flex>
-          </form>
+          </Paper>
         </Flex>
-        <Flex as="section" direction="col" data-current={info === 'payment'} className="l_box l_flow-md">
+        <Flex as="section" direction="col" data-current={info === 'payment'} className="l_box" gap="4">
           <div>
             <Heading as="h2" size="3">
               Payment information
@@ -106,7 +108,7 @@ const Checkout = () => {
               Fill all information below filled with * is (required)
             </Text>
           </div>
-          <form className="l_flow-md">
+          <Paper as="form" flow="5">
             <FormController required label="name">
               <Input />
             </FormController>
@@ -138,10 +140,10 @@ const Checkout = () => {
                 Next
               </Button>
             </Flex>
-          </form>
+          </Paper>
         </Flex>
-        <Flex direction="col" data-current={info === 'success'} className="l_box l_flow-md">
-          <form className="l_flow-md">
+        <Flex direction="col" data-current={info === 'success'} gap="4" className="l_box">
+          <Paper as="form" flow="5">
             <FormController required label="name">
               <Input />
             </FormController>
@@ -167,10 +169,10 @@ const Checkout = () => {
                 Success
               </Button>
             </Flex>
-          </form>
+          </Paper>
         </Flex>
       </div>
-    </section>
+    </Paper>
   )
 }
 

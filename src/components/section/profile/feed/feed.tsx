@@ -2,7 +2,7 @@ import { useId, Fragment } from 'react'
 import { getUsers } from '@api/user'
 import { USERS_LIST } from '@api/user/users.data'
 import { Post, UserPoster } from '@components/article'
-import { Avatar, Flex, Grid, Heading, IconButton, Text } from '@pillar-ui/core'
+import { Avatar, Flex, Grid, Heading, IconButton, Paper, Text } from '@pillar-ui/core'
 import { Check, Cross } from '@components/icons'
 import * as HoverCard from '@radix-ui/react-hover-card'
 
@@ -10,13 +10,13 @@ const user = USERS_LIST[0]
 
 const Info = () => {
   return (
-    <section aria-labelledby="information-id" className="l_box l_flow-md">
+    <Paper as="section" flow="5" aria-labelledby="information-id" className="l_box">
       <Heading id="information-id" as="h3" size="4" color="b" low weight="5">
         Information
       </Heading>
       <Text size="3">{user.description}</Text>
 
-      <Grid grid="auto 1fr" gap="4" items="center">
+      <Grid cols={{ default: 'auto 1fr' }} gap="4" items="center">
         <Text as="span" weight="7" size="4">
           Number :
         </Text>
@@ -53,7 +53,7 @@ const Info = () => {
           </Fragment>
         ))}
       </Grid>
-    </section>
+    </Paper>
   )
 }
 
@@ -63,7 +63,7 @@ const User = ({ name, avatar, role }: any) => {
     <Flex as="article" aria-labelledby={id} justify="between" items="center">
       <Flex gap="3">
         <UserCardHover user={{ name, avatar, role }}>
-          <Avatar title={name} image={avatar} />
+          <Avatar title={name} src={avatar} />
         </UserCardHover>
         <div>
           <Heading id={id} as="h4" size="3" weight="5">
@@ -84,25 +84,18 @@ const User = ({ name, avatar, role }: any) => {
 
 const SuggestFriends = () => {
   return (
-    <section aria-labelledby="suggested-friend-id" className="l_box l_flow-md">
+    <Paper as="section" flow="5" aria-labelledby="suggested-friend-id" className="l_box">
       <Heading as="h3" id="suggested-friend-id" size="4" weight="5">
         Suggested accounts
       </Heading>
-      <div className="l_flow-md">
+      <Paper flow="5">
         {getUsers({ pageSize: 8 }).map((user) => (
           <User key={user.slug} {...user} />
         ))}
-      </div>
-    </section>
+      </Paper>
+    </Paper>
   )
 }
-// const ActivityTimeline = () => {
-//   return (
-//     <div className="l_box l_flow-md">
-//       <h1>Hell</h1>
-//     </div>
-//   )
-// }
 
 const UserCardHover = ({ children, user }: any) => {
   return (
@@ -119,8 +112,8 @@ const UserCardHover = ({ children, user }: any) => {
 
 const feed = () => {
   return (
-    <Grid grid="1fr 25rem" gap="4" className="md_grid-one">
-      <section className="l_flow-md">
+    <Grid cols={{ default: '1fr', lg: '1fr 25rem' }} gap="4">
+      <Paper as="section" flow="5">
         <Heading className="u_sr-only" as="h3">
           Home Posts
         </Heading>
@@ -150,8 +143,8 @@ const feed = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio odio ipsa molestiae voluptas deserunt.
           Magnam ea, nobis sequi quasi expedita sint at vel ullam numquam odio omnis hic, cum quae!
         </Post>
-      </section>
-      <Grid gap="4" grid="1fr 1fr" sm="1fr" className="feed-side--section">
+      </Paper>
+      <Grid gap="4" cols={{ default: '1fr', md: '1fr 1fr' }} className="feed-side--section">
         <Info />
         <SuggestFriends />
         {/* <ActivityTimeline /> */}

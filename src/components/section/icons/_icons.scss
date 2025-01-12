@@ -1,5 +1,5 @@
 .icon-item-container {
-  border: 2px solid var(--slate-6);
+  border: 2px solid var(--B6);
   position: relative;
   overflow: hidden;
   padding: 0.125rem;
@@ -7,7 +7,7 @@
 }
 
 .icon-item-container:hover {
-  border-color: var(--primary-8);
+  border-color: var(--P8);
 }
 .icon-item-container:hover,
 .icon-item-container:focus-visible,
@@ -23,17 +23,17 @@
 }
 
 .icon-item-container:focus-visible {
-  outline: 2px dashed var(--primary-8);
+  outline: 2px dashed var(--P8);
   outline-offset: -2px;
 }
 
 .icon-copy-text {
-  background-color: var(--slate-1);
+  background-color: var(--B1);
   position: absolute;
   inset: 0;
   transform: translate(-100%) scale(0);
   &[data-visible='true'] {
-    background-color: var(--primary-9);
+    background-color: var(--P9);
     color: white;
   }
 }

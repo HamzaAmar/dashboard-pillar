@@ -1,5 +1,5 @@
 import { getUsers } from '@api/user'
-import { Avatar, Badge, Breadcrumb, BreadcrumbItem, Flex, Grid, Heading, Text } from '@pillar-ui/core'
+import { Avatar, Badge, Breadcrumb, BreadcrumbItem, Flex, Grid, Heading, Paper, Text } from '@pillar-ui/core'
 import { Check } from '@components/icons'
 import useBoolean from '@hooks/useBoolean'
 import { useId } from 'react'
@@ -13,15 +13,15 @@ const ChatCard = ({ user, handleTrue }: ChatCardProps) => {
       <article aria-labelledby={chatId} className="chat--card">
         <Flex className="char-card--link-wrapper" as={NavLink} replace onClick={handleTrue} gap="4" to={user.slug}>
           <header>
-            <Avatar image={user.avatar} title={user.name} />
+            <Avatar src={user.avatar} title={user.name} />
           </header>
           <div>
             <Flex justify="between" items="center" gap="3">
-              <Heading id={chatId} weight="5" size="1" as="h2">
+              <Heading id={chatId} color="b" weight="5" size="3" as="h2">
                 {user.name}
               </Heading>
-              <Flex>
-                <Check width={14} stroke="var(--color-purple-3)" />
+              <Flex gap="1">
+                <Check width="16" stroke="var(--P11)" />
                 <Text className="u_flex-none" size="1" color="b" low>
                   12.30 PM
                 </Text>
@@ -33,7 +33,7 @@ const ChatCard = ({ user, handleTrue }: ChatCardProps) => {
                 provident ipsa! Provident ratione soluta beatae quam voluptates laudantium rerum quibusdam recusandae
                 aspernatur necessitatibus! Aliquam!
               </Text>
-              <Badge size="3" type="numeric" max={15} number={10} />
+              <Badge style={{ flex: 'none' }} size="3" type="numeric" max={15} number={10} />
             </Flex>
           </div>
         </Flex>
@@ -45,26 +45,22 @@ const ChatCard = ({ user, handleTrue }: ChatCardProps) => {
 const ChatLayout = () => {
   const users = getUsers()
   const { state: open, handleTrue, handleFalse } = useBoolean()
-  // let { user } = useParams()
-  // useEffect(() => {
-  //   if (user && !open) {
-  //   }
-  // }, [user, handleFalse, open])
+
   return (
-    <section aria-labelledby="chat--page-id" className="l_flow-lg">
+    <Paper as="section" flow="5" aria-labelledby="chat--page-id">
       <Flex items="center" justify="between">
-        <Heading as="h1" id="chat--page-id" size="3">
-          TODO Page
+        <Heading as="h1" id="chat--page-id" size="7">
+          Let's Chat
         </Heading>
-        <Breadcrumb size="4">
-          <BreadcrumbItem link="../../">Home</BreadcrumbItem>
-          <BreadcrumbItem link="../..">Pages</BreadcrumbItem>
-          <BreadcrumbItem link="./" current>
+        <Breadcrumb>
+          <BreadcrumbItem href="../../">Home</BreadcrumbItem>
+          <BreadcrumbItem href="../..">Pages</BreadcrumbItem>
+          <BreadcrumbItem href="./" current>
             Chat
           </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Grid grid="300px 1fr" className="chat chat-inbox">
+      <Grid cols={{ default: '300px 1fr' }} className="chat chat-inbox">
         <section className="chat--sidebar chat-inbox--sidebar" data-open={!open}>
           <header></header>
           <nav>
@@ -77,7 +73,7 @@ const ChatLayout = () => {
         </section>
         <Outlet context={{ open, handleFalse }} />
       </Grid>
-    </section>
+    </Paper>
   )
 }
 

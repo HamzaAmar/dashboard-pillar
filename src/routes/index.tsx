@@ -1,6 +1,5 @@
 import { Layout } from '@components/common'
-import { EmptyChat, Faq, Pages } from '@components/section'
-import { COMPOSITE_ROUTES, CORE_ROUTES, FORMS_ROUTES } from './components'
+import { EmptyChat, Pages } from '@components/section'
 import { createBrowserRouter, Navigate } from 'react-router-dom'
 
 import { BarPage, LinePage, PiePage } from './pages/chart'
@@ -130,46 +129,6 @@ export const routers = createBrowserRouter([
         ],
       },
       {
-        path: 'components',
-        children: [
-          { index: true, element: <Navigate to="/base-ui/avatar" replace /> },
-          {
-            path: 'base-ui',
-            children: CORE_ROUTES,
-          },
-          {
-            path: 'compose-ui',
-            children: COMPOSITE_ROUTES,
-          },
-          {
-            path: 'form',
-            children: FORMS_ROUTES,
-          },
-          {
-            path: 'form',
-            children: [{ path: 'dropzone', lazy: () => import('./components/form/dropzone') }],
-          },
-          {
-            path: 'chart',
-            children: [
-              {
-                path: 'bar-chart',
-                element: <BarPage />,
-              },
-              {
-                path: 'pie-donut-chart',
-                element: <PiePage />,
-              },
-              {
-                path: 'line-chart',
-                element: <LinePage />,
-              },
-            ],
-          },
-        ],
-      },
-
-      {
         path: 'ecommerce',
         children: [
           {
@@ -206,7 +165,7 @@ export const routers = createBrowserRouter([
       // TODO: Nested Route
 
       { path: 'icons', lazy: () => import('./pages/icons') },
-      { path: '*', lazy: () => import('./pages/noMatch') },
+      // { path: '*', lazy: () => import('./pages/noMatch') },
     ],
   },
 ])

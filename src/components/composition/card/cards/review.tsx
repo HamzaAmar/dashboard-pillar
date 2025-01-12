@@ -1,4 +1,4 @@
-import { Avatar, Button, Flex, Text, Rating } from '@pillar-ui/core'
+import { Avatar, Button, Flex, Text, Rating, Paper } from '@pillar-ui/core'
 import { getDateFormat } from '@utils/date'
 import { Dislike, Eye, Like } from '@components/icons'
 
@@ -6,10 +6,10 @@ import type { ReviewCardProps } from '../card.type'
 
 const ReviewComp = ({ user, rating, date, review }: ReviewCardProps) => {
   return (
-    <article className="l_box l_flow-md">
+    <Paper flow="4" className="l_box">
       <Flex as="header" items="center" justify="between">
         <Flex items="center" gap="3">
-          <Avatar image={user?.avatar} title={user.name} />
+          <Avatar src={user?.avatar} title={user.name} />
           <div>
             <Text weight="5" size="4">
               {user.name}
@@ -41,7 +41,7 @@ const ReviewComp = ({ user, rating, date, review }: ReviewCardProps) => {
           </Button>
         </Flex>
       </footer>
-    </article>
+    </Paper>
   )
 }
 

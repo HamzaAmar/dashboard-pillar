@@ -1,5 +1,5 @@
 import * as AlertDialogRadix from '@radix-ui/react-alert-dialog'
-import { Flex, Button, Text, Heading } from '@pillar-ui/core'
+import { Flex, Button, Text, Heading, Paper } from '@pillar-ui/core'
 
 import type { AlertDialogActionButtonProps, AlertDialogProps, AlertDialogRootProps } from './modal.type'
 
@@ -9,7 +9,7 @@ export const AlertDialog = ({ children, trigger, size = '5', ...rest }: AlertDia
       <AlertDialogRadix.Trigger asChild>{trigger}</AlertDialogRadix.Trigger>
       <AlertDialogRadix.Portal>
         <AlertDialogRadix.Overlay className="modal--overlay" />
-        <AlertDialogRadix.Content className={`dialog modal--content modal__${size} l_box l_flow-md`}>
+        <AlertDialogRadix.Content className={`dialog modal--content modal__${size} l_box`}>
           {children}
         </AlertDialogRadix.Content>
       </AlertDialogRadix.Portal>

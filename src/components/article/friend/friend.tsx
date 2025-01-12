@@ -12,7 +12,7 @@ const Friend = ({ user }: FriendProps) => {
       <Flex items="center" gap="5" className="u_leading__sm">
         <UserCardHover user={user}>
           <Link to="/">
-            <Avatar size="6" image={user.avatar} corner="3" title={user.name} />
+            <Avatar size="6" src={user.avatar} corner="3" title={user.name} />
           </Link>
         </UserCardHover>
         <div className="">
@@ -38,7 +38,7 @@ const Friend = ({ user }: FriendProps) => {
             </Flex>
             <Flex gap="1">
               <Text size="3" weight="5" low color="b" as="span">
-                Following :{' '}
+                Following :
               </Text>
               <Text size="3" as="span">
                 {user.following}

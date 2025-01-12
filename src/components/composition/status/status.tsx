@@ -23,7 +23,7 @@ const statusObj = {
 
 const danger = ({ title, description, status }: StatusProps) => {
   return (
-    <Flex className="status l_box l_flow-sm" direction="col" justify="center" items="center">
+    <Flex className="status l_box" gap="5" direction="col" justify="center" items="center">
       <div className={`danger-icon-wrapper u_${statusObj[status].color}`}>{statusObj[status].icon}</div>
       <Text size="7" weight="7">
         {title}

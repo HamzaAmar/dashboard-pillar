@@ -24,7 +24,7 @@ const Article = ({ count, title }: EcommerceDashboardArticleProps) => {
     },
   }
   return (
-    <Paper as="article" flow="4" aria-labelledby={id} className="l_box u_flex-1">
+    <Paper as="article" flow="4" aria-labelledby={id} className="l_box fl-1">
       <Flex as="header" justify="between" items="center">
         <Heading id={id} as="h3" size="3" color="b" low weight="5">
           {title}

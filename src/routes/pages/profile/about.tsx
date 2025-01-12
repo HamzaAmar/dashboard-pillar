@@ -1,4 +1,4 @@
-import { Chips, Flex, Grid, Heading, ProgressBar, Text, Timeline, TimelineItem } from '@pillar-ui/core'
+import { Chips, Flex, Grid, Heading, Paper, ProgressBar, Text, Timeline, TimelineItem } from '@pillar-ui/core'
 
 const skills = ['React', 'Nextjs', 'Remix', 'Gatsby', 'CSS', 'HTML', 'Accessibility']
 const languages = [
@@ -24,16 +24,16 @@ export const Component = () => {
       <Heading as="h3" id="about-page-id" className="u_sr-only">
         About Page
       </Heading>
-      <Grid grid="minmax(230px, 1fr) 2fr" className="sm_grid-one" gap="5">
-        <div className="l_box l_flow-lg">
-          <section aria-labelledby="user-detail" className="l_flow-sm">
+      <Grid cols={{ default: '1fr', md: 'minmax(230px, 1fr) 2fr' }} gap="5">
+        <Paper flow="5" className="l_box">
+          <Paper as="section" aria-labelledby="user-detail" flow="5">
             <Heading id="user-detail" as="h4" size="4">
               Details
             </Heading>
-            <ul className="l_flow-sm">
+            <Paper as="ul" flow="5">
               {info.map(({ title, value }, index) => (
                 <Flex as="li" gap="4" key={index}>
-                  <Text className="u_flex-1" as="span" size="3" weight="5">
+                  <Text className="fl-1" as="span" size="3" weight="5">
                     {title}
                   </Text>
                   <Text className="u_flex-2" as="span" size="3" color="b" low>
@@ -41,9 +41,9 @@ export const Component = () => {
                   </Text>
                 </Flex>
               ))}
-            </ul>
-          </section>
-          <section aria-labelledby="user-skills-id" className="l_flow-sm">
+            </Paper>
+          </Paper>
+          <Paper as="section" aria-labelledby="user-skills-id" flow="5">
             <Heading id="user-skills-id" as="h4" size="4">
               Skills
             </Heading>
@@ -52,24 +52,24 @@ export const Component = () => {
                 <Chips key={skill}>{skill}</Chips>
               ))}
             </Flex>
-          </section>
-          <section aria-labelledby="user-language-id" className="l_flow-sm">
+          </Paper>
+          <Paper as="section" aria-labelledby="user-language-id" flow="5">
             <Heading id="user-language-id" as="h4" size="4">
               Language
             </Heading>
-            <div className="l_flow-sm">
+            <Paper flow="3">
               {languages.map(({ lang, progress }) => (
-                <Grid grid="1fr 50px" items="center" gap="4" key={lang}>
+                <Grid cols={{ default: '1fr 50px' }} items="center" gap="4" key={lang}>
                   <Text as="span" size="3" weight="5">
                     {lang}
                   </Text>
                   <ProgressBar color="d" label="language Progress" value={progress} />
                 </Grid>
               ))}
-            </div>
-          </section>
-        </div>
-        <section aria-labelledby="about-me-id" className="l_flow-lg l_box">
+            </Paper>
+          </Paper>
+        </Paper>
+        <Paper as="section" flow="5" aria-labelledby="about-me-id" className="l_box">
           <div>
             <Heading id="about-me-id" as="h4" size="4">
               About Me
@@ -84,7 +84,7 @@ export const Component = () => {
               ducimus illum?
             </Text>
           </div>
-          <Timeline variant="dashed">
+          <Timeline line="dashed">
             <TimelineItem>
               <Heading weight="5" as="h3" size="3">
                 Senior Web Developer At Shopify
@@ -144,7 +144,7 @@ export const Component = () => {
               </article>
             </TimelineItem>
           </Timeline>
-        </section>
+        </Paper>
       </Grid>
     </section>
   )
