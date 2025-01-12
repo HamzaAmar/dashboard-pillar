@@ -100,9 +100,7 @@ export const ProductDetailsSection = () => {
               </RadioGroup> */}
             </div>
 
-            <Heading size="3" as="h3">
-              Free Shipping
-            </Heading>
+            <Heading as="h3">Free Shipping</Heading>
             <Text color="b" low size="4">
               All Our products benifits free shipping To all over the ground The estimate day to ship the product is 7
               day to the farest country from our stock

@@ -2,8 +2,6 @@ import { Layout } from '@components/common'
 import { EmptyChat, Pages } from '@components/section'
 import { createBrowserRouter, Navigate } from 'react-router-dom'
 
-import { BarPage, LinePage, PiePage } from './pages/chart'
-
 export const routers = createBrowserRouter([
   {
     path: '/',
@@ -24,29 +22,7 @@ export const routers = createBrowserRouter([
             path: 'faq',
             lazy: () => import('./pages/faq'),
           },
-          {
-            path: 'crypto',
-            async lazy() {
-              let { Component } = await import('./pages/dahsboard/crypto')
-              return { Component }
-            },
-          },
-          {
-            path: 'ecommerce',
-            lazy: () => import('./pages/dahsboard/ecommerce'),
-          },
-          {
-            path: 'jobs',
-            lazy: () => import('./pages/dahsboard/jobs'),
-          },
-          {
-            path: 'contact',
-            lazy: () => import('./pages/dahsboard/contact'),
-          },
-          {
-            path: 'nft',
-            lazy: () => import('./pages/dahsboard/nft'),
-          },
+
           {
             path: 'emails',
             async lazy() {
@@ -97,19 +73,7 @@ export const routers = createBrowserRouter([
               { path: 'about', lazy: () => import('./pages/profile/about') },
             ],
           },
-          {
-            path: 'register',
-            lazy: () => import('./pages/authentication/register'),
-          },
 
-          {
-            path: 'login',
-            lazy: () => import('./pages/authentication/login'),
-          },
-          {
-            path: 'forget-password',
-            lazy: () => import('./pages/authentication/forgetPassword'),
-          },
           {
             path: 'account-settings',
             lazy: () => import('./pages/settings/layout'),
@@ -129,7 +93,7 @@ export const routers = createBrowserRouter([
         ],
       },
       {
-        path: 'ecommerce',
+        path: 'e-commerce',
         children: [
           {
             path: 'products',
@@ -162,8 +126,53 @@ export const routers = createBrowserRouter([
         ],
       },
 
-      // TODO: Nested Route
+      {
+        path: 'dashboard',
+        children: [
+          {
+            path: 'crypto',
+            async lazy() {
+              let { Component } = await import('./pages/dahsboard/crypto')
+              return { Component }
+            },
+          },
+          {
+            path: 'ecommerce',
+            lazy: () => import('./pages/dahsboard/ecommerce'),
+          },
+          {
+            path: 'jobs',
+            lazy: () => import('./pages/dahsboard/jobs'),
+          },
+          {
+            path: 'contact',
+            lazy: () => import('./pages/dahsboard/contact'),
+          },
+          {
+            path: 'nft',
+            lazy: () => import('./pages/dahsboard/nft'),
+          },
+        ],
+      },
 
+      {
+        path: 'auth',
+        children: [
+          {
+            path: 'register',
+            lazy: () => import('./pages/authentication/register'),
+          },
+
+          {
+            path: 'login',
+            lazy: () => import('./pages/authentication/login'),
+          },
+          {
+            path: 'forget-password',
+            lazy: () => import('./pages/authentication/forgetPassword'),
+          },
+        ],
+      },
       { path: 'icons', lazy: () => import('./pages/icons') },
       // { path: '*', lazy: () => import('./pages/noMatch') },
     ],

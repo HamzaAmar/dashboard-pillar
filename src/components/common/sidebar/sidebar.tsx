@@ -30,7 +30,7 @@ export const SidebarItem = forwardRef(({ isShrink, children, title, icon, as: Ta
           <Text weight="5" size="3">
             {title}
           </Text>
-          {children && <Icons.ChevronDown width="20" />}
+          {children && <Icons.ChevronDown width="16" />}
         </Flex>
       </Flex>
       {children && (
@@ -54,8 +54,13 @@ export const SidebarItem = forwardRef(({ isShrink, children, title, icon, as: Ta
 export const Sidebar = ({ isShrink }: any) => {
   const [open, setOpen] = useState<string | null>(null)
 
-  const handleOpen = (title: string) => () => {
-    setOpen((open) => (open === title ? null : title))
+  const handleOpen = (id: string) => () => {
+    setOpen((open) => (open === id ? null : id))
+  }
+
+  const openItem = (id: string) => {
+    const opened = open === id || window.location.pathname.startsWith(`/${id}`)
+    return opened
   }
 
   return (
@@ -63,7 +68,7 @@ export const Sidebar = ({ isShrink }: any) => {
       <nav className="sidebar--nav">
         <Flex
           as={Link}
-          to="/"
+          to="/dashboard/ecommerce"
           justify="center"
           items="center"
           aria-label="Logo navigation sidebar"
@@ -74,7 +79,7 @@ export const Sidebar = ({ isShrink }: any) => {
         <ul className="sidebar--list">
           {SIDEBAR_CONTENT.map(({ id, title, icon, to, children }) => {
             // TODO: Figure a good type for this
-            const obj = to ? ({ to, as: NavLink } as any) : { open: open === title, onClick: handleOpen(title) }
+            const obj = to ? ({ to, as: NavLink } as any) : { open: openItem(id), onClick: handleOpen(id) }
             return (
               <SidebarItem key={id} isShrink={isShrink} icon={icon} title={title} {...obj}>
                 {children?.map(({ id, title, icon, to }) => (
@@ -90,23 +95,23 @@ export const Sidebar = ({ isShrink }: any) => {
 }
 
 export const SidebarDrawer = () => {
-  const [open, setOpen] = useState<string | null>(null)
+  const [open, setOpen] = useState<string | null>(window.location.pathname)
 
-  const openItem = (title: string) => {
-    const opened = open === title
+  const openItem = (id: string) => {
+    const opened = open === id || window.location.pathname.startsWith(`/${id}`)
     return opened
   }
   const TRIGGER_LABEL = open ? 'Close Sidebar' : 'Open Sidebar'
 
-  const handleOpen = (title: string) => () => {
-    setOpen((open) => (open === title ? null : title))
+  const handleOpen = (id: string) => () => {
+    setOpen((open) => (open === id ? null : id))
   }
   return (
     <Drawer
       title={
         <Flex
           as={Link}
-          to="/"
+          to="/dashboard/ecommerce"
           justify="center"
           items="center"
           className="sidebar--header"
@@ -122,7 +127,7 @@ export const SidebarDrawer = () => {
       <nav className="sidebar--nav">
         <ul className="sidebar--list">
           {SIDEBAR_CONTENT.map(({ id, title, icon, to, children }) => {
-            const obj = to ? ({ to, as: NavLink } as any) : { open: openItem(title), onClick: handleOpen(title) }
+            const obj = to ? ({ to, as: NavLink } as any) : { open: openItem(id), onClick: handleOpen(id) }
             return (
               <SidebarItem key={id} icon={icon} title={title} {...obj}>
                 {children?.map(({ id, title, icon, to }) => (

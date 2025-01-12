@@ -3,18 +3,6 @@ import { Button, Flex, FormController, Heading, Input, Paper, Separator, Text } 
 import { Facebook, Github, Gmail, Mail, Twitter } from '@components/icons'
 import { Form } from 'react-router-dom'
 
-function MediaButton({ title, icon }: any) {
-  const lowercaseTitle = title.toLowerCase()
-  return (
-    <Flex gap="5" as="button" items="center" className={`auth-button auth-button__${lowercaseTitle}`}>
-      <span>{icon}</span>
-      <Text size="4" className="u_sr-only">
-        {title}
-      </Text>
-    </Flex>
-  )
-}
-
 export const ForgetPassword = () => {
   return (
     <Flex items="center" justify="center" className="auth-container">
@@ -22,9 +10,7 @@ export const ForgetPassword = () => {
         <Logo width="120" />
 
         <div>
-          <Heading size="3" weight="5">
-            Forget Password
-          </Heading>
+          <Heading weight="5">Forget Password</Heading>
           <Text color="b" low size="3">
             New Email Will send to you email (Please check you email)
           </Text>

@@ -10,9 +10,7 @@ export const Register = () => {
         <Logo width="120" />
 
         <div>
-          <Heading size="3" weight="5">
-            Welcome to Adminstor
-          </Heading>
+          <Heading weight="5">Welcome to Adminstor</Heading>
           <Text color="b" low size="3">
             Get your Free account now.
           </Text>

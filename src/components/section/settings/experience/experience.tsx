@@ -2,7 +2,7 @@ import { Button, Flex, Input, Textarea, FormController, Paper } from '@pillar-ui
 
 const PersonalDetail = () => {
   return (
-    <Paper as="form" flow="5" className="l_flow-md">
+    <Paper as="form" flow="5">
       <FormController label="Title">
         <Input name="title" />
       </FormController>
