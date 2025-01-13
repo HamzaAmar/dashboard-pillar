@@ -48,9 +48,6 @@ export const SidebarItem = forwardRef(({ isShrink, children, title, icon, as: Ta
  ======================================================================================================
 */
 
-// TODO:
-// ------ 1) - Set Open the item in hard Reload in page
-
 export const Sidebar = ({ isShrink }: any) => {
   const [open, setOpen] = useState<string | null>(null)
 
@@ -78,7 +75,6 @@ export const Sidebar = ({ isShrink }: any) => {
         </Flex>
         <ul className="sidebar--list">
           {SIDEBAR_CONTENT.map(({ id, title, icon, to, children }) => {
-            // TODO: Figure a good type for this
             const obj = to ? ({ to, as: NavLink } as any) : { open: openItem(id), onClick: handleOpen(id) }
             return (
               <SidebarItem key={id} isShrink={isShrink} icon={icon} title={title} {...obj}>

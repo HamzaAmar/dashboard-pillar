@@ -1,6 +1,6 @@
 import useBoolean from '@hooks/useBoolean'
 import { Outlet } from 'react-router-dom'
-import { Header, Footer, Sidebar, Settings } from '..'
+import { Header, Footer, Sidebar } from '..'
 import type { SidebarVariantType } from './layout.type'
 
 const Layout = () => {
@@ -13,10 +13,7 @@ const Layout = () => {
       <Header isShrink={isShrink} handleToggle={handleToggle} />
       <Sidebar isShrink={isShrink} />
 
-      <main className="main">
-        {<Outlet />}
-        <Settings />
-      </main>
+      <main className="main">{<Outlet />}</main>
       <Footer />
     </div>
   )

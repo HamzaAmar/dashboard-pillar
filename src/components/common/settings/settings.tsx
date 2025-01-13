@@ -5,22 +5,13 @@ import useBoolean from '@hooks/useBoolean'
 
 const Settings = () => {
   const { state, handleToggle } = useBoolean(false)
-  // const { state: settings, changeMode, changePrimary } = useSettings()
   return (
     <Drawer
       title="Page Customize"
       size="5"
       position="right"
       trigger={
-        <IconButton
-          color="b"
-          variant="solid"
-          corner="0"
-          className="settings--button"
-          onClick={handleToggle}
-          title="Page Customize"
-          icon={<Setting width="20" className="settings--button-icon" />}
-        />
+        <IconButton size="4" color="b" onClick={handleToggle} title="Page Customize" icon={<Setting width="20" />} />
       }
       open={state}
     >

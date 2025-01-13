@@ -16,6 +16,8 @@ const pageChildren = [
   { id: 'profile', title: 'Profile', icon: <Icons.UserCircle width={18} />, to: '/pages/profile' },
   { id: 'account-settings', title: 'Settings', icon: <Icons.Setting width={18} />, to: '/pages/account-settings' },
   { id: 'pricing', title: 'Pricing', icon: <Icons.Dollar width={18} />, to: '/pages/pricing' },
+  { id: 'feedback', title: 'Feedback', icon: <Icons.Heart width={18} />, to: '/pages/feedback' },
+  { id: 'timeline', title: 'Timeline', icon: <Icons.Clock width={18} />, to: '/pages/timeline' },
   { id: 'notification', title: 'Notifications', icon: <Icons.Message width={18} />, to: '/pages/notifications' },
 ]
 
