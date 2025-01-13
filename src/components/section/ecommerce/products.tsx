@@ -17,7 +17,7 @@ import { Caret, Filter, LayoutGrid, Menu, Star } from '@components/icons'
 import { useLoaderData } from 'react-router-dom'
 
 import type { ProductsModel } from '@api/ecommerce'
-import { MenuButton } from '@components/composition/menuButton'
+// import { MenuButton } from '@components/composition/menuButton'
 
 /*
 ====================================================================================================
@@ -122,45 +122,45 @@ const ProductFilter = () => {
   )
 }
 
-const SortProducts = () => {
-  // const [state, setState] = useState<ProductSortUnion>("lowest-price");
-  const [state, setState] = useState('lowest-price')
+// const SortProducts = () => {
+//   // const [state, setState] = useState<ProductSortUnion>("lowest-price");
+//   const [state, setState] = useState('lowest-price')
 
-  return (
-    <MenuButton
-      trigger={
-        <Button iconPosition="end" size="4" icon={<Caret />} variant="outline" color="b">
-          Sort by
-        </Button>
-      }
-    >
-      <MenuButton.Content>
-        <MenuButton.RadioGroup value={state} onValueChange={setState}>
-          <MenuButton.Radio value="lowest-price">
-            <Text size="3" weight={state === 'lowest-price' ? '5' : '4'}>
-              Lowest Price
-            </Text>
-          </MenuButton.Radio>
-          <MenuButton.Radio value="highest-price">
-            <Text size="3" weight={state === 'highest-price' ? '5' : '4'}>
-              Highest Price
-            </Text>
-          </MenuButton.Radio>
-          <MenuButton.Radio value={'top-review'}>
-            <Text size="3" weight={state === 'top-review' ? '5' : '4'}>
-              Top Customers Review
-            </Text>
-          </MenuButton.Radio>
-          <MenuButton.Radio value="recent">
-            <Text size="3" weight={state === 'recent' ? '5' : '4'}>
-              Most Recent
-            </Text>
-          </MenuButton.Radio>
-        </MenuButton.RadioGroup>
-      </MenuButton.Content>
-    </MenuButton>
-  )
-}
+//   return (
+//     <MenuButton
+//       trigger={
+//         <Button iconPosition="end" size="4" icon={<Caret />} variant="outline" color="b">
+//           Sort by
+//         </Button>
+//       }
+//     >
+//       <MenuButton.Content>
+//         <MenuButton.RadioGroup value={state} onValueChange={setState}>
+//           <MenuButton.Radio value="lowest-price">
+//             <Text size="3" weight={state === 'lowest-price' ? '5' : '4'}>
+//               Lowest Price
+//             </Text>
+//           </MenuButton.Radio>
+//           <MenuButton.Radio value="highest-price">
+//             <Text size="3" weight={state === 'highest-price' ? '5' : '4'}>
+//               Highest Price
+//             </Text>
+//           </MenuButton.Radio>
+//           <MenuButton.Radio value={'top-review'}>
+//             <Text size="3" weight={state === 'top-review' ? '5' : '4'}>
+//               Top Customers Review
+//             </Text>
+//           </MenuButton.Radio>
+//           <MenuButton.Radio value="recent">
+//             <Text size="3" weight={state === 'recent' ? '5' : '4'}>
+//               Most Recent
+//             </Text>
+//           </MenuButton.Radio>
+//         </MenuButton.RadioGroup>
+//       </MenuButton.Content>
+//     </MenuButton>
+//   )
+// }
 
 /*
 ====================================================================================================
@@ -193,7 +193,7 @@ const Products = () => {
       <Flex wrap gap="4" items="center" justify="between">
         <Flex items="center" gap="4">
           <ProductFilter />
-          <SortProducts />
+          {/* <SortProducts /> */}
         </Flex>
         <Flex style={{ marginLeft: 'auto' }} items="center" gap="3">
           <Text size="4" low color="b">

@@ -9,7 +9,7 @@ export const routers = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Navigate to="/pages/ecommerce" replace />,
+        element: <Navigate to="/dashboard/ecommerce" replace />,
       },
       {
         path: 'pages',
@@ -58,6 +58,17 @@ export const routers = createBrowserRouter([
               },
               { path: ':user', lazy: () => import('./pages/chat') },
             ],
+          },
+          {
+            path: 'feedback',
+            async lazy() {
+              let { Component, loader } = await import('./pages/feedback')
+              return { Component, loader }
+            },
+          },
+          {
+            path: 'timeline',
+            lazy: () => import('./pages/timeline'),
           },
           {
             path: 'profile',
