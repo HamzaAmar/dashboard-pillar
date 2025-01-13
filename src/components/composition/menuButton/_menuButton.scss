@@ -1,0 +1,45 @@
+.menu-button--header,
+.menu-button--footer {
+  background-color: var(--B4) !important;
+}
+
+.menu-button--item {
+  padding: 0.5rem;
+  outline: none;
+  &:hover {
+    background-color: var(--B3);
+    cursor: pointer;
+  }
+  &:focus-visible {
+    outline: dashed 2px var(--P9);
+    outline-offset: -3px;
+  }
+}
+
+.menu-button--container {
+  max-height: 90vh;
+  overflow: auto;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  animation: fromBottom 0.25s ease-in-out;
+}
+
+.menu-button--main {
+  overflow: auto;
+}
+
+.menu-button--separator {
+  background-color: var(--B5);
+  height: 1px;
+}
+
+@keyframes fromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

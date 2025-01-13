@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 import { LanguageUnion } from '@hooks/useSettings/useSettings.type'
-import { RequestNotificationTypes } from 'src/api/notifacation/notifacation.type'
+import { RequestNotificationTypes } from '@api/notifacation/notification'
 
 interface LanguageProps {
   slug: LanguageUnion
@@ -13,7 +13,7 @@ export const LANGUAGES: LanguageProps[] = [
     slug: 'en',
     title: 'English',
     icon: (
-      <svg width="20" aria-hidden={true} viewBox="0 0 512 512">
+      <svg width="16" aria-hidden={true} viewBox="0 0 512 512">
         <path fill="#f5f5f5" d="M0 0h512v512H0z" />
         <path
           fill="#ff4b55"
@@ -32,7 +32,7 @@ export const LANGUAGES: LanguageProps[] = [
     slug: 'fr',
     title: 'French',
     icon: (
-      <svg width="20" aria-hidden={true} viewBox="0 0 512 512">
+      <svg width="16" aria-hidden={true} viewBox="0 0 512 512">
         <path fill="#230f8f" d="M0 0h171v512H0z" />
         <path fill="#fff" d="M171 0h170v512H171z" />
         <path fill="#eb2a30" d="M341 0h171v512H341z" />
@@ -43,7 +43,7 @@ export const LANGUAGES: LanguageProps[] = [
   //   slug: "deutsche",
   //   title: "Deutsche",
   //   icon: (
-  //     <svg width="20" aria-hidden={true} viewBox="0 0 512 512">
+  //     <svg width="16" aria-hidden={true} viewBox="0 0 512 512">
   //       <path fill="#464655" d="M0 0h512v171H0z" />
   //       <path fill="#ffe15a" d="M0 341h512v171H0z" />
   //       <path fill="#ff4b55" d="M0 171h512v170H0z" />
@@ -54,7 +54,7 @@ export const LANGUAGES: LanguageProps[] = [
     slug: 'ar',
     title: 'Arabic',
     icon: (
-      <svg width="24" aria-hidden={true} viewBox="0 0 48 48" stroke="none">
+      <svg width="20" aria-hidden={true} viewBox="0 0 48 48" stroke="none">
         <path fill="#f54337" d="M2 9v30h10V9H2z" />
         <path fill="#398f3d" d="M12 9v10h34V9H12z" />
         <path fill="#edeff1" d="M12 19v10h34V19H12z" />
@@ -63,7 +63,7 @@ export const LANGUAGES: LanguageProps[] = [
     ),
   },
 ]
-export const requestText: Record<RequestNotificationTypes, (name: string, type?: string) => string> = {
+export const NOTIFICATION_TYPE: Record<RequestNotificationTypes, (name: string, type?: string) => string> = {
   like: (name) => `<strong>${name}</strong> Like one of your posts.`,
   comments: (name) => `<strong>${name}</strong> Reviews one of your posts.`,
   'new Job': (name) => `Congratulate <strong>${name}</strong> on starting new position`,
