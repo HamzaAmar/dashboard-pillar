@@ -1,9 +1,9 @@
 import { getRandomNameAndAvatarUser } from '@api/user'
 import { getDate } from '@utils/date'
 
-import type { NotificationModelType } from './notifacation.type'
+import type { NotificationDTO } from './notification'
 
-export const NOTIFICATION_LIST: NotificationModelType[] = [
+export const NOTIFICATION_LIST: NotificationDTO[] = [
   {
     id: 'notification-1',
     type: 'friends',

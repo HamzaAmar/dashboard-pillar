@@ -16,7 +16,7 @@ export type RequestNotificationTypes =
   | 'comments'
   | 'know'
 
-export interface NotificationModelType {
+export interface NotificationDTO {
   id: string
   user: UserNotificationInfo
   type: 'friends' | 'pages' | 'events' | 'groups'

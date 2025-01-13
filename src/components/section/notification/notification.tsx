@@ -2,9 +2,9 @@ import { Avatar, Badge, Chips, Flex, Heading, IconButton, Paper, Text } from '@p
 import { Dots } from '@components/icons'
 import { classnames } from '@utils/classnames'
 import { getNotifications } from '@api/notifacation'
-import type { NotificationItemProps } from './notification.type'
+import { NotificationDTO } from '@api/notifacation/notification'
 
-const NotificationCard = ({ user, unread, request, type, description, ...rest }: NotificationItemProps) => {
+const NotificationCard = ({ user, unread, request, type, description, ...rest }: NotificationDTO) => {
   const NotificationItemClassname = classnames('notifications-item', {
     highlight: unread,
   })
