@@ -22,9 +22,12 @@ const pageChildren = [
 ]
 
 const chartChildren = [
-  { id: 'ecommerce', title: 'E_commerce', icon: <Icons.Dollar width={18} />, to: '/pages/ecommerce' },
-  { id: 'crypto', title: 'Crypto', icon: <Icons.ReportAnalytics width={18} />, to: '/pages/crypto' },
-  { id: 'jobs', title: 'Jobs', icon: <Icons.Users width={18} />, to: '/pages/jobs' },
+  { id: 'bar', title: 'Bar', icon: <Icons.Dollar width={18} />, to: '/charts/bar' },
+  { id: 'line', title: 'Line', icon: <Icons.Dollar width={18} />, to: '/charts/line' },
+  { id: 'area', title: 'Area', icon: <Icons.Dollar width={18} />, to: '/charts/area' },
+  { id: 'pie', title: 'Pie', icon: <Icons.Dollar width={18} />, to: '/charts/pie' },
+  { id: 'radar', title: 'Radar', icon: <Icons.Dollar width={18} />, to: '/charts/radar' },
+  { id: 'mixed', title: 'Mixed', icon: <Icons.Dollar width={18} />, to: '/charts/mixed' },
 ]
 const ecommerceChildren = [
   { id: 'products', title: 'Products', icon: <Icons.Dollar width={18} />, to: '/e-commerce/products' },
@@ -53,7 +56,7 @@ const authChildren = [
 export const SIDEBAR_CONTENT = [
   { id: 'dashboard', title: 'Dashboard', icon: <Icons.ReportAnalytics width={18} />, children: dashboardChildren },
   { id: 'pages', title: 'Pages', icon: <Icons.Note width={18} />, children: pageChildren },
-  // { id: 'chart', title: 'Chart', icon: <Icons.Chart width={18} />, children: chartChildren },
+  { id: 'chart', title: 'Chart', icon: <Icons.Chart width={18} />, children: chartChildren },
   { id: 'e-commerce', title: 'Ecommerce', icon: <Icons.Cart width={18} />, children: ecommerceChildren },
   { id: 'auth', title: 'Auth', icon: <Icons.Lock width={18} />, children: authChildren },
   { id: 'icons', title: 'Icons', icon: <Icons.CircleRefresh width={18} />, to: '/icons' },

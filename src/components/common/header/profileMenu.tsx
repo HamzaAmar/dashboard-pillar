@@ -14,7 +14,7 @@ function ProfileMenuButton() {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <Flex className="custom-button" as="button" items="center" gap="1">
-          <Avatar title={me.name} size="4" />
+          <Avatar src="https://i.pravatar.cc/60?img=1" variant="dashed" title={me.name} size="3" />
           <ChevronDown width="16" />
         </Flex>
       </DropdownMenu.Trigger>

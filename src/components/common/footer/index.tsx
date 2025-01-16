@@ -10,7 +10,7 @@ export const Footer = () => {
       <Flex as="ul" gap="3">
         {SOCIAL_MEDIA.map((link) => (
           <li key={link.href}>
-            <IconButton as="a" {...link} />
+            <IconButton size="3" as="a" {...link} />
           </li>
         ))}
       </Flex>

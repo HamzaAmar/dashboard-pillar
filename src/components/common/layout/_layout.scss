@@ -1,7 +1,7 @@
 .admin-layout {
-  --header-footer-height: 4rem;
+  --header-footer-height: 3.75rem;
   display: grid;
-  background-color: var(--B3);
+  background-color: var(--B4);
   grid-template-columns: auto 1fr;
   grid-template-rows: var(--header-footer-height) 1fr var(--header-footer-height);
   grid-template-areas: 'sidebar header' 'sidebar main' 'sidebar footer';

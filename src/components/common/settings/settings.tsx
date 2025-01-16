@@ -11,7 +11,14 @@ const Settings = () => {
       size="5"
       position="right"
       trigger={
-        <IconButton size="4" color="b" onClick={handleToggle} title="Page Customize" icon={<Setting width="20" />} />
+        <IconButton
+          variant="text"
+          size="4"
+          color="b"
+          onClick={handleToggle}
+          title="Page Customize"
+          icon={<Setting width="20" />}
+        />
       }
       open={state}
     >

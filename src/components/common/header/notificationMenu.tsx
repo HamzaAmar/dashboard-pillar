@@ -41,7 +41,7 @@ function NotificationMenuButton() {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <IconButton icon={<Bell />} size="4" title="Notifications" />
+        <IconButton variant="text" icon={<Bell />} size="4" title="Notifications" />
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Content align="end" sideOffset={16} asChild>

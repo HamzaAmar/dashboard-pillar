@@ -75,7 +75,7 @@ function MessageMenuButton() {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <IconButton icon={<Messages />} title="Messages" size="4" />
+        <IconButton variant="text" icon={<Messages />} title="Messages" size="4" />
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Content align="end" sideOffset={16} asChild>
@@ -174,6 +174,7 @@ export const Header = ({ handleToggle, isShrink }: any) => {
           size="4"
           icon={state.mode === 'light' ? <Moon /> : <Sun />}
           title={`turn ${state.mode === 'dark' ? 'Off' : 'On'} dark mode ${state.mode}`}
+          variant="text"
         />
         <div className="language--container">
           <LanguageMenuButton />
