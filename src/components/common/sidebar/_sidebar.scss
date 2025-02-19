@@ -91,10 +91,16 @@
   outline: none;
 }
 
+.sidebar--header {
+  border-bottom: 1px solid var(--B5);
+}
+
 .sidebar--nav-button {
   padding: 8px 20px;
   width: 100%;
   border-inline-start: 3px solid transparent;
+  border-start-end-radius: 10rem;
+  border-end-end-radius: 10rem;
 }
 
 .sidebar--nav-button:focus-visible {
@@ -103,8 +109,8 @@
 }
 
 .sidebar--nav-button[aria-current='page'] {
-  border-color: var(--P9);
-  background-color: var(--P4);
+  border-color: var(--B9);
+  background-color: var(--B4);
 }
 
 li ul {
@@ -112,7 +118,7 @@ li ul {
 }
 
 .sidebar--nav-button:hover {
-  background-color: var(--O6);
+  background-color: var(--B5);
 }
 
 // Sidebar Item Section Style End

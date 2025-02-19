@@ -1,4 +1,4 @@
-import { Home, Bell, Messages, UserCircle } from '@components/icons'
+import { Home, Bell, Messages, UserCircle } from '@pillar-ui/icons'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { SidebarItem, Sidebar } from '..'
 

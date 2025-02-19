@@ -1,5 +1,5 @@
 import { Flex, IconButton, Text } from '@pillar-ui/core'
-import * as Icons from '@components/icons'
+import * as Icons from '@pillar-ui/icons'
 import { Children, forwardRef } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Logo } from '..'
@@ -79,7 +79,7 @@ export const Sidebar = ({ isShrink }: any) => {
             return (
               <SidebarItem key={id} isShrink={isShrink} icon={icon} title={title} {...obj}>
                 {children?.map(({ id, title, icon, to }) => (
-                  <SidebarItem as={NavLink} key={id} to={to} icon={icon} title={title} />
+                  <SidebarItem as={NavLink} key={id} to={to ?? ''} icon={icon} title={title} />
                 ))}
               </SidebarItem>
             )
@@ -127,7 +127,7 @@ export const SidebarDrawer = () => {
             return (
               <SidebarItem key={id} icon={icon} title={title} {...obj}>
                 {children?.map(({ id, title, icon, to }) => (
-                  <SidebarItem as={NavLink} key={id} to={to} icon={icon} title={title} />
+                  <SidebarItem as={NavLink} key={id} to={to ?? ''} icon={icon} title={title} />
                 ))}
               </SidebarItem>
             )
