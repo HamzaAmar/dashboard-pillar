@@ -1,6 +1,6 @@
 import { Logo } from '@components/common'
-import { Button, Flex, FormController, Heading, Input, Paper, Separator, Text } from '@pillar-ui/core'
-import { Facebook, Github, Gmail, Mail, Twitter } from '@components/icons'
+import { Button, Flex, FormController, Heading, Input, Paper, Text } from '@pillar-ui/core'
+import { Envelop } from '@pillar-ui/icons'
 import { Form } from 'react-router-dom'
 
 export const ForgetPassword = () => {
@@ -20,31 +20,10 @@ export const ForgetPassword = () => {
           <FormController required label="Email">
             <Input name="email" />
           </FormController>
-          <Button variant="solid" icon={<Mail />} size="6" fluid>
+          <Button variant="solid" icon={<Envelop />} fluid>
             Forget Password
           </Button>
         </Paper>
-
-        <Separator position="center">
-          <Text color="b" low>
-            or
-          </Text>
-        </Separator>
-
-        <Flex items="center" justify="center" gap="5">
-          <Button color="p" icon={<Facebook width="1rem" />}>
-            Facebook
-          </Button>
-          <Button color="i" icon={<Twitter width="1rem" />}>
-            Twitter
-          </Button>
-          <Button color="d" icon={<Gmail width="1rem" />}>
-            Gmail
-          </Button>
-          <Button color="b" icon={<Github width="1rem" />}>
-            Github
-          </Button>
-        </Flex>
       </Paper>
     </Flex>
   )

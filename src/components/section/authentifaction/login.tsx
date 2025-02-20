@@ -1,6 +1,17 @@
 import { Logo } from '@components/common'
-import { Button, Flex, FormController, Heading, Input, InputPassword, Paper, Separator, Text } from '@pillar-ui/core'
-import { Facebook, Github, Gmail, Twitter } from '@components/icons'
+import {
+  Button,
+  Flex,
+  FormController,
+  Heading,
+  Input,
+  InputPassword,
+  Paper,
+  Separator,
+  Text,
+  Link as PillarLink,
+} from '@pillar-ui/core'
+import { Facebook, Github, Gmail, Twitter } from '@pillar-ui/icons'
 import { Form, Link } from 'react-router-dom'
 
 export const Login = () => {
@@ -24,7 +35,7 @@ export const Login = () => {
             <InputPassword name="new-password" autoComplete="new-password" />
           </FormController>
 
-          <Button variant="solid" size="6" fluid>
+          <Button variant="solid" fluid>
             Sign in
           </Button>
         </Paper>
@@ -33,9 +44,9 @@ export const Login = () => {
           <Text color="b" low as="span" size="4">
             If you don't have an account?
           </Text>
-          <Button variant="link" as={Link} to="/pages/register">
+          <PillarLink color="b" as={Link} to="/pages/register">
             Register Instead
-          </Button>
+          </PillarLink>
         </Flex>
 
         <Separator position="center">
