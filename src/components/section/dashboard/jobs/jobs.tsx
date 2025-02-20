@@ -1,17 +1,17 @@
 import { useId } from 'react'
 import { Avatar, Button, Chips, Flex, Grid, Heading, IconButton, Paper, Text } from '@pillar-ui/core'
 import { useLoaderData } from 'react-router-dom'
-import { ArrowDown, CircleCheck, Dots, Message } from '@components/icons'
+import { ArrowDown, CircleCheck, DotsHorizontal, Message } from '@pillar-ui/icons'
 
 import type { JobsProps } from '@api/jobs/todo.type'
 
-export const Job = ({ image, title, description }: JobsProps) => {
+export const Job = ({ image, title, description, type }: JobsProps) => {
   const id = `job-${useId()}-item`
   return (
     <Paper flow="5" as="article" aria-labelledby={id} className="l_box">
       <Flex justify="between" items="center">
         <Avatar src={`/images/jobs/${image}`} title="job" corner="0" />
-        <IconButton icon={<Dots />} title="more info" />
+        <IconButton icon={<DotsHorizontal />} title="more info" />
       </Flex>
       <Paper flow="4">
         <div>
@@ -23,15 +23,11 @@ export const Job = ({ image, title, description }: JobsProps) => {
           </Text>
         </div>
         <Flex wrap gap="3">
-          <Chips color="i" variant="soft">
-            Full Time
-          </Chips>
-          <Chips variant="soft" color="i">
-            Hello
-          </Chips>
-          <Chips color="i" variant="soft">
-            Hello
-          </Chips>
+          {type.map((t, index) => (
+            <Chips key={t} variant="soft" color={index === 0 ? 'se' : index === 1 ? 'i' : 'p'} size="3">
+              {t}
+            </Chips>
+          ))}
         </Flex>
       </Paper>
       <Grid gap="3" cols={{ default: '1fr auto' }}>

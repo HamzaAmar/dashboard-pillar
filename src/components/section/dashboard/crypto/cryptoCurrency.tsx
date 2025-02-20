@@ -1,7 +1,7 @@
 import { useId } from 'react'
 import { RECENT_ADDED, TOP_ACCOUNT, TRENDING } from '@api/crypto'
 import { Avatar, Button, Flex, Heading, Paper, Text } from '@pillar-ui/core'
-import { ArrowDown, ChevronDown, CircleCheck, Clock, Like, User } from '@components/icons'
+import { ArrowDown, ChevronDown, CircleCheck, Clock, ThumbUp, User } from '@pillar-ui/icons'
 
 // TODO: Remove any from the project
 const CryptoItem = ({ title, icon, children }: any) => {
@@ -15,13 +15,7 @@ const CryptoItem = ({ title, icon, children }: any) => {
             {title}
           </Heading>
         </Flex>
-        <Button
-          size="3"
-          iconPosition="end"
-          variant="text"
-          className="u_font-medium"
-          icon={<ChevronDown direction="right" />}
-        >
+        <Button size="3" iconPosition="end" variant="text" icon={<ChevronDown direction="right" />}>
           More
         </Button>
       </Flex>
@@ -68,22 +62,22 @@ export const CryptoCurrency = () => {
           ))}
         </CryptoItem>
 
-        <CryptoItem title="Top Account" icon={<Like direction="right-top" width={24} />}>
+        <CryptoItem title="Top Account" icon={<ThumbUp direction="right-top" width={24} />}>
           {TOP_ACCOUNT.map(({ id, title, abbr, image }) => (
             <Flex key={id} as="article" justify="between">
               <Flex gap="3" items="center">
                 <Avatar src={image} size="3" title="bitcoin" />
-                <Flex gap="3" items="start">
-                  <div>
+                <div>
+                  <Flex gap="1" items="center">
                     <Text size="3" weight="5">
                       {title}
                     </Text>
-                    <Text size="3" color="b" low>
-                      {abbr}
-                    </Text>
-                  </div>
-                  <CircleCheck width={16} fill="var(--indigo-9)" stroke="var(--B1)" />
-                </Flex>
+                    <CircleCheck width={18} fill="var(--I9)" stroke="var(--B1)" />
+                  </Flex>
+                  <Text size="3" color="b" low>
+                    {abbr}
+                  </Text>
+                </div>
               </Flex>
               <Button icon={<User />} variant="soft" size="3" color="b">
                 Follow

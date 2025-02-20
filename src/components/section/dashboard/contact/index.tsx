@@ -11,7 +11,7 @@ import {
   Paper,
   Text,
 } from '@pillar-ui/core'
-import { CirclePlus, Dots, Envelop, Eye, Info, Message, Phone, Video } from '@components/icons'
+import { CircleHelp, DotsHorizontal, Envelop, Eye, SquareInfo, Message, Phone, Video } from '@pillar-ui/icons'
 import { useLoaderData } from 'react-router-dom'
 import { ContactCardProps } from './contact.type'
 
@@ -34,18 +34,18 @@ const Card = ({ name, email, avatar, phone }: ContactCardProps) => {
           </div>
         </Flex>
 
-        <IconButton icon={<Dots />} title="more info" />
+        <IconButton variant="text" size="4" icon={<DotsHorizontal />} title="more info" />
       </Flex>
 
       <Flex justify="between" items="center">
-        <Flex gap="1">
-          <IconButton icon={<Phone />} title={`Voice Call ${name}`} />
-          <IconButton icon={<Message />} title={`Video Message ${name}`} />
-          <IconButton icon={<Envelop />} title={`Send Email ${name}`} />
-          <IconButton icon={<Video />} title={`Video Call ${name}`} />
-          <IconButton icon={<Eye />} title={`View  ${name} Profile `} />
+        <Flex gap="2">
+          <IconButton size="4" icon={<Phone />} title={`Voice Call ${name}`} />
+          <IconButton size="4" icon={<Message />} title={`Video Message ${name}`} />
+          <IconButton size="4" icon={<Envelop />} title={`Send Email ${name}`} />
+          <IconButton size="4" icon={<Video />} title={`Video Call ${name}`} />
+          <IconButton size="4" icon={<Eye />} title={`View  ${name} Profile `} />
         </Flex>
-        <Button icon={<Info />} color="d" variant="soft" size="4">
+        <Button icon={<SquareInfo />} color="d" variant="soft" size="4">
           Report
         </Button>
       </Flex>
@@ -68,7 +68,7 @@ const Contact = () => {
         </Breadcrumb>
       </Flex>
       <Flex justify="end">
-        <Button variant="soft" icon={<CirclePlus />}>
+        <Button variant="soft" icon={<CircleHelp />}>
           New Contact
         </Button>
       </Flex>

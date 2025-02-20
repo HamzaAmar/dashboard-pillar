@@ -1,6 +1,6 @@
 import { BarStackChart } from '@components/chart'
 import { Flex, Heading, Paper, Text } from '@pillar-ui/core'
-import { ArrowDown } from '@components/icons'
+import { ArrowDown } from '@pillar-ui/icons'
 import { ParentSize } from '@visx/responsive'
 import { useId } from 'react'
 

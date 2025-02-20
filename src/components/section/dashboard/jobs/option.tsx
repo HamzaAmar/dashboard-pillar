@@ -1,5 +1,5 @@
 import { Flex, Grid, Text } from '@pillar-ui/core'
-import { ChevronDown } from '@components/icons'
+import { ChevronDown } from '@pillar-ui/icons'
 
 import type { JobOptionProps } from './jobs.type'
 

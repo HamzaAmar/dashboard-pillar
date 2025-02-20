@@ -1,15 +1,15 @@
 import { CRYPTO_CURRENCY } from '@api/crypto'
-import { Button, Flex, Grid, Heading, IconButton, TableRow, Text, Table, TableColumn, Paper } from '@pillar-ui/core'
-import { Card, Dots, Heart } from '@components/icons'
+import { Button, Flex, Grid, Heading, IconButton, Text, Table, Paper } from '@pillar-ui/core'
+import { Cart, DotsHorizontal, Heart } from '@pillar-ui/icons'
 import { formatPrice } from '@utils/formatNumber'
 
 const CurrencyRow = ({ name, currency, total, prices }: any) => {
   return (
-    <TableRow>
-      <TableColumn>
+    <tr>
+      <td>
         <Heart width="16" />
-      </TableColumn>
-      <TableColumn>
+      </td>
+      <td>
         <Flex as="span" items="center" gap="1">
           <Text as="span" weight="5" size="4">
             {name}
@@ -18,34 +18,34 @@ const CurrencyRow = ({ name, currency, total, prices }: any) => {
             ({currency})
           </Text>
         </Flex>
-      </TableColumn>
-      <TableColumn weight="5">{formatPrice({ number: prices[0].price })}</TableColumn>
-      <TableColumn>
+      </td>
+      <td>{formatPrice({ number: prices[0].price })}</td>
+      <td>
         <Text as="span" color="d" size="3" low weight="5">
           0.02%
         </Text>
-      </TableColumn>
-      <TableColumn>
+      </td>
+      <td>
         <Text as="span" color="su" size="3" low weight="5">
           0.15%
         </Text>
-      </TableColumn>
-      <TableColumn weight="5">{formatPrice({ number: total })}</TableColumn>
-      <TableColumn weight="5">
+      </td>
+      <td>{formatPrice({ number: total })}</td>
+      <td>
         <Text size="3">{formatPrice({ number: total })}</Text>
         <Text size="3" color="b" low>
           {prices[0].price} {currency}
         </Text>
-      </TableColumn>
-      <TableColumn>
+      </td>
+      <td>
         <Flex gap="3" items="center">
-          <Button variant="soft" icon={<Card />} size="3">
+          <Button variant="soft" icon={<Cart />} size="3">
             Buy
           </Button>
-          <IconButton corner="full" title="action settings" icon={<Dots />} size="4" />
+          <IconButton corner="full" title="action settings" icon={<DotsHorizontal />} size="4" />
         </Flex>
-      </TableColumn>
-    </TableRow>
+      </td>
+    </tr>
   )
 }
 
@@ -59,22 +59,22 @@ const CurrencyTable = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </Text>
         </div>
-        <IconButton icon={<Dots />} title="Settings" />
+        <IconButton icon={<DotsHorizontal />} title="Settings" />
       </Flex>
       <Table>
         <thead>
-          <TableRow type="head">
-            <TableColumn as="th">
+          <tr>
+            <th>
               <Text className="u_sr-only">Like</Text>
-            </TableColumn>
-            <TableColumn as="th">Name</TableColumn>
-            <TableColumn as="th">Price</TableColumn>
-            <TableColumn as="th">Today</TableColumn>
-            <TableColumn as="th">This Week</TableColumn>
-            <TableColumn as="th">Market Cap</TableColumn>
-            <TableColumn as="th">Volume Today</TableColumn>
-            <TableColumn as="th">Actions</TableColumn>
-          </TableRow>
+            </th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Today</th>
+            <th>This Week</th>
+            <th>Market Cap</th>
+            <th>Volume Today</th>
+            <th>Actions</th>
+          </tr>
         </thead>
 
         <tbody>
