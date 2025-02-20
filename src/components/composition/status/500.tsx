@@ -1,5 +1,5 @@
 import { Button, Flex, Heading, Text } from '@pillar-ui/core'
-import { CircleRefresh, Message } from '@components/icons'
+import { CircleRefresh, Message } from '@pillar-ui/icons'
 import type { ErrorProps } from './status.type'
 
 const Error500 = ({ variant = 'gradient', color }: ErrorProps) => {

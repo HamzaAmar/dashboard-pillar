@@ -1,5 +1,5 @@
 import { Button, Flex, Heading, Text } from '@pillar-ui/core'
-import { Home, Message } from '@components/icons'
+import { Home, Message } from '@pillar-ui/icons'
 import type { ErrorProps } from './status.type'
 
 const notFound = ({ variant = 'gradient', color }: ErrorProps) => {

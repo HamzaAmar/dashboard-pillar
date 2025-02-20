@@ -1,10 +1,10 @@
 import { Button, Flex, Text } from '@pillar-ui/core'
-import { Check, Cross, Info, Warning } from '@components/icons'
+import { Check, Cross, SquareInfo, SquareHelp } from '@pillar-ui/icons'
 import type { StatusProps } from './status.type'
 
 const statusObj = {
   info: {
-    icon: <Info width={32} />,
+    icon: <SquareInfo width={32} />,
     color: 'indigo',
   },
   danger: {
@@ -16,7 +16,7 @@ const statusObj = {
     color: 'success',
   },
   warning: {
-    icon: <Warning width={32} />,
+    icon: <SquareHelp width={32} />,
     color: 'warning',
   },
 }
