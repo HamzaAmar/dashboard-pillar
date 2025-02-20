@@ -1,4 +1,4 @@
-import { Cross } from '@components/icons'
+import { X } from '@pillar-ui/icons'
 import * as DialogRadix from '@radix-ui/react-dialog'
 import { Flex, IconButton, Paper } from '@pillar-ui/core'
 
@@ -15,7 +15,7 @@ export const DialogRoot = ({ trigger, children, description, title, size = '5' }
             <DialogRadix.Title>{title}</DialogRadix.Title>
 
             <DialogRadix.Close asChild>
-              <IconButton className="dialog--button-cross" icon={<Cross />} title="Close Dialog" />
+              <IconButton className="dialog--button-cross" icon={<X />} title="Close Dialog" />
             </DialogRadix.Close>
           </Flex>
           <Paper flow="5" className="modal--content-children">

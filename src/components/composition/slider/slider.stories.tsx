@@ -1,4 +1,4 @@
-import { CirclePlus, Minus, Volume, VolumeOff } from '@components/icons'
+import { Plus, Minus, Volume, VolumeMute } from '@pillar-ui/icons'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { Slider } from '.'
 import { Flex, Text } from '@pillar-ui/core'
@@ -73,7 +73,7 @@ export const SliderPrefixAndSuffix = () => {
   return (
     <Flex direction="col" gap="5">
       <NormalSlider label="Increase/decrease Range Number" sliderPrefix="0" SliderSuffix="100" />
-      <NormalSlider label="volume" sliderPrefix={<VolumeOff width="20" />} SliderSuffix={<Volume width="20" />} />
+      <NormalSlider label="volume" sliderPrefix={<VolumeMute width="20" />} SliderSuffix={<Volume width="20" />} />
       <NormalSlider
         label="Font Weight"
         color="w"
@@ -88,7 +88,7 @@ export const SliderPrefixAndSuffix = () => {
             style={{
               width: '1.5rem',
               height: '1.5rem',
-              background: 'var(--indigo-9)',
+              background: 'var(--I9)',
               color: 'white',
               borderRadius: '.25em',
             }}
@@ -103,12 +103,12 @@ export const SliderPrefixAndSuffix = () => {
             style={{
               width: '1.5rem',
               height: '1.5rem',
-              background: 'var(--indigo-9)',
+              background: 'var(--I9)',
               color: 'white',
               borderRadius: '.25em',
             }}
           >
-            <CirclePlus width="16" />
+            <Plus width="16" />
           </Flex>
         }
         label="volume"

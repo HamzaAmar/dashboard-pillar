@@ -5,7 +5,7 @@
   position: fixed;
   inset: 0;
   animation: overlayShow 150ms easing.$ease-elastic;
-  z-index: 100;
+  z-index: 1555555;
 }
 // TODO: Fix ANimation Problem
 
@@ -106,7 +106,7 @@
 
 .modal--content {
   box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
-  z-index: 101;
+  z-index: 155555555;
   display: grid;
   grid-template-rows: 3rem 1fr;
 }

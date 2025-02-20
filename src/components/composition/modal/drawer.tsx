@@ -1,5 +1,5 @@
 import { Flex, Heading, IconButton, Paper } from '@pillar-ui/core'
-import { Cross } from '@components/icons'
+import { X } from '@pillar-ui/icons'
 import * as DialogRadix from '@radix-ui/react-dialog'
 
 import type { DrawerDialogProps } from './modal.type'
@@ -18,7 +18,7 @@ export const Drawer = ({ trigger, children, title, position = 'right', size = '5
               </Heading>
             </DialogRadix.Title>
             <DialogRadix.Close asChild>
-              <IconButton className="dialog--button-cross" icon={<Cross />} title="Close Dialog" />
+              <IconButton className="dialog--button-cross" icon={<X />} title="Close Dialog" />
             </DialogRadix.Close>
           </Flex>
 

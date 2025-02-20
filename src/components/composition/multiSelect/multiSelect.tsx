@@ -1,5 +1,5 @@
 // import { useId } from "react";
-// import { ChevronDown, Cross } from "@components/icons";
+// import { ChevronDown, Cross } from "@pillar-ui/icons";
 // import { Flex, Text } from "@pillar-ui/core";
 // import type { MultiSelectProps } from "./multiSelect.type";
 // import { useMultiSelect } from "@hooks/useMultiSelect";

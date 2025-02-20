@@ -1,14 +1,21 @@
 .menu-button--header,
 .menu-button--footer {
-  background-color: var(--B4) !important;
+  background-color: var(--B2) !important;
 }
 
 .menu-button--item {
   padding: 0.5rem;
   outline: none;
+  cursor: pointer;
+
+  &[data-read='true'] {
+    background-color: var(--P3);
+    &:hover {
+      background-color: var(--P4);
+    }
+  }
   &:hover {
     background-color: var(--B3);
-    cursor: pointer;
   }
   &:focus-visible {
     outline: dashed 2px var(--P9);
@@ -17,15 +24,21 @@
 }
 
 .menu-button--container {
-  max-height: 90vh;
+  border-radius: 0.25rem;
+  max-height: 60vh;
   overflow: auto;
   display: grid;
   grid-template-rows: auto 1fr auto;
   animation: fromBottom 0.25s ease-in-out;
+  z-index: 10;
+  border: 1px solid var(--B5);
+  box-shadow: 0 0 8px var(--B3);
+  background-color: var(--B1);
 }
 
 .menu-button--main {
   overflow: auto;
+  scrollbar-width: thin;
 }
 
 .menu-button--separator {

@@ -1,4 +1,4 @@
-import { Cross } from '@components/icons'
+import { X } from '@pillar-ui/icons'
 import * as PopoverRadix from '@radix-ui/react-popover'
 import { IconButton } from '@pillar-ui/core'
 
@@ -27,7 +27,7 @@ export const Popover = ({ trigger, children, placement = 'top-start' }: PopoverR
         <PopoverRadix.Arrow className="popup--arrow" />
         <div className="u_flex u_justify-end">
           <PopoverRadix.Close asChild aria-label="close">
-            <IconButton className="popup--close" icon={<Cross width={16} />} title="Close" size="4" />
+            <IconButton className="popup--close" icon={<X width={16} />} title="Close" size="4" />
           </PopoverRadix.Close>
         </div>
         {children}

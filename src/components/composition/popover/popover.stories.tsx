@@ -1,4 +1,4 @@
-import { Warning } from '@components/icons'
+import { CircleInfo } from '@pillar-ui/icons'
 import type { ComponentMeta } from '@storybook/react'
 import { Heading, IconButton } from '@pillar-ui/core'
 import { Popover } from '.'
@@ -18,42 +18,42 @@ export const Placement = () => {
         placeItems: 'center',
       }}
     >
-      <Popover trigger={<IconButton icon={<Warning width={16} />} title="open popover" />} placement="top-start">
+      <Popover trigger={<IconButton icon={<CircleInfo width={16} />} title="open popover" />} placement="top-start">
         <Heading size="4">Hello world</Heading>
       </Popover>
-      <Popover trigger={<IconButton icon={<Warning width={16} />} title="open popover" />} placement="top-center">
+      <Popover trigger={<IconButton icon={<CircleInfo width={16} />} title="open popover" />} placement="top-center">
         <Heading size="4">Hello world</Heading>
       </Popover>
-      <Popover trigger={<IconButton icon={<Warning width={16} />} title="open popover" />} placement="top-end">
-        <Heading size="4">Hello world</Heading>
-      </Popover>
-
-      <Popover trigger={<IconButton icon={<Warning width={16} />} title="open popover" />} placement="right-start">
-        <Heading size="4">Hello world</Heading>
-      </Popover>
-      <Popover trigger={<IconButton icon={<Warning width={16} />} title="open popover" />} placement="right-center">
-        <Heading size="4">Hello world</Heading>
-      </Popover>
-      <Popover trigger={<IconButton icon={<Warning width={16} />} title="open popover" />} placement="right-end">
+      <Popover trigger={<IconButton icon={<CircleInfo width={16} />} title="open popover" />} placement="top-end">
         <Heading size="4">Hello world</Heading>
       </Popover>
 
-      <Popover trigger={<IconButton icon={<Warning width={16} />} title="open popover" />} placement="bottom-start">
+      <Popover trigger={<IconButton icon={<CircleInfo width={16} />} title="open popover" />} placement="right-start">
         <Heading size="4">Hello world</Heading>
       </Popover>
-      <Popover trigger={<IconButton icon={<Warning width={16} />} title="open popover" />} placement="bottom-center">
+      <Popover trigger={<IconButton icon={<CircleInfo width={16} />} title="open popover" />} placement="right-center">
         <Heading size="4">Hello world</Heading>
       </Popover>
-      <Popover trigger={<IconButton icon={<Warning width={16} />} title="open popover" />} placement="bottom-end">
+      <Popover trigger={<IconButton icon={<CircleInfo width={16} />} title="open popover" />} placement="right-end">
         <Heading size="4">Hello world</Heading>
       </Popover>
-      <Popover trigger={<IconButton icon={<Warning width={16} />} title="open popover" />} placement="left-start">
+
+      <Popover trigger={<IconButton icon={<CircleInfo width={16} />} title="open popover" />} placement="bottom-start">
         <Heading size="4">Hello world</Heading>
       </Popover>
-      <Popover trigger={<IconButton icon={<Warning width={16} />} title="open popover" />} placement="left-center">
+      <Popover trigger={<IconButton icon={<CircleInfo width={16} />} title="open popover" />} placement="bottom-center">
         <Heading size="4">Hello world</Heading>
       </Popover>
-      <Popover trigger={<IconButton icon={<Warning width={16} />} title="open popover" />} placement="left-end">
+      <Popover trigger={<IconButton icon={<CircleInfo width={16} />} title="open popover" />} placement="bottom-end">
+        <Heading size="4">Hello world</Heading>
+      </Popover>
+      <Popover trigger={<IconButton icon={<CircleInfo width={16} />} title="open popover" />} placement="left-start">
+        <Heading size="4">Hello world</Heading>
+      </Popover>
+      <Popover trigger={<IconButton icon={<CircleInfo width={16} />} title="open popover" />} placement="left-center">
+        <Heading size="4">Hello world</Heading>
+      </Popover>
+      <Popover trigger={<IconButton icon={<CircleInfo width={16} />} title="open popover" />} placement="left-end">
         <Heading size="4">Hello world</Heading>
       </Popover>
     </div>

@@ -1,7 +1,7 @@
 import { CSSProperties, useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react'
 import { Flex, IconButton } from '@pillar-ui/core'
-import { ChevronDown } from '@components/icons'
+import { ChevronDown } from '@pillar-ui/icons'
 
 import type { CarouselProps } from './carousel.type'
 import { classnames } from '@utils/classnames'

@@ -1,5 +1,5 @@
 import { Flex, Text } from '@pillar-ui/core'
-import { FileUpload } from '@components/icons'
+import { FileUpload } from '@pillar-ui/icons'
 import { useDropzone } from 'react-dropzone'
 
 import type { DropzoneProps } from './dropzone.type'
