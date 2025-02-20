@@ -1,18 +1,18 @@
 import { Breadcrumb, BreadcrumbItem, Button, Flex, Heading } from '@pillar-ui/core'
-import { CirclePlus } from '@components/icons'
+import { Plus } from '@pillar-ui/icons'
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd'
-import { TodoCard } from './Card'
+import { TodoCard } from './todoCard'
 import { useTodoList } from './useTodo'
-import { TodoItem } from './Item'
+import { TodoItem } from './todoItem'
 
 const Todo = () => {
   const { lists, addNote, handleDragEnd } = useTodoList()
 
   return (
-    <section aria-labelledby="todo--page-id">
+    <section aria-labelledby="todo--page-id" className="taskboard-container">
       <Flex items="center" justify="between">
-        <Heading id="todo--page-id" size="7">
-          TODO Page
+        <Heading id="todo--page-id" size="6">
+          Task Board
         </Heading>
         <Breadcrumb>
           <BreadcrumbItem href="../../">Home</BreadcrumbItem>
@@ -31,7 +31,7 @@ const Todo = () => {
                 ref={provider.innerRef}
                 className="todo-container"
                 {...provider.droppableProps}
-                gap="6"
+                gap="4"
               >
                 {lists.columnOrder.map((column, index) => {
                   return (
@@ -48,6 +48,7 @@ const Todo = () => {
                                     id={column}
                                     length={lists.columns[column].tasksIds.length}
                                     title={lists.columns[column].title ?? 'hello'}
+                                    color={lists.columns[column].color ?? 'd'}
                                     isDragOver={snapshot.isDraggingOver}
                                     addNote={addNote}
                                   >
@@ -74,7 +75,7 @@ const Todo = () => {
                   )
                 })}
                 <Flex justify="center" items="center" className="todo--item todo--item-add l_box ">
-                  <Button size="4" fluid variant="link" icon={<CirclePlus />}>
+                  <Button size="4" fluid variant="link" icon={<Plus />}>
                     Add New Column
                   </Button>
                 </Flex>

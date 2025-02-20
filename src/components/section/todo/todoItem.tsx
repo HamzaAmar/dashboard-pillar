@@ -2,10 +2,10 @@ import { forwardRef, useEffect, useId, useRef } from 'react'
 import type { TodoItemProps } from './todo.type'
 import useBoolean from '@hooks/useBoolean'
 import { Badge, Button, Flex, Heading, IconButton, Paper, Textarea } from '@pillar-ui/core'
-import { Dots, Plus } from '@components/icons'
+import { DotsHorizontal, Plus } from '@pillar-ui/icons'
 
 export const TodoItem = forwardRef<HTMLElement, TodoItemProps>(
-  ({ title, addNote, length = 0, children, isDragOver, id, ...rest }, ref) => {
+  ({ title, addNote, length = 0, children, isDragOver, id, color, ...rest }, ref) => {
     const { state, handleToggle, handleFalse } = useBoolean(false)
     const textareaRef = useRef<HTMLTextAreaElement>(null)
     const columnId = `column-${useId()}-todo`
@@ -26,7 +26,6 @@ export const TodoItem = forwardRef<HTMLElement, TodoItemProps>(
     return (
       <Paper
         as="article"
-        flow="3"
         aria-labelledby={columnId}
         className="todo-item-list l_box todo--item"
         data-drag-over={isDragOver}
@@ -35,32 +34,34 @@ export const TodoItem = forwardRef<HTMLElement, TodoItemProps>(
       >
         <Flex as="header" className="todo--item-header" justify="between">
           <Flex items="center" gap="3">
-            <Badge color="b" size="4" max={100} type="numeric" number={length} />
             <Heading id={columnId} color="b" low as="h2" weight="5" size="3">
               {title}
             </Heading>
+            <Badge color={color} variant="soft" size="3" max={100} type="numeric" number={length} />
           </Flex>
           <Flex items="center" gap="3">
-            <IconButton onClick={handleToggle} size="4" icon={<Plus />} title="Add New Column" />
-            <IconButton size="4" icon={<Dots />} title="Add New Column" />
+            <IconButton onClick={handleToggle} size="3" icon={<Plus />} title="Add New Column" />
+            <IconButton variant="text" size="3" icon={<DotsHorizontal />} title="Add New Column" />
           </Flex>
         </Flex>
-        {state && (
-          <Paper as="form" flow="4" action="">
-            <Textarea ref={textareaRef} size="4" placeholder="Type Your Note" name=""></Textarea>
-            <Flex gap="4">
-              <Button onClick={_addNote} type="button" size="4" variant="solid" fluid>
-                Add Note
-              </Button>
-              <Button size="4" type="button" onClick={handleFalse} variant="solid" color="b" fluid>
-                Cancel
-              </Button>
-            </Flex>
+        <div className="hover-scrollbar todo--item-main">
+          {state && (
+            <Paper as="form" flow="4" action="">
+              <Textarea ref={textareaRef} size="4" placeholder="Type Your Note" name=""></Textarea>
+              <Flex gap="4">
+                <Button className="fl-1" onClick={_addNote} type="button" size="4" variant="solid">
+                  Add Note
+                </Button>
+                <Button size="4" type="button" onClick={handleFalse} variant="soft" color="d">
+                  Cancel
+                </Button>
+              </Flex>
+            </Paper>
+          )}
+          <Paper flow="4" className="todo--item-list">
+            {children}
           </Paper>
-        )}
-        <Paper flow="4" className="todo--item-main">
-          {children}
-        </Paper>
+        </div>
       </Paper>
     )
   }

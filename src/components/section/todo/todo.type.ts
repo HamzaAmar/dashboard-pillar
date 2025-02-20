@@ -12,6 +12,7 @@ export interface AddNoteParams {
 export interface TodoItemProps {
   title: string
   length: number
+  color: 'd' | 'w' | 'se' | 'su' | 'b' | 'o' | 'i'
   children: ReactNode
   isDragOver: boolean
   addNote(args: AddNoteParams): void

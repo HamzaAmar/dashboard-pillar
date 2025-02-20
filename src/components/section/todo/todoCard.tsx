@@ -1,4 +1,4 @@
-import { Dots } from '@components/icons'
+import { DotsHorizontal } from '@pillar-ui/icons'
 import { Draggable } from '@hello-pangea/dnd'
 import { Avatar, AvatarGroup, Chips, Flex, Heading, IconButton, Paper, ProgressBar, Text } from '@pillar-ui/core'
 import { useId } from 'react'
@@ -14,7 +14,7 @@ const COLORS: BadgeColor = {
   6: 'o',
 }
 
-export const TodoCard = ({ tags, title, tasks, done, participants, index, id }: TodoCardProps) => {
+export const TodoCard = ({ tags, title, tasks, description, done, participants, index, id }: TodoCardProps) => {
   const doneLength = done?.length ?? 0
   const tasksLength = tasks?.length ?? 0
   const taskId = `task-${useId()}-item`
@@ -41,8 +41,12 @@ export const TodoCard = ({ tags, title, tasks, done, participants, index, id }: 
                   {title}
                 </button>
               </Heading>
-              <IconButton size="4" icon={<Dots />} title="Add New Column" />
+
+              <IconButton size="3" icon={<DotsHorizontal />} title="Add New Column" />
             </Flex>
+            <Text truncate="2" size="3" color="b" low>
+              {description}
+            </Text>
             {!Number.isNaN(value) ? (
               <Paper flow="3">
                 <Flex gap="3" items="center" justify="between">
@@ -58,7 +62,7 @@ export const TodoCard = ({ tags, title, tasks, done, participants, index, id }: 
                     {Math.floor(value)}%
                   </Text>
                 </Flex>
-                <ProgressBar value={value} label={`${doneLength} of ${tasks} tasks`} />
+                <ProgressBar size="2" value={value} label={`${doneLength} of ${tasks} tasks`} />
               </Paper>
             ) : (
               <Text size="3" color="b" low>
@@ -80,7 +84,7 @@ export const TodoCard = ({ tags, title, tasks, done, participants, index, id }: 
                 </Flex>
               )}
               {tags?.length && (
-                <AvatarGroup size="1">
+                <AvatarGroup size="1" limit={3}>
                   {participants?.map(({ avatar, name, slug }) => (
                     <Avatar key={slug} src={avatar} title={name} />
                   ))}

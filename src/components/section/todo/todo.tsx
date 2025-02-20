@@ -15,7 +15,7 @@ import {
   Text,
   Textarea,
 } from '@pillar-ui/core'
-import { CirclePlus, Dots, Plus } from '@components/icons'
+import { DotsHorizontal, Plus } from '@pillar-ui/icons'
 import useBoolean from '@hooks/useBoolean'
 import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd'
 import { v4 as uuid4 } from 'uuid'
@@ -66,7 +66,7 @@ const TodoCard = ({ tags, title, tasks, done, participants, index, id }: TodoCar
                   {title}
                 </button>
               </Heading>
-              <IconButton size="4" icon={<Dots />} title="Add New Column" />
+              <IconButton size="4" icon={<DotsHorizontal />} title="Add New Column" />
             </Flex>
             {!Number.isNaN(value) ? (
               <Paper flow="3">
@@ -163,7 +163,7 @@ const TodoItem = forwardRef<HTMLElement, TodoItemProps>(
           </Flex>
           <Flex items="center" gap="3">
             <IconButton onClick={handleToggle} size="4" icon={<Plus />} title="Add New Column" />
-            <IconButton size="4" icon={<Dots />} title="Add New Column" />
+            <IconButton size="4" icon={<DotsHorizontal />} title="Add New Column" />
           </Flex>
         </Flex>
         {state && (
@@ -318,6 +318,7 @@ const Todo = () => {
                                     id={column}
                                     length={lists.columns[column].tasksIds.length}
                                     title={lists.columns[column].title ?? 'hello'}
+                                    color="d"
                                     isDragOver={snapshot.isDraggingOver}
                                     addNote={addNote}
                                   >
@@ -344,7 +345,7 @@ const Todo = () => {
                   )
                 })}
                 <Flex justify="center" items="center" className="todo--item todo--item-add l_box ">
-                  <Button size="4" fluid variant="link" icon={<CirclePlus />}>
+                  <Button size="4" fluid variant="link" icon={<Plus />}>
                     Add New Column
                   </Button>
                 </Flex>
