@@ -3,17 +3,28 @@
   align-self: start;
   background-color: var(--B2);
   grid-area: sidebar;
-  height: 100vh;
-  width: 200px;
-  overflow: auto;
-  scrollbar-width: thin;
-  position: relative;
   position: sticky;
   top: 0;
   z-index: 1;
   border-inline-end: 1px solid var(--B5);
   &[data-shrink='true'] {
     overflow: visible;
+  }
+
+  & nav {
+    height: 100vh;
+    width: 200px;
+  }
+}
+
+.hover-scrollbar {
+  height: 100%;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+  scrollbar-color: transparent transparent;
+  &:hover {
+    scrollbar-color: var(--B7) transparent;
   }
 }
 

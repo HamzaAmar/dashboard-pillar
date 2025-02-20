@@ -5,9 +5,9 @@ import { Link, NavLink } from 'react-router-dom'
 import { Logo } from '..'
 import type { ForwardRefComponent } from '@type/polymorphic.type'
 import type { SidebarItemProps } from './sidebar.type'
-import { useState } from 'react'
 import { Drawer } from '@components/composition'
 import { SIDEBAR_CONTENT } from './sidebar.data'
+import { useOpen } from './useOpen'
 
 /*
  ======================================================================================================
@@ -44,21 +44,12 @@ export const SidebarItem = forwardRef(({ isShrink, children, title, icon, as: Ta
 
 /*
  ======================================================================================================
-  Sidebar Section
+  Sidebar Desktop and above Section
  ======================================================================================================
 */
 
-export const Sidebar = ({ isShrink }: any) => {
-  const [open, setOpen] = useState<string | null>(null)
-
-  const handleOpen = (id: string) => () => {
-    setOpen((open) => (open === id ? null : id))
-  }
-
-  const openItem = (id: string) => {
-    const opened = open === id || window.location.pathname.startsWith(`/${id}`)
-    return opened
-  }
+export const Sidebar = ({ isShrink }: { isShrink?: boolean }) => {
+  const { handleOpen, isOpen } = useOpen()
 
   return (
     <aside className="sidebar" data-shrink={isShrink}>
@@ -73,9 +64,9 @@ export const Sidebar = ({ isShrink }: any) => {
         >
           <Logo width={100} isShrink={isShrink} />
         </Flex>
-        <ul className="sidebar--list">
+        <ul className="hover-scrollbar sidebar--list">
           {SIDEBAR_CONTENT.map(({ id, title, icon, to, children }) => {
-            const obj = to ? ({ to, as: NavLink } as any) : { open: openItem(id), onClick: handleOpen(id) }
+            const obj = to ? ({ to, as: NavLink } as any) : { open: isOpen(id), onClick: handleOpen(id) }
             return (
               <SidebarItem key={id} isShrink={isShrink} icon={icon} title={title} {...obj}>
                 {children?.map(({ id, title, icon, to }) => (
@@ -90,18 +81,16 @@ export const Sidebar = ({ isShrink }: any) => {
   )
 }
 
-export const SidebarDrawer = () => {
-  const [open, setOpen] = useState<string | null>(window.location.pathname)
+/*
+ ======================================================================================================
+  Sidebar Mobile Section
+ ======================================================================================================
+*/
 
-  const openItem = (id: string) => {
-    const opened = open === id || window.location.pathname.startsWith(`/${id}`)
-    return opened
-  }
+export const SidebarDrawer = () => {
+  const { handleOpen, isOpen, open } = useOpen()
   const TRIGGER_LABEL = open ? 'Close Sidebar' : 'Open Sidebar'
 
-  const handleOpen = (id: string) => () => {
-    setOpen((open) => (open === id ? null : id))
-  }
   return (
     <Drawer
       title={
@@ -121,9 +110,9 @@ export const SidebarDrawer = () => {
       trigger={<IconButton className="drawer--sidebar" icon={<Icons.Menu />} title={TRIGGER_LABEL} />}
     >
       <nav className="sidebar--nav">
-        <ul className="sidebar--list">
+        <ul className="hover-scrollbar sidebar--list">
           {SIDEBAR_CONTENT.map(({ id, title, icon, to, children }) => {
-            const obj = to ? ({ to, as: NavLink } as any) : { open: openItem(id), onClick: handleOpen(id) }
+            const obj = to ? ({ to, as: NavLink } as any) : { open: isOpen(id), onClick: handleOpen(id) }
             return (
               <SidebarItem key={id} icon={icon} title={title} {...obj}>
                 {children?.map(({ id, title, icon, to }) => (
