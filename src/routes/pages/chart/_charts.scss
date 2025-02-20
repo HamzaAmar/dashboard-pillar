@@ -1,0 +1,37 @@
+.chart-tooltip {
+  background-color: var(--B1);
+  border: 1px solid var(--B6);
+  padding: 0.75rem;
+}
+
+.recharts-rectangle.recharts-tooltip-cursor {
+  fill: var(--B4);
+}
+
+.recharts-default-tooltip {
+  background-color: var(--B2) !important;
+  color: var(--B12) !important;
+  border-color: var(--B5) !important;
+  border-radius: 0.75rem;
+}
+
+.recharts-tooltip-item {
+  font-size: 0.75rem;
+  &::before {
+    content: '';
+    display: inline-flex;
+    width: 1em;
+    height: 1em;
+    background-color: currentColor;
+    border-radius: 0.25em;
+    margin-right: 0.5em;
+  }
+}
+
+.recharts-legend-item-text {
+  font-size: 0.75rem;
+}
+
+// .recharts-wrapper > * + * {
+//   margin-top: 1.5rem;
+// }
