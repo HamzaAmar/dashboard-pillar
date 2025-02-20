@@ -2,7 +2,7 @@ import { CSSProperties } from 'react'
 import { Avatar, Button, Flex, Heading, Paper, Text } from '@pillar-ui/core'
 import { Link } from 'react-router-dom'
 import type { BlogPostProps } from './blog.type'
-import { ArrowDown } from '@components/icons'
+import { ArrowDown } from '@pillar-ui/icons'
 
 const blog = ({ title, description, to, image, user }: BlogPostProps) => {
   return (

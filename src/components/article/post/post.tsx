@@ -1,6 +1,6 @@
 import { USERS_LIST } from '@api/user/users.data'
-import { Avatar, Button, Flex, Heading, IconButton, Text } from '@pillar-ui/core'
-import { Dots, Heart, Message, Share, World } from '@components/icons'
+import { Avatar, Button, Flex, Heading, IconButton, Paper, Text } from '@pillar-ui/core'
+import { DotsHorizontal, Heart, Message, Share, World } from '@pillar-ui/icons'
 import { useId } from 'react'
 import { PostProps } from './post.type'
 
@@ -10,34 +10,36 @@ const Post = ({ children, user = fallbackUser }: PostProps) => {
   const id = `user-${useId()}-post`
 
   return (
-    <Flex as="article" aria-labelledby={id} justify="between" gap="4" direction="col" className="post l_box">
+    <Paper flow="5" as="article" aria-labelledby={id} className="post l_box">
       <Flex as="header" justify="between" items="center">
         <Flex gap="5">
           <Avatar src={user.avatar} title={user.name} />
-          <div className="leading-1">
-            <Heading as="h4" id={id} truncate="1" size="3" weight="5">
+          <div>
+            <Heading as="h4" id={id} truncate="1" size="4" weight="5">
               {user.name}
             </Heading>
-            <Text size="4">
-              2min · <World width={16} />
+            <Text as={Flex} gap="2" items="center" color="b" low size="4">
+              2min · <World width={14} />
             </Text>
           </div>
         </Flex>
-        <IconButton title="Post Settings" icon={<Dots />} />
+        <IconButton title="Post Settings" size="4" icon={<DotsHorizontal />} />
       </Flex>
-      <div className="post--main">{children}</div>
-      <Flex gap="5" flex="1" className="u_mt-auto" as="footer">
-        <Button color="b" variant="soft" className="post--button" fluid icon={<Heart width="20" />}>
+      <Paper flow="4" className="post--main">
+        {children}
+      </Paper>
+      <Flex gap="5" flex="1" as="footer">
+        <Button color="b" variant="soft" className="fl-1" icon={<Heart width="20" />}>
           Like
         </Button>
-        <Button color="b" variant="soft" className="post--button" fluid icon={<Message width="20" />}>
+        <Button color="b" variant="soft" className="fl-1" icon={<Message width="20" />}>
           Review
         </Button>
-        <Button color="b" variant="soft" className="post--button" fluid icon={<Share width="20" />}>
+        <Button color="b" variant="soft" className="fl-1" icon={<Share width="20" />}>
           Share
         </Button>
       </Flex>
-    </Flex>
+    </Paper>
   )
 }
 

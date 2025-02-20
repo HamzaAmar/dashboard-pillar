@@ -1,6 +1,6 @@
 import { useId } from 'react'
 import { Avatar, Flex, Heading, IconButton, Text } from '@pillar-ui/core'
-import { Dots } from '@components/icons'
+import { DotsHorizontal } from '@pillar-ui/icons'
 import { UserCardHover } from '@components/article'
 import { Link } from 'react-router-dom'
 import type { FriendProps } from './friend.type'
@@ -8,8 +8,8 @@ import type { FriendProps } from './friend.type'
 const Friend = ({ user }: FriendProps) => {
   const id = `friend-${useId()}-item`
   return (
-    <Flex aria-labelledby={id} as="article" className="l_box" justify="between">
-      <Flex items="center" gap="5" className="u_leading__sm">
+    <Flex aria-labelledby={id} as="article" className="l_box" items="start" justify="between">
+      <Flex items="center" gap="5">
         <UserCardHover user={user}>
           <Link to="/">
             <Avatar size="6" src={user.avatar} corner="3" title={user.name} />
@@ -18,7 +18,7 @@ const Friend = ({ user }: FriendProps) => {
         <div className="">
           <UserCardHover user={user}>
             <Link className="friend-card--name" to="/">
-              <Heading as="h4" id={id} size="3" weight="5">
+              <Heading as="h4" id={id} weight="5">
                 {user.name}
               </Heading>
             </Link>
@@ -47,7 +47,7 @@ const Friend = ({ user }: FriendProps) => {
           </Flex>
         </div>
       </Flex>
-      <IconButton icon={<Dots />} title="Edit Friends Settings" />
+      <IconButton size="4" icon={<DotsHorizontal />} title="Edit Friends Settings" />
     </Flex>
   )
 }

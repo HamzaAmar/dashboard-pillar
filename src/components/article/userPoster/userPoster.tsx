@@ -1,5 +1,5 @@
 import { Avatar, Button, Flex, Text, Paper } from '@pillar-ui/core'
-import { Globe, Message } from '@components/icons'
+import { Globe, Message } from '@pillar-ui/icons'
 import type { UserPosterProps } from './userPoster.type'
 import * as HoverCard from '@radix-ui/react-hover-card'
 import { forwardRef } from 'react'
@@ -27,27 +27,27 @@ export const UserPoster = forwardRef<HTMLDivElement, UserPosterProps>(({ user, .
   return (
     <Paper as="article" flow="5" ref={forwardedRef} {...rest} className="user-poster l_box">
       <Flex gap="4">
-        <Avatar src={user.avatar} title={user.name} />
+        <Avatar size="4" src={user.avatar} title={user.name} />
         <div>
           <Text weight="5">{user.name}</Text>
-          <Text size="4" color="b" truncate="4" low>
+          <Text size="3" color="b" truncate="5" low>
             {user.description}
           </Text>
         </div>
       </Flex>
       <Flex justify="center" className="user-poster--common-friends" gap="4">
-        <Globe width={16} />
+        <Globe width={20} />
         <div>
           <Text truncate="1" weight="5" size="3">
             6 friends in Common
           </Text>
-          <Text truncate="1" size="4">
+          <Text truncate="1" size="2" color="b" low>
             Samir Lmoud , Ryan Helper and Kent
           </Text>
         </div>
       </Flex>
       <footer>
-        <Button icon={<Message width={20} />} fluid>
+        <Button variant="soft" icon={<Message width={20} />} fluid>
           Message
         </Button>
       </footer>
