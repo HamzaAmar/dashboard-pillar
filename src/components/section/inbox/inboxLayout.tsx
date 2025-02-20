@@ -1,6 +1,6 @@
 import { InboxTypeProps } from '@api/inbox/message.type'
 import { Badge, Button, Flex, Grid, IconButton, Paper, Text } from '@pillar-ui/core'
-import { ArrowDown, CirclePlus } from '@components/icons'
+import { ArrowDown, Mailbox } from '@pillar-ui/icons'
 import useBoolean from '@hooks/useBoolean'
 import { NavLink, Outlet, useLoaderData } from 'react-router-dom'
 import { INBOX_NAV } from './inbox.data'
@@ -12,7 +12,7 @@ const InboxNavItem = ({ title, href, children, icon, handleTrue }: InboxNavItemP
       <Flex as={NavLink} justify="between" className="inbox-nav--item-link" to={href} onClick={handleTrue}>
         <Flex gap="4" items="center">
           {icon}
-          <Text size="4" weight="5">
+          <Text color="b" size="4" weight="5">
             {title}
           </Text>
         </Flex>
@@ -37,7 +37,7 @@ export const InboxLayout = () => {
         data-open={!open}
       >
         <div className="inbox-compose">
-          <Button variant="soft" size="6" fluid icon={<CirclePlus width={20} />}>
+          <Button variant="soft" fluid icon={<Mailbox width={20} />}>
             Compose
           </Button>
         </div>
@@ -45,7 +45,7 @@ export const InboxLayout = () => {
           {INBOX_NAV.map(({ icon, id, title, href }) => {
             return (
               <InboxNavItem key={id} icon={icon} title={title} href={href} handleTrue={handleTrue}>
-                {data[href] && <Badge type="numeric" max={10} number={data[href]} size="4" color="b" />}
+                {data[href] && <Badge variant="soft" type="numeric" max={10} number={data[href]} size="4" color="se" />}
               </InboxNavItem>
             )
           })}

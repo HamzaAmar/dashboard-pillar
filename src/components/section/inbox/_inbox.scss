@@ -16,7 +16,7 @@
   border-top: 1px solid var(--B4);
 }
 .inbox-compose {
-  margin: 1.5rem;
+  margin: 1rem;
 }
 .inbox--item {
   padding: 0.125rem 0.5rem;
@@ -29,18 +29,22 @@
   padding: 0.5rem 1rem;
   outline: transparent 1px solid;
   border-left: 3px solid transparent;
-}
-.inbox-nav--item-link:hover {
-  background-color: var(--B5);
-}
 
-.inbox-nav--item-link[aria-current='page'] {
-  border-color: var(--B8);
-  background-color: var(--B6);
+  &[aria-current='page'] {
+    border-color: var(--P8);
+    background-color: var(--P4);
+
+    &:hover {
+      background-color: var(--P5);
+    }
+  }
+
+  &:hover {
+    background-color: var(--B4);
+  }
 }
 
 .inbox-content {
-  padding: 1rem;
   overflow: auto;
 }
 .inbox-item--link {
@@ -60,7 +64,7 @@
 
 .inbox-item--important[data-active='true'] {
   & > svg {
-    fill: var(--D9);
+    fill: var(--D8);
     stroke: var(--D9);
   }
 }

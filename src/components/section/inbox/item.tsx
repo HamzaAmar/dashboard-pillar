@@ -1,5 +1,5 @@
 import { InboxModelType } from '@api/inbox/message.type'
-import { Crown, Star } from '@components/icons'
+import { ThumbUp, Star } from '@pillar-ui/icons'
 import useBoolean from '@hooks/useBoolean'
 import { Avatar, Checkbox, Flex, IconButton, Text } from '@pillar-ui/core'
 import { getDateFormat } from '@utils/date'
@@ -13,13 +13,13 @@ export const InboxItem = ({ message, user, date, type, unread }: Omit<InboxModel
   const isImportant = important.state || type === 'important'
 
   return (
-    <Flex as="article" gap="3" className="inbox--item" items="center">
-      <Checkbox>
+    <Flex as="article" gap="2" className="inbox--item" items="center">
+      <Checkbox size="3">
         <Text className="H-sr">hello</Text>
       </Checkbox>
 
       <IconButton
-        size="4"
+        size="3"
         color={!isStarred ? 'b' : 'w'}
         className="inbox-item--star"
         data-active={isStarred}
@@ -28,16 +28,16 @@ export const InboxItem = ({ message, user, date, type, unread }: Omit<InboxModel
         title={`${star.state ? 'Starred' : 'Not Starred'}`}
       />
       <IconButton
-        size="4"
+        size="3"
         color={!isImportant ? 'b' : 'd'}
         className="inbox-item--important"
         data-active={isImportant}
         onClick={important.handleToggle}
-        icon={<Crown />}
+        icon={<ThumbUp />}
         title={`mark as ${important.state ? 'Unimportant' : 'important'}`}
       />
       <Flex as={Link} items="center" justify="between" gap="4" className="inbox-item--link" to="hello">
-        <Flex gap="3">
+        <Flex gap="3" items="center">
           <Avatar src={user.avatar} title={user.name} />
           <div>
             <Text truncate="1" weight="5" size="3">

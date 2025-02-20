@@ -1,33 +1,54 @@
-import { Alert, Clock, Crown, Message, Star, Trash } from '@components/icons'
+import {
+  Help,
+  Clock,
+  ThumbUp,
+  Message,
+  Star,
+  Trash,
+  Send,
+  Mailbox,
+  Database,
+  CircleWarning,
+  Messages,
+  Media,
+  Tags,
+} from '@pillar-ui/icons'
 import { InboxNavType } from './inbox.type'
 
 export const INBOX_NAV: InboxNavType[] = [
-  { id: 'inbox', title: 'Inbox', href: 'inbox', icon: <Star width="20" /> },
-  { id: 'send', title: 'Send', href: 'send', icon: <Message width="20" /> },
-  { id: 'Draft', title: 'Draft', href: 'draft', icon: <Star width="20" /> },
+  { id: 'inbox', title: 'Inbox', href: 'inbox', icon: <Mailbox width="16" /> },
+  { id: 'send', title: 'Send', href: 'send', icon: <Send width="16" /> },
+  { id: 'Draft', title: 'Draft', href: 'draft', icon: <Database width="16" /> },
   {
     id: 'starred',
     title: 'Starred',
     href: 'starred',
-    icon: <Star width="20" />,
+    icon: <Star width="16" />,
   },
   {
     id: 'spam',
     title: 'Spam',
     href: 'spam',
-    icon: <Alert type="octagon" width="20" />,
+    icon: <CircleWarning type="octagon" width="16" />,
   },
-  { id: 'trash', title: 'Trash', href: 'trash', icon: <Trash width="20" /> },
+  { id: 'trash', title: 'Trash', href: 'trash', icon: <Trash width="16" /> },
   {
     id: 'important',
     title: 'Important',
     href: 'important',
-    icon: <Crown width="20" />,
+    icon: <ThumbUp width="16" />,
   },
   {
     id: 'snoozed',
     title: 'Snoozed',
     href: 'snoozed',
-    icon: <Clock width="20" />,
+    icon: <Clock width="16" />,
   },
+]
+
+export const MAIL_TYPE = [
+  { icon: <Mailbox width="16" />, title: 'Primary' },
+  { icon: <Tags width="16" />, title: 'Promotion' },
+  { icon: <Media width="16" />, title: 'Social' },
+  { icon: <Messages width="16" />, title: 'Forums' },
 ]
