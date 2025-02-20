@@ -3,6 +3,7 @@ import { UserInfoNameAvatar } from '@api/user/user.type'
 interface Task {
   slug: string
   title: string
+  description?: string
 }
 
 interface Participant extends UserInfoNameAvatar {}
@@ -14,6 +15,7 @@ export interface TaskProps {
   tasks?: Task[]
   done?: string[]
   participants?: Participant[]
+  description?: string
 }
 
 export interface Column {
