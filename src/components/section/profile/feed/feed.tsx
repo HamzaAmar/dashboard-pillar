@@ -3,8 +3,9 @@ import { getUsers } from '@api/user'
 import { USERS_LIST } from '@api/user/users.data'
 import { Post, UserPoster } from '@components/article'
 import { Avatar, Flex, Grid, Heading, IconButton, Paper, Text } from '@pillar-ui/core'
-import { Check, Cross } from '@components/icons'
+import { Check, X } from '@pillar-ui/icons'
 import * as HoverCard from '@radix-ui/react-hover-card'
+import Image from '@components/core/image'
 
 const user = USERS_LIST[0]
 
@@ -63,10 +64,10 @@ const User = ({ name, avatar, role }: any) => {
     <Flex as="article" aria-labelledby={id} justify="between" items="center">
       <Flex gap="3">
         <UserCardHover user={{ name, avatar, role }}>
-          <Avatar title={name} src={avatar} />
+          <Avatar size="4" title={name} src={avatar} />
         </UserCardHover>
         <div>
-          <Heading id={id} as="h4" size="3" weight="5">
+          <Heading id={id} as="h4" size="4" weight="5" leading="3">
             {name}
           </Heading>
           <Text size="3" color="b" low>
@@ -75,8 +76,8 @@ const User = ({ name, avatar, role }: any) => {
         </div>
       </Flex>
       <Flex gap="3">
-        <IconButton corner="full" size="4" color="i" variant="solid" title="Accept Friend" icon={<Check />} />
-        <IconButton corner="full" size="4" color="d" variant="outline" title="refuse Friend" icon={<Cross />} />
+        <IconButton size="3" color="p" variant="soft" title="Accept Friend" icon={<Check />} />
+        <IconButton size="3" color="d" variant="soft" title="refuse Friend" icon={<X />} />
       </Flex>
     </Flex>
   )
@@ -120,8 +121,20 @@ const feed = () => {
         <Post>
           <Text size="4" color="b" low>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio odio ipsa molestiae voluptas deserunt.
-            Magnam ea, nobis sequi quasi expedita sint at vel ullam numquam odio omnis hic, cum quae!
+            Magnam ea, nobis sequi quasi expedita sint at vel ullam numquam odio omnis hic, cum quae! Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Distinctio odio ipsa molestiae voluptas deserunt. Magnam ea, nobis
+            sequi quasi expedita sint at vel ullam numquam odio omnis hic
           </Text>
+          <Grid cols={{ default: '1fr 1fr' }} gap="4">
+            <Image src="https://picsum.photos/id/128/300/160" alt="placeholder" />
+            <Image src="https://picsum.photos/id/128/300/160" alt="placeholder" />
+            <Image src="https://picsum.photos/id/128/300/160" alt="placeholder" />
+            <Paper border background="B3" corner="4" className="F-c">
+              <Text weight="5" size="7">
+                5+
+              </Text>
+            </Paper>
+          </Grid>
         </Post>
         <Post>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio odio ipsa molestiae voluptas deserunt.
@@ -144,11 +157,11 @@ const feed = () => {
           Magnam ea, nobis sequi quasi expedita sint at vel ullam numquam odio omnis hic, cum quae!
         </Post>
       </Paper>
-      <Grid gap="4" cols={{ default: '1fr', md: '1fr 1fr' }} className="feed-side--section">
+      <Paper flow="5" className="feed-side--section">
         <Info />
         <SuggestFriends />
         {/* <ActivityTimeline /> */}
-      </Grid>
+      </Paper>
     </Grid>
   )
 }

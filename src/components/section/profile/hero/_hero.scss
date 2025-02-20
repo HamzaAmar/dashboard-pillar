@@ -47,15 +47,17 @@
   margin-left: auto;
 }
 
-.section-item--button {
+.hero-nav--item {
   background-color: var(--color-primary-3);
   padding: 0.5rem;
   font-weight: 500;
   border-bottom: 3px solid transparent;
 }
 
-.section-item--button[aria-current='page'] {
-  border-color: var(--color-shared-11);
+.hero-nav--item[aria-current='page'] {
+  border-color: var(--P11);
+  background-color: var(--P9);
+  color: white;
 }
 
 .hero--navigation {

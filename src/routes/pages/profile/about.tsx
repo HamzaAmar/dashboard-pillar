@@ -20,7 +20,7 @@ const info = [
 
 export const Component = () => {
   return (
-    <section aria-labelledby="about-page-id">
+    <Paper as="section" aria-labelledby="about-page-id" flow="5">
       <Heading as="h3" id="about-page-id" className="u_sr-only">
         About Page
       </Heading>
@@ -59,7 +59,7 @@ export const Component = () => {
             </Heading>
             <Paper flow="3">
               {languages.map(({ lang, progress }) => (
-                <Grid cols={{ default: '1fr 50px' }} items="center" gap="4" key={lang}>
+                <Grid cols={{ default: '10ch 1fr' }} items="center" gap="4" key={lang}>
                   <Text as="span" size="3" weight="5">
                     {lang}
                   </Text>
@@ -146,7 +146,7 @@ export const Component = () => {
           </Timeline>
         </Paper>
       </Grid>
-    </section>
+    </Paper>
   )
 }
 
