@@ -1,6 +1,6 @@
-// import type { ProductsModel } from "@api/ecommerce/products.type";
+// import type { ProductDTO } from "@api/ecommerce/products.type";
 
-import type { ProductsModel } from '@api/ecommerce'
+import type { ProductDTO } from '@api/ecommerce'
 
 type Variant = 'horizontal' | 'vertical'
 
@@ -9,7 +9,7 @@ interface User {
   avatar: string
 }
 
-export interface ProductCardProps extends ProductsModel {
+export interface ProductCardProps extends ProductDTO {
   variant?: Variant
 }
 

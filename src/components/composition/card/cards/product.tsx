@@ -1,5 +1,5 @@
 import { Avatar, Button, Chips, Flex, IconButton, Paper, Rating, Text } from '@pillar-ui/core'
-import { Cart, Heart } from '@components/icons'
+import { Cart, Heart } from '@pillar-ui/icons'
 import { formatPrice } from '@utils/formatNumber'
 
 import type { ProductCardProps } from '../card.type'

@@ -1,6 +1,6 @@
 import { Avatar, Button, Flex, Text, Rating, Paper } from '@pillar-ui/core'
 import { getDateFormat } from '@utils/date'
-import { Dislike, Eye, Like } from '@components/icons'
+import { ThumbUp, Eye, ThumbDown } from '@pillar-ui/icons'
 
 import type { ReviewCardProps } from '../card.type'
 
@@ -14,7 +14,7 @@ const ReviewComp = ({ user, rating, date, review }: ReviewCardProps) => {
             <Text weight="5" size="4">
               {user.name}
             </Text>
-            <Rating rating={rating} />
+            <Rating size="3" rating={rating} />
           </div>
         </Flex>
         <Text color="b" low size="3">
@@ -29,10 +29,10 @@ const ReviewComp = ({ user, rating, date, review }: ReviewCardProps) => {
       <footer>
         <Flex items="center" justify="between">
           <Flex gap="3">
-            <Button icon={<Like />} variant="soft" color="b" size="4">
+            <Button icon={<ThumbUp />} variant="soft" color="b" size="4">
               Like
             </Button>
-            <Button icon={<Dislike />} variant="soft" color="b" size="4">
+            <Button icon={<ThumbDown />} variant="soft" color="b" size="4">
               Dislike
             </Button>
           </Flex>
