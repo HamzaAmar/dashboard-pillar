@@ -2,7 +2,7 @@ import { Button, Flex, Heading, Paper, Text } from '@pillar-ui/core'
 
 const Chat = () => {
   return (
-    <Paper flow="4" gap="6" height="100%" as={Flex} justify="center" items="center" direction="col">
+    <Paper gap="4" height="100%" as={Flex} justify="center" items="center" direction="col">
       <Flex direction="col" items="center">
         <Heading as="h3" size="6">
           Chat is Empty

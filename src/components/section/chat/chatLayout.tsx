@@ -1,6 +1,6 @@
 import { getUsers } from '@api/user'
 import { Avatar, Badge, Breadcrumb, BreadcrumbItem, Flex, Grid, Heading, Paper, Text } from '@pillar-ui/core'
-import { Check } from '@components/icons'
+import { Checks } from '@pillar-ui/icons'
 import useBoolean from '@hooks/useBoolean'
 import { useId } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
@@ -20,8 +20,8 @@ const ChatCard = ({ user, handleTrue }: ChatCardProps) => {
               <Heading id={chatId} color="b" weight="5" size="3" as="h2">
                 {user.name}
               </Heading>
-              <Flex gap="1">
-                <Check width="16" stroke="var(--P11)" />
+              <Flex gap="2" items="center">
+                <Checks width="14" stroke="var(--P11)" />
                 <Text className="u_flex-none" size="1" color="b" low>
                   12.30 PM
                 </Text>

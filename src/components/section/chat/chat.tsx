@@ -1,7 +1,7 @@
 import { MessagesByUserType } from '@api/messages/message.type'
 import { USERS_LIST } from '@api/user/users.data'
 import { Avatar, Flex, IconButton, Input, Text } from '@pillar-ui/core'
-import { ArrowDown, Dots, Face, Phone, Search, Send } from '@components/icons'
+import { ArrowDown, DotsHorizontal, Face, Phone, Search, Send, Video } from '@pillar-ui/icons'
 import { useLoaderData, useNavigate, useOutletContext } from 'react-router-dom'
 import { EmptyChat } from '.'
 
@@ -26,20 +26,21 @@ export const Chat = () => {
           <div className="back--button">
             <IconButton onClick={handleBack} icon={<ArrowDown direction="left" />} title="Go Back" />
           </div>
-          <Avatar src={user.avatar} title={user.name} size="4" />
+          <Avatar src={user.avatar} title={user.name} color="w" variant="outline" size="3" />
           <div>
-            <Text weight="5" size="4">
+            <Text weight="5" size="4" leading="2">
               {user.name}
             </Text>
-            <Text size="3" color="b" low>
+            <Text size="2" color="b" low>
               last seen a long time ago
             </Text>
           </div>
         </Flex>
         <Flex gap="3">
-          <IconButton size="4" icon={<Dots />} title="More actions" />
-          <IconButton size="4" icon={<Search />} title="Search in this chat" />
-          <IconButton size="4" icon={<Phone />} title="Call" />
+          <IconButton size="3" color="su" icon={<Phone />} title="Call" />
+          <IconButton size="3" color="w" icon={<Video />} title="Video Call" />
+          <IconButton size="3" icon={<Search />} title="Search in this chat" />
+          <IconButton size="3" variant="text" icon={<DotsHorizontal />} title="More actions" />
         </Flex>
       </Flex>
       <div className="chat--content--main">
@@ -60,9 +61,9 @@ export const Chat = () => {
         )}
       </div>
       <Flex gap="4" className="chat--content--footer" as="footer" items="center">
-        <IconButton icon={<Face />} title="More actions" />
+        <IconButton size="3" icon={<Face />} title="More actions" />
         <Input placeholder="type your message" fluid />
-        <IconButton variant="solid" corner="full" icon={<Send />} title="Send Message" />
+        <IconButton size="3" color="p" variant="solid" corner="full" icon={<Send />} title="Send Message" />
       </Flex>
     </section>
   )

@@ -46,7 +46,7 @@
 //
 
 .chat-content--item {
-  background-color: var(--B6);
+  background-color: var(--B4);
   max-width: 360px;
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -55,7 +55,7 @@
 .chat-content--item[data-variant='owner'] {
   margin-left: auto;
   border-top-right-radius: 0;
-  background-color: var(--P6);
+  background-color: var(--P4);
 }
 .chat-content--item[data-variant='sender'] {
   margin-right: auto;
@@ -63,14 +63,14 @@
 }
 
 .char-card--link-wrapper {
-  padding: 0.75rem 1rem;
+  padding: 0.5rem;
   border-inline-start: 4px solid transparent;
   outline: none;
 }
 
 .char-card--link-wrapper[aria-current='page'] {
   border-color: var(--P9);
-  background-color: var(--O6);
+  background-color: var(--P4);
 }
 
 .back--button {
