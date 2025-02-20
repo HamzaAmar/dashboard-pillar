@@ -1,5 +1,5 @@
 import { UserInfoNameAvatar } from '@api/user/user.type'
-import { ProductsModel } from '../products/products.type'
+import { ProductDTO } from '../products/products.type'
 
 export type OrderStatusUnion =
   | 'paid'
@@ -12,9 +12,9 @@ export type OrderStatusUnion =
   | 'awaiting-shipping'
   | 'awaiting-pickup'
 
-export type OrderProduct = Pick<ProductsModel, 'price' | 'title'>
+export type OrderProduct = Pick<ProductDTO, 'price' | 'title'>
 
-export interface OrderModel {
+export interface OrderDTO {
   id: string
   customer: UserInfoNameAvatar
   date: Date

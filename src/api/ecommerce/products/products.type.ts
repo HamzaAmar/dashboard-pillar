@@ -24,16 +24,17 @@ export interface ProductCore {
   quantity: number
 }
 
-export interface ProductsModel extends ProductCore {
+export interface ProductDTO extends ProductCore {
   id: string
   images?: string[]
   reviews: ReviewModel[]
   numberRating: number
   date: Date
   user: UserInfoNameAvatar
+  category: 'Kids' | 'Women' | 'Men' | 'Sport' | 'Walking'
 }
 
-// export interface ProductsModel extends ProductCore {
+// export interface ProductDTO extends ProductCore {
 //   id: string;
 //   images?: string[];
 //   reviews: ReviewModel[];

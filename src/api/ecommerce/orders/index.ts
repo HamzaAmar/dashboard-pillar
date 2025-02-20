@@ -5,7 +5,7 @@ import { getRandomNumber } from '@utils/randomNumber'
 import { PRODUCT_CORE } from '../products/products.data'
 import { status } from './order.data'
 
-import type { OrderModel, OrderProduct } from './orders.type'
+import type { OrderDTO, OrderProduct } from './orders.type'
 
 function getRandomProduct(loop: number) {
   const products = Array.from<unknown, OrderProduct>({ length: loop }, (_, index) => {
@@ -30,7 +30,7 @@ function totalPrice(products: OrderProduct[]) {
 }
 
 export function getOrders() {
-  const orders = Array.from<unknown, OrderModel>({ length: 100 }, (_, index) => {
+  const orders = Array.from<unknown, OrderDTO>({ length: 100 }, (_, index) => {
     const userIndex = getRandomNumber({ min: 1, max: USERS_LIST.length })
     const statusIndex = getRandomNumber({ min: 1, max: status.length })
     const loop = getRandomNumber({ max: 5 })

@@ -4,10 +4,10 @@ import { getDate } from '@utils/date'
 import { PRODUCT_CORE } from './products.data'
 
 import type { ReviewModel } from '@api/posts/posts.type'
-import type { GetProductProps, ProductsModel } from './products.type'
+import type { GetProductProps, ProductDTO } from './products.type'
 import { USERS_LIST } from '@api/user/users.data'
 
-const CATEGORIES_LIST = ['Kids', 'Women', 'Men', 'Sport', 'Walking']
+const CATEGORIES_LIST = ['Kids', 'Women', 'Men', 'Sport', 'Walking'] as const
 
 // function getSizes(min = 5, max = 10) {
 //   const arr: number[] = []
@@ -45,7 +45,7 @@ export function getProducts({ current = 1, pageSize = 10 }: GetProductProps = {}
   const to = next > total ? total : next
   const length = to - from
 
-  const products = Array.from<unknown, ProductsModel>({ length }, (_, index) => {
+  const products = Array.from<unknown, ProductDTO>({ length }, (_, index) => {
     const userIndex = getRandomNumber({ min: 10, max: USERS_LIST.length })
     const RatingIndex = getRandomNumber({ min: 2, max: 5 })
     const numberRatingIndex = getRandomNumber({ min: 800, max: 20000 })
