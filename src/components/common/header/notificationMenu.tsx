@@ -1,5 +1,5 @@
 import { getNotifications } from '@api/notifacation'
-import { Bell } from '@components/icons'
+import { Bell } from '@pillar-ui/icons'
 import { Avatar, Badge, Button, Flex, IconButton, Text } from '@pillar-ui/core'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { getTimeAgo } from '@utils/date'

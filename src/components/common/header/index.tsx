@@ -1,25 +1,11 @@
-import { Badge, Button, Flex, IconButton, Text } from '@pillar-ui/core'
+import { Button, Flex, IconButton, Text } from '@pillar-ui/core'
 import { Avatar } from '@pillar-ui/core'
-import {
-  Bell,
-  Check,
-  Checkbox,
-  ChevronDown,
-  Envelop,
-  Help,
-  Menu,
-  Messages,
-  Moon,
-  Setting,
-  Sun,
-  User,
-} from '@components/icons'
+import { Check, ChevronDown, CircleCheck, Close, EyeCheck, Menu, Messages, Moon, Sun } from '@pillar-ui/icons'
 import { LANGUAGES } from './header.data'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
-import { formatDate, getTimeAgo } from '@utils/date'
+import { formatDate } from '@utils/date'
 import useSettings from '@hooks/useSettings/useSettings'
 import { Link } from 'react-router-dom'
-import { getNotifications } from '@api/notifacation'
 import { getMessages } from '@api/messages'
 import { SidebarDrawer } from '../sidebar/sidebar'
 import NotificationMenuButton from './notificationMenu'
@@ -97,8 +83,8 @@ function MessageMenuButton() {
           <DropdownMenu.Group className="menu-button--main">
             {getMessages(15).map(({ from, id, date, unread, message }) => (
               <DropdownMenu.Item asChild key={id}>
-                <Flex justify="between" className="menu-button--item">
-                  <Flex gap="3">
+                <Flex data-read={unread} justify="between" items="center" gap="4" className="menu-button--item">
+                  <Flex gap="3" items="center">
                     <Avatar src={from.avatar} title={from.name} />
                     <div className="fl-1">
                       <Text weight="5" size="3">
@@ -109,12 +95,11 @@ function MessageMenuButton() {
                       </Text>
                     </div>
                   </Flex>
-                  <Flex flex="none" items="end" justify="between" direction="col">
+                  <Flex gap="3" items="end" justify="between">
+                    {!unread && <EyeCheck width={16} strokeWidth={2} stroke="var(--P9)" />}
                     <Text color="b" low size="3">
                       {formatDate(date)}
                     </Text>
-
-                    <Check width={12} stroke={unread ? 'currentColor' : 'var(--color-primary-3)'} />
                   </Flex>
                 </Flex>
               </DropdownMenu.Item>
@@ -124,14 +109,7 @@ function MessageMenuButton() {
 
           <DropdownMenu.Group>
             <DropdownMenu.Item className="menu-button--item">
-              <Button
-                size="4"
-                // className="menu-button--item"
-                variant="text"
-                fluid
-                as={Link}
-                to="pages/emails"
-              >
+              <Button size="4" variant="text" color="b" fluid as={Link} to="pages/emails">
                 View All
               </Button>
             </DropdownMenu.Item>
