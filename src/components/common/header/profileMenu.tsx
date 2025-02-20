@@ -1,4 +1,4 @@
-import { Avatar, Checkbox, Flex, Text } from '@pillar-ui/core'
+import { Avatar, Flex, Text } from '@pillar-ui/core'
 import { Check, ChevronDown, Envelop, Help, Messages, Settings, User } from '@pillar-ui/icons'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { Link } from 'react-router-dom'

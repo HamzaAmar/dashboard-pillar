@@ -1,6 +1,6 @@
 import { Button, Flex, IconButton, Text } from '@pillar-ui/core'
 import { Avatar } from '@pillar-ui/core'
-import { Check, ChevronDown, CircleCheck, Close, EyeCheck, Menu, Messages, Moon, Sun } from '@pillar-ui/icons'
+import { ChevronDown, EyeCheck, Menu, Messages, Moon, Sun } from '@pillar-ui/icons'
 import { LANGUAGES } from './header.data'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { formatDate } from '@utils/date'

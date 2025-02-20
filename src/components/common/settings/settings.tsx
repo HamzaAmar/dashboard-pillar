@@ -1,9 +1,9 @@
 import { Drawer } from '@components/composition'
-import { IconButton, Paper, Text } from '@pillar-ui/core'
-import { Setting } from '@components/icons'
+import { CustomRadio, IconButton, Paper, RadioGroup, Text } from '@pillar-ui/core'
+import { Settings } from '@pillar-ui/icons'
 import useBoolean from '@hooks/useBoolean'
 
-const Settings = () => {
+const SettingsComp = () => {
   const { state, handleToggle } = useBoolean(false)
   return (
     <Drawer
@@ -17,7 +17,7 @@ const Settings = () => {
           color="b"
           onClick={handleToggle}
           title="Page Customize"
-          icon={<Setting width="20" />}
+          icon={<Settings width="20" />}
         />
       }
       open={state}
@@ -31,26 +31,19 @@ const Settings = () => {
                 Choose Your Prefered Light Mode
               </Text>
             </div>
-            {/* <RadioGroup showLabel={false} label="Choose Your Prefered Light Mode" name="mode-color" direction="row">
-              <CustomRadio
-                className="customize--white-color-text"
-                label="Light"
-                size="4"
-                defaultChecked={settings.mode === 'light'}
-                onChange={changeMode('light')}
-              >
-                <div className="customize--primary-color-box customize--white-color-box" />
+            <RadioGroup legend="Choose Your Prefered Light Mode" name="mode-color" direction="row">
+              <CustomRadio size="4">
+                <Text size="4" weight="5">
+                  Light
+                </Text>
               </CustomRadio>
 
-              <CustomRadio
-                defaultChecked={settings.mode === 'dark'}
-                label="Dark"
-                size="4"
-                onChange={changeMode('dark')}
-              >
-                <div className="customize--primary-color-box  customize--black-color-box" />
+              <CustomRadio size="4">
+                <Text size="4" weight="5">
+                  Dark
+                </Text>
               </CustomRadio>
-            </RadioGroup> */}
+            </RadioGroup>
           </Paper>
           <Paper flow="7" as="article">
             <div>
@@ -59,68 +52,25 @@ const Settings = () => {
                 Choose the preferred Primary color you want
               </Text>
             </div>
-            {/* <RadioGroup label="Choose the preferred Primary color you want" name="primary-color" direction="row">
-              <CustomRadio
-                defaultChecked={settings.primary === 'green'}
-                onChange={changePrimary('green')}
-                label="Success"
-                size="4"
-                color="su"
-                className="preferred-color--radio"
-              >
-                <div className="customize--primary-color-box"></div>
+
+            <RadioGroup legend="Choose Your Prefered Light Mode" name="mode-color" direction="row">
+              <CustomRadio size="4">
+                <Text size="4" weight="5">
+                  Blue
+                </Text>
               </CustomRadio>
-              <CustomRadio
-                defaultChecked={settings.primary === 'red'}
-                onChange={changePrimary('red')}
-                label="Danger"
-                size="4"
-                color="d"
-                className="preferred-color--radio"
-              >
-                <div className="customize--primary-color-box"></div>
+
+              <CustomRadio size="4">
+                <Text size="4" weight="5">
+                  Red
+                </Text>
               </CustomRadio>
-              <CustomRadio
-                defaultChecked={settings.primary === 'orange'}
-                onChange={changePrimary('orange')}
-                label="Warning"
-                size="4"
-                color="w"
-                className="preferred-color--radio"
-              >
-                <div className="customize--primary-color-box"></div>
+              <CustomRadio size="4">
+                <Text size="4" weight="5">
+                  Green
+                </Text>
               </CustomRadio>
-              <CustomRadio
-                defaultChecked={settings.primary === 'mint'}
-                onChange={changePrimary('mint')}
-                label="Mint"
-                size="4"
-                color="i"
-                className="preferred-color--radio"
-              >
-                <div className="customize--primary-color-box"></div>
-              </CustomRadio>
-              <CustomRadio
-                defaultChecked={settings.primary === 'indigo'}
-                onChange={changePrimary('indigo')}
-                label="Indigo"
-                size="4"
-                color="i"
-                className="preferred-color--radio"
-              >
-                <div className="customize--primary-color-box"></div>
-              </CustomRadio>
-              <CustomRadio
-                defaultChecked={settings.primary === 'purple'}
-                onChange={changePrimary('purple')}
-                label="Purple"
-                size="4"
-                color="se"
-                className="preferred-color--radio"
-              >
-                <div className="customize--primary-color-box"></div>
-              </CustomRadio>
-            </RadioGroup> */}
+            </RadioGroup>
           </Paper>
         </Paper>
       </section>
@@ -128,4 +78,4 @@ const Settings = () => {
   )
 }
 
-export default Settings
+export default SettingsComp
