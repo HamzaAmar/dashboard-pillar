@@ -17,7 +17,6 @@ function NotificationItem({ user, id, date, unread, request }: NotificationDTO) 
             <Text
               truncate="2"
               size="4"
-              // weight="5"
               dangerouslySetInnerHTML={{
                 __html: NOTIFICATION_TYPE[request](user.name),
               }}
@@ -29,7 +28,7 @@ function NotificationItem({ user, id, date, unread, request }: NotificationDTO) 
         </Flex>
         {unread && (
           <div className="u_flex-none">
-            <Badge color="p" type="dot" size="7" />
+            <Badge color="p" type="dot" />
           </div>
         )}
       </Flex>

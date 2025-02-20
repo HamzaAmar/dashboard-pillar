@@ -85,7 +85,7 @@ function MessageMenuButton() {
               <DropdownMenu.Item asChild key={id}>
                 <Flex data-read={unread} justify="between" items="center" gap="4" className="menu-button--item">
                   <Flex gap="3" items="center">
-                    <Avatar src={from.avatar} title={from.name} />
+                    <Avatar size="4" src={from.avatar} title={from.name} />
                     <div className="fl-1">
                       <Text weight="5" size="3">
                         {from.name}
