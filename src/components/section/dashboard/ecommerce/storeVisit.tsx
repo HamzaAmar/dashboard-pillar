@@ -1,6 +1,6 @@
 import { USERS_LIST } from '@api/user/users.data'
 import { Avatar, Button, Flex, Grid, Heading, IconButton, Paper, ProgressBar, Text } from '@pillar-ui/core'
-import { ChevronDown, Dots, Setting, User } from '@components/icons'
+import { ChevronDown, DotsHorizontal, Settings, User } from '@pillar-ui/icons'
 import { StoreVisitProgressProps } from '../dashboard.type'
 
 const me = USERS_LIST[0]
@@ -25,16 +25,18 @@ export const StoreVisit = () => {
   return (
     <Grid as="section" cols={{ default: '1fr', md: '300px 1fr' }} gap="4">
       <article aria-label="user analytics">
-        <Flex className="l_box" justify="center" items="center" direction="col" gap="4">
+        <Flex className="l_box" justify="center" items="center" direction="col" gap="5">
           <Avatar size="8" title={`${me.name} Profile Picture`} src={me.avatar} />
           <div className="account-settings-user-name">
-            <Text weight="5"> {me.name} </Text>
+            <Text weight="5" size="5">
+              {me.name}
+            </Text>
             <Text size="3" low color="b">
               {me.role}
             </Text>
           </div>
-          <Flex justify="between" gap="4">
-            <Flex items="center" justify="center" gap="1" direction="col">
+          <Flex justify="between" gap="6">
+            <Flex items="center" justify="center" gap="2" direction="col">
               <Text weight="5" size="4">
                 34K
               </Text>
@@ -60,10 +62,10 @@ export const StoreVisit = () => {
             </Flex>
           </Flex>
           <Flex gap="3" items="center">
-            <Button icon={<Setting />} fluid>
+            <Button className="fl-1" icon={<Settings />}>
               Settings
             </Button>
-            <IconButton title={`${me.name} Account Settings`} icon={<Dots />} />
+            <IconButton size="4" title={`${me.name} Account Settings`} icon={<DotsHorizontal />} />
           </Flex>
         </Flex>
       </article>
@@ -78,7 +80,7 @@ export const StoreVisit = () => {
               Detail About Your Store Visit
             </Text>
           </div>
-          <IconButton icon={<Dots />} title="Store Visit" />
+          <IconButton variant="text" size="4" icon={<DotsHorizontal />} title="Store Visit" />
         </Flex>
         <Flex justify="between" items="center">
           <Flex gap="4" items="center">

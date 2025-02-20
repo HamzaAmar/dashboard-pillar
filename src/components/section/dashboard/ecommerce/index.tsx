@@ -1,14 +1,15 @@
-import { Breadcrumb, BreadcrumbItem, Flex, Heading, Paper } from '@pillar-ui/core'
+import { Breadcrumb, BreadcrumbItem, Flex, Grid, Heading, Paper } from '@pillar-ui/core'
 import { StoreVisit } from './storeVisit'
 import { SalesAnalytics } from './salesAnalytics'
 import { SalesCharts } from './salesCharts'
 import { EcommerceTables } from './ecommerceTable'
+import { EcommerceMetrics } from './metrics'
 
 const Ecommerce = () => {
   return (
-    <Paper flow="7">
+    <Paper flow="5">
       <Flex items="center" wrap justify="between">
-        <Heading as="h1" size="7" weight="5">
+        <Heading as="h1" size="6" weight="5">
           Ecommerce
         </Heading>
         <Breadcrumb>
@@ -19,12 +20,13 @@ const Ecommerce = () => {
           </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Paper flow="5" as="section" aria-labelledby="store-analytics-id">
+      <Paper flow="4" as="section" aria-labelledby="store-analytics-id">
         <StoreVisit />
         <SalesAnalytics />
         <SalesCharts />
       </Paper>
-      <Paper flow="5" as="section" aria-labelledby="store-sell-id">
+      <EcommerceMetrics />
+      <Paper flow="4" as="section" aria-labelledby="store-sell-id">
         <EcommerceTables />
       </Paper>
     </Paper>

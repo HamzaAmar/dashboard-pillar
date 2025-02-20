@@ -1,24 +1,20 @@
-import type { ProductsModel } from '@api/ecommerce/products/products.type'
+import type { ProductDTO } from '@api/ecommerce/products/products.type'
 import { UserModel } from '@api/user/user.type'
-import {
-  Avatar,
-  Chips,
-  Flex,
-  Grid,
-  Heading,
-  IconButton,
-  Text,
-  Table,
-  TableRow,
-  TableColumn,
-  Paper,
-} from '@pillar-ui/core'
-import { Dots, Star } from '@components/icons'
+import { Avatar, Chips, Flex, Grid, Heading, IconButton, Text, Table, Paper, Color } from '@pillar-ui/core'
+import { DotsHorizontal, Star } from '@pillar-ui/icons'
 import { useLoaderData } from 'react-router-dom'
+
+const ChipsColor = {
+  Kids: 'd',
+  Women: 'se',
+  Men: 'i',
+  Sport: 'su',
+  Walking: 'w',
+} as const
 
 const BestSeller = () => {
   const { users } = useLoaderData() as {
-    products: ProductsModel[]
+    products: ProductDTO[]
     users: UserModel[]
   }
   // const [current, setCurrent] = useState(1);
@@ -31,22 +27,22 @@ const BestSeller = () => {
       </Flex>
       <Table>
         <thead>
-          <TableRow type="head">
-            <TableColumn as="th">Products</TableColumn>
-            <TableColumn as="th">Price</TableColumn>
-            <TableColumn as="th">Category</TableColumn>
-            <TableColumn as="th">Rating</TableColumn>
-            <TableColumn as="th">Orders</TableColumn>
-          </TableRow>
+          <tr>
+            <th>Products</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Rating</th>
+            <th>Orders</th>
+          </tr>
         </thead>
         <tbody>
           {users.map(({ slug, avatar, name }) => (
-            <TableRow key={slug}>
-              <TableColumn>
+            <tr key={slug}>
+              <td>
                 <Flex gap="4">
                   <Avatar title={`${name} profile's Picture`} src={`${avatar}`} size="5" corner="3" />
                   <div className="u_leading-sm">
-                    <Heading as="h4" size="1" truncate="1" weight="5">
+                    <Heading as="h4" size="4" truncate="1" weight="5">
                       {name}
                     </Heading>
                     <Text size="3" color="b" low>
@@ -54,12 +50,12 @@ const BestSeller = () => {
                     </Text>
                   </div>
                 </Flex>
-              </TableColumn>
-              <TableColumn>Price</TableColumn>
-              <TableColumn>Category</TableColumn>
-              <TableColumn>Rating</TableColumn>
-              <TableColumn>Rating</TableColumn>
-            </TableRow>
+              </td>
+              <td>Price</td>
+              <td>Category</td>
+              <td>Rating</td>
+              <td>Rating</td>
+            </tr>
           ))}
         </tbody>
       </Table>
@@ -69,35 +65,36 @@ const BestSeller = () => {
 
 const BestSelling = () => {
   const { products } = useLoaderData() as {
-    products: ProductsModel[]
+    products: ProductDTO[]
     users: UserModel[]
   }
   return (
-    <Paper as="section" aria-labelledby="best-selling-id" className="fl-1 l_box">
+    <Paper as="section" flow="5" aria-labelledby="best-selling-id" className="l_box">
       <Flex as="header">
-        <Heading id="best-selling-id" as="h3" size="3">
+        <Heading id="best-selling-id" as="h3" size="5">
           Best Selling Products
         </Heading>
       </Flex>
       <Table>
         <thead>
-          <TableRow type="head">
-            <TableColumn as="th">Products</TableColumn>
-            <TableColumn as="th">Price</TableColumn>
-            <TableColumn as="th">Category</TableColumn>
-            <TableColumn as="th">Rating</TableColumn>
-            <TableColumn as="th">Orders</TableColumn>
-            <TableColumn as="th">Actions</TableColumn>
-          </TableRow>
+          <tr>
+            <th>Products</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Category</th>
+            <th>Rating</th>
+            <th>Orders</th>
+            <th></th>
+          </tr>
         </thead>
         <tbody>
-          {products.map(({ id, color, heroImage, title, price, rating }) => (
-            <TableRow key={id}>
-              <TableColumn>
+          {products.map(({ id, color, heroImage, title, price, rating, category, quantity }) => (
+            <tr key={id}>
+              <td>
                 <Flex gap="4">
-                  <Avatar title={`${color} ${title}`} src={`/images/products/${heroImage}`} size="5" corner="0" />
+                  <Avatar title={`${color} ${title}`} src={`/images/products/${heroImage}`} size="5" corner="3" />
                   <div className="u_leading-sm">
-                    <Heading as="h4" size="1" truncate="1" weight="5">
+                    <Heading as="h4" size="4" truncate="1" weight="5">
                       {title}
                     </Heading>
                     <Text size="3" color="b" low>
@@ -105,27 +102,31 @@ const BestSelling = () => {
                     </Text>
                   </div>
                 </Flex>
-              </TableColumn>
-              <TableColumn>
-                <Chips variant="soft" size="6">
-                  {price.price}
+              </td>
+              <td>
+                <Text size="3">{price.price} $</Text>
+              </td>
+              <td>
+                <Text size="3">{quantity}</Text>
+              </td>
+              <td>
+                <Chips variant="soft" color={ChipsColor[category]}>
+                  {category}
                 </Chips>
-              </TableColumn>
-              <TableColumn>Category</TableColumn>
-              <TableColumn>
+              </td>
+              <td>
                 <Flex gap="1">
                   <Star fill="var(--W8)" stroke="var(--W8)" width="20" />
-
                   <Text weight="7" as="span" size="3">
                     ({rating})
                   </Text>
                 </Flex>
-              </TableColumn>
-              <TableColumn>#${id}</TableColumn>
-              <TableColumn>
-                <IconButton icon={<Dots />} title="more Info" size="4" />
-              </TableColumn>
-            </TableRow>
+              </td>
+              <td>#${id}</td>
+              <td>
+                <IconButton variant="text" icon={<DotsHorizontal />} title="more Info" size="4" />
+              </td>
+            </tr>
           ))}
         </tbody>
       </Table>
@@ -134,10 +135,5 @@ const BestSelling = () => {
 }
 
 export const EcommerceTables = () => {
-  return (
-    <Grid cols={{ default: 'minmax(0,1fr) minmax(0,1fr)' }} className="md_grid-one" gap="4">
-      <BestSelling />
-      <BestSeller />
-    </Grid>
-  )
+  return <BestSelling />
 }

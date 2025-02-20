@@ -8,5 +8,3 @@ export const loginAction: ActionFunction = ({ params, request }) => {
 export const Component = () => {
   return <Login />
 }
-
-Component.displayName = 'Login Page'
