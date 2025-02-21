@@ -13,10 +13,10 @@ import {
   Paper,
   Text,
 } from '@pillar-ui/core'
-import { Caret, Filter, LayoutGrid, Menu, Star } from '@components/icons'
+import { Filter, GridHorizontal, Menu, Star } from '@pillar-ui/icons'
 import { useLoaderData } from 'react-router-dom'
 
-import type { ProductsModel } from '@api/ecommerce'
+import type { ProductDTO } from '@api/ecommerce'
 // import { MenuButton } from '@components/composition/menuButton'
 
 /*
@@ -61,7 +61,7 @@ const ProductFilter = () => {
       position="right"
       size="4"
     >
-      <FormGroup direction="col" title="Customer Rating">
+      <FormGroup legend="Hello World my name is Hamza" direction="col" title="Customer Rating">
         <Checkbox name="hello" title="hello">
           <CheckBoxStarContent number={1} />
         </Checkbox>
@@ -78,7 +78,7 @@ const ProductFilter = () => {
           <CheckBoxStarContent number={5} />
         </Checkbox>
       </FormGroup>
-      <FormGroup direction="row" title="Color">
+      <FormGroup legend="Hello World my name is Hamza" direction="row" title="Color">
         <Checkbox name="hello" title="hello">
           red
         </Checkbox>
@@ -169,7 +169,7 @@ const ProductFilter = () => {
 */
 
 const Products = () => {
-  const data = useLoaderData() as ProductsModel[]
+  const data = useLoaderData() as ProductDTO[]
   const [view, setView] = useState<Current>('grid')
 
   const handleCurrent = (current: Current) => () => {
@@ -203,7 +203,7 @@ const Products = () => {
             variant={view === 'grid' ? 'solid' : 'outline'}
             size="4"
             corner="full"
-            icon={<LayoutGrid />}
+            icon={<GridHorizontal />}
             title="hello"
             color="p"
             onClick={handleCurrent('grid')}

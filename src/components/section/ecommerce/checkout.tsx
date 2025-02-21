@@ -10,7 +10,7 @@ import {
   Text,
   Textarea,
 } from '@pillar-ui/core'
-import { ArrowDown, Card, Check, CircleCheck, Ship } from '@components/icons'
+import { ArrowDown, Cart, Check, CircleCheck, Ship } from '@pillar-ui/icons'
 import { useState } from 'react'
 
 type InfoUnion = 'shipping' | 'payment' | 'success'
@@ -45,7 +45,7 @@ const Checkout = () => {
         </button>
         <button data-current={info === 'payment'} onClick={handleInfo('payment')} className="checkout--button l_box">
           <div>
-            <Card width="28" />
+            <Cart width="28" />
             <Text size="4">Payment Info</Text>
           </div>
         </button>

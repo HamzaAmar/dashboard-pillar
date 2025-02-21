@@ -10,13 +10,11 @@ import {
   IconButton,
   InputNumber,
   Text,
-  TableRow,
-  TableColumn,
   BreadcrumbItem,
   Paper,
 } from '@pillar-ui/core'
 import { getDiscountPrice } from '@utils/price'
-import { ArrowDown, Card, CircleCheck, Trash } from '@components/icons'
+import { ArrowDown, Cart, CircleCheck, Trash } from '@pillar-ui/icons'
 import { formatPrice } from '@utils/formatNumber'
 import { Link } from 'react-router-dom'
 import { getProducts, ProductCore } from '@api/ecommerce'
@@ -29,8 +27,8 @@ const CartRow = ({ quantity, price, heroImage, title }: ProductCore) => {
   }
 
   return (
-    <TableRow type="head">
-      <TableColumn>
+    <tr>
+      <td>
         <Flex gap="4">
           <Avatar corner="3" src={`/images/products/${heroImage[0]}`} title="helo" />
           <div>
@@ -45,9 +43,9 @@ const CartRow = ({ quantity, price, heroImage, title }: ProductCore) => {
             </Text>
           </div>
         </Flex>
-      </TableColumn>
-      <TableColumn weight="5">{getDiscountPrice({ price: price.price, discount: price.discount ?? 0 })}</TableColumn>
-      <TableColumn>
+      </td>
+      <td>{getDiscountPrice({ price: price.price, discount: price.discount ?? 0 })}</td>
+      <td>
         <InputNumber
           aria-label="product-quantity"
           value={productQuantity}
@@ -55,25 +53,25 @@ const CartRow = ({ quantity, price, heroImage, title }: ProductCore) => {
           min={1}
           size="4"
         />
-      </TableColumn>
-      <TableColumn weight="5">{formatPrice({ number: price.price * productQuantity })}</TableColumn>
-      <TableColumn>
+      </td>
+      <td>{formatPrice({ number: price.price * productQuantity })}</td>
+      <td>
         <IconButton variant="soft" color="d" icon={<Trash />} title="remove Product" />
-      </TableColumn>
-    </TableRow>
+      </td>
+    </tr>
   )
 }
 
 function TableCart() {
   return (
     <Table>
-      <TableRow type="head">
-        <TableColumn as="th">Product</TableColumn>
-        <TableColumn as="th">Price</TableColumn>
-        <TableColumn as="th">Quantity</TableColumn>
-        <TableColumn as="th">Total</TableColumn>
-        <TableColumn as="th">Actions</TableColumn>
-      </TableRow>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th>Actions</th>
+      </tr>
       {getProducts({ pageSize: 8 }).map((product) => (
         <CartRow {...product} />
       ))}
@@ -103,7 +101,7 @@ const cart = () => {
             <Button as={Link} to="../products" color="b" variant="solid" icon={<ArrowDown direction="left" />}>
               Back To Shopping
             </Button>
-            <Button as={Link} to="../checkout" variant="solid" icon={<Card />}>
+            <Button as={Link} to="../checkout" variant="solid" icon={<Cart />}>
               Checkout
             </Button>
           </Flex>
@@ -120,7 +118,7 @@ const cart = () => {
               <img src="/images/payment/paypal.svg" width="120" alt="paypal" />
             </Flex>
             <Flex items="start" gap="3">
-              <CircleCheck width="32" stroke="var(--indigo-8)" />
+              <CircleCheck width="32" stroke="var(--I8)" />
               <div>
                 <Heading as="h2" size="3">
                   Buyer Protection

@@ -15,7 +15,7 @@ import {
   BreadcrumbItem,
   Paper,
 } from '@pillar-ui/core'
-import { Cart, Heart } from '@components/icons'
+import { Cart, Heart } from '@pillar-ui/icons'
 import { formatPrice } from '@utils/formatNumber'
 import { getDiscountPrice } from '@utils/price'
 
