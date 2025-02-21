@@ -1,0 +1,20 @@
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(240deg, var(--B6) 0%, var(--B8) 100%);
+  //   background-size: 6px 6px;
+  box-shadow: 0 4px 8px -4px var(--B1);
+}
+
+.image {
+  display: block;
+  width: 101%;
+  height: 101%;
+  object-fit: cover;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
