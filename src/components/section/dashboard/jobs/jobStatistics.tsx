@@ -1,7 +1,7 @@
 import React from 'react'
 import { Paper, Flex, Heading, Text, IconButton, Avatar, Color, Button, Grid } from '@pillar-ui/core'
 import { DotsHorizontal } from '@pillar-ui/icons'
-import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from 'recharts'
+import { XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from 'recharts'
 
 interface StatisticsChartData {
   month: string
@@ -36,7 +36,7 @@ const chartData: StatisticsChartData[] = [
 
 const StatisticsCard = () => {
   return (
-    <Paper flow="4" className="l_box">
+    <Paper flow="5" className="l_box">
       <Flex justify="between" items="center">
         <Heading size="4" weight="6">
           Statistics
@@ -60,7 +60,7 @@ const StatisticsCard = () => {
             </pattern>
           </defs>
           <XAxis axisLine={false} dataKey="month" tickLine={false} fontSize={12} angle={-45} textAnchor="end" />
-          <YAxis axisLine={false} tickLine={false} fontSize={12} />
+          <YAxis width={30} axisLine={false} tickLine={false} fontSize={12} />
           <Tooltip />
           <Legend iconType="plainline" iconSize={12} />
           <Area

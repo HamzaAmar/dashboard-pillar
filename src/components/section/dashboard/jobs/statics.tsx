@@ -1,7 +1,5 @@
-import { BarStackChart } from '@components/chart'
-import { Flex, Heading, Paper, Text } from '@pillar-ui/core'
+import { Flex, Heading, Paper, Text, Chips } from '@pillar-ui/core'
 import { ArrowDown } from '@pillar-ui/icons'
-import { ParentSize } from '@visx/responsive'
 import { useId } from 'react'
 
 import type { JobStaticArticleProps } from './jobs.type'
@@ -11,21 +9,22 @@ export const JobStaticArticle = ({ city, number, color }: JobStaticArticleProps)
   const id = `city-${useId()}-jobs`
   return (
     <article aria-labelledby={id} className={`l_box u_${color}`}>
-      <Heading id={id} as="h3" size="4">
-        {city} Jobs
-      </Heading>
+      <Flex justify="between" gap="1" color={color}>
+        <Heading id={id} as="h3" size="4">
+          {city} Jobs
+        </Heading>
+        <Chips variant="soft" color={color}>
+          <ArrowDown direction="right-top" />
+          +30%
+        </Chips>
+      </Flex>
+      <Text size="3" low color="b">
+        This Week
+      </Text>
+
       <Text as="span" weight="7" size="9">
         {number}
       </Text>
-      <Flex justify="between">
-        <Text size="4" low color={color}>
-          This Week
-        </Text>
-        <Flex weight="7" low gap="1" color={color} as={Text} size="4">
-          <span>+30%</span>
-          <ArrowDown direction="right-top" width={16} />
-        </Flex>
-      </Flex>
     </article>
   )
 }
