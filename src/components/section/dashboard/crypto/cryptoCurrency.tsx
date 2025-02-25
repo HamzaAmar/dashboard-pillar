@@ -15,7 +15,7 @@ const CryptoItem = ({ title, icon, children }: any) => {
             {title}
           </Heading>
         </Flex>
-        <Button size="3" iconPosition="end" variant="text" icon={<ChevronDown direction="right" />}>
+        <Button size="3" iconPosition="end" variant="link" icon={<ChevronDown direction="right" />}>
           More
         </Button>
       </Flex>
@@ -43,7 +43,7 @@ const MarketCryptoItem = ({ title, abbr, footer, image }: any) => {
 
 export const CryptoCurrency = () => {
   return (
-    <Paper flow="5" as="section">
+    <Paper flow="5" as="section" className="l_box">
       <div>
         <Heading as="h2">Today Featured Content</Heading>
         <Text size="3" color="b" low>

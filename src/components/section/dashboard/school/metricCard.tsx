@@ -19,7 +19,9 @@ export function MetricCard({ title, value, change, data, icon, color, areaColor 
           </Text>
         </Flex>
         <div>
-          <Text weight="5">{title}</Text>
+          <Text size="3" color="b" low>
+            {title}
+          </Text>
           <Text leading="1" size="8" weight="6">
             {value.toLocaleString()}
           </Text>

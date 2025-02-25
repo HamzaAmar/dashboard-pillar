@@ -4,6 +4,7 @@ import { SalesAnalytics } from './salesAnalytics'
 import { SalesCharts } from './salesCharts'
 import { EcommerceTables } from './ecommerceTable'
 import { EcommerceMetrics } from './metrics'
+import { RevenueMetrics } from './revenue'
 
 const Ecommerce = () => {
   return (
@@ -20,6 +21,7 @@ const Ecommerce = () => {
           </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
+      <RevenueMetrics />
       <Paper flow="4" as="section" aria-labelledby="store-analytics-id">
         <StoreVisit />
         <SalesAnalytics />

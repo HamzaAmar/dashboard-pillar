@@ -319,44 +319,62 @@ export const PatientsList = () => {
   }
 
   return (
-    <Paper flow="5">
+    <Paper flow="5" className="l_box">
       <Heading as="h2" weight="5">
         Patients List
       </Heading>
       <Table>
         <thead>
           <tr>
-            <td>Patient ID</td>
-            <td>Name</td>
-            <td>Gender</td>
-            <td>Age</td>
-            <td>Doctor</td>
-            <td>Disease</td>
-            <td>Contact</td>
-            <td>Appointment</td>
-            <td>Room</td>
+            <th>Patient ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Doctor</th>
+            <th>Disease</th>
+            <th>Contact</th>
+            <th>Appointment</th>
+            <th>Room</th>
           </tr>
         </thead>
         <tbody>
           {PATIENTS.map(({ id, name, gender, age, doctor, disease, contact, appointment, room, avatar }) => (
             <tr key={id}>
               <td>
-                <Text size="3">{id}</Text>
+                <Text size="2" weight="5">
+                  {id}
+                </Text>
               </td>
               <td>
                 <Flex gap="2" items="center">
                   <Avatar size="4" src={avatar} />
-                  <Text>{name}</Text>
+                  <Text size="3">{name}</Text>
                 </Flex>
               </td>
-              <td>{gender}</td>
+              <td>
+                <Chips variant="soft" color={gender === 'Male' ? 'se' : 'i'}>
+                  {gender}
+                </Chips>
+              </td>
               <td>{age}</td>
-              <td>{doctor}</td>
+              <td>
+                <Text size="3" weight="5">
+                  {doctor}
+                </Text>
+              </td>
               <td>
                 <Chips color="p">{disease}</Chips>
               </td>
-              <td>{contact}</td>
-              <td>{appointment}</td>
+              <td>
+                <Text color="b" low size="3">
+                  {contact}
+                </Text>
+              </td>
+              <td>
+                <Text color="b" low size="3">
+                  {appointment}
+                </Text>
+              </td>
               <td>{room}</td>
             </tr>
           ))}

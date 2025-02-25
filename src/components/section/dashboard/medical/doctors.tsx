@@ -72,19 +72,21 @@ export const DoctorsList = () => {
   return (
     <Paper className="l_box" flow="7">
       <Flex justify="between" items="center" className="mb-4">
-        <Heading as="h2" weight="5">
+        <Heading as="h2" weight="5" size="4">
           Doctors List
         </Heading>
-        <Button variant="text">View All</Button>
+        <Button variant="soft" color="b" size="3">
+          View All
+        </Button>
       </Flex>
       <div className="separator">
         {doctors.map(({ id, name, credentials, status, specialization, avatar }) => (
           <Flex as={Paper} p="2" gap="2" key={id} justify="between" items="center">
             <Flex gap="4" items="center">
-              <Avatar src={avatar} />
-              <Paper flow="2">
+              <Avatar variant="outline" src={avatar} />
+              <div>
                 <div>
-                  <Text weight="5" size="4">
+                  <Text weight="5" size="4" leading="2">
                     {name}
                   </Text>
                   <Text size="3">{specialization}</Text>
@@ -92,15 +94,15 @@ export const DoctorsList = () => {
                 <Text size="2" color="b" low>
                   {credentials}
                 </Text>
-              </Paper>
-              <Chips size="3" color={getStatusColor(status)}>
+              </div>
+              <Chips variant="soft" size="3" color={getStatusColor(status)}>
                 {status}
               </Chips>
             </Flex>
             <Flex gap="4" items="center">
               <Flex gap="2">
+                <IconButton size="4" icon={<Phone />} color="su" variant="shadow" title="Call" />
                 <IconButton size="4" icon={<Calendar />} variant="soft" title="View Appointment" />
-                <IconButton size="4" icon={<Phone />} color="su" variant="soft" title="Call" />
               </Flex>
             </Flex>
           </Flex>

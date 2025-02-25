@@ -5,13 +5,13 @@ import { ArrowDown, CircleCheck, DotsHorizontal, Message } from '@pillar-ui/icon
 
 import type { JobsProps } from '@api/jobs/todo.type'
 
-export const Job = ({ image, title, description, type }: JobsProps) => {
+export const Job = ({ image, title, description, type, price }: JobsProps) => {
   const id = `job-${useId()}-item`
   return (
     <Paper flow="5" as="article" aria-labelledby={id} className="l_box">
       <Flex justify="between" items="center">
-        <Avatar src={`/images/jobs/${image}`} title="job" corner="0" />
-        <IconButton icon={<DotsHorizontal />} title="more info" />
+        <Avatar corner="3" src={`/images/jobs/${image}`} title="job" />
+        <IconButton size="3" variant="text" icon={<DotsHorizontal />} title="more info" />
       </Flex>
       <Paper flow="4">
         <div>
@@ -30,8 +30,11 @@ export const Job = ({ image, title, description, type }: JobsProps) => {
           ))}
         </Flex>
       </Paper>
+      <Text color="b" low size="3">
+        {price}
+      </Text>
       <Grid gap="3" cols={{ default: '1fr auto' }}>
-        <Button size="4" icon={<CircleCheck />} fluid>
+        <Button variant="shadow" size="4" icon={<CircleCheck />} fluid>
           Apply Now
         </Button>
         <Button variant="soft" size="4" icon={<Message />} color="b">
@@ -46,7 +49,7 @@ export const Jobs = () => {
   const { jobs } = useLoaderData() as { jobs: JobsProps[] }
 
   return (
-    <Paper as="section" flow="5" aria-labelledby="latest-jobs-id">
+    <Paper as="section" flow="5" aria-labelledby="latest-jobs-id" className="l_box">
       <Heading id="latest-jobs-id" as="h2">
         Latest Jobs
       </Heading>

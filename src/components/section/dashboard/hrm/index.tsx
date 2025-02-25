@@ -1,7 +1,10 @@
 import { Breadcrumb, BreadcrumbItem, Flex, Heading, Paper } from '@pillar-ui/core'
-import { CryptoAnalytics } from '../crypto/cryptoAnalytics'
-import { CryptoCurrency } from '../crypto/cryptoCurrency'
-import { HistoryTrading } from '../crypto/historyTrading'
+import { HRMOverview } from './overview'
+import { LeaveManagement } from './leaveManagement'
+import { DepartmentBreakdown } from './departmentBreakdown'
+import { PayrollStatistics } from './payrollStatistics'
+import { RecruitmentPipeline } from './recruitmentPipeline'
+import { EmployeeAttendanceChart } from './employeeAttendanceChart'
 
 const HRM = () => {
   return (
@@ -18,9 +21,12 @@ const HRM = () => {
           </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <CryptoAnalytics />
-      <CryptoCurrency />
-      <HistoryTrading />
+      <HRMOverview />
+      <EmployeeAttendanceChart />
+      <RecruitmentPipeline />
+      <PayrollStatistics />
+      <LeaveManagement />
+      <DepartmentBreakdown />
     </Paper>
   )
 }

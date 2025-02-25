@@ -27,25 +27,26 @@ export const RevenueStats = () => {
       <ResponsiveContainer width="100%" height={350}>
         <LineChart data={revenueData} margin={{ left: 0, right: 15 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="var(--B6)" />
-          <XAxis dataKey="month" fontSize={12} />
-          <YAxis domain={[0, 40]} fontSize={12} />
+          <XAxis axisLine={false} tickLine={false} dataKey="month" fontSize={12} />
+          <YAxis axisLine={false} tickLine={false} domain={[0, 40]} fontSize={12} />
           <Tooltip />
           <Legend iconType="circle" />
           <Line
-            type="monotone"
+            type="bump"
             dataKey="profit"
             stroke="var(--P9)"
             strokeWidth="2"
-            dot={{ r: 4, fill: 'var(--B2)', strokeDasharray: 'none' }}
-            strokeDasharray="6 4"
+            dot={{ r: 2, fill: 'var(--B2)' }}
+
+            // strokeDasharray="6 4"
           />
           <Line
-            type="monotone"
+            type="bump"
             dataKey="income"
             stroke="var(--Se9)"
             strokeWidth="2"
-            dot={{ r: 4, fill: 'var(--B2)', strokeDasharray: 'none' }}
-            strokeDasharray="6 4"
+            dot={{ r: 2, fill: 'var(--B2)' }}
+            // strokeDasharray="6 4"
           />
         </LineChart>
       </ResponsiveContainer>

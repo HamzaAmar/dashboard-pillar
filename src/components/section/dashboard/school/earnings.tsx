@@ -1,15 +1,10 @@
 import React from 'react'
-import { Paper, Flex, Heading, Text, IconButton, Avatar, Select, Grid } from '@pillar-ui/core'
+import { Paper, Flex, Heading, Text, IconButton, Grid } from '@pillar-ui/core'
 import { DotsHorizontal } from '@pillar-ui/icons'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts'
 import { EARNING_MONTH } from './school.data'
 
 // Define type for chart data
-interface ChartData {
-  month: string
-  earnings: number
-  expanse: number
-}
 
 interface GenderData {
   name: string
@@ -99,8 +94,8 @@ const EarningsChartCard = () => {
 
 const GenderDonutChartCard = () => {
   const genderData: GenderData[] = [
-    { name: 'Male', value: 55, color: 'var(--P8)' },
-    { name: 'Female', value: 45, color: 'var(--Se8)' },
+    { name: 'Male', value: 55, color: 'var(--P9)' },
+    { name: 'Female', value: 45, color: 'var(--Se9)' },
   ]
 
   return (

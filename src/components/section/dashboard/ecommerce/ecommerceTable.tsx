@@ -1,6 +1,6 @@
 import type { ProductDTO } from '@api/ecommerce/products/products.type'
 import { UserModel } from '@api/user/user.type'
-import { Avatar, Chips, Flex, Grid, Heading, IconButton, Text, Table, Paper, Color } from '@pillar-ui/core'
+import { Avatar, Chips, Flex, Heading, IconButton, Text, Table, Paper } from '@pillar-ui/core'
 import { DotsHorizontal, Star } from '@pillar-ui/icons'
 import { useLoaderData } from 'react-router-dom'
 
@@ -11,57 +11,6 @@ const ChipsColor = {
   Sport: 'su',
   Walking: 'w',
 } as const
-
-const BestSeller = () => {
-  const { users } = useLoaderData() as {
-    products: ProductDTO[]
-    users: UserModel[]
-  }
-  // const [current, setCurrent] = useState(1);
-  return (
-    <Paper as="section" aria-labelledby="best-seller-id" className="fl-1 l_box">
-      <Flex as="header">
-        <Heading id="best-seller-id" as="h3" size="3">
-          Best Seller
-        </Heading>
-      </Flex>
-      <Table>
-        <thead>
-          <tr>
-            <th>Products</th>
-            <th>Price</th>
-            <th>Category</th>
-            <th>Rating</th>
-            <th>Orders</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map(({ slug, avatar, name }) => (
-            <tr key={slug}>
-              <td>
-                <Flex gap="4">
-                  <Avatar title={`${name} profile's Picture`} src={`${avatar}`} size="5" corner="3" />
-                  <div className="u_leading-sm">
-                    <Heading as="h4" size="4" truncate="1" weight="5">
-                      {name}
-                    </Heading>
-                    <Text size="3" color="b" low>
-                      28 Jul 2022
-                    </Text>
-                  </div>
-                </Flex>
-              </td>
-              <td>Price</td>
-              <td>Category</td>
-              <td>Rating</td>
-              <td>Rating</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-    </Paper>
-  )
-}
 
 const BestSelling = () => {
   const { products } = useLoaderData() as {

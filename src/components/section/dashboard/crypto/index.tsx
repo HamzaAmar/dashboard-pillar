@@ -5,9 +5,9 @@ import { HistoryTrading } from './historyTrading'
 
 const Crypto = () => {
   return (
-    <Paper as="section" flow="7" aria-labelledby="crypto-page-id">
+    <Paper as="section" flow="5" aria-labelledby="crypto-page-id">
       <Flex items="center" wrap justify="between">
-        <Heading size="7" weight="5" id="crypto-page-id">
+        <Heading size="6" weight="5" id="crypto-page-id">
           Crypto Page
         </Heading>
         <Breadcrumb>

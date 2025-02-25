@@ -39,7 +39,7 @@ const Article = ({ count, title }: EcommerceDashboardArticleProps) => {
       </div>
       <Flex as="header" justify="between" items="center">
         <Button as={Link} to="#" size="3" variant="soft" color="b">
-          View Your Eearning
+          View Your Earning
         </Button>
         <Text as={Flex} gap="1" low color={statusObj[status].color} size="3" weight="5">
           {statusObj[status].icon}

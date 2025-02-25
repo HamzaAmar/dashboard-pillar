@@ -35,13 +35,31 @@ const appointments = [
     day: 'Thu',
     time: '09:00 AM - 11:00 AM',
   },
+  {
+    id: 5,
+    title: 'Compliance Training for Medical Staff',
+    type: 'Online Webinar',
+    date: '06',
+    day: 'Mon',
+    time: '10:00 AM - 12:00 PM',
+  },
+  {
+    id: 6,
+    title: 'Patient Communication Skills Workshop',
+    type: 'In-person Workshop',
+    date: '07',
+    day: 'Fri',
+    time: '01:00 PM - 03:00 PM',
+  },
 ]
 
 export const UpcomingAppointments = () => {
   return (
     <Paper flow="5" className="l_box">
       <Flex justify="between" items="center" className="mb-4">
-        <Heading as="h2">Upcoming Appointments</Heading>
+        <Heading as="h2" size="4">
+          Upcoming Appointments
+        </Heading>
         <Button variant="text">View All</Button>
       </Flex>
       <Paper flow="4">
@@ -63,7 +81,9 @@ export const UpcomingAppointments = () => {
                     <Video width={28} />
                   </Paper>
                   <div>
-                    <Text weight="6">{apt.title}</Text>
+                    <Text weight="5" truncate="1" size="4">
+                      {apt.title}
+                    </Text>
                     <Text size="3" color="b" low>
                       {apt.type}
                     </Text>

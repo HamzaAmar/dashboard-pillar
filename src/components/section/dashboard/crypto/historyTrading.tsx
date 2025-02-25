@@ -14,12 +14,16 @@ const CurrencyRow = ({ name, currency, total, prices }: any) => {
           <Text as="span" weight="5" size="4">
             {name}
           </Text>
-          <Text as="span" size="1" color="b" low>
+          <Text as="span" size="2" color="b" low>
             ({currency})
           </Text>
         </Flex>
       </td>
-      <td>{formatPrice({ number: prices[0].price })}</td>
+      <td>
+        <Text size="3" weight="5">
+          {formatPrice({ number: prices[0].price })}
+        </Text>
+      </td>
       <td>
         <Text as="span" color="d" size="3" low weight="5">
           0.02%
@@ -30,7 +34,11 @@ const CurrencyRow = ({ name, currency, total, prices }: any) => {
           0.15%
         </Text>
       </td>
-      <td>{formatPrice({ number: total })}</td>
+      <td>
+        <Text size="3" weight="5">
+          {formatPrice({ number: total })}
+        </Text>
+      </td>
       <td>
         <Text size="3">{formatPrice({ number: total })}</Text>
         <Text size="3" color="b" low>
@@ -39,10 +47,10 @@ const CurrencyRow = ({ name, currency, total, prices }: any) => {
       </td>
       <td>
         <Flex gap="3" items="center">
-          <Button variant="soft" icon={<Cart />} size="3">
+          <Button variant="soft" icon={<Cart />} size="4">
             Buy
           </Button>
-          <IconButton corner="full" title="action settings" icon={<DotsHorizontal />} size="4" />
+          <IconButton variant="text" title="action settings" icon={<DotsHorizontal />} size="3" />
         </Flex>
       </td>
     </tr>
@@ -51,7 +59,7 @@ const CurrencyRow = ({ name, currency, total, prices }: any) => {
 
 const CurrencyTable = () => {
   return (
-    <Paper flow="5" as="section" style={{ overflow: 'hidden' }} className="trading-activity">
+    <Paper flow="5" as="section" style={{ overflow: 'hidden' }} className="l_box trading-activity">
       <Flex justify="between" items="center">
         <div>
           <Heading>Recent Trading Activities</Heading>
@@ -59,7 +67,7 @@ const CurrencyTable = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </Text>
         </div>
-        <IconButton icon={<DotsHorizontal />} title="Settings" />
+        <IconButton size="3" variant="text" icon={<DotsHorizontal />} title="Settings" />
       </Flex>
       <Table>
         <thead>

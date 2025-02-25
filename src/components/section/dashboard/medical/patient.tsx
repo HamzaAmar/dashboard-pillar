@@ -4,12 +4,12 @@ import { Paper, Heading } from '@pillar-ui/core'
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts'
 
 const visitSex = [
-  { name: 'Female', value: 15.5, color: 'var(--Su9)' },
-  { name: 'Male', value: 10.2, color: 'var(--W9)' },
+  { name: 'Female', value: 15.5, color: 'var(--D9)' },
+  { name: 'Male', value: 10.2, color: 'var(--Se9)' },
 ]
 
 const visitAge = [
-  { name: 'old', value: 45, color: 'var(--Su9)' },
+  { name: 'old', value: 45, color: 'var(--Se11)' },
   { name: 'Adult', value: 30, color: 'var(--Se9)' },
   { name: 'Baby', value: 15, color: 'var(--P9)' },
   { name: 'Teenger', value: 10, color: 'var(--I9)' },
@@ -24,15 +24,15 @@ export const PatientVisits = () => {
           <PieChart>
             <Pie
               data={visitSex}
-              innerRadius={50}
+              innerRadius={0}
               fill="red"
               stroke="var(--B3)"
-              outerRadius={80}
-              paddingAngle={5}
+              outerRadius={100}
+              paddingAngle={0}
               dataKey="value"
             >
               {visitSex.map((entry, index) => (
-                <Cell radius={4} key={index} fill={entry.color} />
+                <Cell radius={20} key={index} fill={entry.color} />
               ))}
             </Pie>
             <Tooltip />
@@ -44,9 +44,9 @@ export const PatientVisits = () => {
         <Heading size="4">Patients Age Static</Heading>
         <ResponsiveContainer height="100%" aspect={1 / 1}>
           <PieChart>
-            <Pie data={visitAge} fill="red" stroke="var(--B3)" outerRadius={80} paddingAngle={2} dataKey="value">
+            <Pie stroke="var(--B1)" data={visitAge} innerRadius={50} outerRadius={90} paddingAngle={0} dataKey="value">
               {visitAge.map((entry, index) => (
-                <Cell key={index} fill={entry.color} />
+                <Cell key={index} stroke={entry.color} fill={entry.color} />
               ))}
             </Pie>
             <Tooltip />

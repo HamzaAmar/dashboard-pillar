@@ -11,7 +11,7 @@ import {
   Paper,
   Text,
 } from '@pillar-ui/core'
-import { CircleHelp, DotsHorizontal, Envelop, Eye, SquareInfo, Message, Phone, Video } from '@pillar-ui/icons'
+import { DotsHorizontal, Envelop, Eye, SquareInfo, Message, Phone, Video, Plus } from '@pillar-ui/icons'
 import { useLoaderData } from 'react-router-dom'
 import { ContactCardProps } from './contact.type'
 
@@ -20,7 +20,7 @@ const Card = ({ name, email, avatar, phone }: ContactCardProps) => {
     <Paper as="article" flow="6" className="contact-card l_box">
       <Flex justify="between" items="start">
         <Flex as="header" gap="3">
-          <Avatar title={name} src={avatar} />
+          <Avatar variant="outline" title={name} src={avatar} />
           <div className="u_leading__sm">
             <Heading weight="5" size="4">
               {name}
@@ -39,13 +39,13 @@ const Card = ({ name, email, avatar, phone }: ContactCardProps) => {
 
       <Flex justify="between" items="center">
         <Flex gap="2">
-          <IconButton size="4" icon={<Phone />} title={`Voice Call ${name}`} />
-          <IconButton size="4" icon={<Message />} title={`Video Message ${name}`} />
-          <IconButton size="4" icon={<Envelop />} title={`Send Email ${name}`} />
-          <IconButton size="4" icon={<Video />} title={`Video Call ${name}`} />
+          <IconButton variant="shadow" color="su" size="4" icon={<Phone />} title={`Voice Call ${name}`} />
+          <IconButton color="se" size="4" icon={<Video />} title={`Video Call ${name}`} />
+          <IconButton color="w" size="4" icon={<Message />} title={`Video Message ${name}`} />
+          <IconButton color="p" size="4" icon={<Envelop />} title={`Send Email ${name}`} />
           <IconButton size="4" icon={<Eye />} title={`View  ${name} Profile `} />
         </Flex>
-        <Button icon={<SquareInfo />} color="d" variant="soft" size="4">
+        <Button icon={<SquareInfo />} color="d" variant="text" size="4">
           Report
         </Button>
       </Flex>
@@ -58,7 +58,7 @@ const Contact = () => {
   return (
     <Paper as="section" flow="6">
       <Flex justify="between" items="center">
-        <Heading size="7">Manage Contact List</Heading>
+        <Heading size="6">Manage Contact List</Heading>
         <Breadcrumb>
           <BreadcrumbItem href="../../">Home</BreadcrumbItem>
           <BreadcrumbItem href="../..">Dashboard</BreadcrumbItem>
@@ -68,7 +68,7 @@ const Contact = () => {
         </Breadcrumb>
       </Flex>
       <Flex justify="end">
-        <Button variant="soft" icon={<CircleHelp />}>
+        <Button variant="shadow" icon={<Plus />}>
           New Contact
         </Button>
       </Flex>

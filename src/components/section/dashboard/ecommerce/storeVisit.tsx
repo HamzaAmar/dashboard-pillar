@@ -26,7 +26,7 @@ export const StoreVisit = () => {
     <Grid as="section" cols={{ default: '1fr', md: '300px 1fr' }} gap="4">
       <article aria-label="user analytics">
         <Flex className="l_box" justify="center" items="center" direction="col" gap="5">
-          <Avatar size="8" title={`${me.name} Profile Picture`} src={me.avatar} />
+          <Avatar size="6" title={`${me.name} Profile Picture`} src={me.avatar} />
           <div className="account-settings-user-name">
             <Text weight="5" size="5">
               {me.name}
@@ -36,36 +36,36 @@ export const StoreVisit = () => {
             </Text>
           </div>
           <Flex justify="between" gap="6">
-            <Flex items="center" justify="center" gap="2" direction="col">
-              <Text weight="5" size="4">
-                34K
-              </Text>
-              <Text size="4" color="b" low>
+            <Flex items="center" justify="center" direction="col">
+              <Text size="3" color="b" low>
                 Sales
               </Text>
-            </Flex>
-            <Flex items="center" justify="center" gap="1" direction="col">
-              <Text weight="5" size="4">
+              <Text weight="6" size="4">
                 34K
               </Text>
-              <Text size="4" color="b" low>
+            </Flex>
+            <Flex items="center" justify="center" direction="col">
+              <Text size="3" color="b" low>
                 Customers
               </Text>
-            </Flex>
-            <Flex items="center" justify="center" gap="1" direction="col">
-              <Text weight="5" size="4">
-                1200
+              <Text weight="6" size="4">
+                34K
               </Text>
-              <Text size="4" color="b" low>
+            </Flex>
+            <Flex items="center" justify="center" direction="col">
+              <Text size="3" color="b" low>
                 Products
+              </Text>
+              <Text weight="6" size="4">
+                1200
               </Text>
             </Flex>
           </Flex>
           <Flex gap="3" items="center">
-            <Button className="fl-1" icon={<Settings />}>
+            <Button variant="shadow" className="fl-1" icon={<Settings />}>
               Settings
             </Button>
-            <IconButton size="4" title={`${me.name} Account Settings`} icon={<DotsHorizontal />} />
+            <IconButton variant="text" size="4" title={`${me.name} Account Settings`} icon={<DotsHorizontal />} />
           </Flex>
         </Flex>
       </article>

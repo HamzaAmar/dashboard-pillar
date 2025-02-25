@@ -25,9 +25,7 @@ export interface StoreVisitProgressProps {
   title: string
 }
 
-export interface CryptoCurrencyItemProps extends CryptoPrices {
-  color?: Color
-}
+export interface CryptoCurrencyItemProps extends CryptoPrices {}
 
 export interface PagesProps {
   title: string

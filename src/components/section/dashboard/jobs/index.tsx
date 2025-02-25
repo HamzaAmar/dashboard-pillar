@@ -12,12 +12,13 @@ import {
 import { JobStaticArticle, JobStatics } from './statics'
 import { JobOptions } from './option'
 import { Jobs } from './jobs'
+import StatisticsDashboardPage from './jobStatistics'
 
 const JobsSection = () => {
   return (
-    <Paper as="section" flow="7" aria-labelledby="dashboard--page-id">
+    <Paper as="section" flow="5" aria-labelledby="dashboard--page-id">
       <Flex items="center" justify="between">
-        <Heading as="h1" id="dashboard--page-id" size="7">
+        <Heading as="h1" id="dashboard--page-id" size="5">
           E_commerce Dashboard
         </Heading>
         <Breadcrumb>
@@ -28,9 +29,9 @@ const JobsSection = () => {
           </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Paper as="section" flow="5" aria-labelledby="job-analytics-id">
+      <Paper as="section" flow="5" className="l_box" aria-labelledby="job-analytics-id">
         <div>
-          <Heading id="job-analytics-id" as="h2">
+          <Heading id="job-analytics-id" as="h2" size="5">
             Jobs Analytics
           </Heading>
           <Text color="b" low size="3">
@@ -40,6 +41,8 @@ const JobsSection = () => {
 
         <JobOptions />
       </Paper>
+
+      <StatisticsDashboardPage />
 
       <Grid cols={{ default: '1fr', lg: '1fr 1fr' }} gap="5">
         <JobStatics />

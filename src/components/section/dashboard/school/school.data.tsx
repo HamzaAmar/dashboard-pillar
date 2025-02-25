@@ -1,4 +1,4 @@
-import { Building, Dollar, Users, Laptop, Movies, Video, Camera, Palette, Microphone } from '@pillar-ui/icons'
+import { Building, Dollar, Users, Laptop, Video, Camera, Palette, Microphone } from '@pillar-ui/icons'
 import { MetricCardProps } from './school.type'
 import { Avatar } from '@pillar-ui/core'
 

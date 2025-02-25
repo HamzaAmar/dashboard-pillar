@@ -200,7 +200,7 @@ export const SalesCharts = () => {
     <Grid gap="4" cols={{ default: '1fr', md: '1fr 1fr' }}>
       <Paper flow="8" className="l_box">
         <Heading weight="5">Best Selling By Category</Heading>
-        <ResponsiveContainer width="100%" aspect={2 / 1}>
+        <ResponsiveContainer width="100%" height={300}>
           <BarChart data={data}>
             <CartesianGrid strokeDasharray="3 3" stroke="var(--B5)" vertical={false} />
             <XAxis
@@ -241,7 +241,7 @@ export const SalesCharts = () => {
         <Heading size="7" weight="5">
           Best Selling By Category
         </Heading>
-        <ResponsiveContainer width="100%" aspect={2 / 1}>
+        <ResponsiveContainer width="100%" height={300}>
           <LineChart data={bestSellingData}>
             <CartesianGrid strokeDasharray="3 3" stroke="var(--B5)" />
             <XAxis

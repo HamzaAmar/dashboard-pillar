@@ -34,7 +34,7 @@ interface MetricProps {
 export const Metric = ({ title, value, change, icon, color }: MetricProps) => {
   return (
     <Paper key={title} className="l_box">
-      <Flex direction="col" gap="3">
+      <Paper flow="3">
         <Flex items="center" justify="between">
           <Text color="b" low>
             {title}
@@ -42,14 +42,14 @@ export const Metric = ({ title, value, change, icon, color }: MetricProps) => {
           {icon}
         </Flex>
         <Flex justify="between" items="center">
-          <Text size="7" weight="7">
+          <Text size="7" weight="6" leading="2">
             {value}
           </Text>
           <Chips variant="soft" color={change.startsWith('+') ? 'su' : 'd'} size="3">
             {change}
           </Chips>
         </Flex>
-      </Flex>
+      </Paper>
     </Paper>
   )
 }

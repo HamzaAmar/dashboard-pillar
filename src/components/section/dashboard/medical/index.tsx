@@ -7,6 +7,7 @@ import { PatientsList } from './patients'
 import { DoctorsList } from './doctors'
 import { UpcomingAppointments } from './upcomingEvent'
 import { Treatments } from './treatments'
+import PatientsOverviewCard from './patientOverview'
 
 export const MedicalDashboard = () => {
   return (
@@ -21,7 +22,10 @@ export const MedicalDashboard = () => {
       <Grid cols={{ default: '1fr', lg: '1.5fr 2fr 2fr' }} gap="4">
         <PatientVisits />
         <UpcomingAppointments />
-        <Treatments />
+        <Paper flow="4">
+          <Treatments />
+          <PatientsOverviewCard />
+        </Paper>
       </Grid>
 
       <PatientsList />
