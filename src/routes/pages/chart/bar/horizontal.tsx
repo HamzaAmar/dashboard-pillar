@@ -1,4 +1,5 @@
-import { Bar, BarChart, CartesianGrid, Legend, Rectangle, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { ChartLayout } from '../chartLayout'
 
 const data = [
   { country: 'South Korea', value: 1500 },
@@ -15,14 +16,24 @@ const data = [
 
 export const Horizontal = () => {
   return (
-    <ResponsiveContainer width="100%" aspect={2 / 1}>
-      <BarChart data={data} layout="vertical">
-        <CartesianGrid vertical={false} stroke="var(--B7)" />
-        <XAxis type="number" domain={[0, 1500]} />
-        <YAxis type="category" dataKey="country" fontSize={10} interval={0} width={50} />
-        <Tooltip />
-        <Bar dataKey="value" fill="var(--Se9)" radius={[0, 6, 6, 0]} />
-      </BarChart>
-    </ResponsiveContainer>
+    <ChartLayout title="Horizontal Bar Chart">
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart data={data} layout="vertical">
+          <CartesianGrid vertical={false} stroke="var(--B5)" />
+          <XAxis axisLine={false} tickLine={false} fontSize="12" type="number" domain={[0, 1500]} />
+          <YAxis
+            axisLine={false}
+            tickLine={false}
+            type="category"
+            dataKey="country"
+            fontSize={10}
+            interval={0}
+            width={50}
+          />
+          <Tooltip />
+          <Bar dataKey="value" fill="var(--Se9)" radius={[0, 6, 6, 0]} />
+        </BarChart>
+      </ResponsiveContainer>
+    </ChartLayout>
   )
 }

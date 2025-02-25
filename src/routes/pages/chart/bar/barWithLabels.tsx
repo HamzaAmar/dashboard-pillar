@@ -1,4 +1,5 @@
-import { Tooltip, BarChart, Bar, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Cell } from 'recharts'
+import { Tooltip, BarChart, Bar, ResponsiveContainer, XAxis, YAxis, Cell } from 'recharts'
+import { ChartLayout } from '../chartLayout'
 
 const data = [
   {
@@ -55,7 +56,7 @@ const data = [
 
 const CustomizedLabel = ({ x, y, stroke, width, value }: any) => {
   return (
-    <text x={x + width / 2} y={y} dy={-4} fill={stroke} fontSize={10} textAnchor="middle">
+    <text x={x + width / 2} y={y} dy={-4} stroke={stroke} fontSize={10} textAnchor="middle">
       {value}
     </text>
   )
@@ -63,18 +64,18 @@ const CustomizedLabel = ({ x, y, stroke, width, value }: any) => {
 
 export const BarWithLabel = () => {
   return (
-    <ResponsiveContainer width="100%" aspect={2 / 1}>
-      <BarChart width={150} height={40} data={data}>
-        <XAxis dataKey="name" stroke="var(--B12)" angle={-45} textAnchor="end" fontSize={10} color="red" />
-        <YAxis domain={[0, 4500]} stroke="var(--B8)" strokeDasharray="3 3" />
-        <CartesianGrid stroke="var(--B8)" strokeDasharray="3 3" />
-        <Tooltip />
-        <Bar radius={[100, 100, 0, 0]} dataKey="uv" label={<CustomizedLabel />}>
-          {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={entry.color} />
-          ))}
-        </Bar>
-      </BarChart>
-    </ResponsiveContainer>
+    <ChartLayout title="Bar chart With Label">
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart margin={{ top: 20, right: 10, left: 10, bottom: 0 }} width={150} height={40} data={data}>
+          <XAxis dataKey="name" stroke="var(--B11)" fontSize={12} tickLine={false} axisLine={false} />
+          <Tooltip />
+          <Bar radius={[100, 100, 0, 0]} dataKey="uv" label={<CustomizedLabel />}>
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={entry.color} />
+            ))}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+    </ChartLayout>
   )
 }

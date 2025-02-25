@@ -9,6 +9,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
+import { ChartLayout } from '../chartLayout'
 
 const data = [
   { ageRange: '85+', males: 0.5, females: -0.5 },
@@ -33,30 +34,42 @@ const data = [
 
 export const PyramidHorizontal = () => {
   return (
-    <ResponsiveContainer width="100%" aspect={2 / 1.25}>
-      <BarChart
-        barGap={-10}
-        barSize={10}
-        width={800}
-        height={600}
-        data={data}
-        layout="vertical"
-        margin={{ top: 20, bottom: 5 }}
-      >
-        <CartesianGrid strokeDasharray="3 3" horizontal={true} />
-        <XAxis
-          type="number"
-          domain={[-6, 6]}
-          ticks={[-6, -4, -2, 0, 2, 4, 6]}
-          tickFormatter={(value) => `${Math.abs(value)}%`}
-        />
-        <YAxis type="category" dataKey="ageRange" width={50} />
-        <Tooltip formatter={(value: number) => `${Math.abs(value)}%`} labelFormatter={(label) => `Age: ${label}`} />
-        <Legend verticalAlign="top" height={36} />
-        <ReferenceLine height={30} width={30} x={0} stroke="var(--B12)" />
-        <Bar dataKey="males" fill="var(--Se9)" name="Males" />
-        <Bar dataKey="females" fill="var(--P9)" name="Females" />
-      </BarChart>
-    </ResponsiveContainer>
+    <ChartLayout title="Pyramid Horizontal Bar Chart">
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart
+          barGap={-10}
+          barSize={10}
+          width={800}
+          height={600}
+          data={data}
+          layout="vertical"
+          margin={{ top: 20, bottom: 5 }}
+        >
+          <XAxis
+            fontSize={12}
+            axisLine={false}
+            tickLine={false}
+            type="number"
+            domain={[-6, 6]}
+            ticks={[-6, -4, -2, 0, 2, 4, 6]}
+            tickFormatter={(value) => `${Math.abs(value)}%`}
+          />
+          <YAxis
+            axisLine={false}
+            tickLine={false}
+            widths={30}
+            fontSize={12}
+            type="category"
+            dataKey="ageRange"
+            width={50}
+          />
+          <Tooltip formatter={(value: number) => `${Math.abs(value)}%`} labelFormatter={(label) => `Age: ${label}`} />
+          <Legend verticalAlign="bottom" />
+          <ReferenceLine height={30} width={30} x={0} stroke="var(--B12)" />
+          <Bar dataKey="males" fill="var(--Se9)" name="Males" />
+          <Bar dataKey="females" fill="var(--P9)" name="Females" />
+        </BarChart>
+      </ResponsiveContainer>
+    </ChartLayout>
   )
 }

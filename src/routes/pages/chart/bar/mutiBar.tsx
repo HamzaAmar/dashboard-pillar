@@ -13,6 +13,7 @@ import {
   TooltipProps,
 } from 'recharts'
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent'
+import { ChartLayout } from '../chartLayout'
 
 const data = [
   {
@@ -77,27 +78,29 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameT
 
 export const MultiBar = () => {
   return (
-    <ResponsiveContainer width="100%" aspect={2 / 1}>
-      <BarChart
-        width={500}
-        height={300}
-        data={data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" stroke="var(--B6)" />
-        <XAxis dataKey="name" fontSize={14} />
-        <YAxis />
-        <Tooltip content={<CustomTooltip />} />
-        <Legend />
-        <Bar dataKey="pv" fill="var(--P9)" activeBar={<Rectangle fill="var(--P10)" stroke="var(--P10)" />} />
-        <Bar dataKey="uv" fill="var(--Se9)" activeBar={<Rectangle fill="var(--Se11)" stroke="var(--Se10)" />} />
-        <Bar dataKey="amt" fill="var(--I9)" activeBar={<Rectangle fill="var(--I11)" stroke="var(--I10)" />} />
-      </BarChart>
-    </ResponsiveContainer>
+    <ChartLayout title="Multiple Bar Chart">
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 0,
+            right: 10,
+            left: 10,
+            bottom: 0,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" stroke="var(--B6)" />
+          <XAxis dataKey="name" fontSize={12} tickLine={false} axisLine={false} />
+          <YAxis width={30} fontSize={12} />
+          <Tooltip content={<CustomTooltip />} />
+          <Legend />
+          <Bar dataKey="pv" fill="var(--P9)" activeBar={<Rectangle fill="var(--P10)" stroke="var(--P10)" />} />
+          <Bar dataKey="uv" fill="var(--Se9)" activeBar={<Rectangle fill="var(--Se11)" stroke="var(--Se10)" />} />
+          <Bar dataKey="amt" fill="var(--I9)" activeBar={<Rectangle fill="var(--I11)" stroke="var(--I10)" />} />
+        </BarChart>
+      </ResponsiveContainer>
+    </ChartLayout>
   )
 }

@@ -1,20 +1,6 @@
-import { Heading, Paper } from '@pillar-ui/core'
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  TooltipProps,
-  RadarChart,
-  PolarGrid,
-  Radar,
-  PolarAngleAxis,
-} from 'recharts'
+import { Tooltip, ResponsiveContainer, TooltipProps, RadarChart, PolarGrid, Radar, PolarAngleAxis } from 'recharts'
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent'
+import { ChartLayout } from '../chartLayout'
 
 const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameType>) => {
   if (active && payload && payload.length) {
@@ -39,17 +25,16 @@ const data = [
 ]
 export const RadarGridCircle = () => {
   return (
-    <Paper as="article" flow="5">
-      <Heading>Basic Line Chart</Heading>
-      <ResponsiveContainer width="100%" aspect={2 / 1}>
+    <ChartLayout title="Radar Grid Circle">
+      <ResponsiveContainer width="100%" height={300}>
         <RadarChart data={data}>
           <Tooltip content={<CustomTooltip />} />
-          <PolarAngleAxis dataKey="month" />
-          <PolarGrid gridType="circle" radialLines={false} />
+          <PolarAngleAxis dataKey="month" tick={{ fill: 'var(--B11)', fontSize: 12 }} />
+          <PolarGrid gridType="circle" radialLines={false} stroke="var(--B5)" />
           <Radar dot={{ r: 4, fillOpacity: 1 }} dataKey="mobile" fill="var(--I9)" fillOpacity={0.6} />
           <Radar dot={{ r: 4, fillOpacity: 1 }} dataKey="desktop" fill="var(--Se9)" fillOpacity={0.6} />
         </RadarChart>
       </ResponsiveContainer>
-    </Paper>
+    </ChartLayout>
   )
 }

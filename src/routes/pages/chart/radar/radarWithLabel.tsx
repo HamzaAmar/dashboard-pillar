@@ -1,5 +1,6 @@
 import React from 'react'
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer, Tooltip } from 'recharts'
+import { ChartLayout } from '../chartLayout'
 
 type DataPoint = {
   subject: string
@@ -26,24 +27,23 @@ export const RadarWithLabel = () => {
   ]
 
   return (
-    <div className="w-full h-96 bg-gray-900 p-4">
-      <div className="text-gray-300 text-lg mb-4">Radar with Polygon Fill</div>
-      <ResponsiveContainer width="100%" aspect={2 / 1}>
+    <ChartLayout title="Radar with Label">
+      <ResponsiveContainer width="100%" height={300}>
         <RadarChart data={data}>
-          <PolarGrid stroke="#444" />
-          <PolarAngleAxis dataKey="subject" tick={{ fill: '#888', fontSize: 12 }} tickSize={18} />
-          <PolarRadiusAxis angle={90} domain={[0, 180]} tick={{ fill: '#888', fontSize: 12 }} />
+          <PolarGrid stroke="var(--B6)" />
+          <PolarAngleAxis dataKey="subject" tick={{ fill: 'var(--B11)', fontSize: 12 }} tickSize={18} />
+          <PolarRadiusAxis angle={90} domain={[0, 180]} tick={{ fill: 'var(--B11)', fontSize: 12 }} />
           <Radar
             name="Values"
             dataKey="value"
-            stroke="#8884d8"
-            fill="#8884d8"
+            stroke="var(--I9)"
+            fill="var(--I9)"
             fillOpacity={0.6}
             label={<CustomizedLabel />}
           />
           <Tooltip />
         </RadarChart>
       </ResponsiveContainer>
-    </div>
+    </ChartLayout>
   )
 }

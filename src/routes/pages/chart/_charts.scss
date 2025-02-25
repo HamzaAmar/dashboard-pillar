@@ -1,3 +1,30 @@
+.charts-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--S6);
+  & > * {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    border: 1px solid var(--B5);
+    padding: var(--S4);
+    border-radius: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .charts-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .charts-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 .chart-tooltip {
   background-color: var(--B1);
   border: 1px solid var(--B6);
@@ -8,11 +35,20 @@
   fill: var(--B4);
 }
 
-.recharts-default-tooltip {
+.recharts-default-tooltip,
+.recharts-tooltip-wrapper {
   background-color: var(--B2) !important;
   color: var(--B12) !important;
   border-color: var(--B5) !important;
   border-radius: 0.75rem;
+}
+
+.recharts-tooltip-item {
+  color: var(--B12) !important;
+}
+
+.recharts-tooltip-wrapper {
+  color: red;
 }
 
 .recharts-tooltip-item {

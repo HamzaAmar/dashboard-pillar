@@ -1,16 +1,5 @@
-import { Heading, Paper } from '@pillar-ui/core'
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  TooltipProps,
-} from 'recharts'
-import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { ChartLayout } from '../chartLayout'
 
 const data = [
   { month: 'January', orders: 120 },
@@ -27,32 +16,19 @@ const data = [
   { month: 'December', orders: 40 },
 ]
 
-const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameType>) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="chart-tooltip">
-        <p style={{ margin: 0, color: 'var(--P11)' }}>{`Month: ${label}`}</p>
-        <p style={{ margin: 0, color: 'var(--P11)' }}>{`Orders: ${payload[0].value}`}</p>
-      </div>
-    )
-  }
-
-  return null
-}
 export const StepLine = () => {
   return (
-    <Paper as="article" flow="5">
-      <Heading>Basic Line Chart</Heading>
-      <ResponsiveContainer width="100%" aspect={2 / 1}>
-        <LineChart width={500} height={300} data={data}>
+    <ChartLayout title="Step Line Chart">
+      <ResponsiveContainer width="100%" height={300}>
+        <LineChart margin={{ top: 0, right: 0, left: 0, bottom: 0 }} data={data}>
           <Line type="step" dataKey="orders" stroke="var(--P9)" strokeWidth={2} dot={{ r: 0 }} activeDot={{ r: 6 }} />
           <XAxis dataKey="month" stroke="var(--B12)" angle={-45} textAnchor="end" fontSize={12} color="red" />
-          <YAxis stroke="var(--B12)" />
+          <YAxis tickLine={false} width={30} fontSize={12} stroke="var(--B12)" />
           <CartesianGrid stroke="var(--B8)" strokeDasharray="3 3" />
-          <Tooltip content={<CustomTooltip />} />
+          <Tooltip />
           <Legend />
         </LineChart>
       </ResponsiveContainer>
-    </Paper>
+    </ChartLayout>
   )
 }

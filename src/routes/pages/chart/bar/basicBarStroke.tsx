@@ -1,20 +1,6 @@
 import { Tooltip } from '@pillar-ui/core'
-import { Legend } from '@visx/legend'
-import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, CartesianGrid, TooltipProps } from 'recharts'
-import type { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent'
-
-const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameType>) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="chart-tooltip">
-        <p style={{ margin: 0, color: 'var(--P11)' }}>{`Month: ${label}`}</p>
-        <p style={{ margin: 0, color: 'var(--P11)' }}>{`Orders: ${payload[0].value}`}</p>
-      </div>
-    )
-  }
-
-  return null
-}
+import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis } from 'recharts'
+import { ChartLayout } from '../chartLayout'
 
 const data = [
   {
@@ -63,21 +49,24 @@ const data = [
 
 export const BasicBarStroke = () => {
   return (
-    <ResponsiveContainer width="100%" aspect={2 / 1}>
-      <BarChart reverseStackOrder width={150} height={40} data={data}>
-        <Bar
-          dataKey="uv"
-          fill="var(--P9)"
-          radius={[10, 10, 0, 0]}
-          fillOpacity={0.5}
-          strokeWidth={2}
-          stroke="var(--P9)"
-        />
-        <XAxis dataKey="month" stroke="var(--B12)" angle={-45} textAnchor="end" fontSize={12} color="red" />
-        <YAxis stroke="var(--B12)" />
-        <CartesianGrid stroke="var(--B8)" strokeDasharray="3 3" />
-        <Tooltip />
-      </BarChart>
-    </ResponsiveContainer>
+    <ChartLayout title="Basic Bar Chart">
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart margin={{ top: 0, right: 10, left: 10, bottom: 0 }} data={data}>
+          <Bar dataKey="uv" fill="var(--P9)" radius={[10, 10, 10, 10]} stroke="var(--P9)" />
+          <XAxis
+            axisLine={false}
+            tickLine={false}
+            dataKey="month"
+            stroke="var(--B12)"
+            angle={-45}
+            textAnchor="end"
+            fontSize={12}
+            color="red"
+          />
+          <YAxis fontSize={12} width={30} axisLine={false} tickLine={false} stroke="var(--B12)" />
+          <Tooltip />
+        </BarChart>
+      </ResponsiveContainer>
+    </ChartLayout>
   )
 }

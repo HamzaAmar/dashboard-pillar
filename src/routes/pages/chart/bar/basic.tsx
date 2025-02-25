@@ -1,20 +1,6 @@
 import { Tooltip } from '@pillar-ui/core'
-import { Legend } from '@visx/legend'
-import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, CartesianGrid, TooltipProps } from 'recharts'
-import type { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent'
-
-const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameType>) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="chart-tooltip">
-        <p style={{ margin: 0, color: 'var(--P11)' }}>{`Month: ${label}`}</p>
-        <p style={{ margin: 0, color: 'var(--P11)' }}>{`Orders: ${payload[0].value}`}</p>
-      </div>
-    )
-  }
-
-  return null
-}
+import { BarChart, Bar, ResponsiveContainer, XAxis } from 'recharts'
+import { ChartLayout } from '../chartLayout'
 
 const data = [
   {
@@ -63,14 +49,22 @@ const data = [
 
 export const BasicBar = () => {
   return (
-    <ResponsiveContainer width="100%" aspect={2 / 1}>
-      <BarChart width={150} height={40} data={data}>
-        <Bar dataKey="uv" fill="var(--P9)" />
-        <XAxis dataKey="month" stroke="var(--B12)" angle={-45} textAnchor="end" fontSize={12} color="red" />
-        <YAxis stroke="var(--B12)" />
-        <CartesianGrid stroke="var(--B8)" strokeDasharray="3 3" />
-        <Tooltip />
-      </BarChart>
-    </ResponsiveContainer>
+    <ChartLayout title="Basic Bar Chart">
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart width={150} height={40} data={data}>
+          <Bar dataKey="uv" fill="var(--P9)" />
+          <XAxis
+            domain={[0, 5000]}
+            stroke="var(--B11)"
+            angle={-45}
+            textAnchor="end"
+            fontSize={12}
+            tickLine={false}
+            axisLine={false}
+          />
+          <Tooltip />
+        </BarChart>
+      </ResponsiveContainer>
+    </ChartLayout>
   )
 }

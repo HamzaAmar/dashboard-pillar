@@ -1,5 +1,6 @@
 import React from 'react'
 import { PieChart, Pie, Cell, Label, LabelList, Legend, ResponsiveContainer } from 'recharts'
+import { ChartLayout } from '../chartLayout'
 
 interface RatingData {
   rating: string
@@ -31,26 +32,10 @@ const CustomLabel = ({ viewBox }: { viewBox?: { cx: number; cy: number } }) => {
   const { cx, cy } = viewBox || { cx: 0, cy: 0 }
   return (
     <g>
-      <text
-        fontWeight="700"
-        fontSize={18}
-        x={cx}
-        y={cy - 10}
-        textAnchor="middle"
-        dominantBaseline="central"
-        className="text-2xl font-bold"
-      >
+      <text fontWeight="700" fontSize={18} x={cx} y={cy - 10} textAnchor="middle" dominantBaseline="central">
         100%
       </text>
-      <text
-        fontWeight="700"
-        fontSize={18}
-        x={cx}
-        y={cy + 15}
-        textAnchor="middle"
-        dominantBaseline="central"
-        className="text-base text-gray-500"
-      >
+      <text fontSize={14} x={cx} y={cy + 15} textAnchor="middle" dominantBaseline="central" fill="var(--B11)">
         Completed
       </text>
     </g>
@@ -59,34 +44,28 @@ const CustomLabel = ({ viewBox }: { viewBox?: { cx: number; cy: number } }) => {
 
 export const TeamActivityChart = () => {
   return (
-    <div className="w-full max-w-md p-6">
-      <h2 className="text-2xl font-bold mb-8">Team activity</h2>
-
-      <div className="relative">
-        <ResponsiveContainer width="100%" aspect={2 / 1}>
-          <PieChart width={400} height={250}>
-            <Pie
-              data={data}
-              cx="50%"
-              cy="50%"
-              innerRadius={60}
-              outerRadius={100}
-              startAngle={180}
-              endAngle={0}
-              paddingAngle={4}
-              dataKey="percentage"
-            >
-              {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.color} />
-              ))}
-              <Label content={<CustomLabel />} position="center" />
-              <LabelList dataKey="percentage" position="outside" content={<CustomizeLabel />} />
-            </Pie>
-            <Legend width={150} verticalAlign="middle" align="right" layout="vertical" iconType="rect" />
-          </PieChart>
-        </ResponsiveContainer>
-      </div>
-    </div>
+    <ChartLayout title="HalfChart">
+      <ResponsiveContainer width="100%" height={300}>
+        <PieChart>
+          <Pie
+            data={data}
+            cx="50%"
+            cy="50%"
+            innerRadius={60}
+            outerRadius={100}
+            startAngle={180}
+            endAngle={0}
+            dataKey="percentage"
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={entry.color} stroke={entry.color} />
+            ))}
+            <Label content={<CustomLabel />} position="center" />
+          </Pie>
+          <Legend height={30} iconType="rect" />
+        </PieChart>
+      </ResponsiveContainer>
+    </ChartLayout>
   )
 }
 

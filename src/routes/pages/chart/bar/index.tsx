@@ -10,14 +10,20 @@ import { BasicBarStroke } from './basicBarStroke'
 import { DynamicColor } from './dynamicColor'
 import { BarWithLabel } from './barWithLabels'
 import { DynamicBarData } from './dynamicData'
+import { PatternBarChart } from './patterBar'
+import { GradientBarChart } from './gradient'
+import { XAxisAbove } from './basicXAxisAbove'
 
 export const Component = () => {
   return (
     <Paper flow="5" className="l_box">
-      <Grid cols={{ default: '1fr', md: '1fr 1fr' }}>
+      <Grid gap="4" cols={{ default: '1fr', md: '1fr 1fr' }} className="charts-container">
         <BasicBar />
+        <XAxisAbove />
         <DynamicBarData />
         <BarWithLabel />
+        <PatternBarChart />
+        <GradientBarChart />
         <BasicBarStroke />
         <MultiBar />
         <DynamicColor />

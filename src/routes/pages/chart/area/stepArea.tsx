@@ -1,18 +1,5 @@
-import { ResponsiveContainer, XAxis, CartesianGrid, TooltipProps, AreaChart, Area, Tooltip } from 'recharts'
-import type { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent'
-
-const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameType>) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="chart-tooltip">
-        <p style={{ margin: 0, color: 'var(--P11)' }}>{`Month: ${label}`}</p>
-        <p style={{ margin: 0, color: 'var(--P11)' }}>{`Orders: ${payload[0].value}`}</p>
-      </div>
-    )
-  }
-
-  return null
-}
+import { ResponsiveContainer, XAxis, AreaChart, Area, Tooltip } from 'recharts'
+import { ChartLayout } from '../chartLayout'
 
 const data = [
   { month: 'January', desktop: 186 },
@@ -21,36 +8,31 @@ const data = [
   { month: 'April', desktop: 73 },
   { month: 'May', desktop: 209 },
   { month: 'June', desktop: 214 },
-  { month: 'July', desktop: 287 }, // Random value
-  { month: 'August', desktop: 142 }, // Random value
-  { month: 'September', desktop: 321 }, // Random value
-  { month: 'October', desktop: 95 }, // Random value
-  { month: 'November', desktop: 264 }, // Random value
-  { month: 'December', desktop: 178 }, // Random value
+  { month: 'July', desktop: 287 },
+  { month: 'August', desktop: 142 },
+  { month: 'September', desktop: 321 },
+  { month: 'October', desktop: 95 },
+  { month: 'November', desktop: 264 },
+  { month: 'December', desktop: 178 },
 ]
 
 export const StepArea = () => {
   return (
-    <ResponsiveContainer width="100%" aspect={2 / 1}>
-      <AreaChart
-        accessibilityLayer
-        data={data}
-        margin={{
-          left: 12,
-          right: 12,
-        }}
-      >
-        <CartesianGrid vertical={false} />
-        <XAxis
-          dataKey="month"
-          tickLine={false}
-          axisLine={false}
-          tickMargin={8}
-          tickFormatter={(value) => value.slice(0, 3)}
-        />
-        <Tooltip content={<CustomTooltip />} />
-        <Area dataKey="desktop" type="step" fill="var(--Se6)" fillOpacity={0.6} stroke="var(--Se9)" />
-      </AreaChart>
-    </ResponsiveContainer>
+    <ChartLayout title="Step Area Chart">
+      <ResponsiveContainer width="100%" height={300}>
+        <AreaChart accessibilityLayer data={data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
+          <XAxis
+            dataKey="month"
+            tickLine={false}
+            axisLine={false}
+            tickMargin={8}
+            fontSize={12}
+            tickFormatter={(value) => value.slice(0, 3)}
+          />
+          <Tooltip />
+          <Area dataKey="desktop" type="step" fill="var(--Se6)" fillOpacity={0.6} stroke="var(--Se9)" />
+        </AreaChart>
+      </ResponsiveContainer>
+    </ChartLayout>
   )
 }

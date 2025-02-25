@@ -1,4 +1,5 @@
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { ChartLayout } from '../chartLayout'
 
 type DataPoint = {
   name: string
@@ -23,11 +24,9 @@ const data: DataPoint[] = [
 
 const NegativeAreaChart = () => {
   return (
-    <div className="w-full max-w-4xl p-4 bg-gray-900 text-gray-200">
-      <h2 className="text-xl font-semibold mb-4">Area with Negative Values</h2>
-
-      <ResponsiveContainer width="100%" aspect={2 / 1}>
-        <AreaChart width={800} height={400} data={data} margin={{ top: 20, right: 30, left: 50, bottom: 5 }}>
+    <ChartLayout title="Negative area chart">
+      <ResponsiveContainer width="100%" height={300}>
+        <AreaChart data={data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
           <defs>
             <linearGradient id="northGradient" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="var(--Se8)" stopOpacity={0.5} />
@@ -38,20 +37,24 @@ const NegativeAreaChart = () => {
               <stop offset="95%" stopColor="var(--P8)" stopOpacity={0.3} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="#444" />
-          <XAxis dataKey="name" stroke="#999" />
-          <YAxis stroke="#999" domain={[-200, 400]} ticks={[-200, -100, 0, 100, 200, 300, 400]} />
-          <Tooltip
-            contentStyle={{ backgroundColor: '#333', border: 'none' }}
-            itemStyle={{ color: '#fff' }}
-            labelStyle={{ color: '#fff' }}
+          <CartesianGrid vertical={false} horizontal={false} />
+          <XAxis fontSize={12} axisLine={false} tickLine={false} dataKey="name" stroke="#999" />
+          <YAxis
+            axisLine={false}
+            tickLine={false}
+            stroke="#999"
+            domain={[-200, 400]}
+            ticks={[-200, -100, 0, 100, 200, 300, 400]}
+            width={30}
+            fontSize={12}
           />
+          <Tooltip />
           <Legend />
           <Area type="monotone" dataKey="north" stroke="var(--Se9)" fill="url(#northGradient)" name="north" />
           <Area type="monotone" dataKey="south" stroke="var(--P9)" fill="url(#southGradient)" name="south" />
         </AreaChart>
       </ResponsiveContainer>
-    </div>
+    </ChartLayout>
   )
 }
 

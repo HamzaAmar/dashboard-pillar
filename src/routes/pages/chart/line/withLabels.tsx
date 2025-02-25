@@ -13,6 +13,7 @@ import {
   LabelList,
 } from 'recharts'
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent'
+import { ChartLayout } from '../chartLayout'
 
 // Sample data based on the image
 const data = [
@@ -47,12 +48,11 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameT
 // Main Chart Component
 export const LinesWithLabels = () => {
   return (
-    <Paper as="article" flow="5">
-      <Heading as="h2">Line Chart With Data Labels</Heading>
-      <ResponsiveContainer width="100%" aspect={2 / 1}>
-        <LineChart data={data} margin={{ top: 40 }}>
+    <ChartLayout title="Basic Line Chart">
+      <ResponsiveContainer width="100%" height={300}>
+        <LineChart margin={{ top: 10, right: 10, left: 0, bottom: 0 }} data={data}>
           <XAxis fontSize={14} dataKey="month" angle={-45} textAnchor="end" />
-          <YAxis domain={[18, 48]} label={{ value: 'Temperature', angle: -90, position: 'insideLeft' }} />
+          <YAxis tickLine={false} width={30} fontSize={12} domain={[18, 48]} />
           <CartesianGrid stroke="var(--B8)" strokeDasharray="3 3" />
           <Tooltip content={<CustomTooltip />} />
           <Legend margin={{ top: 50, right: 0 }} />
@@ -89,6 +89,6 @@ export const LinesWithLabels = () => {
           </Line>
         </LineChart>
       </ResponsiveContainer>
-    </Paper>
+    </ChartLayout>
   )
 }

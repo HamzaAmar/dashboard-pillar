@@ -1,20 +1,6 @@
 import { Tooltip } from '@pillar-ui/core'
-import { Legend } from '@visx/legend'
-import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, CartesianGrid, TooltipProps } from 'recharts'
-import type { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent'
-
-const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameType>) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="chart-tooltip">
-        <p style={{ margin: 0, color: 'var(--P11)' }}>{`Month: ${label}`}</p>
-        <p style={{ margin: 0, color: 'var(--P11)' }}>{`Orders: ${payload[0].value}`}</p>
-      </div>
-    )
-  }
-
-  return null
-}
+import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, CartesianGrid } from 'recharts'
+import { ChartLayout } from '../chartLayout'
 
 const data = [
   {
@@ -75,15 +61,24 @@ const data = [
 
 export const Stacked = () => {
   return (
-    <ResponsiveContainer width="100%" aspect={2 / 1}>
-      <BarChart width={150} height={40} data={data}>
-        <Bar dataKey="uv" fill="var(--P9)" stackId="a" />
-        <Bar dataKey="uv" fill="var(--Se9)" stackId="a" />
-        <XAxis dataKey="month" stroke="var(--B12)" angle={-45} textAnchor="end" fontSize={12} color="red" />
-        <YAxis stroke="var(--B12)" />
-        <CartesianGrid stroke="var(--B8)" strokeDasharray="3 3" />
-        <Tooltip />
-      </BarChart>
-    </ResponsiveContainer>
+    <ChartLayout title="Stacked Bar Chart">
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart width={150} height={40} data={data}>
+          <Bar dataKey="uv" fill="var(--P9)" stackId="a" />
+          <Bar dataKey="uv" fill="var(--I9)" stackId="a" />
+          <XAxis
+            tickLine={false}
+            axisLine={false}
+            dataKey="month"
+            stroke="var(--B12)"
+            angle={-45}
+            textAnchor="end"
+            fontSize={12}
+          />
+          <YAxis fontSize={12} tickLine={false} axisLine={false} width={30} stroke="var(--B12)" />
+          <Tooltip />
+        </BarChart>
+      </ResponsiveContainer>
+    </ChartLayout>
   )
 }

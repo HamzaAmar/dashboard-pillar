@@ -28,11 +28,11 @@
 //   return (
 //     <Paper as="article" flow="5">
 //       <Heading>Basic Line Chart</Heading>
-//       <ResponsiveContainer width="100%" aspect={2 / 1}>
+//       <ResponsiveContainer width="100%"height={300}>
 //         <RadarChart data={data}>
 //           <Tooltip content={<CustomTooltip />} />
-//           <PolarAngleAxis dataKey="month" />
-//           <PolarGrid />
+//           <PolarAngleAxis dataKey="month" tick={{ fill: 'var(--B11)', fontSize: 12 }} />
+//           <PolarGrid stroke="var(--B5)" />
 //           <Radar dataKey="desktop" fill="var(--Se9)" fillOpacity={0.6} />
 //           <Radar dataKey="phone" fill="var(--P9)" fillOpacity={0.6} />
 //         </RadarChart>
@@ -44,6 +44,7 @@
 import { Heading, Paper } from '@pillar-ui/core'
 import { Tooltip, ResponsiveContainer, TooltipProps, RadarChart, PolarGrid, Radar, PolarAngleAxis } from 'recharts'
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent'
+import { ChartLayout } from '../chartLayout'
 
 const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameType>) => {
   if (active && payload && payload.length) {
@@ -109,20 +110,19 @@ const data = [
 
 export const MutlipleRadars = () => {
   return (
-    <Paper as="article" flow="5">
-      <Heading>Top 5 Soccer Players Performance Matrix</Heading>
-      <ResponsiveContainer width="100%" aspect={2 / 1}>
-        <RadarChart data={data}>
+    <ChartLayout title="Stacked Radar Chart">
+      <ResponsiveContainer width="100%" height={300}>
+        <RadarChart margin={{ top: 0, right: 0, left: 0, bottom: 0 }} data={data}>
           <Tooltip content={<CustomTooltip />} />
-          <PolarAngleAxis dataKey="player" />
-          <PolarGrid />
-          <Radar dataKey="goals" fill="var(--Se9)" fillOpacity={0.6} />
-          <Radar dataKey="assists" fill="var(--P9)" fillOpacity={0.6} />
+          <PolarAngleAxis dataKey="player" tick={{ fill: 'var(--B11)', fontSize: 12 }} />
+          <PolarGrid stroke="var(--B5)" />
           <Radar dataKey="dribbles" fill="var(--I9)" fillOpacity={0.6} />
           <Radar dataKey="tackles" fill="var(--Su9)" fillOpacity={0.6} />
           <Radar dataKey="aerialDuelsWon" fill="var(--W9)" fillOpacity={0.6} />
+          <Radar dataKey="assists" fill="var(--P9)" fillOpacity={0.6} />
+          <Radar dataKey="goals" fill="var(--Se9)" fillOpacity={0.6} />
         </RadarChart>
       </ResponsiveContainer>
-    </Paper>
+    </ChartLayout>
   )
 }

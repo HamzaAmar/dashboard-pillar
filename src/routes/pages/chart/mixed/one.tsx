@@ -12,6 +12,7 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 import { Heading, Paper } from '@pillar-ui/core'
+import { ChartLayout } from '../chartLayout'
 
 const data = [
   { month: 'Jan 03', teamA: 20, teamB: 45, teamC: 25 },
@@ -29,39 +30,42 @@ const data = [
 
 export const MultipleChart = ({ title = 'Combo Chart' }: { title?: string }) => {
   return (
-    <Paper flow="5" className="l_box">
-      <Heading as="h2" className="text-xl text-white mb-4">
-        {title}
-      </Heading>
-      <ResponsiveContainer width="100%" aspect={2 / 1}>
-        <ComposedChart accessibilityLayer data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#444" vertical={false} />
-          <XAxis dataKey="month" stroke="#fff" tick={{ fill: 'var(--B11)', fontSize: 12 }} />
-          <YAxis stroke="#fff" tick={{ fill: 'var(--B11)', fontSize: 12 }} />
+    <ChartLayout title={title}>
+      <ResponsiveContainer width="100%" height={300}>
+        <ComposedChart accessibilityLayer data={data} margin={{ top: 0, right: 10, left: 0, bottom: 0 }}>
+          <defs>
+            <linearGradient id="teamA" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="var(--I9)" />
+              <stop offset="90%" stopColor="var(--P9)" />
+            </linearGradient>
+          </defs>
+          <CartesianGrid strokeDasharray="3 3" stroke="var(--B7)" vertical={false} />
+          <XAxis dataKey="month" tickLine={false} axisLine={false} tick={{ fill: 'var(--B11)', fontSize: 12 }} />
+          <YAxis width={30} axisLine={false} tickLine={false} tick={{ fill: 'var(--B11)', fontSize: 12 }} />
           <Tooltip />
           <Legend iconType="circle" />
           <Area
             animationDuration={1000}
             animationEasing="ease"
-            dot={{ r: 4, fillOpacity: 1 }}
+            dot={{ r: 3, fillOpacity: 1 }}
             type="monotone"
             dataKey="teamB"
-            fill="#00a8a8"
-            stroke="#00a8a8"
+            fill="var(--Su8)"
+            stroke="var(--Su9)"
             fillOpacity={0.3}
             name="TEAM B"
           />
           <Line
-            dot={{ r: 4, fillOpacity: 1, fill: 'var(--B1)' }}
+            dot={{ r: 3, fillOpacity: 1, fill: 'var(--W9)' }}
             type="monotone"
             dataKey="teamC"
-            stroke="#ffa500"
+            stroke="var(--W9)"
             strokeWidth={2}
             name="TEAM C"
           />
-          <Bar dataKey="teamA" fill="#8884d8" name="TEAM A" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="teamA" fill="url(#teamA)" name="TEAM A" radius={[8, 8, 0, 0]} barSize={25} />
         </ComposedChart>
       </ResponsiveContainer>
-    </Paper>
+    </ChartLayout>
   )
 }

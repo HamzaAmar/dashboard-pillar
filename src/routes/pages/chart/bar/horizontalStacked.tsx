@@ -1,4 +1,5 @@
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { ChartLayout } from '../chartLayout'
 
 const data = [
   {
@@ -69,19 +70,21 @@ const data = [
 
 export const HorizontalStacked = () => {
   return (
-    <ResponsiveContainer width="100%" aspect={2 / 1}>
-      <BarChart data={data} layout="vertical">
-        <Legend />
-        <CartesianGrid vertical={false} stroke="var(--B7)" />
-        <XAxis type="number" />
-        <YAxis type="category" dataKey="name" fontSize={10} interval={0} width={50} />
-        <Tooltip />
-        <Bar dataKey="discountSales" stackId="a" fill="var(--D9)" />
-        <Bar dataKey="wholesaleSales" stackId="a" fill="var(--P9)" />
-        <Bar dataKey="onlineSales" stackId="a" fill="var(--Se9)" />
-        <Bar dataKey="inStoreSales" stackId="a" fill="var(--Su9)" />
-        <Bar dataKey="totalSales" stackId="a" fill="var(--W9)" />
-      </BarChart>
-    </ResponsiveContainer>
+    <ChartLayout title="Horizontal Stacked Bar Chart">
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart data={data} layout="vertical">
+          <Legend />
+          <CartesianGrid vertical={false} stroke="var(--B5)" />
+          <XAxis type="number" stroke="var(--B11)" fontSize={12} axisLine={false} tickLine={false} />
+          <YAxis fontSize={12} width={30} type="category" dataKey="name" interval={0} />
+          <Tooltip />
+          <Bar dataKey="discountSales" stackId="a" fill="var(--D9)" />
+          <Bar dataKey="wholesaleSales" stackId="a" fill="var(--P9)" />
+          <Bar dataKey="onlineSales" stackId="a" fill="var(--Se9)" />
+          <Bar dataKey="inStoreSales" stackId="a" fill="var(--Su9)" />
+          <Bar dataKey="totalSales" stackId="a" fill="var(--W9)" />
+        </BarChart>
+      </ResponsiveContainer>
+    </ChartLayout>
   )
 }

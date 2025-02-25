@@ -1,6 +1,6 @@
-import { Heading, Paper } from '@pillar-ui/core'
 import { Tooltip, ResponsiveContainer, TooltipProps, RadarChart, PolarGrid, Radar, PolarAngleAxis } from 'recharts'
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent'
+import { ChartLayout } from '../chartLayout'
 
 const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameType>) => {
   if (active && payload && payload.length) {
@@ -25,16 +25,15 @@ const data = [
 ]
 export const RadarLineOnly = () => {
   return (
-    <Paper as="article" flow="5">
-      <Heading>Basic Line Chart</Heading>
-      <ResponsiveContainer width="100%" aspect={2 / 1}>
+    <ChartLayout title="Radar Line Only">
+      <ResponsiveContainer width="100%" height={300}>
         <RadarChart data={data}>
           <Tooltip content={<CustomTooltip />} />
-          <PolarAngleAxis dataKey="month" />
+          <PolarAngleAxis dataKey="month" tick={{ fill: 'var(--B11)', fontSize: 12 }} />
           <PolarGrid radialLines={false} stroke="var(--B6)" />
           <Radar dataKey="desktop" fill="var(--Se9)" fillOpacity={0} stroke="var(--Se9)" strokeWidth={2} />
         </RadarChart>
       </ResponsiveContainer>
-    </Paper>
+    </ChartLayout>
   )
 }

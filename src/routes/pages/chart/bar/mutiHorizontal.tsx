@@ -1,4 +1,5 @@
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { ChartLayout } from '../chartLayout'
 
 const data = [
   { country: 'South Korea', company: 1500, history: 1200 },
@@ -15,15 +16,17 @@ const data = [
 
 export const MultiHorizontal = () => {
   return (
-    <ResponsiveContainer width="100%" aspect={2 / 1}>
-      <BarChart data={data} layout="vertical">
-        <CartesianGrid strokeDasharray="3 3" horizontal={false} />
-        <XAxis type="number" domain={[0, 2500]} />
-        <YAxis interval={0} fontSize={10} type="category" dataKey="country" />
-        <Tooltip />
-        <Bar dataKey="company" fill="var(--P9)" radius={[0, 6, 6, 0]} />
-        <Bar dataKey="history" fill="var(--Se9)" radius={[0, 6, 6, 0]} />
-      </BarChart>
-    </ResponsiveContainer>
+    <ChartLayout title="Horizontal Stacked Bar Chart">
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart data={data} layout="vertical">
+          <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+          <XAxis fontSize={12} tickLine={false} axisLine={false} type="number" domain={[0, 2500]} />
+          <YAxis interval={0} fontSize={10} type="category" dataKey="country" />
+          <Tooltip />
+          <Bar dataKey="company" fill="var(--P9)" radius={[0, 6, 6, 0]} />
+          <Bar dataKey="history" fill="var(--Se9)" radius={[0, 6, 6, 0]} />
+        </BarChart>
+      </ResponsiveContainer>
+    </ChartLayout>
   )
 }

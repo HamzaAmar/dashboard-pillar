@@ -1,4 +1,5 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { ChartLayout } from '../chartLayout'
 
 interface Data {
   month: string
@@ -88,13 +89,12 @@ const COLORS = Object.keys(colors) as Colors[]
 
 export const StackedLines = () => {
   return (
-    <div className="w-full h-96 p-4 bg-gray-900 rounded-lg">
-      <h2 className="text-xl text-white mb-4">JavaScript Framework Trends</h2>
-      <ResponsiveContainer width="100%" aspect={2 / 1}>
-        <LineChart data={data}>
+    <ChartLayout title="Basic Line Chart">
+      <ResponsiveContainer width="100%" height={300}>
+        <LineChart margin={{ top: 0, right: 10, left: 10, bottom: 0 }} data={data}>
           <CartesianGrid strokeDasharray="3 3" stroke="#444" />
-          <XAxis dataKey="month" stroke="#fff" />
-          <YAxis stroke="#fff" tickFormatter={(value) => `${value / 1000}k`} />
+          <XAxis tick={{ fontSize: 12 }} dataKey="month" stroke="#fff" />
+          <YAxis width={30} tick={{ fontSize: 12 }} stroke="#fff" tickFormatter={(value) => `${value / 1000}k`} />
           <Tooltip
             contentStyle={{
               backgroundColor: '#1a1a1a',
@@ -117,6 +117,6 @@ export const StackedLines = () => {
           ))}
         </LineChart>
       </ResponsiveContainer>
-    </div>
+    </ChartLayout>
   )
 }

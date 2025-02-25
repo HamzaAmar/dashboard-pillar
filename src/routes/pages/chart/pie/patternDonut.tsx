@@ -28,6 +28,7 @@ const CustomizedLabel = (props: any) => {
       x={x}
       y={y}
       fill="white"
+      fontSize={12}
       textAnchor="middle"
       dominantBaseline="central"
       transform={`rotate(${rotate}, ${x}, ${y})`}
@@ -42,8 +43,8 @@ export const PatternedDonutChart = () => {
   return (
     <div className="w-full max-w-xl p-4 bg-gray-900 text-gray-200">
       <h2 className="text-xl mb-4">Favourite Movie Type</h2>
-      <ResponsiveContainer width="100%" aspect={2 / 1}>
-        <PieChart width={400} height={400}>
+      <ResponsiveContainer width="100%" height={300}>
+        <PieChart accessibilityLayer width={400} height={400}>
           <defs>
             <linearGradient id="first" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="var(--Se9)" />
@@ -82,22 +83,7 @@ export const PatternedDonutChart = () => {
             ))}
           </Pie>
 
-          {/* Center Text */}
-
-          <text x="37%" y="50%" textAnchor="middle" dominantBaseline="middle" className="text-gray-400">
-            Total
-          </text>
-          <text
-            x="36%"
-            y="60%"
-            textAnchor="middle"
-            dominantBaseline="middle"
-            className="text-xl font-bold text-gray-200"
-          >
-            172
-          </text>
-
-          <Legend width={150} verticalAlign="middle" align="right" layout="vertical" iconType="rect" />
+          <Legend />
         </PieChart>
       </ResponsiveContainer>
     </div>
