@@ -218,6 +218,7 @@ export const SalesCharts = () => {
               fontSize={12}
               tick={{ fill: 'var(--B11)' }}
               tickFormatter={(value) => `$${value}k`}
+              width={30}
             />
             <Tooltip formatter={(value: number) => [`${value}%`, 'Value']} cursor={{ fill: 'transparent' }} />
             <Bar
@@ -259,6 +260,7 @@ export const SalesCharts = () => {
               fontSize={12}
               tick={{ fill: 'var(--B11)' }}
               tickFormatter={(value) => `$${value}k`}
+              width={30}
             />
             <Tooltip formatter={(value: number) => [`$${value}k`, 'Sales']} cursor={{ stroke: 'var(--B6)' }} />
             <Legend iconType="circle" verticalAlign="top" height={36} />

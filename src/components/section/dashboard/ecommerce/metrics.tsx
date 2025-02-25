@@ -35,7 +35,9 @@ const METRICS = [
 export const EcommerceMetrics = () => {
   return (
     <Grid gap="5" cols={{ default: '1fr', md: '2fr 1fr' }}>
-      <MultipleChart />
+      <section className="l_box">
+        <MultipleChart title="Best Selling TEAMS" />
+      </section>
       <Paper flow="5">
         {METRICS.map(({ id, ...rest }) => (
           <Metric key={id} {...rest} />

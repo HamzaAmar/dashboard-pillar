@@ -1,4 +1,4 @@
-import { Breadcrumb, BreadcrumbItem, Flex, Grid, Heading, Paper } from '@pillar-ui/core'
+import { Breadcrumb, BreadcrumbItem, Flex, Heading, Paper } from '@pillar-ui/core'
 import { StoreVisit } from './storeVisit'
 import { SalesAnalytics } from './salesAnalytics'
 import { SalesCharts } from './salesCharts'
