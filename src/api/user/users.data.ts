@@ -21,6 +21,7 @@ export const USERS_LIST: UserModel[] = [
     },
     phone: '+(1) 9936022',
     email: 'samir_lamir@gmail.com',
+    state: 'online',
   },
 
   {
@@ -43,6 +44,7 @@ export const USERS_LIST: UserModel[] = [
     },
     phone: '+(1) 9936022',
     email: 'Lamia-Hello@gmail.com',
+    state: 'online',
   },
   {
     slug: 'kent-c-dodds-12skj4df34',
@@ -64,6 +66,7 @@ export const USERS_LIST: UserModel[] = [
     },
     phone: '+(1) 9936022',
     email: 'Kent.C.dodds@gmail.com',
+    state: 'offline',
   },
   {
     slug: 'dan-san-man-12kls56',
@@ -85,6 +88,7 @@ export const USERS_LIST: UserModel[] = [
     },
     phone: '+(1) 9936022',
     email: 'DanSanMan@gmail.com',
+    state: 'online',
   },
   {
     slug: 'ryan-forty-12nbv87',
@@ -106,6 +110,7 @@ export const USERS_LIST: UserModel[] = [
     },
     phone: '+(1) 9936022',
     email: 'ryan-florence@gmail.com',
+    state: 'offline',
   },
   {
     slug: 'user-6',
@@ -127,6 +132,7 @@ export const USERS_LIST: UserModel[] = [
     },
     phone: '+(1) 9936022',
     email: 'michealjackson@gmail.com',
+    state: 'offline',
   },
   {
     slug: 'user-7',
@@ -148,6 +154,7 @@ export const USERS_LIST: UserModel[] = [
     },
     phone: '+(1) 9936022',
     email: 'sara soueidan@gmail.com',
+    state: 'online',
   },
   {
     slug: 'user-8',
@@ -169,6 +176,7 @@ export const USERS_LIST: UserModel[] = [
     },
     phone: '+(1) 9936022',
     email: 'Latifa-man@gmail.com',
+    state: 'offline',
   },
   {
     slug: 'user-9',
@@ -190,6 +198,7 @@ export const USERS_LIST: UserModel[] = [
     },
     phone: '+(1) 9936022',
     email: 'samia-foulik@gmail.com',
+    state: 'offline',
   },
   {
     slug: 'user-10',
@@ -211,6 +220,7 @@ export const USERS_LIST: UserModel[] = [
     },
     phone: '+(1) 9936022',
     email: 'SaraDrasner@gmail.com',
+    state: 'offline',
   },
   {
     slug: 'user-11',
@@ -232,6 +242,7 @@ export const USERS_LIST: UserModel[] = [
     },
     phone: '+(1) 9936022',
     email: 'surmaHello@gmail.com',
+    state: 'offline',
   },
   {
     slug: 'user-12',
@@ -253,6 +264,7 @@ export const USERS_LIST: UserModel[] = [
     },
     phone: '+(1) 9936022',
     email: 'Kaoutar Lamix@gmail.com',
+    state: 'online',
   },
   {
     slug: 'user-13',
@@ -274,6 +286,7 @@ export const USERS_LIST: UserModel[] = [
     },
     phone: '+(1) 9936022',
     email: 'Sebastian Lance@gmail.com',
+    state: 'online',
   },
   {
     slug: 'user-14',
@@ -295,6 +308,7 @@ export const USERS_LIST: UserModel[] = [
     },
     phone: '+(1) 9936022',
     email: 'Fifi Lwifi@gmail.com',
+    state: 'online',
   },
   {
     slug: 'user-15',
@@ -316,6 +330,7 @@ export const USERS_LIST: UserModel[] = [
     },
     phone: '+(1) 9936022',
     email: 'Kolina Serbou@gmail.com',
+    state: 'offline',
   },
   {
     slug: 'user-16',
@@ -337,6 +352,7 @@ export const USERS_LIST: UserModel[] = [
     },
     phone: '+(1) 9936022',
     email: 'john Louiss@gmail.com',
+    state: 'online',
   },
   {
     slug: 'user-17',
@@ -358,5 +374,6 @@ export const USERS_LIST: UserModel[] = [
     },
     phone: '+(1) 9936022',
     email: 'sara soueidan@gmail.com',
+    state: 'online',
   },
 ]

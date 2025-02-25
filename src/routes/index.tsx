@@ -163,6 +163,30 @@ export const routers = createBrowserRouter([
             path: 'nft',
             lazy: () => import('./pages/dahsboard/nft'),
           },
+          {
+            path: 'crm',
+            lazy: () => import('./pages/dahsboard/crm'),
+          },
+          {
+            path: 'medical',
+            lazy: () => import('./pages/dahsboard/medical'),
+          },
+          {
+            path: 'hrm',
+            lazy: () => import('./pages/dahsboard/hrm'),
+          },
+          {
+            path: 'school',
+            lazy: () => import('./pages/dahsboard/school'),
+          },
+          {
+            path: 'analytics',
+            lazy: () => import('./pages/dahsboard/analytics'),
+          },
+          {
+            path: 'fitness',
+            lazy: () => import('./pages/dahsboard/fitness'),
+          },
         ],
       },
 
@@ -184,7 +208,48 @@ export const routers = createBrowserRouter([
           },
         ],
       },
-      { path: 'icons', lazy: () => import('./pages/icons') },
+      {
+        path: 'charts',
+        children: [
+          {
+            path: 'bar',
+            lazy: () => import('./pages/chart/bar'),
+          },
+          {
+            path: 'line',
+            lazy: () => import('./pages/chart/line'),
+          },
+          {
+            path: 'area',
+            lazy: () => import('./pages/chart/area'),
+          },
+          {
+            path: 'pie',
+            lazy: () => import('./pages/chart/pie'),
+          },
+          {
+            path: 'radar',
+            lazy: () => import('./pages/chart/radar'),
+          },
+          {
+            path: 'mixed',
+            lazy: () => import('./pages/chart/mixed'),
+          },
+          {
+            path: 'radial',
+            lazy: () => import('./pages/chart/radial'),
+          },
+          {
+            path: 'login',
+            lazy: () => import('./pages/authentication/login'),
+          },
+
+          {
+            path: 'forget-password',
+            lazy: () => import('./pages/authentication/forgetPassword'),
+          },
+        ],
+      },
       // { path: '*', lazy: () => import('./pages/noMatch') },
     ],
   },

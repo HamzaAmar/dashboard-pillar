@@ -1,5 +1,5 @@
 import { Avatar, Badge, Chips, Flex, Heading, IconButton, Paper, Text } from '@pillar-ui/core'
-import { Dots } from '@components/icons'
+import { DotsHorizontal } from '@pillar-ui/icons'
 import { classnames } from '@utils/classnames'
 import { getNotifications } from '@api/notifacation'
 import { NotificationDTO } from '@api/notifacation/notification'
@@ -33,7 +33,7 @@ const NotificationCard = ({ user, unread, request, type, description, ...rest }:
       </Flex>
       <Flex gap="3" items="center">
         {unread && <Badge className="notification-badge" type="dot" />}
-        <IconButton title="notification settings" icon={<Dots />} />
+        <IconButton title="notification settings" icon={<DotsHorizontal />} />
       </Flex>
     </Flex>
   )

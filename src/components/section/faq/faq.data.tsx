@@ -1,4 +1,4 @@
-import { Help, User, Users } from '@components/icons'
+import { Help, User, Users } from '@pillar-ui/icons'
 import type { Cards, Questions } from './faq.type'
 
 export const FAQ_HEADER_DATA: Cards = [

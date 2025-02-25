@@ -10,7 +10,7 @@ import {
   AccordionButton,
   Paper,
 } from '@pillar-ui/core'
-import { Message } from '@components/icons'
+import { Message } from '@pillar-ui/icons'
 import { useId } from 'react'
 import { CommonQuestion, FAQ_HEADER_DATA } from './faq.data'
 

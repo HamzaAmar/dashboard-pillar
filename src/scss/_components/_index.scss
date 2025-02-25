@@ -1,3 +1,6 @@
+// Core Style
+@forward '../../components/core/image/image';
+
 @forward '../../components/composition/card/card';
 @forward '../../components/composition/modal/modal';
 @forward '../../components/composition/card/card';
@@ -32,7 +35,6 @@
 @forward '../../components/section/pricing/pricing';
 @forward '../../components/section/notification/notification';
 @forward '../../components/section/profile/profilePhotos/photos';
-@forward '../../components/section/icons/icons';
 @forward '../../components/section/loading/loading';
 
 // Article Style Start
@@ -43,3 +45,6 @@
 
 // Chart Style Start
 @forward '../../components/chart/chart';
+
+// Page Style Start
+@forward '../../routes/pages/chart/charts';

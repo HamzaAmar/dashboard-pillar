@@ -3,6 +3,7 @@ import { ReactNode } from 'react'
 
 const dashboardChildren = [
   { id: 'ecommerce', title: 'E_commerce', icon: <Icons.Dollar width={18} />, to: '/dashboard/ecommerce' },
+  { id: 'school', title: 'School', icon: <Icons.Building width={18} />, to: '/dashboard/school' },
   { id: 'crypto', title: 'Crypto', icon: <Icons.ReportAnalytics width={18} />, to: '/dashboard/crypto' },
   { id: 'jobs', title: 'Jobs', icon: <Icons.Users width={18} />, to: '/dashboard/jobs' },
   { id: 'contact', title: 'Contact', icon: <Icons.Phone width={18} />, to: '/dashboard/contact' },
@@ -10,8 +11,8 @@ const dashboardChildren = [
   { id: 'medical', title: 'Medical', icon: <Icons.Hospital width={18} />, to: '/dashboard/medical' },
   { id: 'crm', title: 'CRM', icon: <Icons.Users width={18} />, to: '/dashboard/crm' },
   { id: 'hrm', title: 'HRM', icon: <Icons.Server width={18} />, to: '/dashboard/hrm' },
-  { id: 'courses', title: 'Course', icon: <Icons.Book width={18} />, to: '/dashboard/courses' },
-  { id: 'school', title: 'School', icon: <Icons.Building width={18} />, to: '/dashboard/school' },
+  { id: 'analytics', title: 'Analytics', icon: <Icons.ChartDot width={18} />, to: '/dashboard/analytics' },
+  { id: 'fitness', title: 'Fitness', icon: <Icons.ChartDot width={18} />, to: '/dashboard/fitness' },
 ]
 
 const pageChildren = [
@@ -34,6 +35,7 @@ const chartChildren = [
   { id: 'pie', title: 'Pie', icon: <Icons.Pie width={18} />, to: '/charts/pie' },
   { id: 'radar', title: 'Radar', icon: <Icons.Radar width={18} />, to: '/charts/radar' },
   { id: 'mixed', title: 'Mixed', icon: <Icons.Dollar width={18} />, to: '/charts/mixed' },
+  { id: 'radial', title: 'Radial', icon: <Icons.Dollar width={18} />, to: '/charts/radial' },
 ]
 const ecommerceChildren = [
   { id: 'products', title: 'Products', icon: <Icons.Dollar width={18} />, to: '/e-commerce/products' },

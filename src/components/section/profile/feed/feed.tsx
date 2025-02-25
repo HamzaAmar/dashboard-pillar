@@ -114,7 +114,7 @@ const UserCardHover = ({ children, user }: any) => {
 const feed = () => {
   return (
     <Grid cols={{ default: '1fr', lg: '1fr 25rem' }} gap="4">
-      <Paper as="section" flow="5">
+      <Paper as="section" flow="5" className="l_box">
         <Heading className="u_sr-only" as="h3">
           Home Posts
         </Heading>

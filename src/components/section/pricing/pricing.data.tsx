@@ -1,5 +1,5 @@
 import { USERS_LIST } from '@api/user/users.data'
-import { Component, FileUpload, Link, Setting, User } from '@components/icons'
+import { Components, FileUpload, Link, Settings, User } from '@pillar-ui/icons'
 import type { FeaturePricingModel, PlanFeatureProps, ReviewProps } from './pricing.type'
 
 export const REVIEW: ReviewProps[] = [
@@ -156,7 +156,7 @@ export const PRICING_FEATURES: FeaturePricingModel = {
 export const FEATURES_PLAN: PlanFeatureProps[] = [
   {
     slug: 'visual',
-    icon: <Component width={32} />,
+    icon: <Components width={32} />,
     title: 'Visual widget builder',
     description: 'the easiest to use drag and drop builder',
   },
@@ -186,7 +186,7 @@ export const FEATURES_PLAN: PlanFeatureProps[] = [
   },
   {
     slug: 'secure-deploy',
-    icon: <Setting width={32} />,
+    icon: <Settings width={32} />,
     title: 'More Secure than others',
     description: 'the easiest to use drag and drop builder',
   },

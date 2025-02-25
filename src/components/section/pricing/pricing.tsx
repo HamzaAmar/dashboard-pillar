@@ -1,19 +1,6 @@
 import { useState, useId } from 'react'
-import {
-  Avatar,
-  Breadcrumb,
-  BreadcrumbItem,
-  Flex,
-  Grid,
-  Heading,
-  TableColumn,
-  TableRow,
-  Text,
-  Rating,
-  Table,
-  Paper,
-} from '@pillar-ui/core'
-import { CircleCheck, CircleCross } from '@components/icons'
+import { Avatar, Breadcrumb, BreadcrumbItem, Flex, Grid, Heading, Text, Rating, Table, Paper } from '@pillar-ui/core'
+import { CircleCheck, CircleX } from '@pillar-ui/icons'
 import type { BillingArticleProps, CompanyRatingProps, Current, PlanFeatureProps, ReviewProps } from './pricing.type'
 import { FEATURES_PLAN, PRICING_FEATURES, REVIEW } from './pricing.data'
 
@@ -136,7 +123,7 @@ const Testimonials = ({ id, user, description, title, company }: ReviewProps) =>
 }
 
 function featureOrNot(feature: boolean) {
-  return feature ? <CircleCheck width={20} /> : <CircleCross stroke="var(--B11)" width={20} />
+  return feature ? <CircleCheck width={20} /> : <CircleX stroke="var(--B11)" width={20} />
 }
 
 export const PricingSection = () => {
@@ -251,27 +238,27 @@ export const PricingSection = () => {
         </div>
         <Table variant="striped">
           <thead>
-            <TableRow type="head">
+            <tr>
               {PRICING_FEATURES.head.map(({ slug, content }) => (
-                <TableColumn key={slug} as="th">
+                <td key={slug}>
                   <Heading as="h3" size="3">
                     {content[0]}
                   </Heading>
                   <Text size="3" color="b" low weight="4">
                     {content[1]}
                   </Text>
-                </TableColumn>
+                </td>
               ))}
-            </TableRow>
+            </tr>
           </thead>
           <tbody>
             {PRICING_FEATURES.body.map(({ slug, title, feature }) => (
-              <TableRow key={slug}>
-                <TableColumn weight="5">{title}</TableColumn>
+              <tr key={slug}>
+                <td>{title}</td>
                 {feature.map((value, index) => (
-                  <TableColumn key={index}>{featureOrNot(value)}</TableColumn>
+                  <td key={index}>{featureOrNot(value)}</td>
                 ))}
-              </TableRow>
+              </tr>
             ))}
           </tbody>
         </Table>

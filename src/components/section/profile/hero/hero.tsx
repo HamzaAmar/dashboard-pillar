@@ -19,7 +19,7 @@ const friends = getUsers({ pageSize: 8 })
 const hero = () => {
   const { avatar, name, role } = user
   return (
-    <section className="hero">
+    <Paper as="section" flow="5" className="hero">
       <div className="hero-image--wrapper">
         <img className="hero--image" src="/images/hero.jfif" alt="" />
         <Button className="hero-image--button" color="b" variant="solid" icon={<Camera width={20} />}>
@@ -27,15 +27,17 @@ const hero = () => {
         </Button>
       </div>
 
-      <Paper flow="4" className="hero--content">
-        <Flex gap="4" className="hero--avatar-wrapper">
-          <Avatar size="8" src={avatar} title={name} />
-          <div className="u_leading--sm">
-            <Heading as="h1" size="6" weight="5">
+      <Paper flow="4">
+        <Flex gap="4" items="center">
+          <Avatar corner="2" size="9" src={avatar} title={name} />
+          <div>
+            <Heading as="h1" size="6" weight="5" leading="1">
               {name}
             </Heading>
-            <Text>{role}</Text>
-            <AvatarGroup size="2" limit={4}>
+            <Text size="3" color="b" low>
+              {role}
+            </Text>
+            <AvatarGroup size="1" limit={4}>
               {friends.map(({ slug, avatar, name }) => (
                 <Avatar src={avatar} key={slug} title={name} />
               ))}
@@ -50,7 +52,7 @@ const hero = () => {
           <SectionItem to="photos" title="Photos" />
         </Flex>
       </Paper>
-    </section>
+    </Paper>
   )
 }
 export default hero

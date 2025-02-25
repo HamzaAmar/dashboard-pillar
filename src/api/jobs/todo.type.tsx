@@ -5,4 +5,5 @@ export interface JobsProps {
   image: string
   company: string
   type: string[]
+  price: string
 }

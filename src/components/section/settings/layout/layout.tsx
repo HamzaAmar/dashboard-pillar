@@ -1,6 +1,6 @@
 import { getUsers } from '@api/user'
 import { Avatar, Button, Flex, Grid, Heading, IconButton, Paper, Text } from '@pillar-ui/core'
-import { Camera, Dots, Facebook, Github, Linkdin, Setting, Twitter } from '@components/icons'
+import { Camera, DotsHorizontal, Facebook, Github, Linkdin, Settings, Twitter } from '@pillar-ui/icons'
 import { NavLink, Outlet } from 'react-router-dom'
 
 const me = getUsers()[0]
@@ -71,10 +71,10 @@ const layout = () => {
                   </Flex>
                 </Flex>
                 <Flex gap="3" items="center">
-                  <Button icon={<Setting />} fluid>
+                  <Button icon={<Settings />} fluid>
                     Settings
                   </Button>
-                  <IconButton title="" icon={<Dots />} />
+                  <IconButton title="" icon={<DotsHorizontal />} />
                 </Flex>
               </Flex>
               <Paper as="article" flow="4" aria-labelledby="social-media-id" className="l_box">

@@ -1,5 +1,5 @@
 import { useId } from 'react'
-import { Avatar, Flex, Heading, IconButton, Text } from '@pillar-ui/core'
+import { Avatar, Flex, Link as PillarLink, IconButton, Text, Paper } from '@pillar-ui/core'
 import { DotsHorizontal } from '@pillar-ui/icons'
 import { UserCardHover } from '@components/article'
 import { Link } from 'react-router-dom'
@@ -9,30 +9,32 @@ const Friend = ({ user }: FriendProps) => {
   const id = `friend-${useId()}-item`
   return (
     <Flex aria-labelledby={id} as="article" className="l_box" items="start" justify="between">
-      <Flex items="center" gap="5">
+      <Flex items="start" gap="5">
         <UserCardHover user={user}>
           <Link to="/">
-            <Avatar size="6" src={user.avatar} corner="3" title={user.name} />
+            <Avatar variant="outline" size="6" src={user.avatar} corner="h6" title={user.name} />
           </Link>
         </UserCardHover>
-        <div className="">
-          <UserCardHover user={user}>
-            <Link className="friend-card--name" to="/">
-              <Heading as="h4" id={id} weight="5">
-                {user.name}
-              </Heading>
-            </Link>
-          </UserCardHover>
+        <Paper flow="3">
+          <div>
+            <UserCardHover user={user}>
+              <Link className="friend-card--name" to="/">
+                <PillarLink color="b" id={id} weight="5" leading="2">
+                  {user.name}
+                </PillarLink>
+              </Link>
+            </UserCardHover>
 
-          <Text color="b" low size="4">
-            {user.role}
-          </Text>
-          <Flex wrap gap="3">
+            <Text color="b" low size="3">
+              {user.role}
+            </Text>
+          </div>
+          <Flex wrap gap="6">
             <Flex gap="1">
               <Text size="3" low weight="5" color="b" as="span">
                 Followers :
               </Text>
-              <Text size="3" as="span">
+              <Text weight="5" size="3" as="span">
                 {user.followers}
               </Text>
             </Flex>
@@ -40,14 +42,14 @@ const Friend = ({ user }: FriendProps) => {
               <Text size="3" weight="5" low color="b" as="span">
                 Following :
               </Text>
-              <Text size="3" as="span">
+              <Text weight="5" size="3" as="span">
                 {user.following}
               </Text>
             </Flex>
           </Flex>
-        </div>
+        </Paper>
       </Flex>
-      <IconButton size="4" icon={<DotsHorizontal />} title="Edit Friends Settings" />
+      <IconButton size="3" variant="text" icon={<DotsHorizontal />} title="Edit Friends Settings" />
     </Flex>
   )
 }

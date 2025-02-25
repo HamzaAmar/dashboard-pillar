@@ -18,6 +18,5 @@ export { CryptoSection, EcommerceSection, JobsSection, NftSection, ContactSectio
 
 export { PricingSection } from './pricing'
 export { NotificationSection } from './notification'
-export { Icons } from './icons'
 export { Faq } from './faq'
 export { LoadingSection } from './loading'

@@ -15,6 +15,7 @@ export interface UserModel {
   contact: Contact
   phone: string
   email: string
+  state?: 'online' | 'offline'
 }
 
 export type UserInfoNameAvatar = Pick<UserModel, 'name' | 'avatar' | 'slug'>

@@ -11,6 +11,7 @@ export interface CryptoPrices {
   image: string
   total: number
   description: string
+  color: string
   prices: CryptoPrice[]
 }
 
@@ -21,7 +22,7 @@ export const TRENDING = [
     abbr: 'BTC',
     image: '/images/crypto/bitcoin.png',
     footer: (
-      <Text low weight="5" size="4" color="d">
+      <Text low weight="5" size="3" color="d">
         -0.5%
       </Text>
     ),
@@ -32,7 +33,7 @@ export const TRENDING = [
     abbr: 'BNB',
     image: '/images/crypto/bnb.png',
     footer: (
-      <Text low weight="5" size="4" color="d">
+      <Text low weight="5" size="3" color="d">
         -0.2%
       </Text>
     ),
@@ -43,7 +44,7 @@ export const TRENDING = [
     image: '/images/crypto/ethereum.png',
     abbr: 'ETH',
     footer: (
-      <Text low weight="5" size="4" color="su">
+      <Text low weight="5" size="3" color="su">
         +0.7%
       </Text>
     ),
@@ -54,7 +55,7 @@ export const TRENDING = [
     image: '/images/crypto/maker.png',
     abbr: 'MKR',
     footer: (
-      <Text low weight="5" size="4" color="su">
+      <Text low weight="5" size="3" color="su">
         +1.1%
       </Text>
     ),
@@ -134,11 +135,10 @@ export const bitcoin: CryptoPrices = {
   name: 'Bitcoin',
   image: 'bitcoin.png',
   description: `Bitcoin is a decentralized cryptocurrency originally described in a 2008 whitepaper by a person, or group of people, using the alias Satoshi Nakamoto. It was launched soon after, in January 2009.
-
   Bitcoin is a peer-to-peer online currency, meaning that all transactions happen directly between equal, independent network participants, without the need for any intermediary to permit or facilitate them. Bitcoin was created, according to Nakamoto’s own words, to allow “online payments to be sent directly from one party to another without going through a financial institution.”
-  
   Some concepts for a similar type of a decentralized electronic currency precede BTC, but Bitcoin holds the distinction of being the first-ever cryptocurrency to come into actual use.`,
   total: 21303652,
+  color: 'var(--W9)',
   prices: [
     { price: 2677.86, time: '2022-12-22T00:00:00Z' },
     { price: 2672.44, time: '2022-12-21T00:00:00Z' },
@@ -207,6 +207,7 @@ export const polygon: CryptoPrices = {
   
   Polygon effectively transforms Ethereum into a full-fledged multi-chain system (aka Internet of Blockchains). This multi-chain system is akin to other ones such as Polkadot, Cosmos, Avalanche etc. with the advantages of Ethereum’s security, vibrant ecosystem and openness.`,
   image: 'polygon.png',
+  color: 'var(--Se9)',
   prices: [
     { price: 0.8602, time: '2022-12-22T00:00:00Z' },
     { price: 0.4402, time: '2022-12-21T00:00:00Z' },
@@ -270,6 +271,7 @@ export const ethereum: CryptoPrices = {
   description: `Ethereum is a decentralized open-source blockchain system that features its own cryptocurrency, Ether. ETH works as a platform for numerous other cryptocurrencies, as well as for the execution of decentralized smart contracts.
   Ethereum was first described in a 2013 whitepaper by Vitalik Buterin. Buterin, along with other co-founders, secured funding for the project in an online public crowd sale in the summer of 2014. The project team managed to raise $18.3 million in Bitcoin, and Ethereum’s price in the Initial Coin Offering (ICO) was $0.311, with over 60 million Ether sold. Taking Ethereum’s price now, this puts the return on investment (ROI) at an annualized rate of over 270%, essentially almost quadrupling your investment every year since the summer of 2014.`,
   image: 'ethereum.png',
+  color: 'var(--B9)',
   prices: [
     { price: 1223.86, time: '2022-12-22T00:00:00Z' },
     { price: 1215.44, time: '2022-12-21T00:00:00Z' },
@@ -332,6 +334,7 @@ export const bnb: CryptoPrices = {
   image: 'bnb.png',
   description: `Launched in July 2017, Binance is the biggest cryptocurrency exchange globally based on daily trading volume. Binance aims to bring cryptocurrency exchanges to the forefront of financial activity globally. The idea behind Binance’s name is to show this new paradigm in global finance — Binary Finance, or Binance.`,
   total: 19854568,
+  color: 'var(--I9)',
   prices: [
     { price: 246.01, time: '2022-12-22T00:00:00Z' },
     { price: 246.01, time: '2022-12-21T00:00:00Z' },
@@ -394,6 +397,7 @@ export const xrp: CryptoPrices = {
   image: 'xrp.png',
   description: `Launched in July 2017, Binance is the biggest cryptocurrency exchange globally based on daily trading volume. Binance aims to bring cryptocurrency exchanges to the forefront of financial activity globally. The idea behind Binance’s name is to show this new paradigm in global finance — Binary Finance, or Binance.`,
   total: 19854568,
+  color: 'var(--P9)',
   prices: [
     { price: 0.46, time: '2022-12-22T00:00:00Z' },
     { price: 0.46, time: '2022-12-21T00:00:00Z' },
@@ -457,6 +461,7 @@ export const pax: CryptoPrices = {
   description: `Pax Gold (PAXG) is a gold-backed cryptocurrency, launched by the creators of Paxos Standard (PAX) in September 2019. As an ERC-20 token operating on the Ethereum blockchain, Pax Gold is tradeable on a large variety of exchanges and has become an accessible way for traders to start investing in gold.
   The main goal behind Pax Gold is to make gold more tradable, as the physical commodity is not easily divisible or flexible in terms of transport. This is why Paxos Standard decided to create a cryptocurrency entirely backed by gold. According to the official whitepaper, Pax Gold was created to allow investors to buy indefinitely small amounts of gold through the cryptocurrency, thus virtually eliminating minimum buy limits for the commodity.`,
   total: 19854568,
+  color: 'var(--D9)',
   prices: [
     { price: 146.01, time: '2022-12-22T00:00:00Z' },
     { price: 146.01, time: '2022-12-21T00:00:00Z' },
@@ -519,6 +524,7 @@ export const decred: CryptoPrices = {
   image: 'decred.png',
   description: `Launched in July 2017, Binance is the biggest cryptocurrency exchange globally based on daily trading volume. Binance aims to bring cryptocurrency exchanges to the forefront of financial activity globally. The idea behind Binance’s name is to show this new paradigm in global finance — Binary Finance, or Binance.`,
   total: 19854568,
+  color: 'var(--Su9)',
   prices: [
     { price: 19.36, time: '2022-12-22T00:00:00Z' },
     { price: 19.35, time: '2022-12-21T00:00:00Z' },
@@ -582,6 +588,7 @@ export const dodgeCoin: CryptoPrices = {
   Initially conceived in 2015 and fully launched in December 2017, Maker is a project whose task is to operate DAI, a community-managed decentralized cryptocurrency with a stable value soft-pegged to the US dollar.
   MKR tokens act as a kind of voting share for the organization that manages DAI; while they do not pay dividends to their holders, they do give the holders voting rights over the development of Maker Protocol and are expected to appreciate in value in accordance with the success of DAI itself.`,
   total: 125447856,
+  color: 'var(--Se9)',
   prices: [
     { price: 5.28, time: '2022-12-22T00:00:00Z' },
     { price: 0.28, time: '2022-12-21T00:00:00Z' },
@@ -646,6 +653,7 @@ export const maker: CryptoPrices = {
   Initially conceived in 2015 and fully launched in December 2017, Maker is a project whose task is to operate DAI, a community-managed decentralized cryptocurrency with a stable value soft-pegged to the US dollar.
   MKR tokens act as a kind of voting share for the organization that manages DAI; while they do not pay dividends to their holders, they do give the holders voting rights over the development of Maker Protocol and are expected to appreciate in value in accordance with the success of DAI itself.`,
   total: 532709250,
+  color: 'var(--W9)',
   prices: [
     { price: 545.28, time: '2022-12-22T00:00:00Z' },
     { price: 560.28, time: '2022-12-21T00:00:00Z' },

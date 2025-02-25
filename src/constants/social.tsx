@@ -1,4 +1,4 @@
-import { Facebook, Github, Twitter, Linkdin } from '@components/icons'
+import { Facebook, Github, Twitter, Linkdin } from '@pillar-ui/icons'
 
 export const SOCIAL_MEDIA = [
   {
