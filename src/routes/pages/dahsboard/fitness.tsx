@@ -19,22 +19,6 @@ import { ChartLine, Heart, Flame, Scale, Clock, Coffee, HandMove, Walking } from
 import FitnessDashboard from '@components/section/dashboard/fitness'
 
 // Sample data
-const activityData = [
-  { date: 'Mon', steps: 8500, calories: 2200, active: 320 },
-  { date: 'Tue', steps: 10200, calories: 2400, active: 380 },
-  { date: 'Wed', steps: 9800, calories: 2300, active: 350 },
-  { date: 'Thu', steps: 11000, calories: 2500, active: 400 },
-  { date: 'Fri', steps: 9500, calories: 2350, active: 360 },
-  { date: 'Sat', steps: 7800, calories: 2100, active: 280 },
-  { date: 'Sun', steps: 6500, calories: 1900, active: 240 },
-]
-
-const activityTypeData = [
-  { name: 'Walking', value: 45, color: '#4CAF50' },
-  { name: 'Running', value: 25, color: '#2196F3' },
-  { name: 'Cycling', value: 20, color: '#FF9800' },
-  { name: 'Gym', value: 10, color: '#9C27B0' },
-]
 
 export const Component = () => {
   return (
@@ -46,39 +30,6 @@ export const Component = () => {
     //       <Heading size="6">Fitness & Health Analytics</Heading>
     //       <Button variant="soft">Download Report</Button>
     //     </Flex>
-
-    //     <Grid cols={{ default: '1fr', lg: '2fr 1fr' }} gap="4">
-    //       <Paper className="l_box">
-    //         <Heading size="4">Weekly Activity Trends</Heading>
-    //         <ResponsiveContainer width="100%" height={300}>
-    //           <LineChart data={activityData}>
-    //             <CartesianGrid strokeDasharray="3 3" />
-    //             <XAxis dataKey="date" />
-    //             <YAxis />
-    //             <Tooltip />
-    //             <Legend />
-    //             <Line type="monotone" dataKey="steps" stroke="#2196F3" name="Steps" />
-    //             <Line type="monotone" dataKey="calories" stroke="#FF9800" name="Calories" />
-    //             <Line type="monotone" dataKey="active" stroke="#4CAF50" name="Active Minutes" />
-    //           </LineChart>
-    //         </ResponsiveContainer>
-    //       </Paper>
-
-    //       <Paper className="l_box">
-    //         <Heading size="4">Activity Distribution</Heading>
-    //         <ResponsiveContainer width="100%" height={300}>
-    //           <PieChart>
-    //             <Pie data={activityTypeData} innerRadius={60} outerRadius={80} paddingAngle={5} dataKey="value">
-    //               {activityTypeData.map((entry, index) => (
-    //                 <Cell key={`cell-${index}`} fill={entry.color} />
-    //               ))}
-    //             </Pie>
-    //             <Tooltip />
-    //             <Legend />
-    //           </PieChart>
-    //         </ResponsiveContainer>
-    //       </Paper>
-    //     </Grid>
 
     //     <Paper className="l_box">
     //       <Heading size="4">Calorie Intake vs. Burn</Heading>

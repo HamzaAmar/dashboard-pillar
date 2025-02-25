@@ -1,5 +1,5 @@
 import { Building, Dollar, Users, Laptop, Video, Camera, Palette, Microphone } from '@pillar-ui/icons'
-import { MetricCardProps } from './school.type'
+import type { AssignmentProps, MetricCardProps } from './school.type'
 import { Avatar } from '@pillar-ui/core'
 
 const fakeData = (points: number, min: number, max: number) => {
@@ -47,30 +47,34 @@ export const METRICS: MetricCardProps[] = [
   },
 ]
 
-export const ASSIGNMENT = [
+export const ASSIGNMENT: AssignmentProps[] = [
   {
     category: 'User experience',
     description: 'Design',
     progress: 72,
     tasks: '120 Tasks',
+    color: 'p',
   },
   {
     category: 'Basic fundamentals',
     description: 'Basic fundamentals',
     progress: 48,
     tasks: '32 Tasks',
+    color: 'su',
   },
   {
     category: 'React native components',
     description: 'React native',
     progress: 15,
     tasks: '182 Tasks',
+    color: 'd',
   },
   {
     category: 'Basic of music theory',
     description: 'Basic of music theory',
     progress: 24,
     tasks: '56 Tasks',
+    color: 'se',
   },
 ]
 

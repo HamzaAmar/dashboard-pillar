@@ -1,5 +1,5 @@
 import React from 'react'
-import { PieChart, Pie, Tooltip, ResponsiveContainer, Cell } from 'recharts'
+import { PieChart, Pie, Tooltip, ResponsiveContainer, Cell, Label } from 'recharts'
 import { ChartLayout } from '../chartLayout'
 
 const data = [
@@ -14,7 +14,7 @@ export const DonutWithLabel = () => {
   return (
     <ChartLayout title="Donut Chart with Label">
       <ResponsiveContainer width="100%" height={300}>
-        <PieChart accessibilityLayer width={400} height={400}>
+        <PieChart accessibilityLayer>
           <Pie
             dataKey="value"
             isAnimationActive={false}
@@ -29,6 +29,12 @@ export const DonutWithLabel = () => {
               <Cell key={`cell-${index}`} stroke={entry.color} fill={entry.color} />
             ))}
           </Pie>
+          <Label
+            value="Total"
+            position="center"
+            fill="var(--B12)"
+            style={{ fontSize: '24px', filter: 'drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25))', fontWeight: '500' }}
+          />
           <Tooltip />
         </PieChart>
       </ResponsiveContainer>

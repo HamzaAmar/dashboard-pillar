@@ -1,5 +1,5 @@
 import React from 'react'
-import { PieChart, Pie, Cell, Label, LabelList, Legend, ResponsiveContainer } from 'recharts'
+import { PieChart, Pie, Cell, Label, Legend, ResponsiveContainer } from 'recharts'
 import { ChartLayout } from '../chartLayout'
 
 interface RatingData {
@@ -13,20 +13,6 @@ const data: RatingData[] = [
   { rating: '4 Star', percentage: 35.91, color: 'var(--Se9)' },
   { rating: '3 Star', percentage: 15.51, color: 'var(--D9)' },
 ]
-
-const CustomizeLabel = ({ cx, cy, midAngle, outerRadius, payload }: any) => {
-  const RADIAN = Math.PI / 180
-  const radius = outerRadius + 30
-  const x = cx + radius * Math.cos(-midAngle * RADIAN)
-  const y = cy + radius * Math.sin(-midAngle * RADIAN)
-
-  return (
-    <text x={x} y={y} fill={'red'} textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
-      {/* {`${payload.percentage}%`} */}
-      Hello
-    </text>
-  )
-}
 
 const CustomLabel = ({ viewBox }: { viewBox?: { cx: number; cy: number } }) => {
   const { cx, cy } = viewBox || { cx: 0, cy: 0 }
@@ -44,7 +30,7 @@ const CustomLabel = ({ viewBox }: { viewBox?: { cx: number; cy: number } }) => {
 
 export const TeamActivityChart = () => {
   return (
-    <ChartLayout title="HalfChart">
+    <ChartLayout title="Half Doughnut Chart">
       <ResponsiveContainer width="100%" height={300}>
         <PieChart>
           <Pie

@@ -1,7 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Paper, Flex, Heading, Text, IconButton, Grid } from '@pillar-ui/core'
 import { DotsHorizontal } from '@pillar-ui/icons'
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts'
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+  PieChart,
+  Pie,
+  Cell,
+  CartesianGrid,
+  Label,
+} from 'recharts'
 import { EARNING_MONTH } from './school.data'
 
 // Define type for chart data
@@ -59,21 +72,24 @@ const EarningsChartCard = () => {
           <Heading size="4" weight="6" as="h2">
             Earnings
           </Heading>
-          {/* <Select
-            size="4"
-            defaultValue="2023"
-            options={[
-              { label: '2023', value: '2023' },
-              { label: '2022', value: '2022' },
-              { label: '2021', value: '2021' },
-            ]}
-          /> */}
         </Flex>
         <IconButton variant="text" icon={<DotsHorizontal />} title="More options" size="4" />
       </Flex>
 
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={EARNING_MONTH} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
+          <defs>
+            <pattern id="earnings" patternUnits="userSpaceOnUse" width="4" height="4">
+              <path d="M 0 0 L 4 4 M -1 3 L 1 5 M 3 -1 L 5 1" stroke="var(--Se9)" strokeWidth="1" />
+            </pattern>
+
+            <pattern id="expanse" patternUnits="userSpaceOnUse" width="6" height="6">
+              <path d="M 0 6 L 6 0" stroke="var(--P9)" strokeWidth="1" />
+              <path d="M 3 9 L 9 3" stroke="var(--P9)" strokeWidth="3" />
+              <path d="M -3 3 L 3 -3" stroke="var(--P9)" strokeWidth="3" />
+            </pattern>
+          </defs>
+          <CartesianGrid stroke="var(--B5)" strokeDasharray="5 5" />
           <XAxis axisLine={false} dataKey="month" tickLine={false} fontSize={12} stroke="var(--B11)" />
           <YAxis
             axisLine={false}
@@ -81,22 +97,43 @@ const EarningsChartCard = () => {
             stroke="var(--B11)"
             fontSize={12}
             tickLine={false}
+            width={35}
           />
           <Tooltip formatter={(value) => `$${value}`} />
           <Legend iconType="circle" iconSize={16} align="right" />
-          <Bar dataKey="earnings" fill="var(--B11)" radius={[16, 16, 0, 0]} barSize={12} name="Earnings" />
-          <Bar dataKey="expanse" fill="var(--I11)" radius={[16, 16, 0, 0]} barSize={12} name="Expanse" />
+          <Bar
+            stroke="var(--Se9)"
+            dataKey="earnings"
+            fill="url(#earnings)"
+            radius={[16, 16, 16, 16]}
+            barSize={16}
+            name="Earnings"
+          />
+          <Bar
+            dataKey="expanse"
+            stroke="var(--P9)"
+            fill="url(#expanse)"
+            radius={[16, 16, 16, 16]}
+            barSize={16}
+            name="Expanse"
+          />
         </BarChart>
       </ResponsiveContainer>
     </Paper>
   )
 }
 
+const genderData: GenderData[] = [
+  { name: 'Male', value: 55, color: 'var(--P9)' },
+  { name: 'Female', value: 45, color: 'var(--Se9)' },
+]
+
 const GenderDonutChartCard = () => {
-  const genderData: GenderData[] = [
-    { name: 'Male', value: 55, color: 'var(--P9)' },
-    { name: 'Female', value: 45, color: 'var(--Se9)' },
-  ]
+  const [label, setLabel] = useState('Total')
+
+  function onPieEnter(value: string) {
+    setLabel(value)
+  }
 
   return (
     <Paper className="l_box" p="3" width="100%">
@@ -107,45 +144,63 @@ const GenderDonutChartCard = () => {
         <IconButton variant="text" icon={<DotsHorizontal />} title="More options" size="4" />
       </Flex>
 
-      <Flex direction="col" items="center" justify="center" className="u_padding-3" style={{ height: '280px' }}>
-        <ResponsiveContainer width="100%" height="80%">
-          <PieChart>
+      <Paper>
+        <ResponsiveContainer width="100%" height={300}>
+          <PieChart accessibilityLayer>
             <Pie
               data={genderData}
-              dataKey="value"
-              nameKey="name"
               cx="50%"
               cy="50%"
-              innerRadius={60}
-              outerRadius={80}
-              paddingAngle={5}
-              labelLine={false}
+              innerRadius="50%"
+              outerRadius="80%"
+              strokeWidth={3}
+              paddingAngle={0}
+              dataKey="value"
+              onMouseLeave={() => onPieEnter('Total')}
             >
               {genderData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.color} stroke={entry.color} />
+                <Cell
+                  onMouseEnter={() => onPieEnter(entry.name)}
+                  key={`cell-${index}`}
+                  stroke={entry.color}
+                  fill={entry.color}
+                />
               ))}
+              <Label
+                value={label}
+                position="center"
+                fill="var(--B12)"
+                style={{ fontSize: '24px', filter: 'drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25))', fontWeight: '500' }}
+              />
             </Pie>
+            <Tooltip />
           </PieChart>
         </ResponsiveContainer>
         <Flex gap="6" justify="center">
-          <Flex direction="col" items="center">
-            <Heading size="3" weight="6" color="p">
-              55%
-            </Heading>
-            <Text size="3" color="b">
-              Male
-            </Text>
+          <Flex gap="3" items="center">
+            <Paper width="20px" ratio="1" background="P9" corner="2" />
+            <div>
+              <Heading size="3" weight="6" color="p" low>
+                55%
+              </Heading>
+              <Text size="3" color="b" low>
+                Male
+              </Text>
+            </div>
           </Flex>
-          <Flex direction="col" items="center">
-            <Heading size="3" weight="6" color="i">
-              45%
-            </Heading>
-            <Text size="3" color="b">
-              Female
-            </Text>
+          <Flex gap="3" items="center">
+            <Paper width="20px" ratio="1" background="Se9" corner="2" />
+            <div>
+              <Heading size="3" weight="6" color="se" low>
+                45%
+              </Heading>
+              <Text size="3" color="b" low>
+                Female
+              </Text>
+            </div>
           </Flex>
         </Flex>
-      </Flex>
+      </Paper>
     </Paper>
   )
 }

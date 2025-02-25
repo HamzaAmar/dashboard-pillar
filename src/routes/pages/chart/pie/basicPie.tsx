@@ -1,4 +1,3 @@
-import React from 'react'
 import { ChartLayout } from '../chartLayout'
 import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts'
 

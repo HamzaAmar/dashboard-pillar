@@ -3,29 +3,6 @@ import { Paper, Flex, Heading, Text, IconButton, ProgressCircle, Grid } from '@p
 import { DotsHorizontal, ChevronRight } from '@pillar-ui/icons'
 import { ASSIGNMENT, COURSES } from './school.data'
 
-// {joinEvent ? (
-//     <div>
-//       <Flex gap="2" items="center">
-//         <Text size="2" color="b" low>
-//           Date
-//         </Text>
-//         <Text size="2" weight="5">
-//           {date}
-//         </Text>
-//       </Flex>
-//       <Flex gap="2" items="center">
-//         <Text size="2" color="b">
-//           Duration
-//         </Text>
-//         <Text size="2" weight="5">
-//           {duration}
-//         </Text>
-//       </Flex>
-//       <Text size="3" weight="5" color="p">
-//         Join the event
-//       </Text>
-//     </div>
-//   ) : null}
 const TopCoursesCard = () => {
   return (
     <Paper flow="5" className="l_box">
@@ -50,7 +27,7 @@ const TopCoursesCard = () => {
                     Upcoming Webinar
                   </Text>
                 ) : (
-                  <Text size="3" color="b">
+                  <Text size="3" color="b" low>
                     {views}
                   </Text>
                 )}
@@ -73,27 +50,27 @@ const AssignmentProgressCard = () => {
         <IconButton variant="text" icon={<DotsHorizontal />} title="Settings" size="4" />
       </Flex>
 
-      <Flex direction="col" gap="3" className="u_padding-inline-3 u_padding-bottom-4">
-        {ASSIGNMENT.map((assignment, index) => (
+      <Paper flow="5">
+        {ASSIGNMENT.map(({ category, description, progress, tasks, color }, index) => (
           <Flex key={index} justify="between" items="center">
             <Flex gap="3" items="center">
-              <ProgressCircle value={assignment.progress} size="4" color="p" label="hello" />
+              <ProgressCircle value={progress} size="4" color={color} label="hello" />
               <Paper>
                 <Heading size="4" weight="5" truncate="2">
-                  {assignment.category}
+                  {category}
                 </Heading>
                 <Text size="3" color="b">
-                  {assignment.description}
+                  {description}
                 </Text>
                 <Text size="3" color="b" low>
-                  {assignment.tasks}
+                  {tasks}
                 </Text>
               </Paper>
             </Flex>
             <IconButton variant="soft" icon={<ChevronRight />} size="3" title="View details" />
           </Flex>
         ))}
-      </Flex>
+      </Paper>
     </Paper>
   )
 }

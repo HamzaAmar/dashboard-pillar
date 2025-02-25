@@ -1,4 +1,4 @@
-import { Grid, Paper } from '@pillar-ui/core'
+import { Paper } from '@pillar-ui/core'
 import { BasicBar } from './basic'
 import { MultiBar } from './mutiBar'
 import { Horizontal } from './horizontal'
@@ -17,7 +17,7 @@ import { XAxisAbove } from './basicXAxisAbove'
 export const Component = () => {
   return (
     <Paper flow="5" className="l_box">
-      <Grid gap="4" cols={{ default: '1fr', md: '1fr 1fr' }} className="charts-container">
+      <div className="charts-container">
         <BasicBar />
         <XAxisAbove />
         <DynamicBarData />
@@ -32,7 +32,7 @@ export const Component = () => {
         <MultiHorizontal />
         <HorizontalStacked />
         <PyramidHorizontal />
-      </Grid>
+      </div>
     </Paper>
   )
 }
