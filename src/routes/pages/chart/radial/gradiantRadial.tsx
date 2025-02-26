@@ -8,7 +8,7 @@ const data = [
   { browser: 'edge', visitors: 173, fill: 'url(#edge)' },
   { browser: 'other', visitors: 90, fill: 'url(#other)' },
 ]
-
+// M31-6.5v13h28v-13zm-45 15v13h28v-13zm60 0v13h28v-13zm-15 15v13h28v-13z
 export const GradientRadial = () => {
   return (
     <ChartLayout title="Gradient Radial Chart">
