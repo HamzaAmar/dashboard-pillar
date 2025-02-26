@@ -10,6 +10,7 @@ export interface BillingArticleProps {
   value: Current
   slug: Current
   features: string[]
+  type: 'monthly' | 'annual'
 }
 
 export interface CompanyRatingProps {

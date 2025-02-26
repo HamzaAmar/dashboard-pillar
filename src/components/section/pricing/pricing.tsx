@@ -1,5 +1,18 @@
 import { useState, useId } from 'react'
-import { Avatar, Breadcrumb, BreadcrumbItem, Flex, Grid, Heading, Text, Rating, Table, Paper } from '@pillar-ui/core'
+import {
+  Avatar,
+  Breadcrumb,
+  BreadcrumbItem,
+  Flex,
+  Grid,
+  Heading,
+  Text,
+  Rating,
+  Table,
+  Paper,
+  Button,
+  Chips,
+} from '@pillar-ui/core'
 import { CircleCheck, CircleX } from '@pillar-ui/icons'
 import type { BillingArticleProps, CompanyRatingProps, Current, PlanFeatureProps, ReviewProps } from './pricing.type'
 import { FEATURES_PLAN, PRICING_FEATURES, REVIEW } from './pricing.data'
@@ -7,18 +20,19 @@ import { FEATURES_PLAN, PRICING_FEATURES, REVIEW } from './pricing.data'
 const CompanyRating = ({ company, image, reviews, rating }: CompanyRatingProps) => {
   const ratingTrunc = Math.trunc(rating)
   return (
-    <Flex items="start">
+    <Flex as="article" gap="3" className="l_box">
       <Avatar src={`/images/jobs/${image}`} title={company} />
       <div>
-        <Flex gap="1">
-          <Rating rating={ratingTrunc} size="4" />
-          <Text size="4" weight="7" as="span" color="w" low>
+        <Flex gap="3">
+          <Text size="4" color="b" weight="5">
+            {company}
+          </Text>
+          <Rating rating={ratingTrunc} size="3" hideTitle />
+          <Text size="4" weight="5" as="span" color="w" low>
             ({rating})
           </Text>
         </Flex>
-        <Text size="3" color="b" as="span">
-          {company}-
-        </Text>
+
         <Text size="3" color="b" low as="span">
           {reviews}+ reviews
         </Text>
@@ -49,7 +63,7 @@ const PlanFeature = ({ icon, title, description }: PlanFeatureProps) => {
   )
 }
 
-const Billing = ({ title, price, description, handlePricing, value, slug, features }: BillingArticleProps) => {
+const Billing = ({ title, price, description, handlePricing, value, slug, features, type }: BillingArticleProps) => {
   const id = `billing-${useId()}-item`
   return (
     <article aria-labelledby={id} className="billing-item fl-1">
@@ -62,15 +76,17 @@ const Billing = ({ title, price, description, handlePricing, value, slug, featur
       >
         <header>
           <Flex items="start" justify="between">
-            <div>
-              <Heading id={id} as="h3" weight="7" size="3">
-                {title}
-              </Heading>
-              <Text weight="7">${price} / month</Text>
-              <Text color="b" low size="3">
-                {description}
-              </Text>
-            </div>
+            <Paper flow="4">
+              <Chips size="5">{title}</Chips>
+              <div>
+                <Text size="4" weight="6" transform="capitalize">
+                  ${price} / {type}
+                </Text>
+                <Text color="b" low size="3">
+                  {description}
+                </Text>
+              </div>
+            </Paper>
             <Flex justify="center" items="center" className="icon-wrapper">
               <CircleCheck className="billing-check" width="24" stroke="var(--B12)" />
             </Flex>
@@ -97,7 +113,7 @@ const Billing = ({ title, price, description, handlePricing, value, slug, featur
 
 const Testimonials = ({ id, user, description, title, company }: ReviewProps) => {
   return (
-    <Flex direction="col" as="article" gap="3" key={id} className="pricing-review l_box">
+    <Paper flow="6" as="article" key={id} className="l_box">
       <div>
         <Heading as="h3" size="3" weight="5">
           {title}
@@ -107,8 +123,8 @@ const Testimonials = ({ id, user, description, title, company }: ReviewProps) =>
         </Text>
       </div>
 
-      <Flex gap="4" className="pricing-review--footer">
-        <Avatar src={user.avatar} title={user.name} />
+      <Flex gap="4">
+        <Avatar size="4" src={user.avatar} title={user.name} />
         <div>
           <Text size="4" weight="5">
             {user.name}
@@ -118,7 +134,7 @@ const Testimonials = ({ id, user, description, title, company }: ReviewProps) =>
           </Text>
         </div>
       </Flex>
-    </Flex>
+    </Paper>
   )
 }
 
@@ -126,15 +142,97 @@ function featureOrNot(feature: boolean) {
   return feature ? <CircleCheck width={20} /> : <CircleX stroke="var(--B11)" width={20} />
 }
 
-export const PricingSection = () => {
+const Pricing = () => {
   const [current, setCurrent] = useState<Current>(null)
+  const [type, setType] = useState<'monthly' | 'annual'>('monthly')
 
   const handlePricing = (name: Current) => {
     setCurrent(name)
   }
 
   return (
-    <Paper as="section" flow="7" aria-labelledby="pricing-page-id">
+    <Paper as="section" flow="5" className="l_box">
+      <Heading as="h2" size="4" weight="5">
+        Choose Your Right Plan
+      </Heading>
+      <Paper flow="6">
+        <Flex justify="center">
+          <Paper width="max(50%, 250px)" corner="full" background="B3" p="2" gap="2" as={Flex}>
+            <Button
+              variant={type === 'monthly' ? 'shadow' : 'soft'}
+              color={type === 'monthly' ? 'p' : 'b'}
+              onClick={() => setType('monthly')}
+              corner="full"
+              className="fl-1"
+            >
+              Monthly
+            </Button>
+            <Button
+              variant={type === 'annual' ? 'shadow' : 'soft'}
+              color={type === 'annual' ? 'p' : 'b'}
+              onClick={() => setType('annual')}
+              corner="full"
+              className="fl-1"
+            >
+              Annual
+            </Button>
+          </Paper>
+        </Flex>
+        <Grid cols={{ default: 'repeat(auto-fit, minmax(250px , 1fr))' }} gap="4">
+          <Billing
+            price={(type === 'annual' ? 11.2 : 1) * 10}
+            slug="basic"
+            title="Basic"
+            value={current}
+            type={type}
+            handlePricing={handlePricing}
+            features={[
+              'Access To all basic features',
+              'basic reporting and analytics',
+              'up to 20 individual persons',
+              '200GB Data for All users',
+              'Basic chat and email support',
+            ]}
+          />
+          <Billing
+            price={(type === 'annual' ? 11.2 : 1) * 20}
+            slug="business"
+            title="Business"
+            value={current}
+            type={type}
+            handlePricing={handlePricing}
+            features={[
+              'Access To all Business features',
+              'Advanced reporting and analytics',
+              'up to 20 individual persons',
+              '400GB Data for All users',
+              'Advanced chat and email support',
+            ]}
+          />
+          <Billing
+            price={(type === 'annual' ? 11.2 : 1) * 50}
+            slug="enterprise"
+            title="Enterprise"
+            value={current}
+            type={type}
+            handlePricing={handlePricing}
+            features={[
+              'Access To all basic features',
+              'Unlimited reporting and analytics',
+              'Up to 100 individual persons',
+              '10TB Data for All users',
+              'Unlimited chat and email support',
+            ]}
+          />
+        </Grid>
+      </Paper>
+    </Paper>
+  )
+}
+
+export const PricingSection = () => {
+  return (
+    <Paper as="section" flow="5" aria-labelledby="pricing-page-id">
       <Flex justify="between" items="center">
         <div>
           <Heading id="pricing-page-id" as="h1" size="4">
@@ -152,87 +250,38 @@ export const PricingSection = () => {
           </BreadcrumbItem>
         </Breadcrumb>
       </Flex>
-      <Paper as="section" flow="5">
-        <Heading as="h2" size="4" weight="5">
-          Belling Plans
-        </Heading>
-        <Grid cols={{ default: 'repeat(auto-fit, minmax(250px , 1fr))' }} gap="4">
-          <Billing
-            price={10}
-            slug="basic"
-            title="Basic Plan"
-            value={current}
-            handlePricing={handlePricing}
-            features={[
-              'Access To all basic features',
-              'basic reporting and analytics',
-              'up to 20 individual persons',
-              '200GB Data for All users',
-              'Basic chat and email support',
-            ]}
-          />
-          <Billing
-            price={20}
-            slug="business"
-            title="Business Plan"
-            value={current}
-            handlePricing={handlePricing}
-            features={[
-              'Access To all Business features',
-              'Advanced reporting and analytics',
-              'up to 20 individual persons',
-              '400GB Data for All users',
-              'Advanced chat and email support',
-            ]}
-          />
-          <Billing
-            price={50}
-            slug="enterprise"
-            title="Enterprise Plan"
-            value={current}
-            handlePricing={handlePricing}
-            features={[
-              'Access To all basic features',
-              'Unlimited reporting and analytics',
-              'Up to 100 individual persons',
-              '10TB Data for All users',
-              'Unlimited chat and email support',
-            ]}
-          />
-        </Grid>
-      </Paper>
-      <Paper flow="5">
-        <Flex as="section" aria-labelledby="trusted-company-id" direction="col" gap="4">
+      <Pricing />
+      <Paper as="section" aria-labelledby="trusted-company-id" flow="5">
+        <Paper flow="5" className="l_box">
           <Heading as="h2" size="4" id="trusted-company-id" weight="5">
             Trusted By 3000+ company around the globe
           </Heading>
-          <Flex wrap gap="6">
+          <Grid cols={{ default: '1fr', md: '1fr 1fr 1fr' }} gap="4">
             <CompanyRating image="dice.jfif" company="Dice" rating={5} reviews={230} />
             <CompanyRating image="apple.jfif" company="Apple" rating={5} reviews={100} />
             <CompanyRating image="dice.jfif" company="Dice" rating={5} reviews={230} />
             <CompanyRating image="Oracle.jfif" company="oracle" rating={4} reviews={300} />
             <CompanyRating image="mongodb.jfif" company="MongoDB" rating={4} reviews={30} />
             <CompanyRating image="dice.jfif" company="Dice" rating={5} reviews={230} />
-          </Flex>
-        </Flex>
-
-        <Paper as="section" flow="5" aria-labelledby="testimonials-id">
+          </Grid>
+        </Paper>
+        <Paper as="section" flow="5" aria-labelledby="testimonials-id" className="l_box">
           <Heading size="4" id="testimonials-id" weight="5" as="h2">
             Testimonials
           </Heading>
-          <div className="pricing-review--list md_grid-two sm_grid-one">
+          <Grid cols={{ default: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }} gap="4">
             {REVIEW.map((review) => (
               <Testimonials key={review.id} {...review} />
             ))}
-          </div>
+          </Grid>
         </Paper>
       </Paper>
-      <Flex as="section" aria-labelledby="pick-plan-id" direction="col" gap="6">
+      <Paper as="section" aria-labelledby="pick-plan-id" flow="6" className="l_box">
         <div>
           <Heading size="4" weight="5" id="pick-plan-id" as="h2">
             Pick a plan that works best for you
           </Heading>
-          <Text color="b" low size="4">
+          <Text color="b" low size="3">
             Stay cool, we have a 48-hour money back guarantee!
           </Text>
         </div>
@@ -254,7 +303,11 @@ export const PricingSection = () => {
           <tbody>
             {PRICING_FEATURES.body.map(({ slug, title, feature }) => (
               <tr key={slug}>
-                <td>{title}</td>
+                <td>
+                  <Text weight="5" size="3">
+                    {title}
+                  </Text>{' '}
+                </td>
                 {feature.map((value, index) => (
                   <td key={index}>{featureOrNot(value)}</td>
                 ))}
@@ -262,8 +315,8 @@ export const PricingSection = () => {
             ))}
           </tbody>
         </Table>
-      </Flex>
-      <Flex as="section" aria-labelledby="personalization-plan-id" direction="col" gap="4">
+      </Paper>
+      <Paper as="section" aria-labelledby="personalization-plan-id" flow="4" className="l_box">
         <Heading as="h2" size="4" weight="5" id="personalization-plan-id">
           Personalization Plan features
         </Heading>
@@ -272,7 +325,7 @@ export const PricingSection = () => {
             <PlanFeature key={plan.slug} {...plan} />
           ))}
         </Grid>
-      </Flex>
+      </Paper>
     </Paper>
   )
 }
