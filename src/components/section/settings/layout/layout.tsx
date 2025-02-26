@@ -1,6 +1,6 @@
 import { getUsers } from '@api/user'
 import { Avatar, Button, Flex, Grid, Heading, IconButton, Paper, Text } from '@pillar-ui/core'
-import { Camera, DotsHorizontal, Facebook, Github, Linkdin, Settings, Twitter } from '@pillar-ui/icons'
+import { DotsHorizontal, Facebook, Github, Linkdin, Settings, Twitter } from '@pillar-ui/icons'
 import { NavLink, Outlet } from 'react-router-dom'
 
 const me = getUsers()[0]
@@ -8,20 +8,7 @@ const me = getUsers()[0]
 const layout = () => {
   return (
     <section aria-labelledby="settings-page-id">
-      <Heading id="settings-page-id" className="u_sr-only">
-        Settings Page
-      </Heading>
-      <header className="account-settings--cover-content">
-        <div className="account-settings--cover-wrapper">
-          <img className="account-settings--cover" src="/images/hero.jfif" alt="" />
-        </div>
-        <div className="account-settings--button">
-          <Button variant="soft" color="b" icon={<Camera width="22" />}>
-            Cover Image
-          </Button>
-        </div>
-      </header>
-      <Grid gap="4" cols={{ default: '240px 1fr', md: '1fr' }} className="account-settings--content">
+      <Grid gap="4" cols={{ default: '1fr', md: '240px 1fr' }}>
         <div className="account-settings--sidebar">
           <section aria-labelledby="user-info">
             <Heading as="h2" id="user-info" className="u_sr-only">
@@ -71,42 +58,42 @@ const layout = () => {
                   </Flex>
                 </Flex>
                 <Flex gap="3" items="center">
-                  <Button icon={<Settings />} fluid>
+                  <Button icon={<Settings />} className="fl-1">
                     Settings
                   </Button>
-                  <IconButton title="" icon={<DotsHorizontal />} />
+                  <IconButton size="4" title="" icon={<DotsHorizontal />} />
                 </Flex>
               </Flex>
               <Paper as="article" flow="4" aria-labelledby="social-media-id" className="l_box">
                 <Flex as="header" justify="between" items="center">
-                  <Heading id="social-media-id" weight="5" size="1" as="h3">
+                  <Heading id="social-media-id" weight="5" size="4" as="h3">
                     Social Media
                   </Heading>
-                  <Button size="4" variant="link">
+                  <Button size="3" color="b" variant="soft">
                     Edit
                   </Button>
                 </Flex>
                 <Paper flow="3">
                   <Flex gap="3" items="center">
-                    <Facebook width={20} />
+                    <Facebook width={18} />
                     <Text size="4" color="b" low>
                       @hamzaamar
                     </Text>
                   </Flex>
                   <Flex gap="3" items="center">
-                    <Linkdin width={20} />
+                    <Linkdin width={18} />
                     <Text size="4" color="b" low>
                       @hamzaamar
                     </Text>
                   </Flex>
                   <Flex gap="3" items="center">
-                    <Twitter width={20} />
+                    <Twitter width={18} />
                     <Text size="4" color="b" low>
                       @hamzaamar123
                     </Text>
                   </Flex>
                   <Flex gap="3" items="center">
-                    <Github width={20} />
+                    <Github width={18} />
                     <Text size="4" color="b" low>
                       @miloudamar93
                     </Text>

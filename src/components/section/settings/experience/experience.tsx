@@ -12,6 +12,9 @@ const PersonalDetail = () => {
       <FormController label="Description">
         <Textarea rows={5} name="description" />
       </FormController>
+      <FormController label="Description">
+        <Textarea rows={5} name="description" />
+      </FormController>
       <Flex justify="end">
         <Button>Update</Button>
       </Flex>
