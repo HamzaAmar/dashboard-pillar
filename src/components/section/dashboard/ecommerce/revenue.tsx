@@ -61,7 +61,7 @@ const SalesPerson: React.FC<SalesPersonProps> = ({ avatar, revenue, percentage }
     <Text style={{ flex: 1 }} size="2" weight="5">
       ${revenue}
     </Text>
-    <Text size="1" color="b" low>
+    <Text size="1" color="b" low style={{ paddingRight: '6px' }}>
       {percentage}%
     </Text>
   </Grid>

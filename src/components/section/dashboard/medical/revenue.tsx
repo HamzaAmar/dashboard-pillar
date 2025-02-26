@@ -21,14 +21,14 @@ const revenueData = [
 export const RevenueStats = () => {
   return (
     <Paper flow="6" className="l_box">
-      <Heading as="h2" weight="5">
+      <Heading as="h2" size="4" weight="5">
         Revenue Statistics
       </Heading>
       <ResponsiveContainer width="100%" height={350}>
-        <LineChart data={revenueData} margin={{ left: 0, right: 15 }}>
+        <LineChart data={revenueData} margin={{ left: 0, right: 10 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="var(--B6)" />
           <XAxis axisLine={false} tickLine={false} dataKey="month" fontSize={12} />
-          <YAxis axisLine={false} tickLine={false} domain={[0, 40]} fontSize={12} />
+          <YAxis width={30} axisLine={false} tickLine={false} domain={[0, 40]} fontSize={12} />
           <Tooltip />
           <Legend iconType="circle" />
           <Line

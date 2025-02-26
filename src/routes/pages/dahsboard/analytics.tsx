@@ -1,6 +1,6 @@
-import { useState, type ReactNode } from 'react'
+import { type ReactNode } from 'react'
 import { Paper, Grid, Text, Flex, Heading, Button, Color, IconButton, Chips, Avatar, Table } from '@pillar-ui/core'
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, AreaChart, Area } from 'recharts'
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, AreaChart, Area } from 'recharts'
 import {
   Plus,
   ArrowCircleDown,
@@ -189,12 +189,6 @@ const chartData = Array.from({ length: 31 }, (_, i) => ({
   value: 500 + Math.sin(i / 5) * 300 + Math.random() * 100,
 }))
 
-// Notable points to highlight
-const highlightPoints = [
-  { day: 7, value: 700, label: '700' },
-  { day: 25, value: 948, label: '948' },
-]
-
 interface CardProps {
   title: string
   value: string
@@ -225,7 +219,20 @@ const SalesMetricsDashboard = () => {
   return (
     <Grid cols={{ default: '1fr', md: '2fr 1fr' }} gap="4">
       <Paper className="l_box">
-        <Flex direction="col" gap="4">
+        <Paper flow="4">
+          <Flex justify="between" items="center">
+            <Text color="b" low size="3">
+              All Time High
+              <Text as="span" size="4" weight="6">
+                {' '}
+                98.78%{' '}
+              </Text>
+              Total Sales
+            </Text>
+            <Button size="3" variant="soft" icon={<CloudDownload width={16} />}>
+              Download Report +8.9%
+            </Button>
+          </Flex>
           <div style={{ height: '250px' }}>
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={chartData} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
@@ -235,8 +242,16 @@ const SalesMetricsDashboard = () => {
                     <stop offset="100%" stopColor="var(--D9)" stopOpacity={0.5} />
                   </linearGradient>
                 </defs>
-                <XAxis dataKey="day" stroke="var(--B11)" fontSize={12} tickLine={false} axisLine={false} />
-                <YAxis stroke="var(--B11)" fontSize={12} tickLine={false} axisLine={false} />
+                <XAxis
+                  height={20}
+                  domain={[0, 5, 10, 15, 20, 25, 30, 35]}
+                  dataKey="day"
+                  stroke="var(--B11)"
+                  fontSize={12}
+                  tickLine={false}
+                  axisLine={false}
+                />
+                <YAxis width={35} stroke="var(--B11)" fontSize={12} tickLine={false} axisLine={false} />
                 <Tooltip
                   contentStyle={{
                     backgroundColor: '#fff',
@@ -245,25 +260,18 @@ const SalesMetricsDashboard = () => {
                     boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                   }}
                 />
-                <Area type="monotone" dataKey="value" stroke="var(--D9)" fill="url(#gradientArea)" strokeWidth={2} />
+                <Area
+                  dot={{ r: 3, fill: 'var(--D9)' }}
+                  type="monotone"
+                  dataKey="value"
+                  stroke="var(--D9)"
+                  fill="url(#gradientArea)"
+                  strokeWidth={2}
+                />
               </AreaChart>
             </ResponsiveContainer>
           </div>
-
-          <Flex justify="between" items="center">
-            <Button size="3" variant="soft" icon={<CloudDownload width={16} />}>
-              Download Report +8.9%
-            </Button>
-            <Text color="b" low size="3">
-              All Time High
-              <Text as="span" size="4" weight="6">
-                {' '}
-                98.78%{' '}
-              </Text>
-              Total Sales
-            </Text>
-          </Flex>
-        </Flex>
+        </Paper>
       </Paper>
 
       <Paper flow="4">

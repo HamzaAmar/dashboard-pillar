@@ -2,7 +2,7 @@ import { Building, Dollar, Users, Laptop, Video, Camera, Palette, Microphone } f
 import type { AssignmentProps, MetricCardProps } from './school.type'
 import { Avatar } from '@pillar-ui/core'
 
-const fakeData = (points: number, min: number, max: number) => {
+export const fakeData = (points: number, min: number, max: number) => {
   return Array.from({ length: points }, () => ({
     value: Math.floor(Math.random() * (max - min + 1)) + min,
   }))

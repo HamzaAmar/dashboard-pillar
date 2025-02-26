@@ -65,9 +65,9 @@ export const JobStatics = () => {
               })
             }}
           />
+          <Tooltip />
           <Bar dataKey="applications" stackId="a" fill="var(--P8)" radius={[0, 0, 4, 4]} />
           <Bar dataKey="interviews" stackId="a" fill="var(--Se8)" radius={[4, 4, 0, 0]} />
-          <Tooltip />
         </BarChart>
       </ResponsiveContainer>
     </Paper>

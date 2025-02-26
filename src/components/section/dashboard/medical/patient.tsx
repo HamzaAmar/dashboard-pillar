@@ -4,8 +4,8 @@ import { Paper, Heading } from '@pillar-ui/core'
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts'
 
 const visitSex = [
-  { name: 'Female', value: 15.5, color: 'var(--D9)' },
-  { name: 'Male', value: 10.2, color: 'var(--Se9)' },
+  { name: 'Female', value: 15.5, color: 'var(--Se9)' },
+  { name: 'Male', value: 10.2, color: 'var(--I9)' },
 ]
 
 const visitAge = [
@@ -22,17 +22,9 @@ export const PatientVisits = () => {
         <Heading size="4">Patients Visits</Heading>
         <ResponsiveContainer aspect={1 / 1.2} width="100%">
           <PieChart>
-            <Pie
-              data={visitSex}
-              innerRadius={0}
-              fill="red"
-              stroke="var(--B3)"
-              outerRadius={100}
-              paddingAngle={0}
-              dataKey="value"
-            >
+            <Pie data={visitSex} innerRadius={0} fill="red" outerRadius={100} paddingAngle={0} dataKey="value">
               {visitSex.map((entry, index) => (
-                <Cell radius={20} key={index} fill={entry.color} />
+                <Cell radius={20} key={index} fill={entry.color} stroke={entry.color} />
               ))}
             </Pie>
             <Tooltip />

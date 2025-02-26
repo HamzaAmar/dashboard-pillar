@@ -70,7 +70,7 @@ const getStatusColor = (status: 'available' | 'busy' | 'unavailable') => {
 
 export const DoctorsList = () => {
   return (
-    <Paper className="l_box" flow="7">
+    <Paper className="l_box" flow="6">
       <Flex justify="between" items="center" className="mb-4">
         <Heading as="h2" weight="5" size="4">
           Doctors List

@@ -77,8 +77,19 @@ const JobsSection = () => {
               </ProgressBarStackItem>
             </ProgressBarStack>
           </Paper>
-          <Paper as="section" flow="3" aria-labelledby="job-open-id">
-            <div className="l_box">
+          <Flex as="section" gap="3" aria-labelledby="job-open-id">
+            <div className="fl-1 l_box">
+              <Heading as="h3" id="job-open-id">
+                Job Open
+              </Heading>
+              <Text as="span" weight="7">
+                15
+              </Text>
+              <Text as="span" color="b" low>
+                Available Jobs
+              </Text>
+            </div>
+            <div className="fl-1 l_box">
               <Heading as="h3" id="job-open-id">
                 Job Open
               </Heading>
@@ -89,7 +100,18 @@ const JobsSection = () => {
                 Jobs Opened
               </Text>
             </div>
-          </Paper>
+            <div className="fl-1 l_box">
+              <Heading as="h3" id="job-open-id">
+                Job Open
+              </Heading>
+              <Text as="span" weight="7" size="9">
+                15
+              </Text>
+              <Text as="span" color="b" low>
+                Jobs Opened
+              </Text>
+            </div>
+          </Flex>
         </Paper>
       </Grid>
       <Grid as="section" gap="4" cols={{ default: '1fr', md: '1fr 1fr', lg: 'repeat(3, 1fr)' }}>

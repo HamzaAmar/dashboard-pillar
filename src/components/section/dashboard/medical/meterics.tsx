@@ -36,7 +36,7 @@ export const Metric = ({ title, value, change, icon, color }: MetricProps) => {
     <Paper key={title} className="l_box">
       <Paper flow="3">
         <Flex items="center" justify="between">
-          <Text color="b" low>
+          <Text color="b" size="3" low>
             {title}
           </Text>
           {icon}

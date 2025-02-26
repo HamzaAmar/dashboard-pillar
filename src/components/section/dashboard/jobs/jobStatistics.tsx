@@ -61,7 +61,13 @@ const StatisticsCard = () => {
           </defs>
           <XAxis axisLine={false} dataKey="month" tickLine={false} fontSize={12} angle={-45} textAnchor="end" />
           <YAxis width={30} axisLine={false} tickLine={false} fontSize={12} />
-          <Tooltip />
+          <Tooltip
+            cursor={{
+              stroke: 'var(--B6)',
+              strokeWidth: 2,
+              strokeDasharray: '5 5',
+            }}
+          />
           <Legend iconType="plainline" iconSize={12} />
           <Area
             type="monotone"
@@ -136,7 +142,7 @@ const UserActivityCard = () => {
         <Button size="3">View All →</Button>
       </Flex>
 
-      <Paper flow="4">
+      <Paper flow="5">
         {activityData.map((activityItem, index) => (
           <Paper key={index} flow="2">
             <Flex gap="3" items="start">
@@ -151,6 +157,7 @@ const UserActivityCard = () => {
                   <Text low color="b" size="3">
                     {activityItem.activity}
                     <Text as="span" weight="5">
+                      {/* Don't Remove this space because It's needed for adding space between text */}{' '}
                       {activityItem.jobTitle}
                     </Text>
                   </Text>

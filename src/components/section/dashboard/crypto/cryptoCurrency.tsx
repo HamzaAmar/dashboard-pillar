@@ -15,7 +15,7 @@ const CryptoItem = ({ title, icon, children }: any) => {
             {title}
           </Heading>
         </Flex>
-        <Button size="3" iconPosition="end" variant="link" icon={<ChevronDown direction="right" />}>
+        <Button size="2" iconPosition="end" variant="soft" color="b" icon={<ChevronDown direction="right" />}>
           More
         </Button>
       </Flex>
@@ -51,18 +51,18 @@ export const CryptoCurrency = () => {
         </Text>
       </div>
       <div className="crypto-currency">
-        <CryptoItem title="Trending" icon={<ArrowDown direction="right-top" width={24} />}>
+        <CryptoItem title="Trending" icon={<ArrowDown direction="right-top" width={20} />}>
           {TRENDING.map((trend) => (
             <MarketCryptoItem key={trend.id} {...trend} />
           ))}
         </CryptoItem>
-        <CryptoItem title="Recently Added" icon={<Clock direction="right-top" width={24} />}>
+        <CryptoItem title="Recently Added" icon={<Clock direction="right-top" width={20} />}>
           {RECENT_ADDED.map((trend) => (
             <MarketCryptoItem key={trend.id} {...trend} />
           ))}
         </CryptoItem>
 
-        <CryptoItem title="Top Account" icon={<ThumbUp direction="right-top" width={24} />}>
+        <CryptoItem title="Top Account" icon={<ThumbUp direction="right-top" width={20} />}>
           {TOP_ACCOUNT.map(({ id, title, abbr, image }) => (
             <Flex key={id} as="article" justify="between">
               <Flex gap="3" items="center">
